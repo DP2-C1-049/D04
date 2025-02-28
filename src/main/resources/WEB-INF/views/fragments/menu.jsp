@@ -23,6 +23,7 @@
 			<acme:menu-suboption code="master.menu.anonymous.rafberalv" action="https://app.clockify.me/tracker"/>
 			<acme:menu-suboption code="master.menu.anonymous.serponlop" action="https://lichess.org/"/>
 			<acme:menu-suboption code="master.menu.anonymous.samcocdel" action="https://futbol-11.com/"/>
+			<acme:menu-suboption code="master.menu.anonymous.javmanriq" action="https://www.listadomanga.es/"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRealm('Administrator')">
