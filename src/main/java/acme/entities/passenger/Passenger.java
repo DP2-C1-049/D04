@@ -27,6 +27,13 @@ public class Passenger extends AbstractEntity {
 
 	//Atributes --------------------------------------------------------------------------
 
+	//	Commented until creating the consumer entity
+	//	@Mandatory
+	//	@Automapped
+	//	@Valid
+	//	@ManyToOne
+	//	private Booking				booking;
+
 	@Mandatory
 	@Automapped
 	@NotBlank
