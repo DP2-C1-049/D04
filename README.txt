@@ -31,3 +31,8 @@ GitHub dashboard STX3837 D01:
 https://github.com/orgs/DP2-C1-049/projects/8/views/2
 GitHub dashboard STX3837 D02:
 https://github.com/orgs/DP2-C1-049/projects/8/views/3
+
+GitHub dashboard serponlop D01 (Student 2):
+https://github.com/orgs/DP2-C1-049/projects/9/views/2
+GitHub dashboard serponlop D02 (Student 2):
+https://github.com/orgs/DP2-C1-049/projects/9/views/3
