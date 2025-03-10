@@ -1,10 +1,10 @@
 
-package acme.entities.flightcrewmembers;
+package acme.realms.flightcrewmembers;
 
 import javax.persistence.Entity;
 import javax.validation.Valid;
 
-import acme.client.components.basis.AbstractEntity;
+import acme.client.components.basis.AbstractRole;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
@@ -17,7 +17,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class FlightCrewMember extends AbstractEntity {
+public class FlightCrewMember extends AbstractRole {
 
 	// Serialisation version ----------------------------------------------------
 
@@ -45,10 +45,12 @@ public class FlightCrewMember extends AbstractEntity {
 	@Automapped
 	private AvailabilityStatus	availabilityStatus;
 
-	@Mandatory
-	@ValidString
-	@Automapped
-	private String				airline;
+	//Comentado hasta que se cree la entidad Airline
+	//	@Mandatory
+	//	@Valid
+	//	@Automapped
+	//	@ManyToOne
+	//	private Airline				airline;
 
 	@Mandatory
 	@ValidScore
