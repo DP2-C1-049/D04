@@ -1,5 +1,5 @@
 
-package acme.entities;
+package acme.entities.activitylog;
 
 import java.util.Date;
 
@@ -42,7 +42,7 @@ public class ActivityLog extends AbstractEntity {
 	//	private Leg		leg;
 
 	@Mandatory
-	@ValidMoment(past = true, min = "2000/01/01 00:00:00")
+	@ValidMoment(past = true)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				registrationMoment;
 
