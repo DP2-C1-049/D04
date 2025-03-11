@@ -35,7 +35,7 @@ public class Booking extends AbstractEntity {
 	@Mandatory
 	@Automapped
 	@Valid
-	@ManyToOne
+	@ManyToOne(optional = false)
 	private Customers			customers;
 
 	@Mandatory
