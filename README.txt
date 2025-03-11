@@ -15,4 +15,34 @@ taking into account that you must link the appropriate version of the Acme-Frame
 the following resources:
 
 - **/fragments/**
- 
+GitHub dashboard:
+https://github.com/orgs/DP2-C1-049/projects/2/views/1
+GitHub dashboard D01:
+https://github.com/orgs/DP2-C1-049/projects/2/views/2
+GitHub dashboard D02:
+https://github.com/orgs/DP2-C1-049/projects/2/views/3
+
+GitHub dashboard SamuCoco04 D01:
+https://github.com/orgs/DP2-C1-049/projects/12/views/2
+GitHub dashboard SamuCoco04 D02:
+https://github.com/orgs/DP2-C1-049/projects/12/views/3
+
+GitHub dashboard STX3837 D01:
+https://github.com/orgs/DP2-C1-049/projects/8/views/2
+GitHub dashboard STX3837 D02:
+https://github.com/orgs/DP2-C1-049/projects/8/views/3
+
+GitHub dashboard serponlop D01 (Student 2):
+https://github.com/orgs/DP2-C1-049/projects/9/views/2
+GitHub dashboard serponlop D02 (Student 2):
+https://github.com/orgs/DP2-C1-049/projects/9/views/3
+
+GitHub dashboard JLF1828 D01 (Student 4):
+https://github.com/orgs/DP2-C1-049/projects/11/views/2
+GitHub dashboard JLF1828 D02 (Student 4):
+https://github.com/orgs/DP2-C1-049/projects/11/views/3
+
+GitHub dashboard javmanriq D01 (Student 3):
+https://github.com/orgs/DP2-C1-049/projects/10/views/2
+GitHub dashboard javmanriq D02 (Student 3):
+https://github.com/orgs/DP2-C1-049/projects/10/views/3

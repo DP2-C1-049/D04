@@ -1,0 +1,6 @@
+key,name,iataCode,website,type,foundationMoment,email,phoneNumber
+airline-01,"Sunrise Airways","SNA","https://www.sunriseair.com","STANDARD","2018/05/23 09:00","info@sunriseair.com","+98987654321"
+airline-02,"Aero Atlantic","AAT","https://www.aeroatlantic.com","LUXURY","2005/09/30 10:45","contact@aeroatlantic.com","+123456789"
+airline-03,"Eco Fly","ECO","https://www.ecofly.org","LOW_COST","1998/12/20 08:00","support@ecofly.org","+445678912345"
+airline-04,"Blue Horizons","BLH","https://www.bluehorizons.com","STANDARD","2012/01/15 16:20","","+11022334455"
+airline-05,"Aurora Airlines","AUR","https://www.auroraairlines.com","STANDARD","2017/02/01 14:30",null,null
