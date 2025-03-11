@@ -11,6 +11,7 @@ import acme.client.components.basis.AbstractEntity;
 import acme.client.components.datatypes.Money;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
+import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
 import acme.entities.leg.Leg;
@@ -39,7 +40,7 @@ public class Flight extends AbstractEntity {
 	@ValidMoney(min = 0)
 	private Money				cost;
 
-	@Mandatory
+	@Optional
 	@Automapped
 	@ValidString
 	private String				description;
@@ -48,5 +49,5 @@ public class Flight extends AbstractEntity {
 	@Automapped
 	@Valid
 	@OneToMany
-	private List<Leg>			leg;
+	private List<Leg>			legs;
 }
