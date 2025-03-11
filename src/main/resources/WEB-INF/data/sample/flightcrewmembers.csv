@@ -1,0 +1,6 @@
+key,employeeCode,phoneNumber,languageSkills,availabilityStatus,airline,salary,yearsOfExperience
+flightCrewMember-01,"AB123456","+1234567","English, Spanish","AVAILABLE","airline-01","2000.00 USD",3
+flightCrewMember-02,"ZC654321","987654321","English, French","AVAILABLE","airline-02","3200.50 EUR",null
+flightCrewMember-03,"TB234567","+441234567890","English","ON_LEAVE","airline-03","4500.00 USD",7
+flightCrewMember-04,"XYZ000123","5544332211","Spanish, Italian","ON_VACATION","airline-04","2800.00 GBP",10
+flightCrewMember-05,"AA999999","+999999999999999","German, English","ON_LEAVE","airline-05","5300.75 USD",0
