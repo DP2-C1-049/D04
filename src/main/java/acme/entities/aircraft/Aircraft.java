@@ -33,7 +33,7 @@ public class Aircraft extends AbstractEntity {
 	private String				registrationNumber;
 
 	@Mandatory
-	@ValidNumber
+	@ValidNumber(min = 0, max = 1000)
 	@Automapped
 	private Integer				capacity;
 

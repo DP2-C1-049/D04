@@ -40,12 +40,12 @@ public class Technician extends AbstractRole {
 	private boolean				passedAnnualHealthTest;
 
 	@Mandatory
-	@ValidNumber
+	@ValidNumber(min = 0, max = 120)
 	@Automapped
 	private Integer				experienceYears;
 
 	@Optional
-	@ValidString(min = 0, max = 255)
+	@ValidString(max = 255)
 	@Automapped
 	private String				certifications;
 }
