@@ -31,7 +31,6 @@ public class Booking extends AbstractEntity {
 
 	//Attributes --------------------------------------------------------------------------
 
-	//Commented until creating the consumer entity
 	@Mandatory
 	@Automapped
 	@Valid
