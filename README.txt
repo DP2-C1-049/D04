@@ -39,5 +39,5 @@ https://github.com/orgs/DP2-C1-049/projects/9/views/3
 
 GitHub dashboard JLF1828 D01 (Student 4):
 https://github.com/orgs/DP2-C1-049/projects/11/views/2
-GitHub dashboard JLF1828 D02 (Student 4):
+GitHub dashboard JLF1828 D02 (Student 4): 
 https://github.com/orgs/DP2-C1-049/projects/11/views/3
