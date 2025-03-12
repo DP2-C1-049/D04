@@ -4,6 +4,8 @@ package acme.entities.passenger;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 
 import acme.client.components.basis.AbstractEntity;
@@ -27,13 +29,6 @@ public class Passenger extends AbstractEntity {
 
 	//Atributes --------------------------------------------------------------------------
 
-	//	Commented until creating the consumer entity
-	//	@Mandatory
-	//	@Automapped
-	//	@Valid
-	//	@ManyToOne
-	//	private Booking				booking;
-
 	@Mandatory
 	@Automapped
 	@NotBlank
@@ -52,6 +47,7 @@ public class Passenger extends AbstractEntity {
 
 	@Mandatory
 	@Automapped
+	@Temporal(TemporalType.TIMESTAMP)
 	@ValidMoment(past = true)
 	private Date				dateOfBirth;
 
