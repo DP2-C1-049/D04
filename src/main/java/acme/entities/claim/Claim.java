@@ -1,5 +1,5 @@
 
-package acme.entities.activitylog;
+package acme.entities.claim;
 
 import java.util.Date;
 
@@ -12,46 +12,52 @@ import javax.validation.Valid;
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
+import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-import acme.entities.flightassignment.FlightAssignment;
+import acme.realms.AssistanceAgents;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
 @Getter
 @Setter
-public class ActivityLog extends AbstractEntity {
+@Entity
+public class Claim extends AbstractEntity {
 
-	// Serialisation version ----------------------------------------------------
+	// Serialisation version --------------------------------------------------
 
 	private static final long	serialVersionUID	= 1L;
 
-	// Attributes ---------------------------------------------------------------
+	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ManyToOne(optional = false)
+	@Automapped
 	@Valid
-	FlightAssignment			flightAssignment;
+	@ManyToOne
+	private AssistanceAgents	assistanceAgent;
 
 	@Mandatory
 	@ValidMoment(past = true)
 	@Temporal(TemporalType.TIMESTAMP)
+	@Automapped
 	private Date				registrationMoment;
 
 	@Mandatory
+	@ValidEmail
 	@Automapped
-	@ValidString(min = 1, max = 50)
-	private String				typeOfIncident;
+	private String				email;
 
 	@Mandatory
+	@ValidString(max = 255)
 	@Automapped
-	@ValidString(min = 0, max = 255)
 	private String				description;
 
 	@Mandatory
 	@Automapped
-	@ValidNumber(min = 0, max = 10, fraction = 0)
-	private Integer				severityLevel;
+	@Valid
+	private ClaimType			type;
+
+	@Mandatory
+	@Automapped
+	private Boolean				indicator;
 }
