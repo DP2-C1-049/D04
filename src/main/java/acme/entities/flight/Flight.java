@@ -1,10 +1,7 @@
 
 package acme.entities.flight;
 
-import java.util.List;
-
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
@@ -14,7 +11,6 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
-import acme.entities.leg.Leg;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -37,7 +33,7 @@ public class Flight extends AbstractEntity {
 
 	@Mandatory
 	@Automapped
-	@ValidMoney(min = 0)
+	@ValidMoney
 	private Money				cost;
 
 	@Optional
@@ -45,9 +41,4 @@ public class Flight extends AbstractEntity {
 	@ValidString
 	private String				description;
 
-	@Mandatory
-	@Automapped
-	@Valid
-	@OneToMany
-	private List<Leg>			legs;
 }
