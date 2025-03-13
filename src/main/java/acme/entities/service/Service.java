@@ -43,7 +43,6 @@ public class Service extends AbstractEntity {
 	private Double				averageDwellTime;
 
 	@Optional
-	@Automapped
 	@ValidString(pattern = "^[A-Z]{4}-[0-9]{2}$")
 	@Column(unique = true)
 	private String				promotionCode;
