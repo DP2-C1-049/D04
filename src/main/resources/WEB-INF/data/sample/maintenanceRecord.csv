@@ -1,0 +1,33 @@
+key,moment,status,nextInspectionDueTime,estimatedCost,notes,key:technician,key:aircraft
+maintenanceRecord-01,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,Aircraft-01
+#maintenanceMoment
+maintenanceRecord-02,2000/01/01 0:00,PENDING,2100/08/01 20:30,EUR 500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,Aircraft-01
+maintenanceRecord-03,2000/01/01 0:01,PENDING,2100/08/01 20:30,EUR 500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,Aircraft-01
+#status
+maintenanceRecord-04,2024/07/01 23:59,IN_PROGRESS,2100/08/01 20:30,EUR 500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,Aircraft-01
+maintenanceRecord-05,2024/07/01 23:59,COMPLETED,2100/08/01 20:30,EUR 500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,Aircraft-01
+#nextInspection
+maintenanceRecord-06,2024/07/01 23:59,PENDING,2200/12/31 23:58,EUR 500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,Aircraft-01
+maintenanceRecord-07,2024/07/01 23:59,PENDING,2200/12/31 23:59,EUR 500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,Aircraft-01
+#estimatedCost
+maintenanceRecord-08,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 0,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,Aircraft-01
+maintenanceRecord-09,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 1,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,Aircraft-01
+maintenanceRecord-10,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 199999999,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,Aircraft-01
+maintenanceRecord-11,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 200000000,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,Aircraft-01
+#notes
+maintenanceRecord-12,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 500,null,technician-01,Aircraft-01
+maintenanceRecord-13,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 500,L,technician-01,Aircraft-01
+maintenanceRecord-14,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,technician-01,Aircraft-01
+maintenanceRecord-15,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,technician-01,Aircraft-01
+maintenanceRecord-16,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 500,โลเร็ม อิปซัม,technician-01,Aircraft-01
+maintenanceRecord-17,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 500,لوريم إيبسوم,technician-01,Aircraft-01
+maintenanceRecord-18,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 500,洛伦·伊普森,technician-01,Aircraft-01
+maintenanceRecord-19,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 500,<marquee>Hacked</marquee>,technician-01,Aircraft-01
+maintenanceRecord-20,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 500,<script>alert(‘Hacked!’);</script>,technician-01,Aircraft-01
+maintenanceRecord-21,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 500,' or 'A' = 'A ,technician-01,Aircraft-01
+#key:technician
+maintenanceRecord-22,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-02,Aircraft-01
+maintenanceRecord-23,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-03,Aircraft-01
+#key:aircraft
+maintenanceRecord-24,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,Aircraft-02
+maintenanceRecord-25,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,Aircraft-03
