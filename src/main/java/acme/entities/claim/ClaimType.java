@@ -2,6 +2,6 @@
 package acme.entities.claim;
 
 public enum ClaimType {
-	FlightIssues, LuggageIssues, SecurityIncident, OtherIssues
+	FLIGHT_ISSUES, LUGGAGE_ISSUES, SECURITY_INCIDENT, OTHER_ISSUES
 
 }

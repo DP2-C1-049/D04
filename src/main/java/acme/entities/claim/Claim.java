@@ -30,31 +30,30 @@ public class Claim extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@Mandatory
-	@Automapped
 	@Valid
+	@Mandatory
 	@ManyToOne
 	private AssistanceAgents	assistanceAgent;
 
-	@Mandatory
 	@ValidMoment(past = true)
 	@Temporal(TemporalType.TIMESTAMP)
+	@Mandatory
 	@Automapped
 	private Date				registrationMoment;
 
-	@Mandatory
 	@ValidEmail
+	@Mandatory
 	@Automapped
 	private String				email;
 
-	@Mandatory
 	@ValidString(max = 255)
+	@Mandatory
 	@Automapped
 	private String				description;
 
+	@Valid
 	@Mandatory
 	@Automapped
-	@Valid
 	private ClaimType			type;
 
 	@Mandatory

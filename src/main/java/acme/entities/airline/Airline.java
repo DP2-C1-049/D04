@@ -33,39 +33,39 @@ public class Airline extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@Mandatory
 	@ValidString(max = 50)
+	@Mandatory
 	@Automapped
 	private String				name;
 
-	@Mandatory
 	@ValidIATACode
+	@Mandatory
 	@Automapped
 	private String				IATACode;
 
-	@Mandatory
 	@ValidUrl
+	@Mandatory
 	@Automapped
 	private String				website;
 
-	@Mandatory
 	@Valid
+	@Mandatory
 	@Automapped
 	private AirlineType			type;
 
-	@Mandatory
 	@ValidMoment(past = true)
 	@Temporal(TemporalType.TIMESTAMP)
+	@Mandatory
 	@Automapped
 	private Date				foundationMoment;
 
-	@Optional
 	@ValidEmail
+	@Optional
 	@Automapped
 	private String				email;
 
-	@Optional
 	@ValidString(pattern = "^\\+?\\d{6,15}$")
+	@Optional
 	@Automapped
 	private String				phoneNumber;
 }

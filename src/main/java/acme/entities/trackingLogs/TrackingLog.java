@@ -14,7 +14,7 @@ import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
 import acme.entities.claim.Claim;
 
-public class TrackingLogs extends AbstractEntity {
+public class TrackingLog extends AbstractEntity {
 
 	// Serialisation version --------------------------------------------------
 
@@ -22,23 +22,23 @@ public class TrackingLogs extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@Mandatory
 	@Valid
+	@Mandatory
 	@OneToOne
 	private Claim				claim;
 
-	@Mandatory
 	@ValidMoment
+	@Mandatory
 	@Automapped
 	private Date				lastUpdateMoment;
 
-	@Mandatory
 	@ValidString(max = 50)
+	@Mandatory
 	@Automapped
 	private String				step;
 
-	@Mandatory
 	@ValidNumber(min = 0, max = 100)
+	@Mandatory
 	@Automapped
 	private Double				resolutionPercentage;
 
@@ -46,8 +46,8 @@ public class TrackingLogs extends AbstractEntity {
 	@Automapped
 	private boolean				indicator;
 
-	@Mandatory
 	@ValidString(max = 255)
+	@Mandatory
 	@Automapped
 	private String				resolution;
 }
