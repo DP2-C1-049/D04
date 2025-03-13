@@ -34,40 +34,39 @@ public class AssistanceAgents extends AbstractRole {
 
 	// Attributes -------------------------------------------------------------
 
+	@ValidString(pattern = "^[A-Z]{2,3}\\d{6}$")
 	@Mandatory
 	@Column(unique = true)
-	@ValidString(pattern = "^[A-Z]{2-3}\\d{6}$")
 	private String				employeeCode;
 
-	@Mandatory
 	@ValidString(max = 255)
+	@Mandatory
 	@Automapped
 	private String				spokenLenguages;
 
-	@Mandatory
 	@Valid
+	@Mandatory
 	@ManyToOne(optional = false)
-	@Automapped
 	private Airline				airline;
 
-	@Mandatory
 	@ValidMoment(past = true)
 	@Temporal(TemporalType.TIMESTAMP)
+	@Mandatory
 	@Automapped
 	private Date				dateStarted;
 
-	@Optional
 	@ValidString(max = 255)
+	@Optional
 	@Automapped
 	private String				bio;
 
-	@Mandatory
 	@ValidMoney
+	@Mandatory
 	@Automapped
 	private Money				salary;
 
-	@Optional
 	@ValidUrl
+	@Optional
 	@Automapped
 	private String				photoLink;
 
