@@ -29,7 +29,6 @@ public class Leg extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@Mandatory
-	@Automapped
 	@ValidString
 	@Column(unique = true)
 	private String				flightNumber;
@@ -48,7 +47,7 @@ public class Leg extends AbstractEntity {
 
 	@Mandatory
 	@Automapped
-	@ValidNumber(min = 0)
+	@ValidNumber
 	private Integer				duration;
 
 	@Mandatory
@@ -57,19 +56,16 @@ public class Leg extends AbstractEntity {
 	private Status				status;
 
 	@Mandatory
-	@Automapped
 	@Valid
 	@ManyToOne
 	private Airport				departureAirport;
 
 	@Mandatory
-	@Automapped
 	@Valid
 	@ManyToOne
 	private Airport				arrivalAirport;
 
 	@Mandatory
-	@Automapped
 	@Valid
 	@ManyToOne
 	private Aircraft			aircraft;
