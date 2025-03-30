@@ -18,6 +18,7 @@ import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
 import acme.entities.aircraft.Aircraft;
 import acme.entities.airport.Airport;
+import acme.entities.flight.Flight;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -29,8 +30,7 @@ public class Leg extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@Mandatory
-	@Automapped
-	@ValidString
+	@ValidString(pattern = "^[A-Z]{3}\\d{4}$")
 	@Column(unique = true)
 	private String				flightNumber;
 
@@ -48,29 +48,31 @@ public class Leg extends AbstractEntity {
 
 	@Mandatory
 	@Automapped
-	@ValidNumber(min = 0)
+	@ValidNumber
 	private Integer				duration;
 
 	@Mandatory
 	@Automapped
 	@Valid
-	private Status				status;
+	private LegStatus				status;
 
 	@Mandatory
-	@Automapped
 	@Valid
 	@ManyToOne
 	private Airport				departureAirport;
 
 	@Mandatory
-	@Automapped
 	@Valid
 	@ManyToOne
 	private Airport				arrivalAirport;
 
 	@Mandatory
-	@Automapped
 	@Valid
 	@ManyToOne
 	private Aircraft			aircraft;
+
+	@Mandatory
+	@ManyToOne
+	@Valid
+	private Flight				flight;
 }
