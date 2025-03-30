@@ -1,13 +1,36 @@
 key,key:userAccount,employeeCode,phoneNumber,languageSkills,availabilityStatus,airline,salary,yearsOfExperience
+#base
 flightCrewMember-01,user-account-flight-crew-member-01,"AB123456","+1234567","English, Spanish","AVAILABLE",airline-01,2000.00 USD,3
 flightCrewMember-02,user-account-flight-crew-member-01,"ZC654321","987654321","English, French","AVAILABLE",airline-02,3200.50 EUR,null
 flightCrewMember-03,user-account-flight-crew-member-01,"TB234567","+441234567890","English","ON_LEAVE",airline-03,4500.00 USD,7
 flightCrewMember-04,user-account-flight-crew-member-01,"XYZ000123","5544332211","Spanish, Italian","ON_VACATION",airline-04,2800.00 GBP,10
 flightCrewMember-05,user-account-flight-crew-member-01,"AA999999","+999999999999999","German, English","ON_LEAVE",airline-05,5300.75 USD,0
+#employeeCode
 flightCrewMember-06,user-account-flight-crew-member-01,"AB987654@#~$%AUBAMEYANG","+987654321","English, German","ON_LEAVE",airline-02,3500.50 EUR,5
+flightCrewMember-12,user-account-flight-crew-member-02,"INV@LID!","+11223344","English","AVAILABLE",airline-01,2500.00 USD,4
+flightCrewMember-27,user-account-flight-crew-member-02,"โลเร็ม อิปซัม","+11223344","English","AVAILABLE",airline-01,2500.00 USD,4
+flightCrewMember-28,user-account-flight-crew-member-02,"لوريم إيبسوم","English","AVAILABLE",airline-01,2500.00 USD,4
+flightCrewMember-29,user-account-flight-crew-member-02,"洛伦·伊普森","+11223344","English","AVAILABLE",airline-01,2500.00 USD,4
+flightCrewMember-30,user-account-flight-crew-member-02,<marquee>Hacked</marquee>,"+11223344","English","AVAILABLE",airline-01,2500.00 USD,4
+flightCrewMember-31,user-account-flight-crew-member-02,' or 'A' = 'A,"+11223344","English","AVAILABLE",airline-01,2500.00 USD,4
+#phoneNumber
 flightCrewMember-07,user-account-flight-crew-member-01,"XY123456","+312","French, Italian","AVAILABLE",airline-03,4000.00 USD,8
-flightCrewMember-08,user-account-flight-crew-member-01,"ZZ123456","+987654321234",null,"ON_VACATION",airline-06,2200.00 USD,2
-flightCrewMember-09,user-account-flight-crew-member-01,"AC234567","+651234567890","Italian, English","NOT_WORKING",airline-07,2700.50 GBP,6
-flightCrewMember-10,user-account-flight-crew-member-01,"DC234567","+123456789012","German, French","ON_LEAVE",airline-08,5000.00 USD,12
-flightCrewMember-11,user-account-flight-crew-member-01,"AB654321","+123456789012","English, Spanish, Italian","AVAILABLE",airline-09,-3500.00 USD,4
-flightCrewMember-12,user-account-flight-crew-member-01,"BC987654","+441234567890","French, German","ON_VACATION",airline-10,2500.00 GBP,140_LEAVE","airline-05","5300.75 USD",0
+flightCrewMember-08,user-account-flight-crew-member-01,"ZZ123456","+987654321234775675876",null,"ON_VACATION",airline-06,2200.00 USD,2
+flightCrewMember-13,user-account-flight-crew-member-02,"EM123789","(123) 456-7890","Spanish","AVAILABLE",airline-03,3000.00 USD,6
+flightCrewMember-14,user-account-flight-crew-member-02,"EM987321","001-800-555-0199","English","ON_LEAVE",airline-04,3200.00 EUR,3
+#languageSkill
+flightCrewMember-15,user-account-flight-crew-member-03,"LS111222","+1122334455","","AVAILABLE",airline-05,2100.00 USD,1
+flightCrewMember-16,user-account-flight-crew-member-03,"LS333444","+9988776655","Mandarin, Arabic, Russian","AVAILABLE",airline-06,4700.00 GBP,9
+flightCrewMember-17,user-account-flight-crew-member-03,"LS555666","+6677889900",null,"ON_VACATION",airline-07,3900.00 USD,0
+#availabilityStatus
+flightCrewMember-18,user-account-flight-crew-member-04,"AV111222","+4455667788","English, Spanish","",airline-08,2800.00 USD,5
+flightCrewMember-19,user-account-flight-crew-member-04,"AV333444","+5566778899","French","UNKNOWN",airline-09,3300.00 EUR,7
+flightCrewMember-20,user-account-flight-crew-member-04,"AV555666","+6677889901","Italian",null,airline-10,4100.00 USD,8
+#salary
+flightCrewMember-21,user-account-flight-crew-member-05,"SAL111222","+7788990011","English","AVAILABLE",airline-11,0.00 USD,2
+flightCrewMember-22,user-account-flight-crew-member-05,"SAL333444","+8899001122","German","AVAILABLE",airline-12,-1500.00 EUR,4
+flightCrewMember-23,user-account-flight-crew-member-05,"SAL555666","+9900112233","Spanish","ON_LEAVE",airline-13,9999999.99 USD,10
+#yearsOfExperience
+flightCrewMember-24,user-account-flight-crew-member-06,"EXP111222","+1011121314","French","AVAILABLE",airline-14,3500.00 USD,-1
+flightCrewMember-25,user-account-flight-crew-member-06,"EXP333444","+1213141516","English","AVAILABLE",airline-15,3600.00 EUR,250
+flightCrewMember-26,user-account-flight-crew-member-06,"EXP555666","+1314151617","Italian","ON_VACATION",airline-16,3700.00 GBP,null
