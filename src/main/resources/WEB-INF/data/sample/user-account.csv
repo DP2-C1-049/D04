@@ -8,8 +8,8 @@ user-account-provider-03,true,"UserIdentity{name: 'Antonia', surname: 'אבטי�
 user-account-administrator-02,true,"UserIdentity{name: 'Ivan', surname: 'Perez', email: 'ivan@acme.com'}", administrator2, administrator2
 user-account-administrator-03,true,"UserIdentity{name: 'Alba', surname: 'Jimenez', email: 'alba@acme.com'}", administrator3, administrator3
 user-account-flight-crew-members-01,true,"UserIdentity{name: 'Juan', surname: 'Valdos', email: '@juan@acme.com', member1, member1}",flightCrewMember1,flightCrewMember1
-user-account-flight-crew-members-02,true,"UserIdentity{name: 'Maria', surname: 'Vivaldi', email: '@maria@acme.com', member2, member2}",flightCrewMember1,flightCrewMember2
-user-account-flight-crew-members-03,true,"UserIdentity{name: 'Francisco', surname: 'Cibeles', email: '@francisco@acme.com', member1, member1}",flightCrewMember1,flightCrewMember3
+user-account-flight-crew-members-02,true,"UserIdentity{name: 'Maria', surname: 'Vivaldi', email: '@maria@acme.com', member2, member2}",flightCrewMember2,flightCrewMember2
+user-account-flight-crew-members-03,true,"UserIdentity{name: 'Francisco', surname: 'Cibeles', email: '@francisco@acme.com', member1, member1}",flightCrewMember3,flightCrewMember3
 user-account-technician-01,true,"UserIdentity{name: 'Samuel', surname: 'Coco', email: 'samucoco@acme.com'}",technician1,technician1
 user-account-technician-02,true,"UserIdentity{name: 'Fernando', surname: 'Alonso', email: 'fernandoalonso33@acme.com'}",technician2,technician2
 user-account-technician-03,true,"UserIdentity{name: 'Carlo', surname: 'Ancelotti', email: 'carloancelotti@acme.com'}",technician3,technician3
