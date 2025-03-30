@@ -10,4 +10,3 @@ flightCrewMember-08,user-account-flight-crew-member-01,"ZZ123456","+987654321234
 flightCrewMember-09,user-account-flight-crew-member-01,"AC234567","+651234567890","Italian, English","NOT_WORKING",airline-07,2700.50 GBP,6
 flightCrewMember-10,user-account-flight-crew-member-01,"DC234567","+123456789012","German, French","ON_LEAVE",airline-08,5000.00 USD,12
 flightCrewMember-11,user-account-flight-crew-member-01,"AB654321","+123456789012","English, Spanish, Italian","AVAILABLE",airline-09,-3500.00 USD,4
-flightCrewMember-12,user-account-flight-crew-member-01,"BC987654","+441234567890","French, German","ON_VACATION",airline-10,2500.00 GBP,140_LEAVE","airline-05","5300.75 USD",0

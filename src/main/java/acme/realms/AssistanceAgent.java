@@ -26,7 +26,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class AssistanceAgents extends AbstractRole {
+public class AssistanceAgent extends AbstractRole {
 
 	// Serialisation version --------------------------------------------------
 
