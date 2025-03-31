@@ -1,0 +1,23 @@
+key,key:flight-crew-member,key:leg,duty,moment,currentStatus,remarks
+# base
+flight-assignament-01,flight-crew-member-01,leg-00,PILOT,2023/01/01 10:00,CONFIRMED, "aaaaaaa"
+flight-assignament-02,flight-crew-member-02,leg-01,COPILOT,2023/01/01 10:00,CONFIRMED, "aaaaaaa"
+flight-assignament-03,flight-crew-member-03,leg-02,LEAD_ATTENDNT,2023/01/01 10:00,CONFIRMED, "aaaaaaa"
+flight-assignament-04,flight-crew-member-04,leg-03,CABIN_ATTENDANT,2023/01/01 10:00,CONFIRMED, "aaaaaaa"
+flight-assignament-05,flight-crew-member-05,leg-04,PILOT,2023/01/01 10:00,PENDING, "aaaaaaa"
+# duty
+flight-assignament-12,flight-crew-member-03,leg-05,PASSENGER,2023/01/01 10:00, CONFIRMED,"aaaaaaa"
+flight-assignament-13,flight-crew-member-03,leg-05,"",2023/01/01 10:00, CONFIRMED,"aaaaaaa"
+flight-assignament-19,flight-crew-member-03,leg-05,null,2023/01/01 10:00, CONFIRMED,"aaaaaaa"
+# moment
+flight-assignament-06,flight-crew-member-01,leg-00,PILOT,0000/01/01 00:00, CONFIRMED,"aaaaaaa"
+flight-assignament-07,flight-crew-member-01,leg-01,PILOT,2030/01/01 00:01, CONFIRMED,"aaaaaaa"
+flight-assignament-08,flight-crew-member-02,leg-02,PILOT,2024/12/31 23:68, CONFIRMED,"aaaaaaa"
+# currentStatus
+flight-assignament-09,flight-crew-member-01,leg-04,PILOT,2023/01/01 10:00, OUT_OF_DATE,"aaaaaaa"
+flight-assignament-10,flight-crew-member-01,leg-05,PILOT,2023/01/01 10:00, "","aaaaaaa"
+flight-assignament-11,flight-crew-member-01,leg-05,PILOT,2023/01/01 10:00, null,"aaaaaaa"
+# remarks
+flight-assignament-14,flight-crew-member-01,leg-03,PILOT,2023/01/01 10:00, CONFIRMED,"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+flight-assignament-15,flight-crew-member-01,leg-02,PILOT,2023/01/01 10:00, CONFIRMED,null
+flight-assignament-16,flight-crew-member-01,leg-03,PILOT,2023/01/01 10:00, CONFIRMED,""
