@@ -7,6 +7,7 @@ user-account-provider-02,true,"UserIdentity{name: 'Martina', surname: 'коза 
 user-account-provider-03,true,"UserIdentity{name: 'Antonia', surname: 'אבטיח Æløzå', email: 'antonia@acme.com'}",provider3,provider3
 user-account-administrator-02,true,"UserIdentity{name: 'Ivan', surname: 'Perez', email: 'ivan@acme.com'}, administrator2, administrator2
 user-account-administrator-03,true,"UserIdentity{name: 'Alba', surname: 'Jimenez', email: 'alba@acme.com'}, administrator3, administrator3
+user-account-flight-crew-members-00,true,"UserIdentity{name: 'Antonio', surname: 'Lobato', email: '@cuantovaletucoche@acme.com}', member0, member0
 user-account-flight-crew-members-01,true,"UserIdentity{name: 'Juan', surname: 'Valdos', email: '@juan@acme.com}', member1, member1
 user-account-flight-crew-members-02,true,"UserIdentity{name: 'Maria', surname: 'Vivaldi', email: '@maria@acme.com}', member2, member2
 user-account-flight-crew-members-03,true,"UserIdentity{name: 'Francisco', surname: 'Cibeles', email: '@francisco@acme.com}', member3, member3
