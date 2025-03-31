@@ -33,7 +33,7 @@ public class Manager extends AbstractRole {
 
 	@Mandatory
 	@Automapped
-	@ValidNumber(min = 0)
+	@ValidNumber(min = 0, max = 80)
 	private Integer				yearsExperience;
 
 	@Mandatory
