@@ -1,0 +1,13 @@
+key,key:userAccount,employeeCode,phoneNumber,languageSkills,availabilityStatus,key:airline,salary,yearsOfExperience
+flightCrewMember-01,user-account-flight-crew-member-01,AB123456,+1234567,"English, Spanish",AVAILABLE,airline-01,2000.00 USD,3
+flightCrewMember-02,user-account-flight-crew-member-01,ZC654321,987654321,"English, French",AVAILABLE,airline-02,3200.50 EUR,null
+flightCrewMember-03,user-account-flight-crew-member-01,TB234567,+441234567890,English,ON_LEAVE,airline-03,4500.00 USD,7
+flightCrewMember-04,user-account-flight-crew-member-01,XYZ000123,5544332211,"Spanish, Italian",ON_VACATION,airline-04,2800.00 GBP,10
+flightCrewMember-05,user-account-flight-crew-member-01,AA999999,+999999999999999,"German, English",ON_LEAVE,airline-05,5300.75 USD,0
+flightCrewMember-06,user-account-flight-crew-member-01,AB987654@#~$%AUBAMEYANG,+987654321,"English, German",ON_LEAVE,airline-02,3500.50 EUR,5
+flightCrewMember-07,user-account-flight-crew-member-01,XY123456,+312,"French, Italian",AVAILABLE,airline-03,4000.00 USD,8
+flightCrewMember-08,user-account-flight-crew-member-01,ZZ123456,+987654321234,null,ON_VACATION,airline-06,2200.00 USD,2
+flightCrewMember-09,user-account-flight-crew-member-01,AC234567,+651234567890,"Italian, English",ON_VACATION,airline-07,2700.50 GBP,6
+flightCrewMember-10,user-account-flight-crew-member-01,DC234567,+123456789012,"German, French",ON_LEAVE,airline-08,5000.00 USD,12
+flightCrewMember-11,user-account-flight-crew-member-01,AB654321,+123456789012,"English, Spanish, Italian",AVAILABLE,airline-09,-3500.00 USD,4
+flightCrewMember-12,user-account-flight-crew-member-01,BC987654,+441234567890,"French, German",ON_VACATION,airline-10,2500.00 GBP,140

@@ -42,7 +42,7 @@ public class AssistanceAgents extends AbstractRole {
 	@ValidString(max = 255)
 	@Mandatory
 	@Automapped
-	private String				spokenLenguages;
+	private String				spokenLanguages;
 
 	@Valid
 	@Mandatory

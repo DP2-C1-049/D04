@@ -1,14 +1,13 @@
-key,name,iataCode,website,type,foundationMoment,email,phoneNumber
-airline-01,"Sunrise Airways","SNA","https://www.sunriseair.com","STANDARD","2018/05/23 09:00","info@sunriseair.com","+98987654321"
-airline-02,"Aero Atlantic","AAT","https://www.aeroatlantic.com","LUXURY","2005/09/30 10:45","contact@aeroatlantic.com","+123456789"
-airline-03,"Eco Fly","ECO","https://www.ecofly.org","LOW_COST","1998/12/20 08:00","support@ecofly.org","+445678912345"
-airline-04,"Blue Horizons","BLH","https://www.bluehorizons.com","STANDARD","2012/01/15 16:20","","+11022334455"
-airline-05,"Aurora Airlines","AUR","https://www.auroraairlines.com","STANDARD","2017/02/01 14:30",null,null
-airline-06,"Skyline AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA","AAA","https://www.skylineAAA.com","LUXURY","2000/07/10 08:15","info@skylineAAA.com","+987654321"
-airline-07,"FlyFast Airlines","*Çª","https://www.flyfast.com","LOW_COST","2010/11/05 12:00","support@flyfast.com","+4433221100"
-airline-08,"Global Airways","GWA","globalairways.com","STANDARD","1995/03/22 18:30","contact@globalairways.com","+9988776655"
-airline-09,"Jetstream","JSM","https://www.jetstream.com","PRIVATE","2015/10/30 09:45","contact@jetstream.com",null
-airline-10,"Pacific Airlines","PAC","https://www.pacificair.com","STANDARD","2030/08/15 14:25","info@pacificair.com","+561234567890"
-airline-11,"Viva Air","VIV","https://www.vivaair.com","LOW_COST","2013/05/05 11:00","support.com","+4423456789"
-airline-12,"Nimbus Air","NMA","https://www.nimbusair.com","STANDARD","2020/06/12 13:30",null,"+34678901234723847927340191834"
-
+key,name,IATACode,website,type,foundationMoment,email,phoneNumber
+Airline-01,"Sunrise Airways","SNA","https://www.sunriseair.com","STANDARD","2018/05/23 09:00","info@sunriseair.com","+98987654321"
+Airline-02,"Aero Atlantic","AAT","https://www.aeroatlantic.com","LUXURY","2005/09/30 10:45","contact@aeroatlantic.com","+123456789"
+Airline-03,"Eco Fly","ECO","https://www.ecofly.org","LOWCOST","1998/12/20 08:00","support@ecofly.org","+445678912345"
+Airline-04,"Blue Horizons","BLH","https://www.bluehorizons.com","STANDARD","2012/01/15 16:20","","+11022334455"
+Airline-05,"Aurora Airlines","AUR","https://www.auroraairlines.com","STANDARD","2017/02/01 14:30",null,null
+Airline-06,"Skyline AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA","AAA","https://www.skylineAAA.com","LUXURY","2000/07/10 08:15","info@skylineAAA.com","+987654321"
+Airline-07,"FlyFast Airlines","ABC","https://www.flyfast.com","LOWCOST","2010/11/05 12:00","support@flyfast.com","+4433221100"
+Airline-08,"Global Airways","GWA","globalairways.com","STANDARD","1995/03/22 18:30","contact@globalairways.com","+9988776655"
+Airline-09,"Jetstream","JSM","https://www.jetstream.com","STANDARD","2015/10/30 09:45","contact@jetstream.com",null
+Airline-10,"Pacific Airlines","PAC","https://www.pacificair.com","STANDARD","2030/08/15 14:25","info@pacificair.com","+561234567890"
+Airline-11,"Viva Air","VIV","https://www.vivaair.com","LOWCOST","2013/05/05 11:00","support.com","+4423456789"
+Airline-12,"Nimbus Air","NMA","https://www.nimbusair.com","STANDARD","2020/06/12 13:30",null,"+34678901234723847927340191834"

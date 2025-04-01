@@ -1,4 +1,4 @@
-key,model,registrationNumber,capacity,cargoWeight,status,details,key:airline
+key,model,registrationNumber,capacity,cargoWeight,status,details,key:Airline
 #model,"","","","","","",""
 Aircraft-01,Lorem ipsum dolor sit ame,a,50,3000,ACTIVE,Lorem ipsum dolor sit ame,Airline-01
 Aircraft-02,L,b,50,3000,ACTIVE,Lorem ipsum dolor sit ame,Airline-01
@@ -35,7 +35,7 @@ Aircraft-27,Lorem ipsum dolor sit ame,u,50,3000,ACTIVE,Lo,Airline-01
 Aircraft-28,Lorem ipsum dolor sit ame,v,50,3000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",Airline-01
 Aircraft-29,Lorem ipsum dolor sit ame,w,50,3000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",Airline-01
 Aircraft-30,Lorem ipsum dolor sit ame,x,50,3000,ACTIVE,โลเร็ม อิปซัม,Airline-01
-#airline,"","","","","","",""
+#Airline,"","","","","","",""
 Aircraft-31,Lorem ipsum dolor sit ame,y,50,3000,ACTIVE,Lorem ipsum dolor sit ame,Airline-01
 Aircraft-32,Lorem ipsum dolor sit ame,z,50,3000,ACTIVE,Lorem ipsum dolor sit ame,Airline-01
 Aircraft-33,Lorem ipsum dolor sit ame,aa,50,3000,ACTIVE,Lorem ipsum dolor sit ame,Airline-02
