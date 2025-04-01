@@ -4,8 +4,7 @@ package acme.entities.airline;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
@@ -18,6 +17,7 @@ import acme.client.components.validation.ValidString;
 import acme.client.components.validation.ValidUrl;
 import acme.constraints.ValidAirline;
 import acme.constraints.ValidIATACode;
+import acme.entities.airport.Airport;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -33,39 +33,43 @@ public class Airline extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@ValidString(max = 50)
 	@Mandatory
+	@ValidString(max = 50)
 	@Automapped
 	private String				name;
 
-	@ValidIATACode
 	@Mandatory
+	@ValidIATACode
 	@Automapped
 	private String				IATACode;
 
-	@ValidUrl
 	@Mandatory
+	@ValidUrl
 	@Automapped
 	private String				website;
 
-	@Valid
 	@Mandatory
+	@Valid
 	@Automapped
 	private AirlineType			type;
 
-	@ValidMoment(past = true)
-	@Temporal(TemporalType.TIMESTAMP)
 	@Mandatory
+	@ValidMoment(past = true)
 	@Automapped
 	private Date				foundationMoment;
 
-	@ValidEmail
 	@Optional
+	@ValidEmail
 	@Automapped
 	private String				email;
 
-	@ValidString(pattern = "^\\+?\\d{6,15}$")
 	@Optional
+	@ValidString(pattern = "^\\+?\\d{6,15}$")
 	@Automapped
 	private String				phoneNumber;
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Airport				airport;
 }

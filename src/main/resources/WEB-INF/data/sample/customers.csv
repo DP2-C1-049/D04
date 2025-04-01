@@ -1,0 +1,52 @@
+key,key:userAccount,identifier,phoneNumber,physicalAdress,city,country,earnedPoints
+customer-00,user-account-customer-01,LGA928374,+1234567890,Calle Guadiamar 5,Badajoz,España,100
+#phoneNumber
+customer-01,user-account-customer-01,LGB928374,123456,Calle Guadiamar 5,Badajoz,España,100
+customer-02,user-account-customer-01,LGC182736,+123456,Calle Guadiamar 5,Badajoz,España,100
+customer-03,user-account-customer-01,LGD563920,987654321012345,Calle Guadiamar 5,Badajoz,España,100
+customer-04,user-account-customer-01,LGE817263,+987654321012345,Calle Guadiamar 5,Badajoz,España,100
+customer-05,user-account-customer-01,LGF091827,123456789,Calle Guadiamar 5,Badajoz,España,100
+customer-06,user-account-customer-01,LGG364829,+123456789,Calle Guadiamar 5,Badajoz,España,100
+#physicalAdress
+customer-07,user-account-customer-01,LGH123456,+1234567890,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Badajoz,España,100
+customer-08,user-account-customer-01,LGI123456,+1234567890,L,Badajoz,España,100
+customer-09,user-account-customer-01,LGK123456,+1234567890,Lo,Badajoz,España,100
+customer-10,user-account-customer-01,LGL123456,+1234567890,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,Badajoz,España,100
+customer-11,user-account-customer-01,LGM123456,+1234567890,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,Badajoz,España,100
+customer-12,user-account-customer-02,HPN123456,+1234567890,Cโลเร็ม อิปซัม,Badajoz,España,100
+customer-13,user-account-customer-02,HP123459,+1234567890,لوريم إيبسوم,Badajoz,España,100
+customer-14,user-account-customer-02,HPO123456,+1234567890,洛伦·伊普森,Badajoz,España,100
+customer-15,user-account-customer-02,HPP123456,+1234567890,<marquee>Hacked</marquee>,Badajoz,España,100
+customer-16,user-account-customer-02,HPQ123456,+1234567890,<script>alert(‘Hacked!’);</script>,Badajoz,España,100
+customer-17,user-account-customer-02,HPR123456,+1234567890,' or 'A' = 'A,Badajoz,España,100
+#city
+customer-18,user-account-customer-01,LGS123456,+1234567890,Calle Guadiamar 5,Lorem ipsum dolor sit ame,España,100
+customer-19,user-account-customer-01,LGT123456,+1234567890,Calle Guadiamar 5,L,España,100
+customer-20,user-account-customer-01,LGU123456,+1234567890,Calle Guadiamar 5,Lo,España,100
+customer-21,user-account-customer-01,LGW123456,+1234567890,Calle Guadiamar 5,Lorem ipsum dolor sit amet consectetur adipiscin,España,100
+customer-22,user-account-customer-01,LGX123456,+1234567890,Calle Guadiamar 5,Lorem ipsum dolor sit amet consectetur adipiscing,España,100
+customer-23,user-account-customer-02,HPY123456,+1234567890,Calle Guadiamar 5,โลเร็ม อิปซัม,España,100
+customer-24,user-account-customer-02,HP987651,+1234567890,Calle Guadiamar 5,لوريم إيبسوم,España,100
+customer-25,user-account-customer-02,HP987652,+1234567890,Calle Guadiamar 5,洛伦·伊普森,España,100
+customer-26,user-account-customer-02,HP987653,+1234567890,Calle Guadiamar 5,<marquee>Hacked</marquee>,España,100
+customer-27,user-account-customer-02,HP987654,+1234567890,Calle Guadiamar 5,<script>alert(‘Hacked!’);</script>,España,100
+customer-28,user-account-customer-02,HP987655,+1234567890,Calle Guadiamar 5,' or 'A' = 'A ,España,100
+#country
+customer-29,user-account-customer-01,LG987656,+1234567890,Calle Guadiamar 5,Badajoz,Lorem ipsum dolor sit ame,100
+customer-30,user-account-customer-01,LG987657,+1234567890,Calle Guadiamar 5,Badajoz,L,100
+customer-31,user-account-customer-01,LG987658,+1234567890,Calle Guadiamar 5,Badajoz,Lo,100
+customer-32,user-account-customer-01,LG987659,+1234567890,Calle Guadiamar 5,Badajoz,Lorem ipsum dolor sit amet consectetur adipiscin,100
+customer-33,user-account-customer-01,LG123460,+1234567890,Calle Guadiamar 5,Badajoz,Lorem ipsum dolor sit amet consectetur adipiscing,100
+customer-34,user-account-customer-02,HP123461,+1234567890,Calle Guadiamar 5,Badajoz,โลเร็ม อิปซัม,100
+customer-35,user-account-customer-02,HP123462,+1234567890,Calle Guadiamar 5,Badajoz,日本,100
+customer-36,user-account-customer-02,HP123463,+1234567890,Calle Guadiamar 5,Badajoz,洛伦·伊普森,100
+customer-37,user-account-customer-02,HP123464,+1234567890,Calle Guadiamar 5,Badajoz,<marquee>Hacked</marquee>,100
+customer-38,user-account-customer-02,HP123465,+1234567890,Calle Guadiamar 5,Badajoz,<script>alert(‘Hacked!’);</script>,100
+customer-39,user-account-customer-02,HP123466,+1234567890,Calle Guadiamar 5,Badajoz,' or 'A' = 'A ,100
+#earnedPoints
+customer-40,user-account-customer-01,LG123467,+1234567890,Calle Guadiamar 5,Badajoz,España,0
+customer-41,user-account-customer-01,LG123468,+1234567890,Calle Guadiamar 5,Badajoz,España,1
+customer-42,user-account-customer-01,LG123469,+1234567890,Calle Guadiamar 5,Badajoz,España,500000
+customer-43,user-account-customer-01,LG123470,+1234567890,Calle Guadiamar 5,Badajoz,España,499999
+customer-44,user-account-customer-01,LG123471,+1234567890,Calle Guadiamar 5,Badajoz,España,13000
+customer-45,user-account-customer-01,LG123472,+1234567890,Calle Guadiamar 5,Badajoz,España,null

@@ -1,0 +1,46 @@
+key,name,iataCode,scope,country,city,website,email,phoneNumber
+#name
+Airport-01,Lorem ipsum dolor sit ame,AAA,REGIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,123456754
+Airport-02,L,BBB,REGIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,123456754
+Airport-03,Lo,CCC,REGIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,123456754
+Airport-04,"Lorem ipsum dolor sit amet, consectetur adipiscin",DDD,REGIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,123456754
+Airport-05,"Lorem ipsum dolor sit amet, consectetur adipiscin",EEE,REGIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,123456754
+Airport-06,โลเร็ม อิปซัม,FFF,REGIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,123456754
+#operationalScope
+Airport-07,Lorem ipsum dolor sit ame,GGG,REGIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,123456754
+Airport-08,Lorem ipsum dolor sit ame,HHH,DOMESTIC,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,123456754
+Airport-09,Lorem ipsum dolor sit ame,III,INTERNATIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,123456754
+#country
+Airport-10,Lorem ipsum dolor sit ame,JJJ,REGIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,123456754
+Airport-11,Lorem ipsum dolor sit ame,KKK,REGIONAL,L,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,123456754
+Airport-12,Lorem ipsum dolor sit ame,LLL,REGIONAL,Lo,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,123456754
+Airport-13,Lorem ipsum dolor sit ame,MMM,REGIONAL,"Lorem ipsum dolor sit amet, consectetur adipiscin",Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,123456754
+Airport-14,Lorem ipsum dolor sit ame,NNN,REGIONAL,"Lorem ipsum dolor sit amet, consectetur adipiscing",Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,123456754
+Airport-15,Lorem ipsum dolor sit ame,OOO,REGIONAL,لوريم إيبسوم,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,123456754
+#city
+Airport-16,Lorem ipsum dolor sit ame,PPP,REGIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,123456754
+Airport-17,Lorem ipsum dolor sit ame,QQQ,REGIONAL,Lorem ipsum dolor sit ame,L,http://lorem.com/ipsum,acme@lorem-ipsum.org,123456754
+Airport-18,Lorem ipsum dolor sit ame,RRR,REGIONAL,Lorem ipsum dolor sit ame,Lo,http://lorem.com/ipsum,acme@lorem-ipsum.org,123456754
+Airport-19,Lorem ipsum dolor sit ame,SSS,REGIONAL,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscin",http://lorem.com/ipsum,acme@lorem-ipsum.org,123456754
+Airport-20,Lorem ipsum dolor sit ame,TTT,REGIONAL,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing",http://lorem.com/ipsum,acme@lorem-ipsum.org,123456754
+Airport-21,Lorem ipsum dolor sit ame,UUU,REGIONAL,Lorem ipsum dolor sit ame,لوريم إيبسوم,http://lorem.com/ipsum,acme@lorem-ipsum.org,123456754
+#website
+Airport-22,Lorem ipsum dolor sit ame,VVV,REGIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,123456754
+Airport-23,Lorem ipsum dolor sit ame,WWW,REGIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,ftp://a,acme@lorem-ipsum.org,123456754
+Airport-24,Lorem ipsum dolor sit ame,XXX,REGIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://example.org/a/b?a&b,acme@lorem-ipsum.org,123456754
+Airport-25,Lorem ipsum dolor sit ame,YYY,REGIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://example.org?a=1&b=2,acme@lorem-ipsum.org,123456754
+Airport-26,Lorem ipsum dolor sit ame,ZZZ,REGIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://www.lorem-ipsum.org/dolor/sit.html#dolor,acme@lorem-ipsum.org,123456754
+Airport-27,Lorem ipsum dolor sit ame,ABB,REGIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,"",acme@lorem-ipsum.org,123456754
+#email
+Airport-28,Lorem ipsum dolor sit ame,ACC,REGIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,123456754
+Airport-29,Lorem ipsum dolor sit ame,ADD,REGIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,a@b.es,123456754
+Airport-30,Lorem ipsum dolor sit ame,AEE,REGIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,a@b.e,123456754
+Airport-31,Lorem ipsum dolor sit ame,AFF,REGIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/iphttp://lorem.com/ipsumsum,null,123456754
+Airport-32,Lorem ipsum dolor sit ame,AGG,REGIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.doloris.edu,123456754
+Airport-33,Lorem ipsum dolor sit ame,AHH,REGIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,a@b.esx,123456754
+#phoneNumber,"","","","","","",""
+Airport-34,Lorem ipsum dolor sit ame,AII,REGIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,123456
+Airport-35,Lorem ipsum dolor sit ame,AJJ,REGIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,+123456
+Airport-36,Lorem ipsum dolor sit ame,AKK,REGIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,12345678
+Airport-37,Lorem ipsum dolor sit ame,ALL,REGIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,123456789098765
+Airport-38,Lorem ipsum dolor sit ame,AMM,REGIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,+123456789098765
