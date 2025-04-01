@@ -12,8 +12,8 @@ task-08,MAINTENANCE,9,500,Lorem ipsum dolor sit amet. consectetur adipiscing eli
 #estimatedDuration
 task-09,MAINTENANCE,5,0,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01
 task-10,MAINTENANCE,5,1,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01
-task-11,MAINTENANCE,5,4999,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01
-task-12,MAINTENANCE,5,5000,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01
+task-11,MAINTENANCE,5,999,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01
+task-12,MAINTENANCE,5,1000,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01
 #description
 task-13,MAINTENANCE,5,500,L,technician-01
 task-14,MAINTENANCE,5,500,Lo,technician-01

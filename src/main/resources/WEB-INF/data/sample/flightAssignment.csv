@@ -1,0 +1,29 @@
+key,duty,remarks,moment,currentStatus,key:flightCrewMember,key:leg
+#duty
+flightAssignment-01,PILOT,Lorem ipsum dolor sit ame,2024/01/01 10:00,AVAILABLE,flightCrewMember-01,leg-01
+flightAssignment-02,COPILOT,Lorem ipsum dolor sit ame,2024/01/01 10:00,AVAILABLE,flightCrewMember-02,leg-01
+flightAssignment-03,LEAD_ATTENDANT,Lorem ipsum dolor sit ame,2024/01/01 10:00,AVAILABLE,flightCrewMember-03,leg-01
+flightAssignment-04,CABIN_ATENDANT,Lorem ipsum dolor sit ame,2024/01/01 10:00,AVAILABLE,flightCrewMember-04,leg-01
+#remarks
+flightAssignment-05,PILOT,Lorem ipsum dolor sit ame,2024/01/01 10:00,AVAILABLE,flightCrewMember-01,leg-01
+flightAssignment-06,PILOT,L,2024/01/01 10:00,AVAILABLE,flightCrewMember-01,leg-01
+flightAssignment-07,PILOT,Lo,2024/01/01 10:00,AVAILABLE,flightCrewMember-01,leg-01
+flightAssignment-08,PILOT,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",2024/01/01 10:00,AVAILABLE,flightCrewMember-01,leg-01
+flightAssignment-09,PILOT,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",2024/01/01 10:00,AVAILABLE,flightCrewMember-01,leg-01
+flightAssignment-10,PILOT,洛伦·伊普森,2024/01/01 10:00,AVAILABLE,flightCrewMember-01,leg-01
+flightAssignment-11,PILOT,' or 'A' = 'A,2024/01/01 10:00,AVAILABLE,flightCrewMember-01,leg-01
+flightAssignment-12,PILOT,<script>alert(‘Hacked!’);</script>,2024/01/01 10:00,AVAILABLE,flightCrewMember-01,leg-01
+#moment
+flightAssignment-13,PILOT,Lorem ipsum dolor sit ame,2024/01/01 10:00,AVAILABLE,flightCrewMember-01,leg-01
+flightAssignment-14,PILOT,Lorem ipsum dolor sit ame,2025/01/01 00:00,AVAILABLE,flightCrewMember-01,leg-01
+flightAssignment-15,PILOT,Lorem ipsum dolor sit ame,2024/12/31 23:59,AVAILABLE,flightCrewMember-01,leg-01
+flightAssignment-16,PILOT,Lorem ipsum dolor sit ame,2000/01/01 00:00,AVAILABLE,flightCrewMember-01,leg-01
+flightAssignment-17,PILOT,Lorem ipsum dolor sit ame,2000/01/01 00:01,AVAILABLE,flightCrewMember-01,leg-01
+#currentStatus
+flightAssignment-18,PILOT,Lorem ipsum dolor sit ame,2024/01/01 10:00,AVAILABLE,flightCrewMember-01,leg-01
+flightAssignment-19,PILOT,Lorem ipsum dolor sit ame,2024/01/01 10:00,ON_VACATION,flightCrewMember-01,leg-01
+flightAssignment-23,PILOT,Lorem ipsum dolor sit ame,2024/01/01 10:00,ON_LEAVE,flightCrewMember-01,leg-01
+#leg
+flightAssignment-21,PILOT,Lorem ipsum dolor sit ame,2024/01/01 10:00,AVAILABLE,flightCrewMember-01,leg-01
+flightAssignment-22,PILOT,Lorem ipsum dolor sit ame,2024/01/01 10:00,AVAILABLE,flightCrewMember-01,leg-01
+flightAssignment-20,PILOT,Lorem ipsum dolor sit ame,2024/01/01 10:00,AVAILABLE,flightCrewMember-01,leg-02

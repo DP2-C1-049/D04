@@ -19,9 +19,9 @@ technician-14,user-account-technician-01,AZ123436,+3412345678912,L,true,3,Lorem 
 technician-15,user-account-technician-01,AZ123446,+3412345678912,Lo,true,3,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
 technician-17,user-account-technician-01,AZ923456,+3412345678912,Lorem ipsum dolor sit amet. consectetur adipiscin,true,3,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
 technician-18,user-account-technician-01,AZ123466,+3412345678912,Lorem ipsum dolor sit amet. consectetur adipiscing,true,3,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-#healthTestPassed
+#passedAnnualHealthTest
 technician-19,user-account-technician-01,AZ123476,+3412345678912,Lorem ipsum dolor sit ame,false,3,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
-#yearsOdExperience
+#experienceYears
 technician-20,user-account-technician-01,AZ123486,+3412345678912,Lorem ipsum dolor sit ame,true,1,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
 technician-21,user-account-technician-01,AZ123496,+3412345678912,Lorem ipsum dolor sit ame,true,120,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*
 technician-22,user-account-technician-01,AZ123156,+3412345678912,Lorem ipsum dolor sit ame,true,119,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*

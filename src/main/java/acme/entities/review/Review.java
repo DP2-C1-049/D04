@@ -6,7 +6,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotBlank;
+import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -29,34 +29,33 @@ public class Review extends AbstractEntity {
 	//Atributes --------------------------------------------------------------------------
 
 	@Mandatory
+	@ValidString(min = 1, max = 50)
 	@Automapped
-	@NotBlank
-	@ValidString(max = 50)
 	private String				name;
 
 	@Mandatory
-	@Automapped
 	@Temporal(TemporalType.TIMESTAMP)
+	@Automapped
 	private Date				moment;
 
 	@Mandatory
+	@ValidString(min = 1, max = 50)
 	@Automapped
-	@NotBlank
-	@ValidString(max = 50)
 	private String				subject;
 
 	@Mandatory
-	@Automapped
 	@ValidString(max = 255)
+	@Automapped
 	private String				text;
 
 	@Optional
-	@Automapped
 	@ValidNumber(min = 0, max = 10, fraction = 2)
+	@Automapped
 	private Double				score;
 
 	@Optional
+	@Valid
 	@Automapped
-	private boolean				recommended;
+	private Boolean				recommended;
 
 }

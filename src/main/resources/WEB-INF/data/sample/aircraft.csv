@@ -17,8 +17,8 @@ Aircraft-12,Lorem ipsum dolor sit ame,洛伦·伊普森,50,3000,ACTIVE,Lorem ips
 Aircraft-13,Lorem ipsum dolor sit ame,g,50,3000,ACTIVE,Lorem ipsum dolor sit ame,Airline-01
 Aircraft-14,Lorem ipsum dolor sit ame,h,1,3000,ACTIVE,Lorem ipsum dolor sit ame,Airline-01
 Aircraft-15,Lorem ipsum dolor sit ame,i,2,3000,ACTIVE,Lorem ipsum dolor sit ame,Airline-01
-Aircraft-16,Lorem ipsum dolor sit ame,j,1000,3000,ACTIVE,Lorem ipsum dolor sit ame,Airline-01
-Aircraft-17,Lorem ipsum dolor sit ame,k,999,3000,ACTIVE,Lorem ipsum dolor sit ame,Airline-01
+Aircraft-16,Lorem ipsum dolor sit ame,j,255,3000,ACTIVE,Lorem ipsum dolor sit ame,Airline-01
+Aircraft-17,Lorem ipsum dolor sit ame,k,254,3000,ACTIVE,Lorem ipsum dolor sit ame,Airline-01
 #cargoWeight,"","","","","","",""
 Aircraft-18,Lorem ipsum dolor sit ame,nn,50,3000,ACTIVE,Lorem ipsum dolor sit ame,Airline-01
 Aircraft-19,Lorem ipsum dolor sit ame,m,50,2000,ACTIVE,Lorem ipsum dolor sit ame,Airline-01
