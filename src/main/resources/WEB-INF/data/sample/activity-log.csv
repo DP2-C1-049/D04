@@ -1,43 +1,43 @@
-key,typeOfIncident,description,severityLevel,registrationMoment,key:flightAssignment,key:flight,key:assistanceAgent
+key,typeOfIncident,description,severityLevel,registrationMoment,key:flight-assignment,key:flight,key:assistanceAgent
 #typeOfIncident,"","","","","","",""
-ActivityLog-01,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-01
-ActivityLog-02,L,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-01
-ActivityLog-03,Lo,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-01
-ActivityLog-04,"Lorem ipsum dolor sit amet, consectetur adipiscin",Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-01
-ActivityLog-05,"Lorem ipsum dolor sit amet, consectetur adipiscing",Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-01
-ActivityLog-06,洛伦·伊普,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-01
-ActivityLog-07,' or 'A' = 'A,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-01
-ActivityLog-08,<script>alert(‘Hacked!’);</script>,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-01
+ActivityLog-01,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-01
+ActivityLog-02,L,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-01
+ActivityLog-03,Lo,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-01
+ActivityLog-04,"Lorem ipsum dolor sit amet, consectetur adipiscin",Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-01
+ActivityLog-05,"Lorem ipsum dolor sit amet, consectetur adipiscing",Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-01
+ActivityLog-06,洛伦·伊普,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-01
+ActivityLog-07,' or 'A' = 'A,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-01
+ActivityLog-08,<script>alert(‘Hacked!’);</script>,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-01
 #description,"","","","","","",""
-ActivityLog-09,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-01
-ActivityLog-10,Lorem ipsum dolor sit ame,L,5,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-01
-ActivityLog-11,Lorem ipsum dolor sit ame,Lo,5,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-01
-ActivityLog-12,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",5,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-01
-ActivityLog-13,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",5,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-01
-ActivityLog-14,Lorem ipsum dolor sit ame,洛伦·伊普森,5,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-01
-ActivityLog-15,Lorem ipsum dolor sit ame,' or 'A' = 'A,5,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-01
-ActivityLog-16,Lorem ipsum dolor sit ame,<script>alert(‘Hacked!’);</script>,5,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-01
+ActivityLog-09,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-01
+ActivityLog-10,Lorem ipsum dolor sit ame,L,5,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-01
+ActivityLog-11,Lorem ipsum dolor sit ame,Lo,5,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-01
+ActivityLog-12,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",5,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-01
+ActivityLog-13,Lorem ipsum dolor sit ame,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",5,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-01
+ActivityLog-14,Lorem ipsum dolor sit ame,洛伦·伊普森,5,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-01
+ActivityLog-15,Lorem ipsum dolor sit ame,' or 'A' = 'A,5,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-01
+ActivityLog-16,Lorem ipsum dolor sit ame,<script>alert(‘Hacked!’);</script>,5,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-01
 #saverityLevel,"","","","","","",""
-ActivityLog-17,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-01
-ActivityLog-18,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,0,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-01
-ActivityLog-19,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,1,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-01
-ActivityLog-20,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,9,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-01
-ActivityLog-21,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,10,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-01
+ActivityLog-17,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-01
+ActivityLog-18,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,0,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-01
+ActivityLog-19,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,1,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-01
+ActivityLog-20,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,9,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-01
+ActivityLog-21,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,10,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-01
 #registrationMoment,"","","","","","",""
-ActivityLog-22,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-01
-ActivityLog-23,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2025/01/01 00:00,flightAssignment-01,flight-00,assistanceAgent-01
-ActivityLog-24,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2024/12/31 23:59,flightAssignment-01,flight-00,assistanceAgent-01
-ActivityLog-25,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2000/01/01 00:00,flightAssignment-01,flight-00,assistanceAgent-01
-ActivityLog-26,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2000/01/01 00:01,flightAssignment-01,flight-00,assistanceAgent-01
-#flightAssignment,"","","","","","",""
-ActivityLog-27,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-01
-ActivityLog-28,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-01
-ActivityLog-29,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flightAssignment-02,flight-00,assistanceAgent-01
+ActivityLog-22,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-01
+ActivityLog-23,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2025/01/01 00:00,flight-assignment-01,flight-00,assistanceAgent-01
+ActivityLog-24,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2024/12/31 23:59,flight-assignment-01,flight-00,assistanceAgent-01
+ActivityLog-25,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2000/01/01 00:00,flight-assignment-01,flight-00,assistanceAgent-01
+ActivityLog-26,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2000/01/01 00:01,flight-assignment-01,flight-00,assistanceAgent-01
+#flight-assignment,"","","","","","",""
+ActivityLog-27,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-01
+ActivityLog-28,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-01
+ActivityLog-29,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flight-assignment-02,flight-00,assistanceAgent-01
 #flight,"","","","","","",""
-ActivityLog-30,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-01
-ActivityLog-31,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-01
-ActivityLog-32,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flightAssignment-01,flight-02,assistanceAgent-01
+ActivityLog-30,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-01
+ActivityLog-31,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-01
+ActivityLog-32,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flight-assignment-01,flight-02,assistanceAgent-01
 #assistanceAgent,"","","","","","",""
-ActivityLog-33,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-01
-ActivityLog-34,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-01
-ActivityLog-35,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flightAssignment-01,flight-00,assistanceAgent-02
+ActivityLog-33,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-01
+ActivityLog-34,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-01
+ActivityLog-35,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,5,2022/01/12 12:00,flight-assignment-01,flight-00,assistanceAgent-02

@@ -13,8 +13,6 @@ import acme.realms.flightcrewmembers.FlightCrewMember;
 @GuiController
 public class FlightCrewMemberFlightAssignmentController extends AbstractGuiController<FlightCrewMember, FlightAssignment> {
 
-	// Internal state ---------------------------------------------------------
-
 	@Autowired
 	private FlightCrewMemberFlightAssignmentCompletedListService	completedListService;
 
@@ -28,25 +26,25 @@ public class FlightCrewMemberFlightAssignmentController extends AbstractGuiContr
 	private FlightCrewMemberFlightAssignmentCreateService			createService;
 
 	@Autowired
-	private FlightCrewMemberFlightAssignmentUpdateService			updateService;
+	private FlightCrewMemberFlightAssignmentDeleteService			deleteService;
 
 	@Autowired
-	private FlightCrewMemberFlightAssignmentDeleteService			deleteService;
+	private FlightCrewMemberFlightAssignmentUpdateService			updateService;
 
 	@Autowired
 	private FlightCrewMemberFlightAssignmentPublishService			publishService;
 
-	// Constructors -----------------------------------------------------------
-
 
 	@PostConstruct
 	protected void initialise() {
-		super.addBasicCommand("show", this.showService);
 		super.addBasicCommand("create", this.createService);
+		super.addBasicCommand("show", this.showService);
 		super.addBasicCommand("update", this.updateService);
 		super.addBasicCommand("delete", this.deleteService);
+
 		super.addCustomCommand("completed-list", "list", this.completedListService);
 		super.addCustomCommand("planned-list", "list", this.plannedListService);
 		super.addCustomCommand("publish", "update", this.publishService);
 	}
+
 }

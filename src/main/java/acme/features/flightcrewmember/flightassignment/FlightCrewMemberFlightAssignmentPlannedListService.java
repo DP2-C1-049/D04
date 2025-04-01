@@ -27,17 +27,19 @@ public class FlightCrewMemberFlightAssignmentPlannedListService extends Abstract
 
 	@Override
 	public void load() {
-		Collection<FlightAssignment> assignment;
-		Date moment;
-		moment = MomentHelper.getCurrentMoment();
-		assignment = this.repository.findAllFlightAssignmentByPlannedLeg(moment);
+		Collection<FlightAssignment> flightAssignments;
 
-		super.getBuffer().addData(assignment);
+		Date currentMoment;
+		currentMoment = MomentHelper.getCurrentMoment();
+		flightAssignments = this.repository.findAllFlightAssignmentByPlannedLeg(currentMoment);
+
+		super.getBuffer().addData(flightAssignments);
 	}
 
 	@Override
 	public void unbind(final FlightAssignment flightAssignment) {
 		Dataset dataset = super.unbindObject(flightAssignment, "duty", "moment", "currentStatus", "remarks");
+
 		super.getResponse().addData(dataset);
 	}
 }

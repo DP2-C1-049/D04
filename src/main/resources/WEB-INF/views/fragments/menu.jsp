@@ -55,8 +55,8 @@
 			<acme:menu-suboption code="master.menu.user-account.consumer-profile" action="/authenticated/consumer/update" access="hasRealm('Consumer')"/>
 		</acme:menu-option>
 		<acme:menu-option code="master.menu.flight-crew-member" access="hasRealm('FlightCrewMember')">
- 			<acme:menu-suboption code="master.menu.flight-crew-member.flight-assignament.completedlist" action="/flight-crew-member/flight-assignament/completed-list"/>
- 			<acme:menu-suboption code="master.menu.flight-crew-member.flight-assignament.plannedlist" action="/flight-crew-member/flight-assignament/planned-list"/>
+ 			<acme:menu-suboption code="master.menu.flight-crew-member.flight-assignment.completedlist" action="/flight-crew-member/flight-assignment/completed-list"/>
+ 			<acme:menu-suboption code="master.menu.flight-crew-member.flight-assignment.plannedlist" action="/flight-crew-member/flight-assignment/planned-list"/>
  		</acme:menu-option>
 	</acme:menu-right>
 </acme:menu-bar>

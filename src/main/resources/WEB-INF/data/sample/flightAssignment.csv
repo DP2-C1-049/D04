@@ -1,29 +1,25 @@
-key,duty,remarks,moment,currentStatus,key:flightCrewMember,key:leg
-#duty
-flightAssignment-01,PILOT,Lorem ipsum dolor sit ame,2024/01/01 10:00,AVAILABLE,flightCrewMember-01,leg-01
-flightAssignment-02,COPILOT,Lorem ipsum dolor sit ame,2024/01/01 10:00,AVAILABLE,flightCrewMember-02,leg-01
-flightAssignment-03,LEAD_ATTENDANT,Lorem ipsum dolor sit ame,2024/01/01 10:00,AVAILABLE,flightCrewMember-03,leg-01
-flightAssignment-04,CABIN_ATENDANT,Lorem ipsum dolor sit ame,2024/01/01 10:00,AVAILABLE,flightCrewMember-04,leg-01
-#remarks
-flightAssignment-05,PILOT,Lorem ipsum dolor sit ame,2024/01/01 10:00,AVAILABLE,flightCrewMember-01,leg-01
-flightAssignment-06,PILOT,L,2024/01/01 10:00,AVAILABLE,flightCrewMember-01,leg-01
-flightAssignment-07,PILOT,Lo,2024/01/01 10:00,AVAILABLE,flightCrewMember-01,leg-01
-flightAssignment-08,PILOT,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",2024/01/01 10:00,AVAILABLE,flightCrewMember-01,leg-01
-flightAssignment-09,PILOT,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",2024/01/01 10:00,AVAILABLE,flightCrewMember-01,leg-01
-flightAssignment-10,PILOT,洛伦·伊普森,2024/01/01 10:00,AVAILABLE,flightCrewMember-01,leg-01
-flightAssignment-11,PILOT,' or 'A' = 'A,2024/01/01 10:00,AVAILABLE,flightCrewMember-01,leg-01
-flightAssignment-12,PILOT,<script>alert(‘Hacked!’);</script>,2024/01/01 10:00,AVAILABLE,flightCrewMember-01,leg-01
-#moment
-flightAssignment-13,PILOT,Lorem ipsum dolor sit ame,2024/01/01 10:00,AVAILABLE,flightCrewMember-01,leg-01
-flightAssignment-14,PILOT,Lorem ipsum dolor sit ame,2025/01/01 00:00,AVAILABLE,flightCrewMember-01,leg-01
-flightAssignment-15,PILOT,Lorem ipsum dolor sit ame,2024/12/31 23:59,AVAILABLE,flightCrewMember-01,leg-01
-flightAssignment-16,PILOT,Lorem ipsum dolor sit ame,2000/01/01 00:00,AVAILABLE,flightCrewMember-01,leg-01
-flightAssignment-17,PILOT,Lorem ipsum dolor sit ame,2000/01/01 00:01,AVAILABLE,flightCrewMember-01,leg-01
-#currentStatus
-flightAssignment-18,PILOT,Lorem ipsum dolor sit ame,2024/01/01 10:00,AVAILABLE,flightCrewMember-01,leg-01
-flightAssignment-19,PILOT,Lorem ipsum dolor sit ame,2024/01/01 10:00,ON_VACATION,flightCrewMember-01,leg-01
-flightAssignment-23,PILOT,Lorem ipsum dolor sit ame,2024/01/01 10:00,ON_LEAVE,flightCrewMember-01,leg-01
-#leg
-flightAssignment-21,PILOT,Lorem ipsum dolor sit ame,2024/01/01 10:00,AVAILABLE,flightCrewMember-01,leg-01
-flightAssignment-22,PILOT,Lorem ipsum dolor sit ame,2024/01/01 10:00,AVAILABLE,flightCrewMember-01,leg-01
-flightAssignment-20,PILOT,Lorem ipsum dolor sit ame,2024/01/01 10:00,AVAILABLE,flightCrewMember-01,leg-02
+key,key:flight-crew-member,key:leg,duty,moment,currentStatus,remarks,draftMode
+# base entity
+flight-assignment-00,flight-crew-member-00,leg-00,PILOT,2023/01/01 10:00,CONFIRMED, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
+# duty - standard variations
+flight-assignment-01,flight-crew-member-01,leg-01,PILOT,2023/01/01 10:00,CONFIRMED, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
+flight-assignment-02,flight-crew-member-02,leg-02,COPILOT,2023/01/01 10:00,CONFIRMED, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
+flight-assignment-03,flight-crew-member-03,leg-03,LEAD_ATTENDANT,2023/01/01 10:00,CONFIRMED, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
+flight-assignment-04,flight-crew-member-04,leg-04,CABIN_ATTENDANT,2023/01/01 10:00,CONFIRMED, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
+flight-assignment-05,flight-crew-member-03,leg-05,PILOT,2023/01/01 10:00, CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
+# moment - standard variations
+flight-assignment-06,flight-crew-member-00,leg-00,PILOT,2000/01/01 00:00, CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
+flight-assignment-07,flight-crew-member-01,leg-01,PILOT,2000/01/01 00:01, CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
+flight-assignment-08,flight-crew-member-02,leg-02,PILOT,2024/12/31 23:59, CONFIRMED,"Past assignment",true
+
+# currentStatus - standard variations
+flight-assignment-09,flight-crew-member-00,leg-04,PILOT,2023/01/01 10:00, PENDING,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
+flight-assignment-10,flight-crew-member-00,leg-05,PILOT,2023/01/01 10:00, CANCELLED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
+
+# remarks - standard variations
+flight-assignment-11,flight-crew-member-00,leg-06,PILOT,2023/01/01 10:00, CONFIRMED,"L",true
+flight-assignment-12,flight-crew-member-00,leg-07,PILOT,2023/01/01 10:00, CONFIRMED,"Lo",true
+flight-assignment-13,flight-crew-member-00,leg-06,PILOT,2023/01/01 10:00, CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",true
+flight-assignment-14,flight-crew-member-00,leg-03,PILOT,2023/01/01 10:00, CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",true
+flight-assignment-15,flight-crew-member-00,leg-02,PILOT,2023/01/01 10:00, CONFIRMED,null,true
+flight-assignment-16,flight-crew-member-00,leg-03,PILOT,2023/01/01 10:00, CONFIRMED,"",true

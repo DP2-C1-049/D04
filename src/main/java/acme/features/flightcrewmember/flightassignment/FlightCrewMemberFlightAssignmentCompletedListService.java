@@ -27,16 +27,17 @@ public class FlightCrewMemberFlightAssignmentCompletedListService extends Abstra
 
 	@Override
 	public void load() {
-		Collection<FlightAssignment> assignment;
-		Date moment;
-		moment = MomentHelper.getCurrentMoment();
-		assignment = this.repository.findAllFlightAssignmentByCompletedLeg(moment);
-		super.getBuffer().addData(assignment);
+		Collection<FlightAssignment> flightAssignments;
+		Date currentMoment;
+		currentMoment = MomentHelper.getCurrentMoment();
+		flightAssignments = this.repository.findAllFlightAssignmentByCompletedLeg(currentMoment);
+		super.getBuffer().addData(flightAssignments);
 	}
 
 	@Override
 	public void unbind(final FlightAssignment flightAssignment) {
 		Dataset dataset = super.unbindObject(flightAssignment, "duty", "moment", "currentStatus", "remarks");
+
 		super.getResponse().addData(dataset);
 	}
 }
