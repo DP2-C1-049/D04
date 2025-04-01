@@ -28,23 +28,23 @@ public class TrackingLog extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@Valid
 	@Mandatory
+	@Valid
 	@OneToOne
 	private Claim				claim;
 
-	@ValidMoment
 	@Mandatory
+	@ValidMoment
 	@Automapped
 	private Date				lastUpdateMoment;
 
-	@ValidString(max = 50)
 	@Mandatory
+	@ValidString(max = 50)
 	@Automapped
 	private String				step;
 
-	@ValidNumber(min = 0, max = 100)
 	@Mandatory
+	@ValidNumber(min = 0, max = 100)
 	@Automapped
 	private Double				resolutionPercentage;
 
@@ -52,8 +52,8 @@ public class TrackingLog extends AbstractEntity {
 	@Automapped
 	private boolean				indicator;
 
-	@ValidString(max = 255)
 	@Mandatory
+	@ValidString(max = 255)
 	@Automapped
 	private String				resolution;
 }

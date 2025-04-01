@@ -6,8 +6,6 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractRole;
@@ -35,19 +33,18 @@ public class Manager extends AbstractRole {
 	private String				identifier;
 
 	@Mandatory
-	@Automapped
 	@ValidNumber(min = 0)
+	@Automapped
 	private Integer				yearsExperience;
 
 	@Mandatory
-	@Automapped
-	@Temporal(TemporalType.DATE)
 	@ValidMoment(past = true)
+	@Automapped
 	private Date				birth;
 
 	@Optional
-	@Automapped
 	@ValidUrl
+	@Automapped
 	private String				photo;
 
 	@Mandatory

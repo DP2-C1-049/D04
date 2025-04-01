@@ -6,8 +6,6 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
 
@@ -30,21 +28,19 @@ public class Leg extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@Mandatory
-	@Automapped
 	@ValidString
+	@Automapped
 	@Column(unique = true)
 	private String				flightNumber;
 
 	@Mandatory
-	@Automapped
 	@ValidMoment
-	@Temporal(TemporalType.TIMESTAMP)
+	@Automapped
 	private Date				departure;
 
 	@Mandatory
-	@Automapped
 	@ValidMoment
-	@Temporal(TemporalType.TIMESTAMP)
+	@Automapped
 	private Date				arrival;
 
 
@@ -64,24 +60,21 @@ public class Leg extends AbstractEntity {
 	private Flight		flight;
 
 	@Mandatory
-	@Automapped
 	@Valid
+	@Automapped
 	private Status		status;
 
 	@Mandatory
-	@Automapped
 	@Valid
 	@ManyToOne
 	private Airport		departureAirport;
 
 	@Mandatory
-	@Automapped
 	@Valid
 	@ManyToOne
 	private Airport		arrivalAirport;
 
 	@Mandatory
-	@Automapped
 	@Valid
 	@ManyToOne
 	private Aircraft	aircraft;

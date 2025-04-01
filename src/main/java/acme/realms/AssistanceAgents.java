@@ -6,8 +6,6 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractRole;
@@ -34,39 +32,38 @@ public class AssistanceAgents extends AbstractRole {
 
 	// Attributes -------------------------------------------------------------
 
-	@ValidString(pattern = "^[A-Z]{2,3}\\d{6}$")
 	@Mandatory
+	@ValidString(pattern = "^[A-Z]{2,3}\\d{6}$")
 	@Column(unique = true)
 	private String				employeeCode;
 
-	@ValidString(max = 255)
 	@Mandatory
+	@ValidString(max = 255)
 	@Automapped
 	private String				spokenLanguages;
 
-	@Valid
 	@Mandatory
+	@Valid
 	@ManyToOne(optional = false)
 	private Airline				airline;
 
-	@ValidMoment(past = true)
-	@Temporal(TemporalType.TIMESTAMP)
 	@Mandatory
+	@ValidMoment(past = true)
 	@Automapped
 	private Date				dateStarted;
 
-	@ValidString(max = 255)
 	@Optional
+	@ValidString(max = 255)
 	@Automapped
 	private String				bio;
 
-	@ValidMoney
 	@Mandatory
+	@ValidMoney
 	@Automapped
 	private Money				salary;
 
-	@ValidUrl
 	@Optional
+	@ValidUrl
 	@Automapped
 	private String				photoLink;
 

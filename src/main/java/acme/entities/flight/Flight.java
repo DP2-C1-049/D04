@@ -28,33 +28,32 @@ public class Flight extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@Mandatory
-	@Automapped
 	@ValidString(max = 50)
+	@Automapped
 	private String				tag;
 
 	@Mandatory
-	@Automapped
 	@Valid
+	@Automapped
 	private Boolean				indication;
 
 	@Mandatory
-	@Automapped
 	@ValidMoney(min = 0)
+	@Automapped
 	private Money				cost;
 
 	@Optional
-	@Automapped
 	@ValidString
+	@Automapped
 	private String				description;
 
 	@Mandatory
-	@Automapped
 	@Valid
 	@OneToMany
 	private List<Leg>			legs;
 
-	@Mandatory()
-	@Valid()
+	@Mandatory
+	@Valid
 	@ManyToOne(optional = false)
 	private Manager				manager;
 }

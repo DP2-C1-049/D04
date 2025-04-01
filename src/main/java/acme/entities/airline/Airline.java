@@ -5,8 +5,6 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
@@ -35,39 +33,38 @@ public class Airline extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@ValidString(max = 50)
 	@Mandatory
+	@ValidString(max = 50)
 	@Automapped
 	private String				name;
 
-	@ValidIATACode
 	@Mandatory
+	@ValidIATACode
 	@Automapped
 	private String				IATACode;
 
-	@ValidUrl
 	@Mandatory
+	@ValidUrl
 	@Automapped
 	private String				website;
 
-	@Valid
 	@Mandatory
+	@Valid
 	@Automapped
 	private AirlineType			type;
 
-	@ValidMoment(past = true)
-	@Temporal(TemporalType.TIMESTAMP)
 	@Mandatory
+	@ValidMoment(past = true)
 	@Automapped
 	private Date				foundationMoment;
 
-	@ValidEmail
 	@Optional
+	@ValidEmail
 	@Automapped
 	private String				email;
 
-	@ValidString(pattern = "^\\+?\\d{6,15}$")
 	@Optional
+	@ValidString(pattern = "^\\+?\\d{6,15}$")
 	@Automapped
 	private String				phoneNumber;
 

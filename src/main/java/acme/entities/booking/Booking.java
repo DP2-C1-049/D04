@@ -40,28 +40,28 @@ public class Booking extends AbstractEntity {
 	//Attributes --------------------------------------------------------------------------
 
 	@Mandatory
-	@Column(unique = true)
 	@ValidString(pattern = "^[A-Z0-9]{6,8}$")
+	@Column(unique = true)
 	private String				locatorCode;
 
 	@Mandatory
-	@Automapped
 	@ValidMoment(past = true)
+	@Automapped
 	private Date				purchaseMoment;
 
 	@Mandatory
-	@Automapped
 	@Valid
+	@Automapped
 	private TravelClass			travelClass;
 
 	@Mandatory
-	@Automapped
 	@ValidMoney(min = 0)
+	@Automapped
 	private Money				price;
 
 	@Optional
-	@Automapped
 	@ValidString(min = 4, max = 4)
+	@Automapped
 	private String				lastNibble;
 
 
