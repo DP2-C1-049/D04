@@ -25,12 +25,12 @@ Claim-19,2012/07/02 0:00,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet. consec
 Claim-20,2012/07/02 0:00,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,SECURITY_INCIDENT,false,assistanceAgent-01,leg-01
 Claim-21,2012/07/02 0:00,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,OTHER_ISSUES,false,assistanceAgent-01,leg-01
 #key:assistanceAgent
-Claim-22,2012/07/02 0:00,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,FLIGHT_ISSUES,false,assistanceAgent-50,leg-01
-Claim-23,2012/07/02 0:00,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,FLIGHT_ISSUES,false,assistanceAgent-44,leg-01
-Claim-24,2012/07/02 0:00,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,FLIGHT_ISSUES,false,assistanceAgent-18,leg-01
+Claim-22,2012/07/02 0:00,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,FLIGHT_ISSUES,false,assistanceAgent-33,leg-01
+Claim-23,2012/07/02 0:00,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,FLIGHT_ISSUES,false,assistanceAgent-22,leg-01
+Claim-24,2012/07/02 0:00,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,FLIGHT_ISSUES,false,assistanceAgent-11,leg-01
 #key:leg
 Claim-25,2012/07/02 0:00,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,FLIGHT_ISSUES,false,assistanceAgent-01,leg-10
-Claim-26,2012/07/02 0:00,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,FLIGHT_ISSUES,false,assistanceAgent-01,leg-13
-Claim-27,2012/07/02 0:00,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,FLIGHT_ISSUES,false,assistanceAgent-01,leg-02
+Claim-26,2012/07/02 0:00,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,FLIGHT_ISSUES,false,assistanceAgent-01,leg-07
+Claim-27,2012/07/02 0:00,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,FLIGHT_ISSUES,false,assistanceAgent-01,leg-18
 #indicator
 Claim-28,2012/07/02 0:00,acme@lorem-ipsum.org,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,FLIGHT_ISSUES,true,assistanceAgent-01,leg-02
