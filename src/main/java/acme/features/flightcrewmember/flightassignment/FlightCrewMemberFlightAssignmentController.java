@@ -45,8 +45,8 @@ public class FlightCrewMemberFlightAssignmentController extends AbstractGuiContr
 		super.addBasicCommand("create", this.createService);
 		super.addBasicCommand("update", this.updateService);
 		super.addBasicCommand("delete", this.deleteService);
-		super.addCustomCommand("publish", "update", this.completedListService);
-		super.addCustomCommand("publish", "update", this.plannedListService);
+		super.addCustomCommand("completed-list", "list", this.completedListService);
+		super.addCustomCommand("planned-list", "list", this.plannedListService);
 		super.addCustomCommand("publish", "update", this.publishService);
 	}
 }
