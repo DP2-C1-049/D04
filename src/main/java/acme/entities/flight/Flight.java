@@ -47,7 +47,7 @@ public class Flight extends AbstractEntity {
 	@Automapped
 	private String				description;
 
-	@Mandatory
+	@Optional
 	@Valid
 	@OneToMany
 	private List<Leg>			legs;

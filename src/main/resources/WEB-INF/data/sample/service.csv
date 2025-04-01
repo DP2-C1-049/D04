@@ -17,8 +17,8 @@ Service-13,Lorem ipsum dolor sit ame,http://example.org?a=1&b=2,10.00,CCCC-25,EU
 Service-14,Lorem ipsum dolor sit ame,ftp://a.b,10.00,DDDD-25,EUR 50.00
 #averageDwellTime
 Service-15,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,10.00,EEEE-25,EUR 50.00
-Service-16,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,00.01,FFFF-25,EUR 50.00
-Service-17,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,00.00,GGGG-25,EUR 50.00
+Service-16,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,1.00,FFFF-25,EUR 50.00
+Service-17,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,1.01,GGGG-25,EUR 50.00
 Service-18,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,100.00,HHHH-25,EUR 50.00
 Service-19,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,99.99,IIII-25,EUR 50.00
 #money
