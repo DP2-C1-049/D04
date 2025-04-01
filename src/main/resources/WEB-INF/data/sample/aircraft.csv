@@ -1,4 +1,4 @@
-key,model,registrationNumber,capacity,cargoWeight,status,details,key:Airline
+key,model,registrationNumber,capacity,cargoWeight,status,details,key:airline
 #model,"","","","","","",""
 Aircraft-01,Lorem ipsum dolor sit ame,a,50,3000,ACTIVE,Lorem ipsum dolor sit ame,Airline-01
 Aircraft-02,L,b,50,3000,ACTIVE,Lorem ipsum dolor sit ame,Airline-01
@@ -17,8 +17,8 @@ Aircraft-12,Lorem ipsum dolor sit ame,洛伦·伊普森,50,3000,ACTIVE,Lorem ips
 Aircraft-13,Lorem ipsum dolor sit ame,g,50,3000,ACTIVE,Lorem ipsum dolor sit ame,Airline-01
 Aircraft-14,Lorem ipsum dolor sit ame,h,1,3000,ACTIVE,Lorem ipsum dolor sit ame,Airline-01
 Aircraft-15,Lorem ipsum dolor sit ame,i,2,3000,ACTIVE,Lorem ipsum dolor sit ame,Airline-01
-Aircraft-16,Lorem ipsum dolor sit ame,j,1000,3000,ACTIVE,Lorem ipsum dolor sit ame,Airline-01
-Aircraft-17,Lorem ipsum dolor sit ame,k,999,3000,ACTIVE,Lorem ipsum dolor sit ame,Airline-01
+Aircraft-16,Lorem ipsum dolor sit ame,j,255,3000,ACTIVE,Lorem ipsum dolor sit ame,Airline-01
+Aircraft-17,Lorem ipsum dolor sit ame,k,254,3000,ACTIVE,Lorem ipsum dolor sit ame,Airline-01
 #cargoWeight,"","","","","","",""
 Aircraft-18,Lorem ipsum dolor sit ame,nn,50,3000,ACTIVE,Lorem ipsum dolor sit ame,Airline-01
 Aircraft-19,Lorem ipsum dolor sit ame,m,50,2000,ACTIVE,Lorem ipsum dolor sit ame,Airline-01
@@ -35,7 +35,7 @@ Aircraft-27,Lorem ipsum dolor sit ame,u,50,3000,ACTIVE,Lo,Airline-01
 Aircraft-28,Lorem ipsum dolor sit ame,v,50,3000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",Airline-01
 Aircraft-29,Lorem ipsum dolor sit ame,w,50,3000,ACTIVE,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",Airline-01
 Aircraft-30,Lorem ipsum dolor sit ame,x,50,3000,ACTIVE,โลเร็ม อิปซัม,Airline-01
-#Airline,"","","","","","",""
+#airline,"","","","","","",""
 Aircraft-31,Lorem ipsum dolor sit ame,y,50,3000,ACTIVE,Lorem ipsum dolor sit ame,Airline-01
 Aircraft-32,Lorem ipsum dolor sit ame,z,50,3000,ACTIVE,Lorem ipsum dolor sit ame,Airline-01
 Aircraft-33,Lorem ipsum dolor sit ame,aa,50,3000,ACTIVE,Lorem ipsum dolor sit ame,Airline-02

@@ -1,0 +1,32 @@
+key,name,picture,averageDwellTime,promotionCode,money
+#name
+Service-01,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,10.00,AABB-25,EUR 50.00
+Service-02,L,http://lorem.com/ipsum,10.00,AACC-25,EUR 50.00
+Service-03,Lo,http://lorem.com/ipsum,10.00,AADD-25,EUR 50.00
+Service-04,"Lorem ipsum dolor sit amet. consectetur adipiscin",http://lorem.com/ipsum,10.00,AAEE-25,EUR 50.00
+Service-05,"Lorem ipsum dolor sit amet. consectetur adipiscing",http://lorem.com/ipsum,10.00,AAFF-25,EUR 50.00
+Service-06,โลเร็ม อิปซัม,http://lorem.com/ipsum,10.00,AAGG-25,EUR 50.00
+Service-07,<script>alert(‘Hacked!’);</script>,http://lorem.com/ipsum,10.00,AAHH-25,EUR 50.00
+Service-08,' or 'A' = 'A,http://lorem.com/ipsum,10.00,AAII-25,EUR 50.00
+#picture
+Service-09,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,10.00,AAJJ-25,EUR 50.00
+Service-10,Lorem ipsum dolor sit ame,http://www.lorem-ipsum.org/dolor/sit/amet/consectetur/adipiscing/elit/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X,10.00,AAKK-25,EUR 50.00
+Service-11,Lorem ipsum dolor sit ame,http://www.lorem-ipsum.org/dolor/sit.html#dolor,10.00,AAAA-25,EUR 50.00
+Service-12,Lorem ipsum dolor sit ame,http://example.org/a/b?a&b,10.00,BBBB-25,EUR 50.00
+Service-13,Lorem ipsum dolor sit ame,http://example.org?a=1&b=2,10.00,CCCC-25,EUR 50.00
+Service-14,Lorem ipsum dolor sit ame,ftp://a.b,10.00,DDDD-25,EUR 50.00
+#averageDwellTime
+Service-15,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,10.00,EEEE-25,EUR 50.00
+Service-16,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,00.01,FFFF-25,EUR 50.00
+Service-17,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,00.00,GGGG-25,EUR 50.00
+Service-18,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,100.00,HHHH-25,EUR 50.00
+Service-19,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,99.99,IIII-25,EUR 50.00
+#money
+Service-20,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,10.00,JJJJ-25,EUR 50.00
+Service-21,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,10.00,KKKK-25,EUR 0.00
+Service-22,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,10.00,LLLL-25,EUR 0.01
+Service-23,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,10.00,MMMM-25,EUR 99.99
+Service-24,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,10.00,OOOO-25,EUR 100.00
+#promotionCode
+Service-25,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,10.00,PPPP-25,EUR 50.00
+Service-26,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,10.00,null,EUR 50.00
