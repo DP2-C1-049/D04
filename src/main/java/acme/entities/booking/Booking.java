@@ -16,6 +16,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
+import acme.entities.flight.Flight;
 import acme.realms.Customers;
 import lombok.Getter;
 import lombok.Setter;
@@ -39,28 +40,28 @@ public class Booking extends AbstractEntity {
 	//Attributes --------------------------------------------------------------------------
 
 	@Mandatory
-	@Column(unique = true)
 	@ValidString(pattern = "^[A-Z0-9]{6,8}$")
+	@Column(unique = true)
 	private String				locatorCode;
 
 	@Mandatory
-	@Automapped
 	@ValidMoment(past = true)
+	@Automapped
 	private Date				purchaseMoment;
 
 	@Mandatory
-	@Automapped
 	@Valid
+	@Automapped
 	private TravelClass			travelClass;
 
 	@Mandatory
-	@Automapped
 	@ValidMoney(min = 0)
+	@Automapped
 	private Money				price;
 
 	@Optional
-	@Automapped
 	@ValidString(min = 4, max = 4)
+	@Automapped
 	private String				lastNibble;
 
 
@@ -68,4 +69,10 @@ public class Booking extends AbstractEntity {
 	public enum TravelClass {
 		ECONOMY, BUSINESS
 	}
+
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Flight flight;
 }

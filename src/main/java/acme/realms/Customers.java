@@ -3,7 +3,6 @@ package acme.realms;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.validation.constraints.NotBlank;
 
 import acme.client.components.basis.AbstractRole;
 import acme.client.components.mappings.Automapped;
@@ -26,35 +25,32 @@ public class Customers extends AbstractRole {
 	//Atributes --------------------------------------------------------------------------
 
 	@Mandatory
-	@Column(unique = true)
 	@ValidString(pattern = "^[A-Z]{2,3}\\d{6}$")
+	@Column(unique = true)
 	private String				identifier;
 
 	@Mandatory
-	@Automapped
 	@ValidString(pattern = "^\\+?\\d{6,15}$")
+	@Automapped
 	private String				phoneNumber;
 
 	@Mandatory
+	@ValidString(min = 1, max = 255)
 	@Automapped
-	@ValidString(max = 255)
-	@NotBlank
 	private String				physicalAdress;
 
 	@Mandatory
+	@ValidString(min = 1, max = 50)
 	@Automapped
-	@ValidString(max = 50)
-	@NotBlank
 	private String				city;
 
 	@Mandatory
+	@ValidString(min = 1, max = 50)
 	@Automapped
-	@ValidString(max = 50)
-	@NotBlank
 	private String				country;
 
 	@Optional
+	@ValidNumber(min = 0, max = 500000)
 	@Automapped
-	@ValidNumber(min = 0, max = 500000, integer = 6, fraction = 0)
 	private Integer				earnedPoints;
 }

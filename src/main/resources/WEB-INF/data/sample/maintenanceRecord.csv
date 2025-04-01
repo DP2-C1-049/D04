@@ -12,8 +12,8 @@ maintenanceRecord-07,2024/07/01 23:59,PENDING,2200/12/31 23:59,EUR 500,Lorem ips
 #estimatedCost
 maintenanceRecord-08,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 0,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,Aircraft-01
 maintenanceRecord-09,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 1,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,Aircraft-01
-maintenanceRecord-10,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 199999999,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,Aircraft-01
-maintenanceRecord-11,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 200000000,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,Aircraft-01
+maintenanceRecord-10,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 999999,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,Aircraft-01
+maintenanceRecord-11,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 1000000,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,Aircraft-01
 #notes
 maintenanceRecord-12,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 500,null,technician-01,Aircraft-01
 maintenanceRecord-13,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 500,L,technician-01,Aircraft-01

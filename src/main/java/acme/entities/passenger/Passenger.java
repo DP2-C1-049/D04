@@ -4,9 +4,6 @@ package acme.entities.passenger;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.validation.constraints.NotBlank;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -30,9 +27,8 @@ public class Passenger extends AbstractEntity {
 	//Atributes --------------------------------------------------------------------------
 
 	@Mandatory
+	@ValidString(min = 1, max = 255)
 	@Automapped
-	@NotBlank
-	@ValidString(max = 255)
 	private String				fullName;
 
 	@Mandatory
@@ -41,18 +37,17 @@ public class Passenger extends AbstractEntity {
 	private String				email;
 
 	@Mandatory
-	@Automapped
 	@ValidString(pattern = "^[A-Z0-9]{6,9}$")
+	@Automapped
 	private String				passportNumber;
 
 	@Mandatory
-	@Automapped
-	@Temporal(TemporalType.TIMESTAMP)
 	@ValidMoment(past = true)
+	@Automapped
 	private Date				dateOfBirth;
 
 	@Optional
-	@Automapped
 	@ValidString(max = 50)
+	@Automapped
 	private String				specialNeeds;
 }
