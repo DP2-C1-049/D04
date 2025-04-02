@@ -34,7 +34,7 @@ public class FlightCrewMemberActivityLogPublishService extends AbstractGuiServic
 		boolean authorised1 = this.repository.existsFlightCrewMember(flightCrewMemberId) && authorised;
 		status = authorised1 && activityLog != null && activityLog.isDraftMode();
 
-		super.getResponse().setAuthorised(authorised1);
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override

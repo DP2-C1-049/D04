@@ -31,7 +31,7 @@ public class FlightCrewMemberActivityLogDeleteService extends AbstractGuiService
 		boolean authorised1 = this.repository.existsFlightCrewMember(flightCrewMemberId);
 		boolean authorised = authorised1 && this.repository.thatActivityLogIsOf(activityLogId, flightCrewMemberId);
 
-		status = authorised1 && activityLog != null && activityLog.isDraftMode();
+		status = authorised && activityLog != null && activityLog.isDraftMode();
 
 		super.getResponse().setAuthorised(status);
 	}

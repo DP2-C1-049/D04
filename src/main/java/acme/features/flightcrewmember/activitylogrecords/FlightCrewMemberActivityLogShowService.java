@@ -28,7 +28,7 @@ public class FlightCrewMemberActivityLogShowService extends AbstractGuiService<F
 		int flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
 		boolean authorised1 = this.repository.existsFlightCrewMember(flightCrewMemberId);
 		boolean authorised = authorised1 && this.repository.thatActivityLogIsOf(activityLogId, flightCrewMemberId);
-		super.getResponse().setAuthorised(authorised1);
+		super.getResponse().setAuthorised(authorised);
 	}
 
 	@Override

@@ -33,7 +33,7 @@ public class FlightCrewMemberActivityLogUpdateService extends AbstractGuiService
 
 		status = authorised && activityLog != null && activityLog.isDraftMode();
 
-		super.getResponse().setAuthorised(authorised1);
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
