@@ -28,18 +28,18 @@ public class Service extends AbstractEntity {
 	// Attributes ---------------------------------------------------------------
 
 	@Mandatory
-	@Automapped
 	@ValidString(min = 1, max = 50)
+	@Automapped
 	private String				name;
 
 	@Mandatory
-	@Automapped
 	@ValidUrl
+	@Automapped
 	private String				picture;
 
 	@Mandatory
-	@Automapped
 	@ValidNumber(min = 1, max = 100)
+	@Automapped
 	private Double				averageDwellTime;
 
 	@Optional
@@ -48,7 +48,7 @@ public class Service extends AbstractEntity {
 	private String				promotionCode;
 
 	@Optional
-	@Automapped
 	@ValidMoney(min = 0)
+	@Automapped
 	private Money				money;
 }
