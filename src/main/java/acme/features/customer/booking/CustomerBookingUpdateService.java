@@ -12,10 +12,10 @@ import acme.client.services.GuiService;
 import acme.entities.booking.Booking;
 import acme.entities.booking.Booking.TravelClass;
 import acme.entities.flight.Flight;
-import acme.realms.Customers;
+import acme.realms.Customer;
 
 @GuiService
-public class CustomerBookingUpdateService extends AbstractGuiService<Customers, Booking> {
+public class CustomerBookingUpdateService extends AbstractGuiService<Customer, Booking> {
 
 	@Autowired
 	private CustomerBookingRepository repository;
@@ -23,7 +23,7 @@ public class CustomerBookingUpdateService extends AbstractGuiService<Customers, 
 
 	@Override
 	public void authorise() {
-		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Customers.class);
+		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
 
 		super.getResponse().setAuthorised(status);
 
@@ -31,7 +31,7 @@ public class CustomerBookingUpdateService extends AbstractGuiService<Customers, 
 		int bookingId = super.getRequest().getData("id", int.class);
 		Booking booking = this.repository.getBookingById(bookingId);
 
-		super.getResponse().setAuthorised(customerId == booking.getCustomers().getId());
+		super.getResponse().setAuthorised(customerId == booking.getCustomer().getId());
 	}
 
 	@Override

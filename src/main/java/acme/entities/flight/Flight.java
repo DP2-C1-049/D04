@@ -4,6 +4,7 @@ package acme.entities.flight;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.Valid;
@@ -49,7 +50,7 @@ public class Flight extends AbstractEntity {
 
 	@Optional
 	@Valid
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER)
 	private List<Leg>			legs;
 
 	@Mandatory

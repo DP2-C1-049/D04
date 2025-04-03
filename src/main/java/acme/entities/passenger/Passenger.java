@@ -14,7 +14,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
-import acme.realms.Customers;
+import acme.realms.Customer;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -61,5 +61,5 @@ public class Passenger extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = true)
-	private Customers			customers;
+	private Customer			customer;
 }

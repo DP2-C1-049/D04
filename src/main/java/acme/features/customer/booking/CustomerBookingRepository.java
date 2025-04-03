@@ -13,7 +13,7 @@ import acme.entities.flight.Flight;
 @Repository
 public interface CustomerBookingRepository extends AbstractRepository {
 
-	@Query("select b from Booking b where b.customers.id = :customerId")
+	@Query("select b from Booking b where b.customer.id = :customerId")
 	Collection<Booking> getAllBookingOf(int customerId);
 
 	@Query("select b from Booking b where b.id = :id")

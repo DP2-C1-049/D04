@@ -8,10 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import acme.client.controllers.AbstractGuiController;
 import acme.client.controllers.GuiController;
 import acme.entities.booking.Booking;
-import acme.realms.Customers;
+import acme.realms.Customer;
 
 @GuiController
-public class CustomerBookingController extends AbstractGuiController<Customers, Booking> {
+public class CustomerBookingController extends AbstractGuiController<Customer, Booking> {
 	// Internal state ---------------------------------------------------------
 
 	@Autowired

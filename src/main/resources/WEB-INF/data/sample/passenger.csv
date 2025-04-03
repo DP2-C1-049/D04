@@ -1,4 +1,4 @@
-key,fullName,email,passportNumber,dateOfBirth,specialNeeds,draftMode,key:customers
+key,fullName,email,passportNumber,dateOfBirth,specialNeeds,draftMode,key:customer
 #BaseEntity
 passenger-00,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Sin necesidades,true,customer-01
 #fullName

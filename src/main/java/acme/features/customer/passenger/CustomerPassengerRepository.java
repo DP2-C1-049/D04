@@ -13,7 +13,7 @@ import acme.entities.passenger.Passenger;
 @Repository
 public interface CustomerPassengerRepository extends AbstractRepository {
 
-	@Query("select p from Passenger p where p.customers.id=:customerId")
+	@Query("select p from Passenger p where p.customer.id=:customerId")
 	Collection<Passenger> getAllPassengersOf(int customerId);
 
 	@Query("select p from Passenger p where p.id=:passengerId")

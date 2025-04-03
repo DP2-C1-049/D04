@@ -1,4 +1,4 @@
-key,locatorCode,purchaseMoment,travelClass,price,lastNibble,key:customers,key:flight,draftMode
+key,locatorCode,purchaseMoment,travelClass,price,lastNibble,key:customer,key:flight,draftMode
 booking-00,ABC123,2012/06/24 14:30,ECONOMY,EUR 500000.00,1234,customer-01,flight-01,true
 #locatorCode
 booking-01,X9Y8Z7W,2012/06/24 14:30,ECONOMY,EUR 500000.00,1234,customer-01,flight-01,true

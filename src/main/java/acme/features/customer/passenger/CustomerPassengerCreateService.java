@@ -7,10 +7,10 @@ import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.passenger.Passenger;
-import acme.realms.Customers;
+import acme.realms.Customer;
 
 @GuiService
-public class CustomerPassengerCreateService extends AbstractGuiService<Customers, Passenger> {
+public class CustomerPassengerCreateService extends AbstractGuiService<Customer, Passenger> {
 
 	@Autowired
 	private CustomerPassengerRepository repository;
@@ -18,19 +18,19 @@ public class CustomerPassengerCreateService extends AbstractGuiService<Customers
 
 	@Override
 	public void authorise() {
-		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Customers.class);
+		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
 
 		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		Customers customer = (Customers) super.getRequest().getPrincipal().getActiveRealm();
+		Customer customer = (Customer) super.getRequest().getPrincipal().getActiveRealm();
 		Passenger passenger;
 
 		passenger = new Passenger();
 		passenger.setDraftMode(true);
-		passenger.setCustomers(customer);
+		passenger.setCustomer(customer);
 
 		super.getBuffer().addData(passenger);
 	}
