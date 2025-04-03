@@ -128,9 +128,9 @@ public class FlightCrewMemberFlightAssignmentPublishService extends AbstractGuiS
 		boolean cambioStatus = !original.getCurrentStatus().equals(assignment.getCurrentStatus());
 		boolean cambioRemarks = false;
 		if (original.getRemarks() != null)
-			cambioRemarks = !original.equals(assignment.getRemarks());
+			cambioRemarks = !original.getRemarks().equals(assignment.getRemarks());
 		else if (assignment.getRemarks() != null)
-			cambioRemarks = !assignment.equals(original.getRemarks());
+			cambioRemarks = !assignment.getRemarks().equals(original.getRemarks());
 		cambio = cambioDuty || cambioFlightCrewMember || cambioLeg || cambioStatus || cambioRemarks;
 		return cambio;
 	}
