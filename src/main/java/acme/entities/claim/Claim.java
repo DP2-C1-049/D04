@@ -13,7 +13,11 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
+import acme.client.helpers.SpringHelper;
 import acme.entities.leg.Leg;
+import acme.entities.trackingLogs.ClaimStatus;
+import acme.entities.trackingLogs.TrackingLog;
+import acme.features.assistanceAgents.trackingLog.TrackingLogRepository;
 import acme.realms.AssistanceAgents;
 import lombok.Getter;
 import lombok.Setter;
@@ -56,10 +60,18 @@ public class Claim extends AbstractEntity {
 
 	@Mandatory
 	@Automapped
-	private Boolean				indicator;
+	private boolean				draftMode;
+
+
+	public ClaimStatus getStatus() {
+		TrackingLogRepository repository = SpringHelper.getBean(TrackingLogRepository.class);
+		return repository.findOrderTrackingLog(this.getId()).flatMap(list -> list.stream().findFirst()).map(TrackingLog::getStatus).orElse(ClaimStatus.PENDING);
+		//return ClaimStatus.PENDING;
+	}
+
 
 	@Mandatory
 	@Valid
 	@ManyToOne
-	private Leg					leg;
+	private Leg leg;
 }

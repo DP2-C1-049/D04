@@ -35,6 +35,7 @@
 			<acme:menu-suboption code="master.menu.administrator.populate-db-sample" action="/administrator/system/populate-sample"/>			
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-system-down" action="/administrator/system/shut-down"/>
+			<acme:menu-suboption code="master.menu.administrator.list-airlines" action="/administrator/airline/list"/>		
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRealm('Provider')">
@@ -43,6 +44,11 @@
 
 		<acme:menu-option code="master.menu.consumer" access="hasRealm('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.assistanceAgent" access="hasRealm('AssistanceAgents')">
+			<acme:menu-suboption code="master.menu.assistance-agent.list-resolved" action="/assistance-agents/claim/list-resolved"/>			
+			<acme:menu-suboption code="master.menu.assistance-agent.list-pending" action="/assistance-agents/claim/list-pending"/>	
 		</acme:menu-option>
 	</acme:menu-left>
 
