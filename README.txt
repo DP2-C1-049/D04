@@ -21,12 +21,15 @@ GitHub dashboard D01:
 https://github.com/orgs/DP2-C1-049/projects/2/views/2
 GitHub dashboard D02:
 https://github.com/orgs/DP2-C1-049/projects/2/views/3
+GitHub dashboard D03:
+https://github.com/orgs/DP2-C1-049/projects/2/views/7
 
 GitHub dashboard SamuCoco04 D01:
 https://github.com/orgs/DP2-C1-049/projects/12/views/2
 GitHub dashboard SamuCoco04 D02:
 https://github.com/orgs/DP2-C1-049/projects/12/views/3
-
+GitHub dashboard SamuCoco04 D03:
+https://github.com/orgs/DP2-C1-049/projects/12/views/4
 GitHub dashboard STX3837 D01:
 https://github.com/orgs/DP2-C1-049/projects/8/views/2
 GitHub dashboard STX3837 D02:
@@ -36,6 +39,8 @@ GitHub dashboard serponlop D01 (Student 2):
 https://github.com/orgs/DP2-C1-049/projects/9/views/2
 GitHub dashboard serponlop D02 (Student 2):
 https://github.com/orgs/DP2-C1-049/projects/9/views/3
+GitHub dashboard serponlop D03 (Student 2):
+https://github.com/orgs/DP2-C1-049/projects/9
 
 GitHub dashboard JLF1828 D01 (Student 4):
 https://github.com/orgs/DP2-C1-049/projects/11/views/2
@@ -48,3 +53,7 @@ GitHub dashboard javmanriq D01 (Student 3):
 https://github.com/orgs/DP2-C1-049/projects/10/views/2
 GitHub dashboard javmanriq D02 (Student 3):
 https://github.com/orgs/DP2-C1-049/projects/10/views/3
+GitHub dashboard javmanriq D03 (Student 3):
+https://github.com/orgs/DP2-C1-049/projects/10/views/4
+
+

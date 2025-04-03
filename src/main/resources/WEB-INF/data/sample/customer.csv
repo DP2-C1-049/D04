@@ -1,0 +1,4 @@
+key,key:userAccount,identifier,phoneNumber,physicalAdress,city,country,earnedPoints
+customer-01,user-account-customer-01,LGB928374,123456,Calle Guadiamar 5,Badajoz,España,100
+customer-02,user-account-customer-02,LGC182736,+123456,Calle Guadiamar 5,Badajoz,España,100
+customer-03,user-account-customer-03,LGD563920,987654321012345,Calle Guadiamar 5,Badajoz,España,100

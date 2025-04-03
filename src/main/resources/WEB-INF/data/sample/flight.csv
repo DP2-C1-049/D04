@@ -1,28 +1,28 @@
-key,tag,indication,cost,description,key:manager
-flight-00,Standard Flight,True,USD 500.00,Standard commercial flight,manager-01
+key,tag,indication,cost,description,key:manager,draftMode
+flight-00,Standard Flight,True,USD 500.00,Standard commercial flight,manager-01,true
 #tag
-flight-01,The Fastest Route,True,USD 500.00,Standard commercial flight,manager-01
-flight-02,The Cheapest Option,True,USD 500.00,Standard commercial flight,manager-01
-flight-03,Non-Stop Flight,True,USD 500.00,Standard commercial flight,manager-01
-flight-04,Luxury Experience,True,USD 500.00,Standard commercial flight,manager-01
-flight-05,Business Class Deal,True,USD 500.00,Standard commercial flight,manager-01
-flight-06,Scenic Mountain View,True,USD 500.00,Standard commercial flight,manager-01
-flight-07,Economy with Free Meal,True,USD 500.00,Standard commercial flight,manager-01
-flight-08,Shortest Duration,True,USD 500.00,Standard commercial flight,manager-01
-flight-09,Best Price Guaranteed,True,USD 500.00,Standard commercial flight,manager-01
-flight-10,Extra Baggage Included,True,USD 500.00,Standard commercial flight,manager-01
+flight-01,The Fastest Route,True,USD 500.00,Standard commercial flight,manager-01,true
+flight-02,The Cheapest Option,True,USD 500.00,Standard commercial flight,manager-01,true
+flight-03,Non-Stop Flight,True,USD 500.00,Standard commercial flight,manager-01,true
+flight-04,Luxury Experience,True,USD 500.00,Standard commercial flight,manager-01,true
+flight-05,Business Class Deal,True,USD 500.00,Standard commercial flight,manager-01,true
+flight-06,Scenic Mountain View,True,USD 500.00,Standard commercial flight,manager-01,true
+flight-07,Economy with Free Meal,True,USD 500.00,Standard commercial flight,manager-01,true
+flight-08,Shortest Duration,True,USD 500.00,Standard commercial flight,manager-01,true
+flight-09,Best Price Guaranteed,True,USD 500.00,Standard commercial flight,manager-01,true
+flight-10,Extra Baggage Included,True,USD 500.00,Standard commercial flight,manager-01,true
 #indication
-flight-11,Standard Flight,False,USD 500.00,Standard commercial flight,manager-01
+flight-11,Standard Flight,False,USD 500.00,Standard commercial flight,manager-01,true
 #cost
-flight-12,Standard Flight,True,USD 0.00,Standard commercial flight,manager-01
-flight-13,Standard Flight,True,USD 1000000.00,Standard commercial flight,manager-01
-flight-14,Standard Flight,True,EUR 999999.99,Standard commercial flight,manager-01
+flight-12,Standard Flight,True,USD 0.00,Standard commercial flight,manager-01,true
+flight-13,Standard Flight,True,USD 1000000.00,Standard commercial flight,manager-01,true
+flight-14,Standard Flight,True,EUR 999999.99,Standard commercial flight,manager-01,true
 #description
-flight-15,Standard Flight,True,USD 500.00,"",manager-01
-flight-16,Standard Flight,True,USD 500.00,A,manager-01
-flight-17,Standard Flight,True,USD 500.00,"Comfortable flight with extra legroom",manager-01
-flight-18,Standard Flight,True,USD 500.00,"Includes access to VIP lounge",manager-01
-flight-19,Standard Flight,True,USD 500.00,"Direct flight with no layovers",manager-01
+flight-15,Standard Flight,True,USD 500.00,"",manager-01,true
+flight-16,Standard Flight,True,USD 500.00,A,manager-01,true
+flight-17,Standard Flight,True,USD 500.00,"Comfortable flight with extra legroom",manager-01,true
+flight-18,Standard Flight,True,USD 500.00,"Includes access to VIP lounge",manager-02,true
+flight-19,Standard Flight,True,USD 500.00,"Direct flight with no layovers",manager-02,true
 #key:manager
-flight-20,Standard Flight,True,USD 500.00,Standard commercial flight,manager-02
-flight-21,Standard Flight,True,USD 500.00,Standard commercial flight,manager-03
+flight-20,Standard Flight,True,USD 500.00,Standard commercial flight,manager-02,true
+flight-21,Standard Flight,True,USD 500.00,Standard commercial flight,manager-02,true
