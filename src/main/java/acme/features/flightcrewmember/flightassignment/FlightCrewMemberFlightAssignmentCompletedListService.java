@@ -22,16 +22,21 @@ public class FlightCrewMemberFlightAssignmentCompletedListService extends Abstra
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+
+		int flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		boolean authorised = this.repository.existsFlightCrewMember(flightCrewMemberId);
+		super.getResponse().setAuthorised(authorised);
 	}
 
 	@Override
 	public void load() {
-		Collection<FlightAssignment> flightAssignments;
+		Collection<FlightAssignment> assignment;
 		Date currentMoment;
+		int flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+
 		currentMoment = MomentHelper.getCurrentMoment();
-		flightAssignments = this.repository.findAllFlightAssignmentByCompletedLeg(currentMoment);
-		super.getBuffer().addData(flightAssignments);
+		assignment = this.repository.findAllFlightAssignmentByCompletedLeg(currentMoment, flightCrewMemberId);
+		super.getBuffer().addData(assignment);
 	}
 
 	@Override

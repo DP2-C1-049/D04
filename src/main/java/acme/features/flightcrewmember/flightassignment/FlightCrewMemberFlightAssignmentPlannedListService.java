@@ -22,23 +22,28 @@ public class FlightCrewMemberFlightAssignmentPlannedListService extends Abstract
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+
+		int flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		boolean authorised = this.repository.existsFlightCrewMember(flightCrewMemberId);
+		super.getResponse().setAuthorised(authorised);
 	}
 
 	@Override
 	public void load() {
-		Collection<FlightAssignment> flightAssignments;
+		Collection<FlightAssignment> assignments;
 
 		Date currentMoment;
-		currentMoment = MomentHelper.getCurrentMoment();
-		flightAssignments = this.repository.findAllFlightAssignmentByPlannedLeg(currentMoment);
+		int flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
 
-		super.getBuffer().addData(flightAssignments);
+		currentMoment = MomentHelper.getCurrentMoment();
+		assignments = this.repository.findAllFlightAssignmentByPlannedLeg(currentMoment, flightCrewMemberId);
+
+		super.getBuffer().addData(assignments);
 	}
 
 	@Override
-	public void unbind(final FlightAssignment flightAssignment) {
-		Dataset dataset = super.unbindObject(flightAssignment, "duty", "moment", "currentStatus", "remarks");
+	public void unbind(final FlightAssignment assignment) {
+		Dataset dataset = super.unbindObject(assignment, "duty", "moment", "currentStatus", "remarks");
 
 		super.getResponse().addData(dataset);
 	}
