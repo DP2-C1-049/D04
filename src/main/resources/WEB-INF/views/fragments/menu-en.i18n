@@ -38,6 +38,11 @@ master.menu.provider.favourite-link = Favourite link
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
 
+# master.menu.manager ##########################################################
+
+master.menu.manager = Manager
+master.menu.manager.list-flights = Listing of flights
+
 # master.menu.technician ####################################################
 master.menu.technician = Technician
 master.menu.maintenanceRecord.list = Maintenance Record List

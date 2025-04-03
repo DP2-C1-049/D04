@@ -1,0 +1,48 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2025 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+manager.flight.list.title = Manager Flight Listing
+
+manager.flight.form.title = Details of Flight
+
+manager.flight.form.label.tag = Tag
+manager.flight.form.label.indication = Needs Self-Transfer
+manager.flight.form.label.cost = Cost
+manager.flight.form.label.description = Description
+manager.flight.form.label.departure = Departure
+manager.flight.form.label.arrival = Arrival
+manager.flight.form.label.draftMode = Draft Mode
+manager.flight.form.label.confirmation = Confirm
+
+manager.flight.list.label.tag = Tag
+manager.flight.list.label.indication = Needs Self-Transfer
+manager.flight.list.label.cost = Cost
+manager.flight.list.label.description = Description
+manager.flight.list.label.departure = Departure
+manager.flight.list.label.arrival = Arrival
+manager.flight.list.label.originCity = Origin 
+manager.flight.list.label.destinationCity= Destiny
+
+master.menu.flight.list = List Flights
+master.menu.flight.create = Create Flight
+master.menu.flight = Flights
+
+button.create.flight = Create
+
+manager.flight.list.button.create = Create
+manager.flight.form.button.create = Register
+manager.flight.form.button.update = Update
+manager.flight.form.button.publish = Publish
+manager.flight.form.button.delete = Delete
+
+manager.flight.form.error.duplicateTag = Tag already exists
+manager.flight.form.error.invalidCost = Not a valid cost
+flight.publish.error.unpublishedLegs = This flight has unpublished legs
+flight.publish.error.noLegs = A flight needs legs to be published
