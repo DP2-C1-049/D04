@@ -4,6 +4,7 @@ package acme.entities.flight;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
 import javax.validation.Valid;
@@ -47,6 +48,7 @@ public class Flight extends AbstractEntity {
 	@ValidString
 	@Automapped
 	private String				description;
+
 
 	@Mandatory
 	@Valid

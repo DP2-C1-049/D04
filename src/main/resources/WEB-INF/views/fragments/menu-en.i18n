@@ -38,6 +38,11 @@ master.menu.provider.favourite-link = Favourite link
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
 
+# master.menu.customer ##########################################################
+master.menu.customer = Customer
+master.menu.customer.list-bookings = List bookings
+master.menu.customer.list-passengers = List passengers
+
 # master.menu.manager ##########################################################
 
 master.menu.manager = Manager
@@ -54,6 +59,8 @@ master.menu.user-account = Account
 master.menu.user-account.general-profile = General profile
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.provider-profile = Provider profile
+master.menu.user-account.customer-profile = Customer profile
+master.menu.user-account.become-customer= Become a customer
 master.menu.user-account.become-consumer = Become a consumer
 master.menu.user-account.consumer-profile = Consumer profile
 
@@ -62,3 +69,16 @@ master.menu.user-account.consumer-profile = Consumer profile
  master.menu.flight-crew-member = Flight Crew Member
  master.menu.flight-crew-member.flight-assignment.completedlist = List Flight Assignaments with completed legs
  master.menu.flight-crew-member.flight-assignment.plannedlist = List Flight Assignaments with planned legs
+
+ # master.menu.booking #################################################################
+ 
+ master.menu.booking.create = Create booking
+ 
+  # master.menu.passenger #################################################################
+ 
+ master.menu.passenger.create = Create passenger
+ 
+ # Actions
+ 
+ master.menu.list = List
+ master.menu.create = Create
