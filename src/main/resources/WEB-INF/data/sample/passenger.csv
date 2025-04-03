@@ -1,45 +1,45 @@
-key,fullName,email,passportNumber,dateOfBirth,specialNeeds
+key,fullName,email,passportNumber,dateOfBirth,specialNeeds,draftMode,key:customer
 #BaseEntity
-passenger-00,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Sin necesidades
+passenger-00,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Sin necesidades,true,customer-01
 #fullName
-passenger-01,L,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Sin necesidades
-passenger-02,Lo,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Sin necesidades
-passenger-03,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Sin necesidades
-passenger-04,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Sin necesidades
-passenger-05,โลเร็ม อิปซัม,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Sin necesidades
-passenger-06,لوريم إيبسوم,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Sin necesidades
-passenger-07,洛伦·伊普森,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Sin necesidades
-passenger-08,<marquee>Hacked</marquee>,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Sin necesidades
-passenger-09,<script>alert(‘Hacked!’);</script>,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Sin necesidades
-passenger-10,' or 'A' = 'A ,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Sin necesidades
+passenger-01,L,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Sin necesidades,true,customer-01
+passenger-02,Lo,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Sin necesidades,true,customer-01
+passenger-03,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Sin necesidades,true,customer-01
+passenger-04,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Sin necesidades,true,customer-01
+passenger-05,โลเร็ม อิปซัม,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Sin necesidades,true,customer-01
+passenger-06,لوريم إيبسوم,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Sin necesidades,true,customer-01
+passenger-07,洛伦·伊普森,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Sin necesidades,true,customer-01
+passenger-08,<marquee>Hacked</marquee>,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Sin necesidades,true,customer-01
+passenger-09,<script>alert(‘Hacked!’);</script>,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Sin necesidades,true,customer-01
+passenger-10,' or 'A' = 'A ,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Sin necesidades,true,customer-01
 #email
-passenger-11,Kareem Abdul-Jabbar,acme@lorem-ipsum.org,A1B2C3,2000/03/12 10:30,Sin necesidades
-passenger-12,Kareem Abdul-Jabbar,a@b.e,A1B2C3,2000/03/12 10:30,Sin necesidades
-passenger-13,Kareem Abdul-Jabbar,a@b.es,A1B2C3,2000/03/12 10:30,Sin necesidades
-passenger-14,Kareem Abdul-Jabbar,a@b.esx,A1B2C3,2000/03/12 10:30,Sin necesidades
-passenger-15,Kareem Abdul-Jabbar,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.doloris.edu,A1B2C3,2000/03/12 10:30,Sin necesidades
-passenger-16,Kareem Abdul-Jabbar,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.es.org,A1B2C3,2000/03/12 10:30,Sin necesidades
+passenger-11,Kareem Abdul-Jabbar,acme@lorem-ipsum.org,A1B2C3,2000/03/12 10:30,Sin necesidades,true,customer-01
+passenger-12,Kareem Abdul-Jabbar,a@b.e,A1B2C3,2000/03/12 10:30,Sin necesidades,true,customer-01
+passenger-13,Kareem Abdul-Jabbar,a@b.es,A1B2C3,2000/03/12 10:30,Sin necesidades,true,customer-01
+passenger-14,Kareem Abdul-Jabbar,a@b.esx,A1B2C3,2000/03/12 10:30,Sin necesidades,true,customer-01
+passenger-15,Kareem Abdul-Jabbar,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.doloris.edu,A1B2C3,2000/03/12 10:30,Sin necesidades,true,customer-01
+passenger-16,Kareem Abdul-Jabbar,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.es.org,A1B2C3,2000/03/12 10:30,Sin necesidades,true,customer-01
 #passportNumber
-passenger-17,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Sin necesidades
-passenger-18,Kareem Abdul-Jabbar,kareemAJ@acme.com,X9Y8Z7W,2000/03/12 10:30,Sin necesidades
-passenger-19,Kareem Abdul-Jabbar,kareemAJ@acme.com,QWERTY12,2000/03/12 10:30,Sin necesidades
-passenger-20,Kareem Abdul-Jabbar,kareemAJ@acme.com,ZXCVBNM12,2000/03/12 10:30,Sin necesidades
+passenger-17,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Sin necesidades,true,customer-01
+passenger-18,Kareem Abdul-Jabbar,kareemAJ@acme.com,X9Y8Z7W,2000/03/12 10:30,Sin necesidades,true,customer-01
+passenger-19,Kareem Abdul-Jabbar,kareemAJ@acme.com,QWERTY12,2000/03/12 10:30,Sin necesidades,true,customer-01
+passenger-20,Kareem Abdul-Jabbar,kareemAJ@acme.com,ZXCVBNM12,2000/03/12 10:30,Sin necesidades,true,customer-01
 #dateOfBirth
-passenger-21,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/01/01 00:00,Sin necesidades
-passenger-22,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/01/01 00:01,Sin necesidades
-passenger-23,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2024/12/31 23:59,Sin necesidades
-passenger-24,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2025/01/01 00:00,Sin necesidades
-passenger-25,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2004/02/14 22:30,Sin necesidades
+passenger-21,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/01/01 00:00,Sin necesidades,true,customer-01
+passenger-22,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/01/01 00:01,Sin necesidades,true,customer-01
+passenger-23,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2024/12/31 23:59,Sin necesidades,true,customer-01
+passenger-24,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2025/01/01 00:00,Sin necesidades,true,customer-01
+passenger-25,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2004/02/14 22:30,Sin necesidades,true,customer-01
 #specialNeeds
-passenger-26,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Lorem ipsum dolor sit amet
-passenger-27,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,
-passenger-28,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,null
-passenger-29,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,L
-passenger-30,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Lorem ipsum dolor sit amet consectetur adipiscin
-passenger-31,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Lorem ipsum dolor sit amet consectetur adipiscing
-passenger-32,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,โลเร็ม อิปซัม
-passenger-33,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,洛伦·伊普森
-passenger-34,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,لوريم إيبسوم
-passenger-35,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,<marquee>Hacked</marquee>
-passenger-36,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,<script>alert(‘Hacked!’);</script>
-passenger-37,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,' or 'A' = 'A
+passenger-26,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Lorem ipsum dolor sit amet,true,customer-01
+passenger-27,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,,true,customer-01
+passenger-28,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,null,true,customer-01
+passenger-29,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,L,true,customer-01
+passenger-30,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Lorem ipsum dolor sit amet consectetur adipiscin,true,customer-02
+passenger-31,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,Lorem ipsum dolor sit amet consectetur adipiscing,true,customer-02
+passenger-32,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,โลเร็ม อิปซัม,true,customer-02
+passenger-33,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,洛伦·伊普森,true,customer-01
+passenger-34,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,لوريم إيبسوم,true,customer-01
+passenger-35,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,<marquee>Hacked</marquee>,true,customer-01
+passenger-36,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,<script>alert(‘Hacked!’);</script>,true,customer-01
+passenger-37,Kareem Abdul-Jabbar,kareemAJ@acme.com,A1B2C3,2000/03/12 10:30,' or 'A' = 'A,true,customer-01
