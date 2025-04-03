@@ -1,30 +1,30 @@
-key,type,priority,estimatedDuration,description,key:technician
-task-01,MAINTENANCE,5,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01
+key,type,priority,estimatedDuration,description,key:technician,draftMode
+task-01,MAINTENANCE,5,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,false
 #type
-task-02,INSPECTION,5,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01
-task-03,REPAIR,5,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01
-task-04,SYSTEM_CHECK,5,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01
+task-02,INSPECTION,5,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,false
+task-03,REPAIR,5,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,false
+task-04,SYSTEM_CHECK,5,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,false
 #priority
-task-05,MAINTENANCE,0,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01
-task-06,MAINTENANCE,1,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01
-task-07,MAINTENANCE,10,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01
-task-08,MAINTENANCE,9,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01
+task-05,MAINTENANCE,0,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,false
+task-06,MAINTENANCE,1,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,false
+task-07,MAINTENANCE,10,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,false
+task-08,MAINTENANCE,9,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,false
 #estimatedDuration
-task-09,MAINTENANCE,5,0,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01
-task-10,MAINTENANCE,5,1,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01
-task-11,MAINTENANCE,5,999,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01
-task-12,MAINTENANCE,5,1000,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01
+task-09,MAINTENANCE,5,0,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,false
+task-10,MAINTENANCE,5,1,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,false
+task-11,MAINTENANCE,5,999,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,false
+task-12,MAINTENANCE,5,1000,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-01,false
 #description
-task-13,MAINTENANCE,5,500,L,technician-01
-task-14,MAINTENANCE,5,500,Lo,technician-01
-task-15,MAINTENANCE,5,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,technician-01
-task-16,MAINTENANCE,5,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,technician-01
-task-17,MAINTENANCE,5,500,โลเร็ม อิปซัม,technician-01
-task-18,MAINTENANCE,5,500,لوريم إيبسوم,technician-01
-task-19,MAINTENANCE,5,500,洛伦·伊普森,technician-01
-task-20,MAINTENANCE,5,500,<marquee>Hacked</marquee>,technician-01
-task-21,MAINTENANCE,5,500,<script>alert(‘Hacked!’);</script>,technician-01
-task-22,MAINTENANCE,5,500,' or 'A' = 'A ,technician-01
+task-13,MAINTENANCE,5,500,L,technician-01,false
+task-14,MAINTENANCE,5,500,Lo,technician-01,false
+task-15,MAINTENANCE,5,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,technician-01,false
+task-16,MAINTENANCE,5,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,technician-01,false
+task-17,MAINTENANCE,5,500,โลเร็ม อิปซัม,technician-01,false
+task-18,MAINTENANCE,5,500,لوريم إيبسوم,technician-01,false
+task-19,MAINTENANCE,5,500,洛伦·伊普森,technician-01,false
+task-20,MAINTENANCE,5,500,<marquee>Hacked</marquee>,technician-01,false
+task-21,MAINTENANCE,5,500,<script>alert(‘Hacked!’);</script>,technician-01,false
+task-22,MAINTENANCE,5,500,' or 'A' = 'A ,technician-01,false
 #key:technician
-task-23,MAINTENANCE,5,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-02
-task-24,MAINTENANCE,5,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-03
+task-23,MAINTENANCE,5,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-02,false
+task-24,MAINTENANCE,5,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,technician-02,false

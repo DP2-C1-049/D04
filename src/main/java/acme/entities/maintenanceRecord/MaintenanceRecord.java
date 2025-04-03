@@ -55,6 +55,10 @@ public class MaintenanceRecord extends AbstractEntity {
 	private String					notes;
 
 	@Mandatory
+	@Automapped
+	private boolean					draftMode;
+
+	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
 	private Aircraft				aircraft;
