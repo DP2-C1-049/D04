@@ -1,10 +1,10 @@
 key,name,picture,averageDwellTime,promotionCode,money
 #name
-Service-01,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,10.00,AABB-25,EUR 50.00
-Service-02,L,http://lorem.com/ipsum,10.00,AACC-25,EUR 50.00
-Service-03,Lo,http://lorem.com/ipsum,10.00,AADD-25,EUR 50.00
-Service-04,"Lorem ipsum dolor sit amet. consectetur adipiscin",http://lorem.com/ipsum,10.00,AAEE-25,EUR 50.00
-Service-05,"Lorem ipsum dolor sit amet. consectetur adipiscing",http://lorem.com/ipsum,10.00,AAFF-25,EUR 50.00
+Service-01,Lorem ipsum dolor sit ameno,https://www.saint-maurice-en-riviere.fr/static/23d9af09fc742f1435a6e1447057dc24/service.jpeg,10.00,AABB-25,EUR 50.00
+Service-02,Loren,https://www.metakomm.de/wp-content/uploads/2016/08/shared-sercices-2.jpg,10.00,AACC-25,EUR 50.00
+Service-03,Lobato,https://t3.ftcdn.net/jpg/01/81/62/38/360_F_181623832_Qp9u4T2PIkTP2qXwuOYpilYCM0dxXYmo.jpg,10.00,AADD-25,EUR 50.00
+Service-04,"Lorem ipsum dolor sit ametinso.",https://th.bing.com/th/id/R.bc467e12a3923329b2d2f3034cc5d8ff?rik=8Om1nGi8z7t2MA&riu=http%3a%2f%2fd2dcouriers.co.za%2fwp-content%2fuploads%2f2015%2f02%2f21023513_s.jpg&ehk=edZ7qpOTCEWOPXpDggoT7hVNwfRrsWkQ45LVjLLpitg%3d&risl=&pid=ImgRaw&r=0,10.00,AAEE-25,EUR 50.00
+Service-05,"Lorem ipsum dolor sit amet.",https://image.shutterstock.com/image-illustration/3d-figures-word-service-on-260nw-1345163555.jpg,10.00,AAFF-25,EUR 50.00
 Service-06,โลเร็ม อิปซัม,http://lorem.com/ipsum,10.00,AAGG-25,EUR 50.00
 Service-07,<script>alert(‘Hacked!’);</script>,http://lorem.com/ipsum,10.00,AAHH-25,EUR 50.00
 Service-08,' or 'A' = 'A,http://lorem.com/ipsum,10.00,AAII-25,EUR 50.00
