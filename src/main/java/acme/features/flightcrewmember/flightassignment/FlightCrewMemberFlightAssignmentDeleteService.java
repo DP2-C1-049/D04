@@ -27,55 +27,58 @@ public class FlightCrewMemberFlightAssignmentDeleteService extends AbstractGuiSe
 
 	@Override
 	public void authorise() {
-		int flightAssignmentId = super.getRequest().getData("id", int.class);
-		FlightAssignment flightAssignment = this.repository.findFlightAssignmentById(flightAssignmentId);
+		int assignmentId = super.getRequest().getData("id", int.class);
 
-		super.getResponse().setAuthorised(flightAssignment != null && flightAssignment.isDraftMode());
+		FlightAssignment assignment = this.repository.findFlightAssignmentById(assignmentId);
+		int flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		boolean authorised1 = this.repository.existsFlightCrewMember(flightCrewMemberId);
+		boolean authorised = authorised1 && this.repository.thatFlightAssignmentIsOf(assignmentId, flightCrewMemberId);
+		super.getResponse().setAuthorised(assignment != null && assignment.isDraftMode() && authorised);
 	}
 
 	@Override
 	public void load() {
-		FlightAssignment flightAssignment = new FlightAssignment();
-		flightAssignment.setDraftMode(true);
-		super.getBuffer().addData(flightAssignment);
+		FlightAssignment assignment = new FlightAssignment();
+		assignment.setDraftMode(true);
+		super.getBuffer().addData(assignment);
 	}
 
 	@Override
-	public void bind(final FlightAssignment flightAssignment) {
+	public void bind(final FlightAssignment assignment) {
 		int legId = super.getRequest().getData("leg", int.class);
 		Leg leg = this.repository.findLegById(legId);
 
 		int flightCrewMemberId = super.getRequest().getData("flightCrewMember", int.class);
 		FlightCrewMember flightCrewMember = this.repository.findFlightCrewMemberById(flightCrewMemberId);
 
-		super.bindObject(flightAssignment, "duty", "moment", "currentStatus", "remarks");
-		flightAssignment.setLeg(leg);
-		flightAssignment.setFlightCrewMember(flightCrewMember);
+		super.bindObject(assignment, "duty", "moment", "currentStatus", "remarks");
+		assignment.setLeg(leg);
+		assignment.setFlightCrewMember(flightCrewMember);
 	}
 
 	@Override
-	public void validate(final FlightAssignment flightAssignment) {
+	public void validate(final FlightAssignment assignment) {
 	}
 
 	@Override
-	public void perform(final FlightAssignment flightAssignment) {
-		Collection<ActivityLog> activityLogs = this.repository.findActivityLogsByFlightAssignmentId(flightAssignment.getId());
+	public void perform(final FlightAssignment assignment) {
+		Collection<ActivityLog> activityLogs = this.repository.findActivityLogsByFlightAssignmentId(assignment.getId());
 		this.repository.deleteAll(activityLogs);
-		this.repository.delete(flightAssignment);
+		this.repository.delete(assignment);
 	}
 
 	@Override
-	public void unbind(final FlightAssignment flightAssignment) {
-		SelectChoices currentStatus = SelectChoices.from(CurrentStatus.class, flightAssignment.getCurrentStatus());
-		SelectChoices duty = SelectChoices.from(Duty.class, flightAssignment.getDuty());
+	public void unbind(final FlightAssignment assignment) {
+		SelectChoices currentStatus = SelectChoices.from(CurrentStatus.class, assignment.getCurrentStatus());
+		SelectChoices duty = SelectChoices.from(Duty.class, assignment.getDuty());
 
 		Collection<Leg> legs = this.repository.findAllLegs();
-		SelectChoices legChoices = SelectChoices.from(legs, "flightNumber", flightAssignment.getLeg());
+		SelectChoices legChoices = SelectChoices.from(legs, "flightNumber", assignment.getLeg());
 
 		Collection<FlightCrewMember> flightCrewMembers = this.repository.findFlightCrewMembersByAvailability(AvailabilityStatus.AVAILABLE);
-		SelectChoices flightCrewMemberChoices = SelectChoices.from(flightCrewMembers, "employeeCode", flightAssignment.getFlightCrewMember());
+		SelectChoices flightCrewMemberChoices = SelectChoices.from(flightCrewMembers, "employeeCode", assignment.getFlightCrewMember());
 
-		Dataset dataset = super.unbindObject(flightAssignment, "duty", "moment", "currentStatus", "remarks", "draftMode");
+		Dataset dataset = super.unbindObject(assignment, "duty", "moment", "currentStatus", "remarks", "draftMode");
 		dataset.put("confirmation", false);
 		dataset.put("readonly", false);
 		dataset.put("moment", MomentHelper.getBaseMoment());

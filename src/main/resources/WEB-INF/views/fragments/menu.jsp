@@ -54,7 +54,7 @@
 		</acme:menu-option>
 	</acme:menu-left>
 
-	<acme:menu-right>		
+	<acme:menu-left>		
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.user-account.general-profile" action="/authenticated/user-account/update"/>
 			<acme:menu-suboption code="master.menu.user-account.become-provider" action="/authenticated/provider/create" access="!hasRealm('Provider')"/>
@@ -66,6 +66,6 @@
  			<acme:menu-suboption code="master.menu.flight-crew-member.flight-assignment.completedlist" action="/flight-crew-member/flight-assignment/completed-list"/>
  			<acme:menu-suboption code="master.menu.flight-crew-member.flight-assignment.plannedlist" action="/flight-crew-member/flight-assignment/planned-list"/>
  		</acme:menu-option>
-	</acme:menu-right>
+	</acme:menu-left>
 </acme:menu-bar>
 
