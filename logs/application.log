@@ -1,3 +1,0 @@
-2025-04-01 02:27:40.763684 INFO  acme.Launcher@main Starting Launcher using Java 21.0.4 on Coco with PID 124876 (C:\Users\SamuDP2\Desktop\Workspace-25\Frameworks\Acme-Framework-25.3.0\target\classes started by SamuDP2 in C:\Users\SamuDP2\Desktop\Workspace-25\Projects\Acme-ANS-D03) 
-2025-04-01 02:27:40.765687500 DEBUG acme.Launcher@main Running with Spring Boot v2.7.18, Spring v5.3.31 
-2025-04-01 02:27:40.766683500 INFO  acme.Launcher@main The following 3 profiles are active: "development", "application", "application#run" 
