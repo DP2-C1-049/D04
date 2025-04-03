@@ -1,0 +1,14 @@
+technician.involves.form.title = Involved In Form
+technician.involves.list.title = Listing of Involved In
+
+technician.involves.form.label.task = Task
+technician.involves.form.label.priority = Priority
+technician.involves.form.label.technician = License number of Technician
+
+technician.involves.form.button.create = Create
+technician.involves.form.button.delete = Delete
+
+technician.involves.list.label.task = Task
+technician.involves.list.label.priority = Priority
+
+technician.involves.list.button.create = Create

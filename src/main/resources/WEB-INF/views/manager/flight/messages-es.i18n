@@ -1,0 +1,47 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2025 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+manager.flight.list.title = Listado de tus Vuelos
+
+manager.flight.form.title = Detalles del vuelo
+
+manager.flight.form.label.tag = Etiqueta
+manager.flight.form.label.indication = Necesita Auto-transferencia
+manager.flight.form.label.cost = Coste
+manager.flight.form.label.description = Descripción
+manager.flight.form.label.departure = Salida
+manager.flight.form.label.arrival = Llegada
+manager.flight.form.label.draftMode = Modo borrador
+manager.flight.form.label.confirmation = Confirmar
+
+manager.flight.list.label.tag = Etiqueta
+manager.flight.list.label.indication = Necesita Auto-transferencia
+manager.flight.list.label.cost = Coste
+manager.flight.list.label.description = Descripción
+manager.flight.list.label.departure = Salida
+manager.flight.list.label.arrival = Llegada
+manager.flight.list.label.originCity = Origen 
+manager.flight.list.label.destinationCity= Destino
+
+master.menu.flight.list = Lista de vuelos
+master.menu.flight.create = Crear vuelos
+master.menu.flight = Vuelos
+
+button.create.flight = Crear
+
+manager.flight.form.button.create = Registrar
+manager.flight.form.button.update = Actualizar
+manager.flight.form.button.publish = Publicar
+manager.flight.form.button.delete = Borrar
+
+manager.flight.form.error.duplicateTag = Ya existe esa etiqueta
+manager.flight.form.error.invalidCost = Coste no válido
+flight.publish.error.unpublishedLegs = Este vuelo tiene tramos no publicados
+flight.publish.error.noLegs = Un vuelo necesita tramos para ser publicado
