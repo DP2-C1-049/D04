@@ -31,6 +31,8 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.list-airports" action="/administrator/airport/list"/>
 			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.aircraft.list" action="/administrator/aircraft/list"/>
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.populate-db-initial" action="/administrator/system/populate-initial"/>
 			<acme:menu-suboption code="master.menu.administrator.populate-db-sample" action="/administrator/system/populate-sample"/>			
 			<acme:menu-separator/>
@@ -45,12 +47,19 @@
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
 		
+
 		<acme:menu-option code="master.menu.manager" access="hasRealm('Manager')">
 			<acme:menu-suboption code="master.menu.manager.list-flights" action="/manager/flight/list"/>
+
+		<acme:menu-option code="master.menu.technician" access="hasRealm('Technician')">
+			<acme:menu-suboption code="master.menu.maintenanceRecord.list" action="/technician/maintenance-record/list"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.task.list" action="/technician/task/list"/>
+
 		</acme:menu-option>
 	</acme:menu-left>
 
-	<acme:menu-right>		
+	<acme:menu-left>		
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.user-account.general-profile" action="/authenticated/user-account/update"/>
 			<acme:menu-suboption code="master.menu.user-account.become-provider" action="/authenticated/provider/create" access="!hasRealm('Provider')"/>
@@ -62,6 +71,6 @@
  			<acme:menu-suboption code="master.menu.flight-crew-member.flight-assignment.completedlist" action="/flight-crew-member/flight-assignment/completed-list"/>
  			<acme:menu-suboption code="master.menu.flight-crew-member.flight-assignment.plannedlist" action="/flight-crew-member/flight-assignment/planned-list"/>
  		</acme:menu-option>
-	</acme:menu-right>
+	</acme:menu-left>
 </acme:menu-bar>
 
