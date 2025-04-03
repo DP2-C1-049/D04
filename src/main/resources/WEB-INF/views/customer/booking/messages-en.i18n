@@ -8,7 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-customer.booking.form.title = Details of booking
+customer.booking.form.title = Create or update booking
 customer.booking.list.title = List of bookings
 
 customer.booking.form.button.create = Create 

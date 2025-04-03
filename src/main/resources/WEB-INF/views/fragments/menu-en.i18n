@@ -58,3 +58,16 @@ master.menu.user-account.consumer-profile = Consumer profile
  master.menu.flight-crew-member = Flight Crew Member
  master.menu.flight-crew-member.flight-assignment.completedlist = List Flight Assignaments with completed legs
  master.menu.flight-crew-member.flight-assignment.plannedlist = List Flight Assignaments with planned legs
+
+ # master.menu.booking #################################################################
+ 
+ master.menu.booking.create = Create booking
+ 
+  # master.menu.passenger #################################################################
+ 
+ master.menu.passenger.create = Create passenger
+ 
+ # Actions
+ 
+ master.menu.list = List
+ master.menu.create = Create
