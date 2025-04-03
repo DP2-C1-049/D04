@@ -53,15 +53,19 @@ public class Flight extends AbstractEntity {
 	@ManyToOne(optional = false)
 	private Manager				manager;
 
+	@Mandatory
+	@Automapped
+	private boolean				draftMode;
+
 
 	@Transient
-	public Date getScheduledDeparture() {
+	public Date getDeparture() {
 		LegRepository repository = SpringHelper.getBean(LegRepository.class);
 		return repository.findFirstDeparture(this.getId()).orElse(null);
 	}
 
 	@Transient
-	public Date getScheduledArrival() {
+	public Date getArrival() {
 		LegRepository repository = SpringHelper.getBean(LegRepository.class);
 		return repository.findLastArrival(this.getId()).orElse(null);
 	}

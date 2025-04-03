@@ -1,8 +1,6 @@
 
 package acme.features.manager.flight;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
@@ -12,7 +10,7 @@ import acme.entities.flight.Flight;
 import acme.realms.Manager;
 
 @GuiService
-public class ManagerFlightListService extends AbstractGuiService<Manager, Flight> {
+public class ManagerFlightShowService extends AbstractGuiService<Manager, Flight> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -24,14 +22,24 @@ public class ManagerFlightListService extends AbstractGuiService<Manager, Flight
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean isManager;
+		int flightId;
+		Flight flight;
+		flightId = super.getRequest().getData("id", int.class);
+		flight = this.repository.findById(flightId);
+		if (flight != null) {
+			int managerId = super.getRequest().getPrincipal().getActiveRealm().getId();
+			isManager = flight.getManager().getId() == managerId;
+		} else
+			isManager = false;
+		super.getResponse().setAuthorised(isManager);
 	}
 
 	@Override
 	public void load() {
-		int managerId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		Collection<Flight> flights = this.repository.findFlightsByManagerId(managerId);
-		super.getBuffer().addData(flights);
+		int id = super.getRequest().getData("id", int.class);
+		Flight flight = this.repository.findById(id);
+		super.getBuffer().addData(flight);
 	}
 
 	@Override
@@ -42,6 +50,7 @@ public class ManagerFlightListService extends AbstractGuiService<Manager, Flight
 		dataset.put("originCity", flight.getOriginCity());
 		dataset.put("destinationCity", flight.getDestinationCity());
 		dataset.put("numberOfLayovers", flight.getNumberOfLayovers());
+		dataset.put("draftMode", flight.isDraftMode());
 		super.getResponse().addData(dataset);
 	}
 }
