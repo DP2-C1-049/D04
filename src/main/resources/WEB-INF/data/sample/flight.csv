@@ -2,15 +2,15 @@ key,tag,indication,cost,description,key:manager,draftMode
 flight-00,Standard Flight,True,USD 500.00,Standard commercial flight,manager-01,true
 #tag
 flight-01,The Fastest Route,True,USD 500.00,Standard commercial flight,manager-01,true
-flight-02,The Cheapest Option,True,USD 500.00,Standard commercial flight,manager-01,true
+flight-02,The Cheapest Option,True,USD 500.00,Standard commercial flight,manager-01,false
 flight-03,Non-Stop Flight,True,USD 500.00,Standard commercial flight,manager-01,true
 flight-04,Luxury Experience,True,USD 500.00,Standard commercial flight,manager-01,true
-flight-05,Business Class Deal,True,USD 500.00,Standard commercial flight,manager-01,true
+flight-05,Business Class Deal,True,USD 500.00,Standard commercial flight,manager-01,false
 flight-06,Scenic Mountain View,True,USD 500.00,Standard commercial flight,manager-01,true
 flight-07,Economy with Free Meal,True,USD 500.00,Standard commercial flight,manager-01,true
 flight-08,Shortest Duration,True,USD 500.00,Standard commercial flight,manager-01,true
 flight-09,Best Price Guaranteed,True,USD 500.00,Standard commercial flight,manager-01,true
-flight-10,Extra Baggage Included,True,USD 500.00,Standard commercial flight,manager-01,true
+flight-10,Extra Baggage Included,True,USD 500.00,Standard commercial flight,manager-01,false
 #indication
 flight-11,Standard Flight,False,USD 500.00,Standard commercial flight,manager-01,true
 #cost
