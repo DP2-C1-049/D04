@@ -4,10 +4,10 @@ booking-00,ABC123,2012/06/24 14:30,ECONOMY,EUR 500000.00,1234,customer-01,flight
 booking-01,X9Y8Z7W,2012/06/24 14:30,ECONOMY,EUR 500000.00,1234,customer-01,flight-01,true
 booking-02,QWERTY12,2012/06/24 14:30,ECONOMY,EUR 500000.00,1234,customer-01,flight-01,true
 #purchaseMoment
-booking-03,ABC121,2000/01/01 00:00,ECONOMY,EUR 500000.00,1234,customer-01,flight-01,true
+booking-03,ABC121,2000/01/01 00:00,ECONOMY,EUR 500000.00,1234,customer-01,flight-01,false
 booking-04,ABC122,2000/01/01 00:01,ECONOMY,EUR 500000.00,1234,customer-01,flight-01,true
 booking-05,ABC124,2024/12/31 23:59,ECONOMY,EUR 500000.00,1234,customer-01,flight-01,true
-booking-06,ABC125,2025/01/01 00:00,ECONOMY,EUR 500000.00,1234,customer-01,flight-01,true
+booking-06,ABC125,2025/01/01 00:00,ECONOMY,EUR 500000.00,1234,customer-01,flight-01,false
 #travelClass
 booking-07,ABC126,2012/06/24 14:30,BUSINESS,EUR 500000.00,1234,customer-01,flight-01,true
 #price

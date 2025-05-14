@@ -4,6 +4,7 @@ package acme.features.customer.booking;
 import java.util.Collection;
 
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
@@ -27,4 +28,8 @@ public interface CustomerBookingRepository extends AbstractRepository {
 
 	@Query("select f from Flight f where f.draftMode = false")
 	Collection<Flight> findAllPublishedFlights();
+
+	@Query("select count(br) from BookingRecord br where br.booking.id = :bookingId")
+	Integer countPassengersInBooking(@Param("bookingId") int bookingId);
+
 }
