@@ -19,7 +19,7 @@ booking-11,ABC130,2012/06/24 14:30,ECONOMY,EUR 999999.99,1234,customer-01,flight
 booking-12,ABC131,2012/06/24 14:30,ECONOMY,EUR 500000.00,4321,customer-01,flight-01,true
 booking-13,ABC132,2012/06/24 14:30,ECONOMY,EUR 500000.00,null,customer-01,flight-01,true
 #key:customers
-booking-14,ABC133,2012/06/24 14:30,ECONOMY,EUR 500000.00,1234,customer-02,flight-01,true
+booking-14,ABC133,2012/06/24 14:30,ECONOMY,EUR 500000.00,1234,customer-02,flight-01,false
 booking-15,ABC134,2012/06/24 14:30,ECONOMY,EUR 500000.00,1234,customer-02,flight-01,true
 booking-16,ABC135,2012/06/24 14:30,ECONOMY,EUR 500000.00,1234,customer-02,flight-01,true
 #key:flight
