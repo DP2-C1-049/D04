@@ -24,16 +24,18 @@ public class FlightCrewMemberActivityLogListService extends AbstractGuiService<F
 	public void authorise() {
 		boolean status;
 		int masterId;
-		FlightAssignment flightAssignment;
+		FlightAssignment assignment;
 
 		masterId = super.getRequest().getData("masterId", int.class);
-		flightAssignment = this.repository.findFlightAssignmentById(masterId);
+		assignment = this.repository.findFlightAssignmentById(masterId);
 
 		int flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
 		boolean authorised = this.repository.existsFlightCrewMember(flightCrewMemberId);
 
-		status = authorised && flightAssignment != null;
-		super.getResponse().setAuthorised(status);
+		status = authorised && assignment != null;
+		boolean ownsIt = assignment.getFlightCrewMember().getId() == flightCrewMemberId;
+
+		super.getResponse().setAuthorised(status && ownsIt);
 	}
 
 	@Override
@@ -56,24 +58,17 @@ public class FlightCrewMemberActivityLogListService extends AbstractGuiService<F
 		dataset = super.unbindObject(activityLog, "registrationMoment", "typeOfIncident", "description", "severityLevel");
 		super.addPayload(dataset, activityLog, "registrationMoment", "typeOfIncident");
 
-		super.getResponse().addData(dataset);
-
-	}
-
-	@Override
-	public void unbind(final Collection<ActivityLog> activityLog) {
 		int masterId;
 
-		final boolean showCreate;
+		boolean showCreate;
 
 		masterId = super.getRequest().getData("masterId", int.class);
 
-		System.out.println("El masterId es: " + masterId + " de la Assignment= " + this.repository.isFlightAssignmentAlreadyPublishedById(masterId));
-		System.out.flush();
-		showCreate = this.repository.associatedWithCompletedLeg(masterId, MomentHelper.getCurrentMoment());
+		showCreate = this.repository.flightAssignmentAssociatedWithCompletedLeg(masterId, MomentHelper.getCurrentMoment());
 
 		super.getResponse().addGlobal("masterId", masterId);
 		super.getResponse().addGlobal("showCreate", showCreate);
+		super.getResponse().addData(dataset);
 
 	}
 

@@ -2,6 +2,7 @@
 package acme.features.flightcrewmember.flightassignment;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -34,7 +35,9 @@ public class FlightCrewMemberFlightAssignmentPublishService extends AbstractGuiS
 		boolean authorised1 = this.repository.existsFlightCrewMember(flightCrewMemberId);
 		assignment = this.repository.findFlightAssignmentById(assignmentId);
 		status = authorised1 && authorised && assignment.isDraftMode() && MomentHelper.isFuture(assignment.getLeg().getArrival());
-		super.getResponse().setAuthorised(status);
+		boolean ownsIt = assignment.getFlightCrewMember().getId() == flightCrewMemberId;
+
+		super.getResponse().setAuthorised(status && ownsIt);
 	}
 
 	@Override
@@ -143,7 +146,14 @@ public class FlightCrewMemberFlightAssignmentPublishService extends AbstractGuiS
 
 		Collection<Leg> legs;
 		SelectChoices legChoices;
+		boolean isCompleted;
+		int flightAssignmentId;
 
+		flightAssignmentId = super.getRequest().getData("id", int.class);
+
+		Date currentMoment;
+		currentMoment = MomentHelper.getCurrentMoment();
+		isCompleted = this.repository.areLegsCompletedByFlightAssignment(flightAssignmentId, currentMoment);
 		Collection<FlightCrewMember> flightCrewMembers;
 		SelectChoices flightCrewMemberChoices;
 		Dataset dataset;
@@ -167,6 +177,7 @@ public class FlightCrewMemberFlightAssignmentPublishService extends AbstractGuiS
 		dataset.put("legs", legChoices);
 		dataset.put("flightCrewMember", flightCrewMemberChoices.getSelected().getKey());
 		dataset.put("flightCrewMembers", flightCrewMemberChoices);
+		dataset.put("isCompleted", isCompleted);
 
 		super.getResponse().addData(dataset);
 	}

@@ -32,8 +32,15 @@ public class FlightCrewMemberActivityLogUpdateService extends AbstractGuiService
 		boolean authorised = authorised1 && this.repository.thatActivityLogIsOf(activityLogId, flightCrewMemberId);
 
 		status = authorised && activityLog != null && activityLog.isDraftMode();
+		int masterId;
+		FlightAssignment assignment;
 
-		super.getResponse().setAuthorised(status);
+		masterId = super.getRequest().getData("masterId", int.class);
+		assignment = this.repository.findFlightAssignmentById(masterId);
+
+		boolean ownsIt = assignment.getFlightCrewMember().getId() == flightCrewMemberId;
+
+		super.getResponse().setAuthorised(status && ownsIt);
 	}
 
 	@Override
@@ -85,7 +92,6 @@ public class FlightCrewMemberActivityLogUpdateService extends AbstractGuiService
 		dataset.put("masterId", flightAssignment.getId());
 		dataset.put("draftMode", activityLog.isDraftMode());
 		dataset.put("readonly", false);
-		System.out.println("Soy update, el activity log tiene draftMode? " + activityLog.isDraftMode() + " y el flightAssignment? " + flightAssignment.isDraftMode());
 		dataset.put("masterDraftMode", flightAssignment.isDraftMode());
 		super.getResponse().addData(dataset);
 	}

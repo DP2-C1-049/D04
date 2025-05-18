@@ -2,6 +2,7 @@
 package acme.features.flightcrewmember.flightassignment;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -30,8 +31,9 @@ public class FlightCrewMemberFlightAssignmentUpdateService extends AbstractGuiSe
 		int flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
 		boolean authorised1 = this.repository.existsFlightCrewMember(flightCrewMemberId);
 		boolean authorised = authorised1 && this.repository.thatFlightAssignmentIsOf(assignmentId, flightCrewMemberId);
+		boolean ownsIt = assignment.getFlightCrewMember().getId() == flightCrewMemberId;
 
-		super.getResponse().setAuthorised(authorised && assignment != null && assignment.isDraftMode());
+		super.getResponse().setAuthorised(authorised && assignment != null && assignment.isDraftMode() && ownsIt);
 	}
 
 	@Override
@@ -106,6 +108,14 @@ public class FlightCrewMemberFlightAssignmentUpdateService extends AbstractGuiSe
 		Collection<Leg> legs = this.repository.findAllLegs();
 		Collection<FlightCrewMember> flightCrewMembers = this.repository.findFlightCrewMembersByAvailability(AvailabilityStatus.AVAILABLE);
 
+		boolean isCompleted;
+		int flightAssignmentId;
+
+		flightAssignmentId = super.getRequest().getData("id", int.class);
+
+		Date currentMoment;
+		currentMoment = MomentHelper.getCurrentMoment();
+		isCompleted = this.repository.areLegsCompletedByFlightAssignment(flightAssignmentId, currentMoment);
 		SelectChoices legChoices = SelectChoices.from(legs, "flightNumber", assignment.getLeg());
 		SelectChoices flightCrewMemberChoices = SelectChoices.from(flightCrewMembers, "employeeCode", assignment.getFlightCrewMember());
 		SelectChoices currentStatus = SelectChoices.from(acme.entities.flightassignment.CurrentStatus.class, assignment.getCurrentStatus());
@@ -121,6 +131,7 @@ public class FlightCrewMemberFlightAssignmentUpdateService extends AbstractGuiSe
 		dataset.put("legs", legChoices);
 		dataset.put("flightCrewMember", flightCrewMemberChoices.getSelected().getKey());
 		dataset.put("flightCrewMembers", flightCrewMemberChoices);
+		dataset.put("isCompleted", isCompleted);
 
 		super.getResponse().addData(dataset);
 	}
