@@ -72,8 +72,7 @@ public class FlightCrewMemberFlightAssignmentCreateService extends AbstractGuiSe
 
 		FlightCrewMember flightCrewMember = assignment.getFlightCrewMember();
 		Leg leg = assignment.getLeg();
-		Boolean confirmation = super.getRequest().getData("confirmation", Boolean.class);
-		super.state(confirmation != null && confirmation, "confirmation", "flight-crew-member.flight-assignament.form.label.confirmation");
+
 		if (flightCrewMember != null && leg != null && this.isLegCompatible(assignment)) {
 			super.state(false, "flightCrewMember", "acme.validation.FlightAssignment.FlightCrewMemberIncompatibleLegs.message");
 			return;
