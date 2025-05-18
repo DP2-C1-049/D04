@@ -12,6 +12,7 @@ import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.booking.Booking;
 import acme.entities.booking.Booking.TravelClass;
+import acme.entities.booking.BookingRecord;
 import acme.entities.flight.Flight;
 import acme.realms.Customer;
 
@@ -24,15 +25,33 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 
 	@Override
 	public void authorise() {
-		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
+		boolean status;
 
-		super.getResponse().setAuthorised(status);
+		try {
+			status = super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
 
-		int customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		int bookingId = super.getRequest().getData("id", int.class);
-		Booking booking = this.repository.getBookingById(bookingId);
+			super.getResponse().setAuthorised(status);
+			if (!super.getRequest().getMethod().equals("POST"))
+				super.getResponse().setAuthorised(false);
+			else {
+				int customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
+				int bookingId = super.getRequest().getData("id", int.class);
+				Booking booking = this.repository.getBookingById(bookingId);
+				Integer flightId = super.getRequest().getData("flight", Integer.class);
+				if (flightId == null)
+					status = false;
+				else if (flightId != 0) {
+					Flight flight = this.repository.getFlightById(flightId);
+					status = status && flight != null && !flight.isDraftMode();
+				}
 
-		super.getResponse().setAuthorised(customerId == booking.getCustomer().getId());
+				status = status && customerId == booking.getCustomer().getId();
+				super.getResponse().setAuthorised(status);
+			}
+		} catch (Throwable t) {
+			super.getResponse().setAuthorised(false);
+		}
+
 	}
 
 	@Override
@@ -54,6 +73,19 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 		Booking existing = this.repository.findBookingByLocator(booking.getLocatorCode());
 		boolean valid = existing == null || existing.getId() == booking.getId();
 		super.state(valid, "locatorCode", "customer.booking.form.error.duplicateLocatorCode");
+
+		Collection<BookingRecord> bookingRecords = this.repository.findAllBookingRecordsByBookingId(booking.getId());
+		valid = !bookingRecords.isEmpty();
+		super.state(valid, "*", "customer.booking.form.error.noPassengers");
+
+		valid = bookingRecords.stream().filter(br -> br.getPassenger().isDraftMode()).findFirst().isEmpty();
+		super.state(valid, "*", "customer.booking.form.error.publishPassengers");
+
+		valid = booking.getFlight() != null;
+		super.state(valid, "flight", "customer.booking.form.error.invalidFlight");
+
+		valid = booking.getLastNibble() != null && !booking.getLastNibble().isBlank();
+		super.state(valid, "lastNibble", "customer.booking.form.error.lastNibbleNeeded");
 	}
 
 	@Override
