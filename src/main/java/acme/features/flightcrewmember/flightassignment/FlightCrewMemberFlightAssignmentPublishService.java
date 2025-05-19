@@ -157,6 +157,7 @@ public class FlightCrewMemberFlightAssignmentPublishService extends AbstractGuiS
 		Collection<FlightCrewMember> flightCrewMembers;
 		SelectChoices flightCrewMemberChoices;
 		Dataset dataset;
+		FlightAssignment fa = this.repository.findFlightAssignmentById(flightAssignmentId);
 
 		legs = this.repository.findAllLegs();
 		flightCrewMembers = this.repository.findFlightCrewMembersByAvailability(AvailabilityStatus.AVAILABLE);
@@ -177,7 +178,8 @@ public class FlightCrewMemberFlightAssignmentPublishService extends AbstractGuiS
 		dataset.put("flightCrewMember", flightCrewMemberChoices.getSelected().getKey());
 		dataset.put("flightCrewMembers", flightCrewMemberChoices);
 		dataset.put("isCompleted", isCompleted);
-		dataset.put("draftMode", assignment.isDraftMode());
+		dataset.put("draftMode", fa.isDraftMode());
+		System.out.println("en draftMode al asignar publish? " + fa.isDraftMode() + " y completed? " + isCompleted);
 
 		super.getResponse().addData(dataset);
 	}
