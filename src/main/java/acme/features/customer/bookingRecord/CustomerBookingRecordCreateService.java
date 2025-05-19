@@ -27,7 +27,7 @@ public class CustomerBookingRecordCreateService extends AbstractGuiService<Custo
 		try {
 			status = super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
 			int customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
-			int bookingId = super.getRequest().getData("bookingId", Integer.class);
+			int bookingId = super.getRequest().getData("bookingId", int.class);
 			Booking booking = this.repository.getBookingById(bookingId);
 			status = status && booking != null && customerId == booking.getCustomer().getId() && booking.isDraftMode();
 
@@ -88,7 +88,7 @@ public class CustomerBookingRecordCreateService extends AbstractGuiService<Custo
 		int customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
 
 		int bookingId = super.getRequest().getData("bookingId", int.class);
-		Collection<Passenger> addedPassengers = this.repository.getPassengersInBooking(bookingId);
+		Collection<Passenger> addedPassengers = this.repository.findAllPassengersByBookingId(bookingId);
 
 		Collection<Passenger> passengers = this.repository.getAllPublisedPassengersOf(customerId).stream().filter(p -> !addedPassengers.contains(p)).toList();
 		SelectChoices passengerChoices = SelectChoices.from(passengers, "fullName", bookingRecord.getPassenger());
