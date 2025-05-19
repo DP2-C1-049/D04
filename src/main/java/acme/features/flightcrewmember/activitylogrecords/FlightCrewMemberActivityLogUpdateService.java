@@ -32,15 +32,8 @@ public class FlightCrewMemberActivityLogUpdateService extends AbstractGuiService
 		boolean authorised = authorised1 && this.repository.thatActivityLogIsOf(activityLogId, flightCrewMemberId);
 
 		status = authorised && activityLog != null && activityLog.isDraftMode();
-		int masterId;
-		FlightAssignment assignment;
 
-		masterId = super.getRequest().getData("masterId", int.class);
-		assignment = this.repository.findFlightAssignmentById(masterId);
-
-		boolean ownsIt = assignment.getFlightCrewMember().getId() == flightCrewMemberId;
-
-		super.getResponse().setAuthorised(status && ownsIt);
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -71,7 +64,6 @@ public class FlightCrewMemberActivityLogUpdateService extends AbstractGuiService
 			return;
 		boolean activityLogMomentIsAfterscheduledArrival = this.repository.associatedWithCompletedLeg(activityLog.getId(), MomentHelper.getCurrentMoment());
 		super.state(activityLogMomentIsAfterscheduledArrival, "WrongActivityLogDate", "acme.validation.activityLog.wrongMoment.message");
-		System.out.println("El moment está despues de la fecha de llegada (el flightAssignment se completo)? " + activityLogMomentIsAfterscheduledArrival);
 
 	}
 
@@ -86,13 +78,10 @@ public class FlightCrewMemberActivityLogUpdateService extends AbstractGuiService
 	@Override
 	public void unbind(final ActivityLog activityLog) {
 		Dataset dataset;
-		FlightAssignment flightAssignment = this.repository.findFlightAssignmentByActivityLogId(activityLog.getId());
 
 		dataset = super.unbindObject(activityLog, "registrationMoment", "typeOfIncident", "description", "severityLevel", "draftMode");
-		dataset.put("masterId", flightAssignment.getId());
 		dataset.put("draftMode", activityLog.isDraftMode());
 		dataset.put("readonly", false);
-		dataset.put("masterDraftMode", flightAssignment.isDraftMode());
 		super.getResponse().addData(dataset);
 	}
 

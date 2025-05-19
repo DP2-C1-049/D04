@@ -122,7 +122,6 @@ public class FlightCrewMemberFlightAssignmentUpdateService extends AbstractGuiSe
 		SelectChoices duty = SelectChoices.from(Duty.class, assignment.getDuty());
 
 		Dataset dataset = super.unbindObject(assignment, "duty", "moment", "currentStatus", "remarks", "draftMode");
-		dataset.put("confirmation", false);
 		dataset.put("readonly", false);
 		dataset.put("moment", MomentHelper.getCurrentMoment());
 		dataset.put("currentStatus", currentStatus);

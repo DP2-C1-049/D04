@@ -51,7 +51,6 @@ public class FlightCrewMemberActivityLogShowService extends AbstractGuiService<F
 		FlightAssignment flightAssignment = this.repository.findFlightAssignmentByActivityLogId(activityLog.getId());
 
 		dataset = super.unbindObject(activityLog, "registrationMoment", "typeOfIncident", "description", "severityLevel", "draftMode");
-		dataset.put("masterId", flightAssignment.getId());
 		dataset.put("draftMode", activityLog.isDraftMode());
 		dataset.put("masterDraftMode", flightAssignment.isDraftMode());
 		dataset.put("readonly", false);
