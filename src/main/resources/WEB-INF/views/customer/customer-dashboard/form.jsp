@@ -2,7 +2,6 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form readonly="true">
-   
     <acme:input-textbox code="customer.dashboard.list.label.lastFiveDestinations" path="lastFiveDestinations"/>
     <acme:input-money code="customer.dashboard.list.label.spentMoney" path="spentMoney"/>
 	<acme:input-integer code="customer.dashboard.list.label.economyBookings" path="economyBookings" />
@@ -17,6 +16,4 @@
 	<acme:input-integer code="customer.dashboard.list.label.bookingMinimumPassengers" path="bookingMinimumPassengers" />	
 	<acme:input-integer code="customer.dashboard.list.label.bookingMaximumPassengers" path="bookingMaximumPassengers" />	
 	<acme:input-double code="customer.dashboard.list.label.bookingDeviationPassengers" path="bookingDeviationPassengers" />	
-		
-	
 </acme:form>

@@ -18,22 +18,31 @@ public class CustomerPassengerPublishService extends AbstractGuiService<Customer
 
 	@Override
 	public void authorise() {
-		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
+		try {
+			boolean status = super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
 
-		super.getResponse().setAuthorised(status);
+			super.getResponse().setAuthorised(status);
 
-		int customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		int passengerId = super.getRequest().getData("id", int.class);
-		Passenger passenger = this.repository.getPassengerById(passengerId);
+			if (!super.getRequest().getMethod().equals("POST"))
+				super.getResponse().setAuthorised(false);
+			else {
+				int customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
+				int passengerId = super.getRequest().getData("id", int.class);
+				Passenger passenger = this.repository.findPassengerById(passengerId);
 
-		super.getResponse().setAuthorised(customerId == passenger.getCustomer().getId());
+				super.getResponse().setAuthorised(customerId == passenger.getCustomer().getId() && passenger.isDraftMode());
+			}
+
+		} catch (Throwable t) {
+			super.getResponse().setAuthorised(false);
+		}
 	}
 
 	@Override
 	public void load() {
 
 		int id = super.getRequest().getData("id", int.class);
-		Passenger passenger = this.repository.getPassengerById(id);
+		Passenger passenger = this.repository.findPassengerById(id);
 
 		super.getBuffer().addData(passenger);
 	}
@@ -43,10 +52,10 @@ public class CustomerPassengerPublishService extends AbstractGuiService<Customer
 		super.bindObject(passenger, "fullName", "email", "passportNumber", "dateOfBirth", "specialNeeds");
 	}
 
-	@Override
-	public void validate(final Passenger passenger) {
-
-	}
+	//	@Override
+	//	public void validate(final Passenger passenger) {
+	//
+	//	}
 
 	@Override
 	public void perform(final Passenger passenger) {

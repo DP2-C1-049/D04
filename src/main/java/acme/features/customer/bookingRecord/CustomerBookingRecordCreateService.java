@@ -28,7 +28,7 @@ public class CustomerBookingRecordCreateService extends AbstractGuiService<Custo
 			status = super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
 			int customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
 			int bookingId = super.getRequest().getData("bookingId", int.class);
-			Booking booking = this.repository.getBookingById(bookingId);
+			Booking booking = this.repository.findBookingById(bookingId);
 			status = status && booking != null && customerId == booking.getCustomer().getId() && booking.isDraftMode();
 
 			if (super.getRequest().hasData("id")) {
@@ -53,7 +53,7 @@ public class CustomerBookingRecordCreateService extends AbstractGuiService<Custo
 	@Override
 	public void load() {
 		int bookingId = super.getRequest().getData("bookingId", int.class);
-		Booking booking = this.repository.getBookingById(bookingId);
+		Booking booking = this.repository.findBookingById(bookingId);
 		BookingRecord bookingRecord = new BookingRecord();
 		bookingRecord.setBooking(booking);
 		super.getBuffer().addData(bookingRecord);
@@ -90,7 +90,7 @@ public class CustomerBookingRecordCreateService extends AbstractGuiService<Custo
 		int bookingId = super.getRequest().getData("bookingId", int.class);
 		Collection<Passenger> addedPassengers = this.repository.findAllPassengersByBookingId(bookingId);
 
-		Collection<Passenger> passengers = this.repository.getAllPublisedPassengersOf(customerId).stream().filter(p -> !addedPassengers.contains(p)).toList();
+		Collection<Passenger> passengers = this.repository.findAllPublisedPassengersOf(customerId).stream().filter(p -> !addedPassengers.contains(p)).toList();
 		SelectChoices passengerChoices = SelectChoices.from(passengers, "fullName", bookingRecord.getPassenger());
 		dataset.put("passengers", passengerChoices);
 		dataset.put("locatorCode", bookingRecord.getBooking().getLocatorCode());
