@@ -1,5 +1,3 @@
-
-
 technician.task.form.title = Task Details
 technician.task.list.title = Listing of tasks
 
@@ -14,9 +12,12 @@ technician.task.form.button.update = Update
 technician.task.form.button.delete = Delete
 technician.task.form.button.publish = Publish
 
+
 technician.task.list.label.type = Type
 technician.task.list.label.priority = Priority
 technician.task.list.label.estimated-duration= Estimated Duration
 technician.task.list.label.description = Description
 
 technician.task.list.button.create = Create
+technician.task.form.label.ticker=Ticker
+technician.task.list.label.ticker=Ticker

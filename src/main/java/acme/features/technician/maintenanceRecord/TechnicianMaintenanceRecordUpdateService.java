@@ -26,14 +26,29 @@ public class TechnicianMaintenanceRecordUpdateService extends AbstractGuiService
 	@Override
 	public void authorise() {
 		boolean status;
-		int masterId;
-		MaintenanceRecord maintenanceRecord;
-		Technician technician;
+		String method = super.getRequest().getMethod();
 
-		masterId = super.getRequest().getData("id", int.class);
-		maintenanceRecord = this.repository.findMaintenanceRecordById(masterId);
-		technician = maintenanceRecord == null ? null : maintenanceRecord.getTechnician();
-		status = maintenanceRecord != null && maintenanceRecord.isDraftMode() && super.getRequest().getPrincipal().hasRealm(technician);
+		if (method.equals("GET"))
+			status = false;
+		else {
+			int masterId;
+			MaintenanceRecord maintenanceRecord;
+			Technician technician;
+
+			masterId = super.getRequest().getData("id", int.class);
+			maintenanceRecord = this.repository.findMaintenanceRecordById(masterId);
+			technician = maintenanceRecord == null ? null : maintenanceRecord.getTechnician();
+			status = maintenanceRecord != null && maintenanceRecord.isDraftMode() && super.getRequest().getPrincipal().hasRealm(technician);
+			super.getResponse().setAuthorised(status);
+
+			Integer aircraftId = super.getRequest().getData("aircraft", Integer.class);
+			if (aircraftId == null)
+				status = false;
+			else if (aircraftId != 0) {
+				Aircraft existingAircraft = this.repository.findAircraftById(aircraftId);
+				status = status && existingAircraft != null;
+			}
+		}
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -41,28 +56,30 @@ public class TechnicianMaintenanceRecordUpdateService extends AbstractGuiService
 	public void load() {
 		MaintenanceRecord maintenanceRecord;
 		int id;
-
+		Date currentMoment;
+		currentMoment = MomentHelper.getCurrentMoment();
 		id = super.getRequest().getData("id", int.class);
 		maintenanceRecord = this.repository.findMaintenanceRecordById(id);
-
+		maintenanceRecord.setMoment(currentMoment);
 		super.getBuffer().addData(maintenanceRecord);
 	}
 	@Override
 	public void bind(final MaintenanceRecord maintenanceRecord) {
-		Date currentMoment;
+
 		Aircraft aircraft;
-		System.out.print(maintenanceRecord);
+
 		aircraft = super.getRequest().getData("aircraft", Aircraft.class);
 
-		currentMoment = MomentHelper.getCurrentMoment();
-		super.bindObject(maintenanceRecord, "status", "nextInspectionDueTime", "estimatedCost", "notes");
-		maintenanceRecord.setMoment(currentMoment);
+		super.bindObject(maintenanceRecord, "ticker", "status", "nextInspectionDueTime", "estimatedCost", "notes");
+
 		maintenanceRecord.setAircraft(aircraft);
 	}
 
 	@Override
 	public void validate(final MaintenanceRecord maintenanceRecord) {
-		;
+		boolean valid = maintenanceRecord.getAircraft() != null;
+		super.state(valid, "aircraft", "acme.validation.form.error.invalidAircraft");
+
 	}
 	@Override
 	public void perform(final MaintenanceRecord maintenanceRecord) {
@@ -76,12 +93,12 @@ public class TechnicianMaintenanceRecordUpdateService extends AbstractGuiService
 
 		SelectChoices aircrafts;
 		Collection<Aircraft> aircraftsCollection;
-		System.out.print(maintenanceRecord);
 		aircraftsCollection = this.repository.findAircrafts();
+
 		aircrafts = SelectChoices.from(aircraftsCollection, "registrationNumber", maintenanceRecord.getAircraft());
 
 		choices = SelectChoices.from(MaintenaceRecordStatus.class, maintenanceRecord.getStatus());
-		dataset = super.unbindObject(maintenanceRecord, "moment", "nextInspectionDueTime", "estimatedCost", "notes", "draftMode");
+		dataset = super.unbindObject(maintenanceRecord, "ticker", "moment", "nextInspectionDueTime", "estimatedCost", "notes", "draftMode");
 		dataset.put("status", choices.getSelected().getKey());
 		dataset.put("statuses", choices);
 

@@ -2,12 +2,17 @@
 package acme.features.technician.maintenanceRecord;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
+import acme.client.components.views.SelectChoices;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
+import acme.entities.aircraft.Aircraft;
+import acme.entities.maintenanceRecord.MaintenaceRecordStatus;
 import acme.entities.maintenanceRecord.MaintenanceRecord;
 import acme.entities.task.Involves;
 import acme.realms.Technician;
@@ -22,14 +27,20 @@ public class TechnicianMaintenanceRecordDeleteService extends AbstractGuiService
 	@Override
 	public void authorise() {
 		boolean status;
-		int masterId;
-		MaintenanceRecord maintenanceRecord;
-		Technician technician;
+		String method = super.getRequest().getMethod();
 
-		masterId = super.getRequest().getData("id", int.class);
-		maintenanceRecord = this.repository.findMaintenanceRecordById(masterId);
-		technician = maintenanceRecord == null ? null : maintenanceRecord.getTechnician();
-		status = maintenanceRecord != null && maintenanceRecord.isDraftMode() && super.getRequest().getPrincipal().hasRealm(technician);
+		if (method.equals("GET"))
+			status = false;
+		else {
+			int masterId;
+			MaintenanceRecord maintenanceRecord;
+			Technician technician;
+
+			masterId = super.getRequest().getData("id", int.class);
+			maintenanceRecord = this.repository.findMaintenanceRecordById(masterId);
+			technician = maintenanceRecord == null ? null : maintenanceRecord.getTechnician();
+			status = maintenanceRecord != null && maintenanceRecord.isDraftMode() && super.getRequest().getPrincipal().hasRealm(technician);
+		}
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -38,36 +49,51 @@ public class TechnicianMaintenanceRecordDeleteService extends AbstractGuiService
 	public void load() {
 		MaintenanceRecord maintenanceRecord;
 		int id;
-
+		Date currentMoment;
+		currentMoment = MomentHelper.getCurrentMoment();
 		id = super.getRequest().getData("id", int.class);
 		maintenanceRecord = this.repository.findMaintenanceRecordById(id);
+		maintenanceRecord.setMoment(currentMoment);
 
 		super.getBuffer().addData(maintenanceRecord);
 	}
 	@Override
 	public void bind(final MaintenanceRecord maintenanceRecord) {
 
-		super.bindObject(maintenanceRecord, "moment", "status", "nextInspectionDueTime", "estimatedCost", "notes");
+		Aircraft aircraft;
+		aircraft = super.getRequest().getData("aircraft", Aircraft.class);
+		super.bindObject(maintenanceRecord, "ticker", "status", "nextInspectionDueTime", "estimatedCost", "notes");
+		maintenanceRecord.setAircraft(aircraft);
 	}
 
 	@Override
 	public void validate(final MaintenanceRecord maintenanceRecord) {
-		;
+		Collection<Involves> relationsInvolvedIn;
+		relationsInvolvedIn = this.repository.findMaintenanceRecordInvolvedIn(maintenanceRecord.getId());
+		boolean valid = relationsInvolvedIn.isEmpty();
+		super.state(valid, "*", "acme.validation.form.error.TaskInvolvedMR");
 	}
 	@Override
 	public void perform(final MaintenanceRecord maintenanceRecord) {
-		Collection<Involves> relationsInvolvedIn;
-
-		relationsInvolvedIn = this.repository.findMaintenanceRecordInvolvedIn(maintenanceRecord.getId());
-		this.repository.deleteAll(relationsInvolvedIn);
 		this.repository.delete(maintenanceRecord);
 	}
 	@Override
 	public void unbind(final MaintenanceRecord maintenanceRecord) {
 		Dataset dataset;
+		SelectChoices choices;
 
-		dataset = super.unbindObject(maintenanceRecord, "moment", "status", "nextInspectionDueTime", "estimatedCost", "notes");
+		SelectChoices aircrafts;
+		Collection<Aircraft> aircraftsCollection;
+		aircraftsCollection = this.repository.findAircrafts();
+		aircrafts = SelectChoices.from(aircraftsCollection, "registrationNumber", maintenanceRecord.getAircraft());
 
+		choices = SelectChoices.from(MaintenaceRecordStatus.class, maintenanceRecord.getStatus());
+		dataset = super.unbindObject(maintenanceRecord, "ticker", "moment", "nextInspectionDueTime", "estimatedCost", "notes", "draftMode");
+		dataset.put("status", choices.getSelected().getKey());
+		dataset.put("statuses", choices);
+
+		dataset.put("aircrafts", aircrafts);
+		dataset.put("aircraft", aircrafts.getSelected().getKey());
 		super.getResponse().addData(dataset);
 	}
 

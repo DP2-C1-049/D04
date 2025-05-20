@@ -10,3 +10,16 @@
 
 acme.validation.airline.IATACODE.message = Debe tener un identificador de tres-letras-mayusculas, donde la ultima letra suele ser una "X"
 acme.validation.Airline.duplicated-IATACode.message = No debe estar duplicado
+
+
+acme.validation.maintenanceRecord.NotNull = El registro no puede ser nulo
+acme.validation.maintenanceRecord.nextInspectionNotNull = Es necesaria una fecha de próxima inspección
+acme.validation.maintenanceRecord.DateCorrect = La próxima inspección debe ser posterior al momento
+
+acme.validation.involved-in.task = Para publicar un registro de mantenimiento debe tener asociada al menos una tarea publicada y todas las asociadas deben estar publicadas
+
+acme.validation.form.error.NotNull = No puede ser nulo
+acme.validation.form.error.invalidAircraft = El avión no es válido
+acme.validation.form.error.invalidTask = La tarea no es válida
+acme.validation.form.error.TaskInvolved = Hay tareas asociadas a algún registro de mantenimiento
+acme.validation.form.error.TaskInvolvedMR = Todavía hay tareas asociadas a este registro

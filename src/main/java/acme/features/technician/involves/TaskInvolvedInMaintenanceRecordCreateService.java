@@ -23,15 +23,30 @@ public class TaskInvolvedInMaintenanceRecordCreateService extends AbstractGuiSer
 
 	@Override
 	public void authorise() {
-		boolean status;
+		boolean status = true;
+
 		int masterId;
 		MaintenanceRecord maintenanceRecord;
+		boolean status1 = true;
+		if (super.getRequest().getMethod().equals("GET") && super.getRequest().hasData("id", int.class))
+			status1 = false;
+		if (super.getRequest().hasData("masterId", int.class)) {
+			masterId = super.getRequest().getData("masterId", int.class);
+			maintenanceRecord = this.repository.findMaintenanceRecordById(masterId);
+			status = maintenanceRecord != null && super.getRequest().getPrincipal().hasRealm(maintenanceRecord.getTechnician()) && maintenanceRecord.isDraftMode();
+			if (super.getRequest().hasData("task", Integer.class)) {
+				Integer taskId = super.getRequest().getData("task", Integer.class);
+				if (taskId == null)
+					status = false;
+				else if (taskId != 0) {
+					Task checkedTask = this.repository.findTaskById(taskId);
+					Involves i = this.repository.findInvolvedInTMR(masterId, taskId);
+					status = status && checkedTask != null && i == null && !checkedTask.isDraftMode() && checkedTask.getTechnician().getId() == super.getRequest().getPrincipal().getActiveRealm().getId();
+				}
+			}
+		}
 
-		masterId = super.getRequest().getData("masterId", int.class);
-		maintenanceRecord = this.repository.findMaintenanceRecordById(masterId);
-		status = maintenanceRecord != null && super.getRequest().getPrincipal().hasRealm(maintenanceRecord.getTechnician());
-
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(status && status1);
 	}
 
 	@Override
@@ -52,20 +67,25 @@ public class TaskInvolvedInMaintenanceRecordCreateService extends AbstractGuiSer
 
 	@Override
 	public void bind(final Involves involvedIn) {
-
+		int taskTicker;
+		int masterId;
 		Task task;
-		int taskId;
+		MaintenanceRecord maintenanceRecord;
 
-		taskId = super.getRequest().getData("task", int.class);
-		task = this.repository.findTaskById(taskId);
+		masterId = super.getRequest().getData("masterId", int.class);
+		maintenanceRecord = this.repository.findMaintenanceRecordById(masterId);
+		taskTicker = super.getRequest().getData("task", int.class);
+		task = this.repository.findTaskById(taskTicker);
 
 		super.bindObject(involvedIn);
 		involvedIn.setTask(task);
+		involvedIn.setMaintenanceRecord(maintenanceRecord);
 	}
 
 	@Override
 	public void validate(final Involves involvedIn) {
-		;
+		boolean valid = involvedIn.getTask() != null;
+		super.state(valid, "task", "acme.validation.form.error.invalidTask");
 	}
 
 	@Override
@@ -79,8 +99,11 @@ public class TaskInvolvedInMaintenanceRecordCreateService extends AbstractGuiSer
 		Collection<Task> tasks;
 		SelectChoices choices;
 		Dataset dataset;
+		int technicianId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		Collection<Task> eliminateTasks = this.repository.findAllInvolvedInMaintenanceRecord(involvedIn.getMaintenanceRecord().getId());
+		tasks = this.repository.findTasksDisponiblesByTechnicianId(technicianId);
+		tasks.removeAll(eliminateTasks);
 
-		tasks = this.repository.findTasksDisponibles();
 		choices = SelectChoices.from(tasks, "description", involvedIn.getTask());
 
 		dataset = super.unbindObject(involvedIn);

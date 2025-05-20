@@ -1,11 +1,15 @@
 
 package acme.features.technician.involves;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
+import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
+import acme.entities.maintenanceRecord.MaintenanceRecord;
 import acme.entities.task.Involves;
 import acme.entities.task.Task;
 import acme.realms.Technician;
@@ -19,53 +23,74 @@ public class TaskInvolvedInMaintenanceRecordDeleteService extends AbstractGuiSer
 
 	@Override
 	public void authorise() {
-		boolean status;
-		int id;
-		Involves involvedIn;
+		boolean status = true;
+		String method = super.getRequest().getMethod();
 
-		id = super.getRequest().getData("id", int.class);
-		involvedIn = this.repository.findInvolvedInById(id);
-		status = involvedIn != null && super.getRequest().getPrincipal().hasRealm(involvedIn.getMaintenanceRecord().getTechnician());
-		;
+		int masterId;
+		MaintenanceRecord maintenanceRecord;
+		boolean status1 = true;
+		if (super.getRequest().getMethod().equals("GET") && super.getRequest().hasData("id", int.class))
+			status1 = false;
+		if (super.getRequest().hasData("masterId", int.class)) {
+			masterId = super.getRequest().getData("masterId", int.class);
+			maintenanceRecord = this.repository.findMaintenanceRecordById(masterId);
+			status = maintenanceRecord != null && super.getRequest().getPrincipal().hasRealm(maintenanceRecord.getTechnician()) && maintenanceRecord.isDraftMode();
 
-		super.getResponse().setAuthorised(status);
+			if (super.getRequest().hasData("task", Integer.class)) {
+				Integer taskId = super.getRequest().getData("task", Integer.class);
+				if (taskId == null)
+					status = false;
+				if (taskId != 0) {
+					Task checkedTask = this.repository.findTaskById(taskId);
+					Involves i = this.repository.findInvolvedInTMR(masterId, taskId);
+					status = status && checkedTask != null && i != null;
+				}
+			}
+		}
+		super.getResponse().setAuthorised(status && status1);
 	}
 	@Override
 	public void load() {
-		Involves involvedIn;
-		int id;
 
-		id = super.getRequest().getData("id", int.class);
-		involvedIn = this.repository.findInvolvedInById(id);
+		Involves involvedIn = new Involves();
+		int masterId = super.getRequest().getData("masterId", int.class);
+		MaintenanceRecord maintenanceRecord = this.repository.findMaintenanceRecordById(masterId);
+		involvedIn.setMaintenanceRecord(maintenanceRecord);
 
 		super.getBuffer().addData(involvedIn);
 	}
 	@Override
 	public void bind(final Involves involvedIn) {
-		int taskId;
-		Task task;
 
-		taskId = super.getRequest().getData("task", int.class);
-		task = this.repository.findTaskById(taskId);
+		super.bindObject(involvedIn, "task");
 
-		super.bindObject(involvedIn);
-		involvedIn.setTask(task);
 	}
 
 	@Override
 	public void validate(final Involves involvedIn) {
-		;
+		boolean valid = involvedIn.getTask() != null;
+		super.state(valid, "task", "acme.validation.form.error.invalidTask");
 	}
 	@Override
 	public void perform(final Involves involvedIn) {
-		this.repository.delete(involvedIn);
+		Involves toDelete = this.repository.findInvolvedInByTaskIdAndMaintenanceRecordId(involvedIn.getTask().getId(), involvedIn.getMaintenanceRecord().getId());
+
+		this.repository.delete(toDelete);
 	}
 
 	@Override
 	public void unbind(final Involves involvedIn) {
+		Collection<Task> tasks;
+		SelectChoices choices;
 		Dataset dataset;
+		tasks = this.repository.findAllInvolvedInMaintenanceRecord(involvedIn.getMaintenanceRecord().getId());
+
+		choices = SelectChoices.from(tasks, "description", involvedIn.getTask());
+
 		dataset = super.unbindObject(involvedIn);
-		dataset.put("task", involvedIn.getTask().getDescription());
+		dataset.put("masterId", super.getRequest().getData("masterId", int.class));
+		dataset.put("task", choices.getSelected().getKey());
+		dataset.put("tasks", choices);
 
 		super.getResponse().addData(dataset);
 	}

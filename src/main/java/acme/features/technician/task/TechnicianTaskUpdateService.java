@@ -21,15 +21,19 @@ public class TechnicianTaskUpdateService extends AbstractGuiService<Technician, 
 	@Override
 	public void authorise() {
 		boolean status;
-		int taskId;
-		Task task;
-		Technician technician;
+		String method = super.getRequest().getMethod();
+		if (method.equals("GET"))
+			status = false;
+		else {
+			int taskId;
+			Task task;
+			Technician technician;
 
-		taskId = super.getRequest().getData("id", int.class);
-		task = this.repository.findTaskById(taskId);
-		technician = task == null ? null : task.getTechnician();
-		status = task != null && task.isDraftMode() && super.getRequest().getPrincipal().hasRealm(technician);
-
+			taskId = super.getRequest().getData("id", int.class);
+			task = this.repository.findTaskById(taskId);
+			technician = task == null ? null : task.getTechnician();
+			status = task != null && task.isDraftMode() && super.getRequest().getPrincipal().hasRealm(technician);
+		}
 		super.getResponse().setAuthorised(status);
 	}
 	@Override
@@ -46,11 +50,14 @@ public class TechnicianTaskUpdateService extends AbstractGuiService<Technician, 
 	@Override
 	public void bind(final Task task) {
 
-		super.bindObject(task, "type", "description", "priority", "estimatedDuration");
+		super.bindObject(task, "ticker", "type", "description", "priority", "estimatedDuration");
 	}
 	@Override
 	public void validate(final Task task) {
-		;
+
+		Task existTask = this.repository.findTaskByTicker(task.getTicker());
+		boolean valid = existTask == null || existTask.getId() == task.getId();
+		super.state(valid, "ticker", "acme.validation.form.error.duplicateTicker");
 	}
 
 	@Override
@@ -63,7 +70,7 @@ public class TechnicianTaskUpdateService extends AbstractGuiService<Technician, 
 		Dataset dataset;
 		SelectChoices choices;
 		choices = SelectChoices.from(TaskType.class, task.getType());
-		dataset = super.unbindObject(task, "type", "description", "priority", "estimatedDuration", "draftMode");
+		dataset = super.unbindObject(task, "ticker", "type", "description", "priority", "estimatedDuration", "draftMode");
 		dataset.put("task", choices.getSelected().getKey());
 		dataset.put("tasks", choices);
 		super.getResponse().addData(dataset);

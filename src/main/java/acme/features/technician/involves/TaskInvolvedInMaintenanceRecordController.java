@@ -32,5 +32,6 @@ public class TaskInvolvedInMaintenanceRecordController extends AbstractGuiContro
 		super.addBasicCommand("show", this.showService);
 		super.addBasicCommand("create", this.createService);
 		super.addBasicCommand("delete", this.deleteService);
+
 	}
 }
