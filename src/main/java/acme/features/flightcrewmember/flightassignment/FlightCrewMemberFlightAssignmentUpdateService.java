@@ -51,7 +51,7 @@ public class FlightCrewMemberFlightAssignmentUpdateService extends AbstractGuiSe
 		Integer flightCrewMemberId = super.getRequest().getData("flightCrewMember", int.class);
 		FlightCrewMember flightCrewMember = this.repository.findFlightCrewMemberById(flightCrewMemberId);
 
-		super.bindObject(assignment, "duty", "moment", "currentStatus", "remarks");
+		super.bindObject(assignment, "duty", "currentStatus", "remarks");
 		assignment.setLeg(leg);
 		assignment.setFlightCrewMember(flightCrewMember);
 	}

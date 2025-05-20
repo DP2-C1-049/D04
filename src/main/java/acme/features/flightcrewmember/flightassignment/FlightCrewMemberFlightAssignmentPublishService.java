@@ -36,8 +36,9 @@ public class FlightCrewMemberFlightAssignmentPublishService extends AbstractGuiS
 		assignment = this.repository.findFlightAssignmentById(assignmentId);
 		status = authorised1 && authorised && assignment.isDraftMode() && MomentHelper.isFuture(assignment.getLeg().getArrival());
 		boolean ownsIt = assignment.getFlightCrewMember().getId() == flightCrewMemberId;
+		status = status && ownsIt;
 
-		super.getResponse().setAuthorised(status && ownsIt);
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -60,7 +61,7 @@ public class FlightCrewMemberFlightAssignmentPublishService extends AbstractGuiS
 		flightCrewMemberId = super.getRequest().getData("flightCrewMember", int.class);
 		flightCrewMember = this.repository.findFlightCrewMemberById(flightCrewMemberId);
 
-		super.bindObject(assignment, "duty", "moment", "currentStatus", "remarks");
+		super.bindObject(assignment, "duty", "currentStatus", "remarks");
 		assignment.setLeg(leg);
 		assignment.setFlightCrewMember(flightCrewMember);
 	}
@@ -73,10 +74,9 @@ public class FlightCrewMemberFlightAssignmentPublishService extends AbstractGuiS
 		boolean cambioFlightCrewMember = !original.getFlightCrewMember().equals(flightCrewMember);
 		boolean cambioDuty = !original.getDuty().equals(assignment.getDuty());
 		boolean cambioLeg = !original.getLeg().equals(assignment.getLeg());
-		boolean cambioMoment = !original.getMoment().equals(assignment.getMoment());
 		boolean cambioStatus = !original.getCurrentStatus().equals(assignment.getCurrentStatus());
 
-		if (!(cambioDuty || cambioLeg || cambioMoment || cambioStatus))
+		if (!(cambioDuty || cambioLeg || cambioStatus))
 			return;
 
 		if (flightCrewMember != null && leg != null && cambioLeg && !this.isLegCompatible(assignment))
@@ -114,28 +114,10 @@ public class FlightCrewMemberFlightAssignmentPublishService extends AbstractGuiS
 
 	@Override
 	public void perform(final FlightAssignment assignment) {
-		if (this.huboAlgunCambio(assignment))
-			assignment.setMoment(MomentHelper.getCurrentMoment());
+		assignment.setMoment(MomentHelper.getCurrentMoment());
 		assignment.setDraftMode(false);
 
 		this.repository.save(assignment);
-	}
-
-	private boolean huboAlgunCambio(final FlightAssignment assignment) {
-		boolean cambio = false;
-		FlightAssignment original = this.repository.findFlightAssignmentById(assignment.getId());
-		FlightCrewMember flightCrewMember = assignment.getFlightCrewMember();
-		boolean cambioFlightCrewMember = !original.getFlightCrewMember().equals(flightCrewMember);
-		boolean cambioDuty = !original.getDuty().equals(assignment.getDuty());
-		boolean cambioLeg = !original.getLeg().equals(assignment.getLeg());
-		boolean cambioStatus = !original.getCurrentStatus().equals(assignment.getCurrentStatus());
-		boolean cambioRemarks = false;
-		if (original.getRemarks() != null)
-			cambioRemarks = !original.getRemarks().equals(assignment.getRemarks());
-		else if (assignment.getRemarks() != null)
-			cambioRemarks = !assignment.getRemarks().equals(original.getRemarks());
-		cambio = cambioDuty || cambioFlightCrewMember || cambioLeg || cambioStatus || cambioRemarks;
-		return cambio;
 	}
 
 	@Override
@@ -179,7 +161,6 @@ public class FlightCrewMemberFlightAssignmentPublishService extends AbstractGuiS
 		dataset.put("flightCrewMembers", flightCrewMemberChoices);
 		dataset.put("isCompleted", isCompleted);
 		dataset.put("draftMode", fa.isDraftMode());
-		System.out.println("en draftMode al asignar publish? " + fa.isDraftMode() + " y completed? " + isCompleted);
 
 		super.getResponse().addData(dataset);
 	}
