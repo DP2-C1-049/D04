@@ -89,7 +89,8 @@ public class Booking extends AbstractEntity {
 		if (this.getFlight() != null) {
 			Money flightCost = this.getFlight().getCost();
 			BookingRepository bookingRepository = SpringHelper.getBean(BookingRepository.class);
-			Integer numberOfPassengers = bookingRepository.getNumberPassengersOfBooking(this.getId());
+			Integer numberOfPassengers = bookingRepository.findAllPassengersByBookingId(this.getId());
+
 			res.setCurrency(flightCost.getCurrency());
 			res.setAmount(flightCost.getAmount() * numberOfPassengers);
 			return res;
@@ -97,6 +98,6 @@ public class Booking extends AbstractEntity {
 		res.setAmount(0.0);
 		res.setCurrency("EUR");
 		return res;
-	}
 
+	}
 }
