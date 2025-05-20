@@ -1,0 +1,25 @@
+# defaults-es.i18n
+ #
+ # Copyright (C) 2012-2025 Rafael Corchuelo.
+ #
+ # In keeping with the traditional purpose of furthering education and research, it is
+ # the policy of the copyright owner to permit non-commercial use and redistribution of
+ # this software. It has been tested carefully, but it is not guaranteed for any particular
+ # purposes.  The copyright owner does not offer any warranties or representations, nor do
+ # they accept any liabilities with respect to them.
+ 
+ customer.recommendation-dashboard.list.title = Panel de recomendaciones
+customer.recommendation-dashboard.form.title = Panel de recomendaciones
+
+customer.recommendation-dashboard.list.label.city = Ciudad
+customer.recommendation-dashboard.list.label.country = País
+customer.recommendation-dashboard.list.label.name = Nombre de Actividad
+customer.recommendation-dashboard.list.label.description = Descripción
+customer.recommendation-dashboard.list.label.recommendationType = Tipo de Recomendación
+
+customer.recommendation-dashboard.form.label.city = Ciudad
+customer.recommendation-dashboard.form.label.country = País
+customer.recommendation-dashboard.form.label.name = Nombre de Actividad
+customer.recommendation-dashboard.form.label.description = Descripción
+customer.recommendation-dashboard.form.label.recommendationType = Tipo de Recomendación
+customer.recommendation-dashboard.list.label.rating = Puntuación
