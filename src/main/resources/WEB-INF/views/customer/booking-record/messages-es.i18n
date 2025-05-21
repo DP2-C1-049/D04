@@ -13,6 +13,7 @@
  
  customer.bookingRecord.form.button.create = Añadir a la reserva
  customer.passenger.form.link.create = Crear nuevo pasajero
- 
+ customer.bookingRecord.form.button.delete = Eliminar de la reserva
  customer.bookingRecord.list.label.passenger = Pasajero
  customer.bookingRecord.list.label.booking = Reserva
+ customer.bookingrecord.form.error.invalidPassenger = El pasajero seleccionado no está disponible
