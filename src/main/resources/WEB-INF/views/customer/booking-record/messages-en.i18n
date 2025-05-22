@@ -8,7 +8,7 @@
  # purposes.  The copyright owner does not offer any warranties or representations, nor do
  # they accept any liabilities with respect to them.
  
- customer.booking-record.form.title = Add new passenger to booking
+ customer.booking-record.form.title = Add or delete new passenger to booking
  
  
  customer.bookingRecord.form.button.create = Add to booking
