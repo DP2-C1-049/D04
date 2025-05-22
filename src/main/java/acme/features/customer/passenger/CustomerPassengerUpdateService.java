@@ -51,10 +51,10 @@ public class CustomerPassengerUpdateService extends AbstractGuiService<Customer,
 		super.bindObject(passenger, "fullName", "email", "passportNumber", "dateOfBirth", "specialNeeds");
 	}
 
-	//	@Override
-	//	public void validate(final Passenger passenger) {
-	//
-	//	}
+	@Override
+	public void validate(final Passenger passenger) {
+
+	}
 
 	@Override
 	public void perform(final Passenger passenger) {
