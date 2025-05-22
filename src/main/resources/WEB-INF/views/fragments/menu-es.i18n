@@ -29,6 +29,8 @@ master.menu.administrator.populate-db-initial = Poblar BD (inicial)
 master.menu.administrator.populate-db-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-system-down = Parar el sistema
 master.menu.administrator.list-bookings = Lista de reservas
+master.menu.administrator.list-airlines = Ver Lista de lineas aereas
+
 
 # master.menu.provider ########################################################
 
@@ -72,6 +74,13 @@ master.menu.user-account.consumer-profile = Perfil de consumidor
  master.menu.flight-crew-member.flight-assignment.completedlist = Listar asignaciones de vuelo con tramos completados
  master.menu.flight-crew-member.flight-assignment.plannedlist = Listar asignaciones de vuelo con tramos planeados
  
+# master.menu.assistance-agent ####################################################
+
+master.menu.assistanceAgent  = Asistente
+master.menu.assistance-agent.list-resolved = Listar quejas completadas
+master.menu.assistance-agent.list-pending = Listar quejas en proceso
+master.menu.assistanceAgent.list-trackingLog = Listar todos los registros
+master.menu.assistanceAgent.show-dashboard= Ver dashboard
   # master.menu.booking #################################################################
  
  master.menu.booking.create = Crear reserva
