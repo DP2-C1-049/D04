@@ -25,17 +25,24 @@ public class FlightCrewMemberFlightAssignmentUpdateService extends AbstractGuiSe
 
 	@Override
 	public void authorise() {
-		int assignmentId = super.getRequest().getData("id", int.class);
-		FlightAssignment assignment = this.repository.findFlightAssignmentById(assignmentId);
-		int flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		int legId = super.getRequest().getData("leg", int.class);
-		boolean authorised2 = true;
-		if (legId != 0)
-			authorised2 = this.repository.existsLeg(legId);
-		boolean authorised1 = this.repository.existsFlightCrewMember(flightCrewMemberId);
-		boolean authorised = authorised2 && authorised1 && this.repository.thatFlightAssignmentIsOf(assignmentId, flightCrewMemberId);
-		boolean ownsIt = assignment.getFlightCrewMember().getId() == flightCrewMemberId;
-
+		String method = super.getRequest().getMethod();
+		boolean authorised;
+		FlightAssignment assignment = null;
+		boolean ownsIt = false;
+		if (method.equals("GET"))
+			authorised = false;
+		else {
+			int flightAssignmentId = super.getRequest().getData("id", int.class);
+			assignment = this.repository.findFlightAssignmentById(flightAssignmentId);
+			int flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+			int legId = super.getRequest().getData("leg", int.class);
+			boolean authorised3 = true;
+			if (legId != 0)
+				authorised3 = this.repository.existsLeg(legId);
+			boolean authorised1 = this.repository.existsFlightCrewMember(flightCrewMemberId);
+			authorised = authorised3 && authorised1 && this.repository.thatFlightAssignmentIsOf(flightAssignmentId, flightCrewMemberId);
+			ownsIt = assignment.getFlightCrewMember().getId() == flightCrewMemberId;
+		}
 		super.getResponse().setAuthorised(authorised && assignment != null && assignment.isDraftMode() && ownsIt);
 	}
 

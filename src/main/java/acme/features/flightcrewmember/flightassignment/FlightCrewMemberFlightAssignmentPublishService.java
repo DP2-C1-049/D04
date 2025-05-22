@@ -27,23 +27,26 @@ public class FlightCrewMemberFlightAssignmentPublishService extends AbstractGuiS
 	@Override
 	public void authorise() {
 		boolean status;
+		String method = super.getRequest().getMethod();
+		if (method.equals("GET"))
+			status = false;
+		else {
+			int flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+			int flightAssignmentId = super.getRequest().getData("id", int.class);
+			boolean authorised = this.repository.thatFlightAssignmentIsOf(flightAssignmentId, flightCrewMemberId);
+			FlightAssignment assignment;
+			boolean authorised1 = this.repository.existsFlightCrewMember(flightCrewMemberId);
+			assignment = this.repository.findFlightAssignmentById(flightAssignmentId);
+			int legId = super.getRequest().getData("leg", int.class);
+			boolean authorised3 = true;
+			if (legId != 0)
+				authorised3 = this.repository.existsLeg(legId);
 
-		int flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		int flightAssignmentId = super.getRequest().getData("id", int.class);
-		boolean authorised = this.repository.thatFlightAssignmentIsOf(flightAssignmentId, flightCrewMemberId);
-		FlightAssignment assignment;
-		boolean authorised1 = this.repository.existsFlightCrewMember(flightCrewMemberId);
-		assignment = this.repository.findFlightAssignmentById(flightAssignmentId);
-		int legId = super.getRequest().getData("leg", int.class);
-		boolean authorised3 = true;
-		if (legId != 0)
-			authorised3 = this.repository.existsLeg(legId);
+			status = authorised3 && authorised1 && authorised && assignment.isDraftMode() && MomentHelper.isFuture(assignment.getLeg().getArrival());
+			boolean ownsIt = assignment.getFlightCrewMember().getId() == flightCrewMemberId;
 
-		status = authorised3 && authorised1 && authorised && assignment.isDraftMode() && MomentHelper.isFuture(assignment.getLeg().getArrival());
-		boolean isHis = assignment.getFlightCrewMember().getId() == flightCrewMemberId;
-
-		status = status && isHis;
-
+			status = status && ownsIt;
+		}
 		super.getResponse().setAuthorised(status);
 
 	}
