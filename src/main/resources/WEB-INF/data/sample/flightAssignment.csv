@@ -3,13 +3,13 @@ key,key:flight-crew-member,key:leg,duty,moment,currentStatus,remarks,draftMode
 flight-assignment-00,flight-crew-member-01,leg-00,PILOT,2023/01/01 10:00,CONFIRMED, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
 # duty - standard variations
 flight-assignment-01,flight-crew-member-01,leg-01,PILOT,2023/01/01 10:00,PENDING, "Samu porco dio e porco ala",true
-flight-assignment-02,flight-crew-member-02,leg-02,COPILOT,2023/01/01 10:00,CONFIRMED, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
+flight-assignment-02,flight-crew-member-02,leg-02,COPILOT,2023/01/01 10:00,CONFIRMED, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",false
 flight-assignment-03,flight-crew-member-03,leg-03,LEAD_ATTENDANT,2023/01/01 10:00,CONFIRMED, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
-flight-assignment-04,flight-crew-member-04,leg-04,CABIN_ATTENDANT,2023/01/01 10:00,CONFIRMED, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
+flight-assignment-04,flight-crew-member-04,leg-04,CABIN_ATTENDANT,2023/01/01 10:00,CONFIRMED, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",false
 flight-assignment-05,flight-crew-member-01,leg-05,PILOT,2023/01/01 10:00, CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
 # moment - standard variations
 flight-assignment-06,flight-crew-member-01,leg-00,PILOT,2000/01/01 00:00, CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
-flight-assignment-07,flight-crew-member-01,leg-01,PILOT,2000/01/01 00:01, CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
+flight-assignment-07,flight-crew-member-01,leg-01,PILOT,2000/01/01 00:01, CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",false
 flight-assignment-08,flight-crew-member-01,leg-02,PILOT,2024/12/31 23:59, CONFIRMED,"Past assignment",true
 
 # currentStatus - standard variations
@@ -23,3 +23,9 @@ flight-assignment-13,flight-crew-member-01,leg-06,PILOT,2023/01/01 10:00, CONFIR
 flight-assignment-14,flight-crew-member-02,leg-03,PILOT,2023/01/01 10:00, CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*",true
 flight-assignment-15,flight-crew-member-02,leg-02,PILOT,2023/01/01 10:00, CONFIRMED,null,true
 flight-assignment-16,flight-crew-member-02,leg-03,PILOT,2023/01/01 10:00, CONFIRMED,"",true
+flight-assignment-17,flight-crew-member-02,leg-03,PILOT,2023/01/01 10:00, CONFIRMED,"โลเร็ม อิปซัม",true
+flight-assignment-18,flight-crew-member-02,leg-03,PILOT,2023/01/01 10:00, CONFIRMED,"لوريم إيبسوم",true
+flight-assignment-19,flight-crew-member-02,leg-03,PILOT,2023/01/01 10:00, CONFIRMED,"洛伦·伊普森",true
+flight-assignment-20,flight-crew-member-02,leg-03,PILOT,2023/01/01 10:00, CONFIRMED,<marquee>Hacked</marquee>,true
+flight-assignment-21,flight-crew-member-02,leg-03,PILOT,2023/01/01 10:00, CONFIRMED,<script>alert(‘Hacked!’);</script>,true
+flight-assignment-22,flight-crew-member-02,leg-03,PILOT,2023/01/01 10:00, CONFIRMED,'' or 'A' = 'A,true
