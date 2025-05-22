@@ -1,7 +1,7 @@
 key,locatorCode,purchaseMoment,travelClass,lastNibble,key:customer,key:flight,draftMode
-booking-00,ABC123,2012/06/24 14:30,ECONOMY,1234,customer-01,flight-01,true
+booking-00,ABC123,2012/02/07 00:00,ECONOMY,1234,customer-01,flight-01,true
 #locatorCode
-booking-01,X9Y8Z7W,2012/06/24 14:30,ECONOMY,1234,customer-01,flight-01,true
+booking-01,X9Y8Z7W,2012/02/07 00:00,ECONOMY,1234,customer-01,flight-01,true
 booking-02,QWERTY12,2012/06/24 14:30,ECONOMY,1234,customer-01,flight-01,true
 #purchaseMoment
 booking-03,ABC121,2000/01/01 00:00,ECONOMY,1234,customer-01,flight-01,false
@@ -19,7 +19,7 @@ booking-11,ABC130,2012/06/24 14:30,ECONOMY,1234,customer-01,flight-01,true
 booking-12,ABC131,2012/06/24 14:30,ECONOMY,4321,customer-01,flight-01,true
 booking-13,ABC132,2012/06/24 14:30,ECONOMY,null,customer-01,flight-01,true
 #key:customers
-booking-14,ABC133,2012/06/24 14:30,ECONOMY,1234,customer-02,flight-01,false
+booking-14,ABC133,2012/02/07 00:00,ECONOMY,1234,customer-02,flight-01,false
 booking-15,ABC134,2012/06/24 14:30,ECONOMY,1234,customer-02,flight-01,true
 booking-16,ABC135,2012/06/24 14:30,ECONOMY,1234,customer-02,flight-01,true
 #key:flight
