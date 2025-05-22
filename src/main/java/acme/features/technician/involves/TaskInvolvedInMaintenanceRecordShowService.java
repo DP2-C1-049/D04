@@ -32,7 +32,7 @@ public class TaskInvolvedInMaintenanceRecordShowService extends AbstractGuiServi
 		involvedIn = this.repository.findInvolvedInById(id);
 
 		if (involvedIn != null)
-			status = super.getRequest().getPrincipal().hasRealm(involvedIn.getMaintenanceRecord().getTechnician()) || !involvedIn.getMaintenanceRecord().isDraftMode() && super.getRequest().getPrincipal().hasRealmOfType(Technician.class);
+			status = super.getRequest().getPrincipal().getActiveRealm().getId() == involvedIn.getMaintenanceRecord().getTechnician().getId() && super.getRequest().getPrincipal().hasRealmOfType(Technician.class);
 		else
 			status = false;
 		super.getResponse().setAuthorised(status);

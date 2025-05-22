@@ -1,5 +1,5 @@
 key,ticker,type,priority,estimatedDuration,description,draftMode,key:technician
-task-01,TICKER-00,MAINTENANCE,5,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,technician-01
+task-01,TICKER-00,MAINTENANCE,5,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,false,technician-01
 #type
 task-02,TICKER-01,INSPECTION,5,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,technician-01
 task-03,TICKER-02,REPAIR,5,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,technician-01
@@ -20,9 +20,9 @@ task-14,TICKER-13,MAINTENANCE,5,500,Lo,true,technician-01
 task-15,TICKER-14,MAINTENANCE,5,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,true,technician-01
 task-16,TICKER-15,MAINTENANCE,5,500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,true,technician-01
 task-17,TICKER-16,MAINTENANCE,5,500,โลเร็ม อิปซัม,true,technician-02
-task-18,TICKER-17,MAINTENANCE,5,500,لوريم إيبسوم,true,technician-02
-task-19,TICKER-18,MAINTENANCE,5,500,洛伦·伊普森,true,technician-02
-task-20,TICKER-19,MAINTENANCE,5,500,<marquee>Hacked</marquee>,true,technician-02
+task-18,TICKER-17,MAINTENANCE,5,500,لوريم إيبسوم,false,technician-02
+task-19,TICKER-18,MAINTENANCE,5,500,洛伦·伊普森,false,technician-02
+task-20,TICKER-19,MAINTENANCE,5,500,<marquee>Hacked</marquee>,false,technician-02
 task-21,TICKER-24,MAINTENANCE,5,500,<script>alert(‘Hacked!’);</script>,true,technician-02
 task-22,TICKER-20,MAINTENANCE,5,500,' or 'A' = 'A,true,technician-02
 #draftMode

@@ -62,6 +62,7 @@ public class TechnicianMaintenanceRecordPublishService extends AbstractGuiServic
 		id = super.getRequest().getData("id", int.class);
 		maintenanceRecord = this.repository.findMaintenanceRecordById(id);
 		maintenanceRecord.setMoment(currentMoment);
+		maintenanceRecord.setStatus(MaintenaceRecordStatus.COMPLETED);
 		super.getBuffer().addData(maintenanceRecord);
 	}
 	@Override
@@ -71,7 +72,7 @@ public class TechnicianMaintenanceRecordPublishService extends AbstractGuiServic
 
 		aircraft = super.getRequest().getData("aircraft", Aircraft.class);
 
-		super.bindObject(maintenanceRecord, "ticker", "status", "nextInspectionDueTime", "estimatedCost", "notes");
+		super.bindObject(maintenanceRecord, "ticker", "nextInspectionDueTime", "estimatedCost", "notes");
 
 		maintenanceRecord.setAircraft(aircraft);
 	}
@@ -112,9 +113,8 @@ public class TechnicianMaintenanceRecordPublishService extends AbstractGuiServic
 
 		choices = SelectChoices.from(MaintenaceRecordStatus.class, maintenanceRecord.getStatus());
 		dataset = super.unbindObject(maintenanceRecord, "ticker", "moment", "nextInspectionDueTime", "estimatedCost", "notes", "draftMode");
-		dataset.put("status", choices.getSelected().getKey());
-		dataset.put("statuses", choices);
 
+		dataset.put("status", MaintenaceRecordStatus.COMPLETED);
 		dataset.put("aircrafts", aircrafts);
 		dataset.put("aircraft", aircrafts.getSelected().getKey());
 		super.getResponse().addData(dataset);
