@@ -3,6 +3,8 @@ package acme.realms;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Index;
+import javax.persistence.Table;
 
 import acme.client.components.basis.AbstractRole;
 import acme.client.components.mappings.Automapped;
@@ -16,6 +18,9 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@Table(indexes = {
+	@Index(columnList = "user_account_id"), @Index(columnList = "identifier")
+})
 public class Customer extends AbstractRole {
 
 	//Serialisation identifier -----------------------------------------------------------
@@ -37,7 +42,7 @@ public class Customer extends AbstractRole {
 	@Mandatory
 	@ValidString(min = 1, max = 255)
 	@Automapped
-	private String				physicalAdress;
+	private String				address;
 
 	@Mandatory
 	@ValidString(min = 1, max = 50)
