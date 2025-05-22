@@ -21,18 +21,30 @@ public class CustomerPassengerListService extends AbstractGuiService<Customer, P
 
 	@Override
 	public void authorise() {
-		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
+		try {
+			if (!super.getRequest().getMethod().equals("GET"))
+				super.getResponse().setAuthorised(false);
+			else {
+				boolean status = super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
 
-		super.getResponse().setAuthorised(status);
+				super.getResponse().setAuthorised(status);
 
-		if (!super.getRequest().getData().isEmpty()) {
-			int customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
-			int bookingId = super.getRequest().getData("bookingId", int.class);
-			Booking booking = this.repository.getBookingById(bookingId);
+				if (!super.getRequest().getData().isEmpty()) {
+					int customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
+					Integer bookingId = super.getRequest().getData("bookingId", Integer.class);
+					if (bookingId == null)
+						super.getResponse().setAuthorised(false);
+					else {
+						Booking booking = this.repository.findBookingById(bookingId);
 
-			super.getResponse().setAuthorised(customerId == booking.getCustomer().getId());
+						super.getResponse().setAuthorised(customerId == booking.getCustomer().getId());
+					}
+
+				}
+			}
+		} catch (Throwable t) {
+			super.getResponse().setAuthorised(false);
 		}
-
 	}
 
 	@Override
@@ -41,10 +53,10 @@ public class CustomerPassengerListService extends AbstractGuiService<Customer, P
 		int customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
 
 		if (super.getRequest().getData().isEmpty())
-			passengers = this.repository.getAllPassengersOf(customerId);
+			passengers = this.repository.findPassengersByCustomer(customerId);
 		else {
 			int bookingId = super.getRequest().getData("bookingId", int.class);
-			passengers = this.repository.getPassengersFromBooking(bookingId);
+			passengers = this.repository.findAllPassengerByBookingId(bookingId);
 		}
 
 		super.getBuffer().addData(passengers);
@@ -52,8 +64,6 @@ public class CustomerPassengerListService extends AbstractGuiService<Customer, P
 
 	@Override
 	public void unbind(final Passenger passenger) {
-		assert passenger != null;
-
 		Dataset dataset;
 
 		dataset = super.unbindObject(passenger, "fullName", "passportNumber", "dateOfBirth", "draftMode");

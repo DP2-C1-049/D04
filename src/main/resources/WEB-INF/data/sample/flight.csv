@@ -1,7 +1,7 @@
 key,tag,indication,cost,description,key:manager,draftMode
 flight-00,Standard Flight,True,USD 500.00,Standard commercial flight,manager-01,true
 #tag
-flight-01,The Fastest Route,True,USD 500.00,Standard commercial flight,manager-01,true
+flight-01,The Fastest Route,True,USD 500.00,Standard commercial flight,manager-01,false
 flight-02,The Cheapest Option,True,USD 500.00,Standard commercial flight,manager-01,false
 flight-03,Non-Stop Flight,True,USD 500.00,Standard commercial flight,manager-01,true
 flight-04,Luxury Experience,True,USD 500.00,Standard commercial flight,manager-01,true
@@ -24,5 +24,5 @@ flight-17,Standard Flight,True,USD 500.00,"Comfortable flight with extra legroom
 flight-18,Standard Flight,True,USD 500.00,"Includes access to VIP lounge",manager-02,true
 flight-19,Standard Flight,True,USD 500.00,"Direct flight with no layovers",manager-02,true
 #key:manager
-flight-20,Standard Flight,True,USD 500.00,Standard commercial flight,manager-02,true
-flight-21,Standard Flight,True,USD 500.00,Standard commercial flight,manager-02,true
+flight-20,Standard Flight,True,USD 500.00,Standard commercial flight,manager-02,false
+flight-21,Standard Flight,True,USD 500.00,Standard commercial flight,manager-02,false

@@ -8,11 +8,12 @@
  # purposes.  The copyright owner does not offer any warranties or representations, nor do
  # they accept any liabilities with respect to them.
  
- customer.booking-record.form.title = Añadir nuevo pasajero a la reserva
- 
+ customer.booking-record.form.title = Añadir o eliminar nuevo pasajero a la reserva
+
  
  customer.bookingRecord.form.button.create = Añadir a la reserva
  customer.passenger.form.link.create = Crear nuevo pasajero
- 
+ customer.bookingRecord.form.button.delete = Eliminar de la reserva
  customer.bookingRecord.list.label.passenger = Pasajero
  customer.bookingRecord.list.label.booking = Reserva
+ customer.bookingrecord.form.error.invalidPassenger = El pasajero seleccionado no está disponible
