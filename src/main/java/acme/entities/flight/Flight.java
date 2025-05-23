@@ -4,7 +4,6 @@ package acme.entities.flight;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
 import javax.validation.Valid;
@@ -49,7 +48,6 @@ public class Flight extends AbstractEntity {
 	@Automapped
 	private String				description;
 
-
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
@@ -81,12 +79,17 @@ public class Flight extends AbstractEntity {
 	@Transient
 	public String getDestinationCity() {
 		LegRepository repository = SpringHelper.getBean(LegRepository.class);
-		return repository.findDestinationCity(this.getId()).orElse("");
+		return repository.findDestinationCity(this.getId()).stream().findFirst().orElse("");
 	}
 
 	@Transient
 	public Integer getNumberOfLayovers() {
 		LegRepository repository = SpringHelper.getBean(LegRepository.class);
 		return repository.numberLayovers(this.getId());
+	}
+
+	@Transient
+	public String getFlightSummary() {
+		return String.format("Flight: %s → %s", this.getOriginCity(), this.getDestinationCity());
 	}
 }
