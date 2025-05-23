@@ -1,5 +1,8 @@
 key,flightNumber,departure,arrival,status,key:flight,key:departureAirport,key:arrivalAirport,key:aircraft,draftMode
 leg-00,AAA1001,2024/06/10 08:00,2024/06/10 10:00,ON_TIME,flight-00,Airport-01,Airport-02,Aircraft-01,true
+leg-21,AAA1234,2025/01/01 09:00,2025/01/01 11:00,ON_TIME,flight-00,Airport-01,Airport-01,Aircraft-01,false
+leg-22,AAA1235,2025/01/01 09:00,2025/01/01 11:00,ON_TIME,flight-00,Airport-01,Airport-01,Aircraft-02,false
+leg-23,AAA1236,2025/01/01 09:00,2025/01/01 11:00,ON_TIME,flight-02,Airport-01,Airport-01,Aircraft-01,false
 #flightNumber
 leg-01,AAA1002,2024/06/11 07:30,2024/06/11 09:45,ON_TIME,flight-00,Airport-01,Airport-02,Aircraft-01,true
 leg-02,AAA2003,2024/06/12 10:00,2024/06/12 12:15,DELAYED,flight-01,Airport-02,Airport-03,Aircraft-02,true
