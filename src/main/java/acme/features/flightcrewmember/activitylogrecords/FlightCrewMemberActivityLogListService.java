@@ -25,18 +25,20 @@ public class FlightCrewMemberActivityLogListService extends AbstractGuiService<F
 		boolean status = false;
 		int masterId;
 		FlightAssignment assignment;
+		if (super.getRequest().hasData("masterId", int.class)) {
+			masterId = super.getRequest().getData("masterId", int.class);
+			assignment = this.repository.findFlightAssignmentById(masterId);
+			if (assignment != null) {
+				int flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+				boolean authorised = this.repository.existsFlightCrewMember(flightCrewMemberId);
 
-		masterId = super.getRequest().getData("masterId", int.class);
-		assignment = this.repository.findFlightAssignmentById(masterId);
-		if (assignment != null) {
-			int flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
-			boolean authorised = this.repository.existsFlightCrewMember(flightCrewMemberId);
-
-			status = authorised && assignment != null;
-			boolean ownsIt = assignment.getFlightCrewMember().getId() == flightCrewMemberId;
-			status = status && ownsIt && this.repository.isFlightAssignmentCompleted(MomentHelper.getCurrentMoment(), masterId);
+				status = authorised && assignment != null;
+				boolean ownsIt = assignment.getFlightCrewMember().getId() == flightCrewMemberId;
+				status = status && ownsIt && this.repository.isFlightAssignmentCompleted(MomentHelper.getCurrentMoment(), masterId);
+			}
+			super.getResponse().setAuthorised(status);
 		}
-		super.getResponse().setAuthorised(status);
+
 	}
 
 	@Override
