@@ -7,8 +7,8 @@ maintenanceRecord-03,TICKER-02,2000/01/01 0:01,PENDING,2100/08/01 20:30,EUR 500,
 maintenanceRecord-04,TICKER-03,2024/07/01 23:59,IN_PROGRESS,2100/08/01 20:30,EUR 500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,technician-01,Aircraft-01
 maintenanceRecord-05,TICKER-04,2024/07/01 23:59,COMPLETED,2100/08/01 20:30,EUR 500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,technician-01,Aircraft-01
 #nextInspection
-maintenanceRecord-06,TICKER-05,2024/07/01 23:59,PENDING,2200/12/31 23:58,EUR 500,DRAFTMODE FALSE,false,technician-01,Aircraft-01
-maintenanceRecord-07,TICKER-06,2024/07/01 23:59,PENDING,2200/12/31 23:59,EUR 500,DRAFTMODE FALSE,false,technician-01,Aircraft-01
+maintenanceRecord-06,TICKER-05,2024/07/01 23:59,COMPLETED,2200/12/31 23:58,EUR 500,DRAFTMODE FALSE,false,technician-01,Aircraft-01
+maintenanceRecord-07,TICKER-06,2024/07/01 23:59,COMPLETED,2200/12/31 23:59,EUR 500,DRAFTMODE FALSE,false,technician-01,Aircraft-01
 #estimatedCost
 maintenanceRecord-08,TICKER-07,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 0,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,technician-01,Aircraft-01
 maintenanceRecord-09,TICKER-08,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 1,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,technician-01,Aircraft-01
@@ -26,9 +26,9 @@ maintenanceRecord-19,TICKER-18,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 500
 maintenanceRecord-20,TICKER-19,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 500,<script>alert(‘Hacked!’);</script>,true,technician-02,Aircraft-01
 maintenanceRecord-21,TICKER-20,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 500,' or 'A' = 'A,true,technician-02,Aircraft-01
 #draftMode
-maintenanceRecord-22,TICKER-21,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 500,DRAFTMODE FALSE,false,technician-01,Aircraft-01
+maintenanceRecord-22,TICKER-21,2024/07/01 23:59,COMPLETED,2100/08/01 20:30,EUR 500,DRAFTMODE FALSE,false,technician-01,Aircraft-01
 #key:technician
-maintenanceRecord-23,TICKER-22,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 500,DRAFTMODE FALSE,false,technician-02,Aircraft-01
+maintenanceRecord-23,TICKER-22,2024/07/01 23:59,COMPLETED,2100/08/01 20:30,EUR 500,DRAFTMODE FALSE,false,technician-02,Aircraft-01
 #key:aircraft
 maintenanceRecord-24,TICKER-23,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,technician-01,Aircraft-02
 maintenanceRecord-25,TICKER-24,2024/07/01 23:59,PENDING,2100/08/01 20:30,EUR 500,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,true,technician-01,Aircraft-03

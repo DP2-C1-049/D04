@@ -114,6 +114,7 @@ public class TechnicianMaintenanceRecordPublishService extends AbstractGuiServic
 		choices = SelectChoices.from(MaintenaceRecordStatus.class, maintenanceRecord.getStatus());
 		dataset = super.unbindObject(maintenanceRecord, "ticker", "moment", "nextInspectionDueTime", "estimatedCost", "notes", "draftMode");
 
+		dataset.put("statuses", choices);
 		dataset.put("status", MaintenaceRecordStatus.COMPLETED);
 		dataset.put("aircrafts", aircrafts);
 		dataset.put("aircraft", aircrafts.getSelected().getKey());
