@@ -12,7 +12,7 @@ import acme.entities.task.Task;
 import acme.realms.Technician;
 
 @GuiService
-public class TechnicianTaskListService extends AbstractGuiService<Technician, Task> {
+public class TechnicianTaskListPublishService extends AbstractGuiService<Technician, Task> {
 
 	@Autowired
 	private TechnicianTaskRepository repository;
@@ -27,10 +27,7 @@ public class TechnicianTaskListService extends AbstractGuiService<Technician, Ta
 	@Override
 	public void load() {
 		Collection<Task> tasks;
-		int technicianId;
-
-		technicianId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		tasks = this.repository.findTasksByTechnicianId(technicianId);
+		tasks = this.repository.findTasksPublish();
 
 		super.getBuffer().addData(tasks);
 	}
@@ -43,4 +40,5 @@ public class TechnicianTaskListService extends AbstractGuiService<Technician, Ta
 		super.addPayload(dataset, task);
 		super.getResponse().addData(dataset);
 	}
+
 }

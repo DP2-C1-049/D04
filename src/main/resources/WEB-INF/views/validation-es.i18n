@@ -10,3 +10,61 @@
 
 acme.validation.airline.IATACODE.message = Debe tener un identificador de tres-letras-mayusculas, donde la ultima letra suele ser una "X"
 acme.validation.Airline.duplicated-IATACode.message = No debe estar duplicado
+
+acme.validation.maintenanceRecord.NotNull = El registro no puede ser nulo
+acme.validation.maintenanceRecord.nextInspectionNotNull = Es necesaria una fecha de próxima inspección
+acme.validation.maintenanceRecord.DateCorrect = La próxima inspección debe ser posterior al momento
+
+acme.validation.involved-in.task = Para publicar un registro de mantenimiento debe tener asociada al menos una tarea publicada y todas las asociadas deben estar publicadas
+
+acme.validation.airport.form.error.duplicateIata = El código IATA ya existe
+acme.validation.error.phoneNumber= No es un número de teléfono válido. Debe tener entre 6 y 15 caracteres
+
+acme.validation.longText= La longitud debe estar entre 1 y 255 caracteres
+acme.validation.shortText= La longitud debe estar entre 1 y 50 caracteres
+
+
+acme.validation.job.ticker.message = Ticker inválido. Debe tener entre 5 y 15 caracteres
+acme.validation.form.error.duplicateTicker = Ticker duplicado
+
+acme.validation.claim.form.error.registrationMomentNotPast = El momento del registro debe de ser pasado
+acme.validation.claim.form.error.type = Solo puedes elegir los tipos que aparecen en el desplegable 
+acme.validation.claim.form.error.leg = Solo puedes elegir la traza que aparecen en el desplegable 
+acme.validation.claim.form.error.leg2 = La traza no puede ser nulo, 
+acme.validation.claim.form.error.draftMode = No puedes eliminar ni modificar un registro si no está en modo borrado
+
+assistanceAgent.trackingLog.form.error.wrongStatus = El estado debe de estar PENDING
+assistanceAgent.trackingLog.form.error.wrongStatus2 = El estado debe de estar ACCEPTED o REJECTED
+assistanceAgent.trackingLog.form.error.resolutionNeeded = El campo resolución no puede ser nulo
+assistanceAgent.trackingLog.form.error.complatePercentage = Solo se puede tener dos trazas de registro al 100%
+assistanceAgent.trackingLog.form.error.wrongNewPercentage = El porcentaje debe de ser mayor al porcentaje de la última traza
+assistanceAgent.trackingLog.form.error.statusNewPercentageTotal =  El estado del nuevo registro con el porcentaje al 100% debe de tener el mismo estado que el otro registro con porcentaje al 100% 
+assistanceAgent.trackingLog.form.error.draftModeClaim = Para publicar el registro debe de estar publicado antes
+assistanceAgent.trackingLog.form.error.wrongPercentage = No se puede crear dos trackingLogs con el mismo porcentaje
+
+acme.validation.leg.message = Este avión tiene tramos de vuelo pendientes, no es posible deshabilitarlo
+
+customer.booking.form.error.duplicateLocatorCode = Este código localizador ya está en uso
+acme.validation.validCurrency = Esta moneda es incorrecta
+
+acme.validation.lastNibble.message  = Este campo es necesario para poder publicar una reserva 
+acme.validation.passengersNumber.message = La reserva debe tener al menos un pasajero para poder ser publicada
+acme.validation.passengersNotPublished.message = Todos los pasajeros deben estar publicados para poder publicar la reserva
+
+acme.validation.form.error.NotNull = No puede ser nulo
+acme.validation.form.error.invalidAircraft = El avión no es válido
+acme.validation.form.error.invalidTask = La tarea no es válida
+acme.validation.form.error.TaskInvolved = Hay tareas asociadas a algún registro de mantenimiento
+acme.validation.form.error.TaskInvolvedMR = Todavía hay tareas asociadas a este registro
+acme.validation.assignment.NotNull = La signación es nula
+acme.validation.assignment.nextInspectionNotNull = El tramo asignado es nulo
+acme.validation.assignment.nextInspectionNotNull = El miembro de la tripulacion asignado es nulo
+acme.validation.assignment.dutyIncorrect = El tramo ya está asignado al rol copiloto o piloto
+acme.validation.assignment.statusIncorrect = Miembro no disponible
+acme.validation.assignment.legIncorrect = No se pueden asignar a varios tramos simultáneamente
+acme.validation.assignment.legDraft = El tramo seleccionado no está publicado
+acme.validation.assignment.delete = No se puede borrar la asignación, todavía tiene registros de actividades asociados.
+
+acme.validation.FlightAssignment.memberHasIncompatibleLegs.message = No se pueden asignar a varios tramos simultáneamente.
+acme.validation.FlightAssignment.memberHasIncompatibleDuty.message = Cada etapa solo puede tener un piloto y un copiloto.
+acme.validation.FlightAssignment.HasIncompatibleLeg = El leg asociado debe estar publicado

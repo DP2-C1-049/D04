@@ -20,7 +20,10 @@ public class TechnicianTaskCreateService extends AbstractGuiService<Technician, 
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Technician.class);
+		if (super.getRequest().getMethod().equals("GET") && super.getRequest().hasData("id", int.class))
+			status = false;
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -38,12 +41,15 @@ public class TechnicianTaskCreateService extends AbstractGuiService<Technician, 
 
 	@Override
 	public void bind(final Task task) {
-		super.bindObject(task, "type", "description", "priority", "estimatedDuration");
+		super.bindObject(task, "ticker", "type", "description", "priority", "estimatedDuration");
 	}
 
 	@Override
 	public void validate(final Task task) {
-		;
+
+		Task existTask = this.repository.findTaskByTicker(task.getTicker());
+		boolean valid = existTask == null || existTask.getId() == task.getId();
+		super.state(valid, "ticker", "acme.validation.form.error.duplicateTicker");
 	}
 
 	@Override
@@ -55,7 +61,7 @@ public class TechnicianTaskCreateService extends AbstractGuiService<Technician, 
 		Dataset dataset;
 		SelectChoices choices;
 		choices = SelectChoices.from(TaskType.class, task.getType());
-		dataset = super.unbindObject(task, "type", "description", "priority", "estimatedDuration", "draftMode");
+		dataset = super.unbindObject(task, "ticker", "type", "description", "priority", "estimatedDuration", "draftMode");
 		dataset.put("tasks", choices);
 
 		super.getResponse().addData(dataset);
