@@ -66,11 +66,6 @@ public class Booking extends AbstractEntity {
 	@Automapped
 	private TravelClass			travelClass;
 
-	//	@Mandatory
-	//	@ValidMoney(min = 0)
-	//	@Automapped
-	//	private Money				price;
-
 	@Optional
 	@ValidString(min = 4, max = 4, pattern = "[0-9]{4}", message = "{acme.validation.lastNibble.notPattern.message}")
 	@Automapped

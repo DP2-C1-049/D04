@@ -1,28 +1,27 @@
 key,locatorCode,purchaseMoment,travelClass,lastNibble,key:customer,key:flight,draftMode
-booking-00,ABC123,2012/02/07 00:00,ECONOMY,1234,customer-01,flight-01,true
+booking-00,ABC123,2012/02/07 00:00,ECONOMY,4999,customer-01,flight-01,true
 #locatorCode
-booking-01,X9Y8Z7W,2012/02/07 00:00,ECONOMY,1234,customer-01,flight-01,true
-booking-02,QWERTY12,2012/06/24 14:30,ECONOMY,1234,customer-01,flight-01,true
+booking-01,X9Y8Z7W,2012/02/07 00:00,ECONOMY,4999,customer-01,flight-01,false
+booking-02,QWERTY12,2012/02/07 00:00,ECONOMY,4999,customer-01,flight-01,true
 #purchaseMoment
-booking-03,ABC121,2000/01/01 00:00,ECONOMY,1234,customer-01,flight-01,false
-booking-04,ABC122,2000/01/01 00:01,ECONOMY,1234,customer-01,flight-01,true
-booking-05,ABC124,2024/12/31 23:59,ECONOMY,1234,customer-01,flight-01,true
-booking-06,ABC125,2025/01/01 00:00,ECONOMY,1234,customer-01,flight-01,false
+booking-03,ABC121,2000/01/01 00:00,ECONOMY,4999,customer-01,flight-01,false
+booking-04,ABC122,2000/01/01 00:01,ECONOMY,4999,customer-01,flight-01,true
+booking-05,ABC124,2024/12/31 23:59,ECONOMY,4999,customer-01,flight-01,true
+booking-06,ABC125,2025/01/01 00:00,ECONOMY,4999,customer-01,flight-01,false
 #travelClass
-booking-07,ABC126,2012/06/24 14:30,BUSINESS,1234,customer-01,flight-01,true
-#price
-booking-08,ABC127,2012/06/24 14:30,ECONOMY,1234,customer-01,flight-01,true
-booking-09,ABC128,2012/06/24 14:30,ECONOMY,1234,customer-01,flight-01,true
-booking-10,ABC129,2012/06/24 14:30,ECONOMY,1234,customer-01,flight-01,true
-booking-11,ABC130,2012/06/24 14:30,ECONOMY,1234,customer-01,flight-01,true
+booking-07,ABC126,2012/02/07 00:00,BUSINESS,4999,customer-01,flight-01,true
 #lastNibble
-booking-12,ABC131,2012/06/24 14:30,ECONOMY,4321,customer-01,flight-01,true
-booking-13,ABC132,2012/06/24 14:30,ECONOMY,null,customer-01,flight-01,true
+booking-08,ABC127,2012/02/07 00:00,ECONOMY,,customer-01,flight-01,true
+booking-09,ABC128,2012/02/07 00:00,ECONOMY,0000,customer-01,flight-01,false
+booking-10,ABC129,2012/02/07 00:00,ECONOMY,0001,customer-01,flight-01,true
+booking-11,ABC130,2012/02/07 00:00,ECONOMY,5000,customer-01,flight-01,true
+booking-12,ABC131,2012/02/07 00:00,ECONOMY,9998,customer-01,flight-01,true
+booking-13,ABC132,2012/02/07 00:00,ECONOMY,9999,customer-01,flight-01,true
 #key:customers
-booking-14,ABC133,2012/02/07 00:00,ECONOMY,1234,customer-02,flight-01,false
-booking-15,ABC134,2012/06/24 14:30,ECONOMY,1234,customer-02,flight-01,true
-booking-16,ABC135,2012/06/24 14:30,ECONOMY,1234,customer-02,flight-01,true
+booking-14,ABC133,2012/02/07 00:00,ECONOMY,4999,customer-02,flight-01,false
+booking-15,ABC134,2012/02/07 00:00,ECONOMY,4999,customer-02,flight-02,true
+booking-16,ABC135,2012/02/07 00:00,ECONOMY,4999,customer-02,flight-03,false
 #key:flight
-booking-17,ABC136,2012/06/24 14:30,ECONOMY,1234,customer-01,flight-02,true
-booking-18,ABC137,2012/06/24 14:30,ECONOMY,1234,customer-01,flight-20,true
-booking-19,ABC138,2012/06/24 14:30,ECONOMY,1234,customer-01,flight-21,true
+booking-17,ABC136,2012/02/07 00:00,ECONOMY,4999,customer-02,flight-02,true
+booking-18,ABC137,2012/02/07 00:00,ECONOMY,4999,customer-01,flight-20,false
+booking-19,ABC138,2012/02/07 00:00,ECONOMY,4999,customer-01,flight-21,true
