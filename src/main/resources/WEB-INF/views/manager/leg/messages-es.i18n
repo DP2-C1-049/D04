@@ -1,0 +1,47 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2025 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+# messages-es.i18n
+# Leg messages for the Manager realm
+
+manager.leg.list.label.flightNumber = Numero de vuelo
+manager.leg.list.label.departureCity = Ciudad de salida
+manager.leg.list.label.arrivalCity = Ciudad de llegada
+manager.leg.list.label.departure = Salida prevista
+manager.leg.list.label.arrival = Llegada prevista
+manager.leg.list.label.duration = Duracion (horas)
+manager.leg.list.label.status = Estado
+manager.leg.list.button.create = Crear tramo
+manager.leg.list.title = Listado de Tramos para este vuelo 
+
+manager.leg.form.title = Detalles del tramo 
+
+# Leg form labels
+manager.leg.form.label.flightNumber = Número de Vuelo
+manager.leg.form.label.departure = Salida programada
+manager.leg.form.label.arrival = Llegada programada
+manager.leg.form.label.duration = Duracion (horas)
+manager.leg.form.label.confirmation = Confirmar
+manager.leg.form.label.arrivalAirport = Aeropuerto de llegada
+manager.leg.form.label.departureAirport = Aeropuerto de Salida
+manager.leg.form.label.aircraft = Aeronave
+manager.leg.form.label.status = Estado
+# Leg form buttons
+manager.leg.form.button.publish = Publicar tramo
+manager.leg.form.button.update = Actualizar tramo
+manager.leg.form.button.create = Crear tramo
+manager.leg.form.button.list = Listar tramos
+manager.leg.form.button.delete = Borrar tramo
+
+manager.leg.error.sameAirport= Mismo aeropuerto de llegada y salida
+
+manager.leg.error.duplicateFlightNumber = Numero de vuelo duplicado
+manager.leg.error.departureBeforeArrival = La salida tiene que ser antes que la llegada
+manager.leg.error.required.date = La fecha no puede ser nula

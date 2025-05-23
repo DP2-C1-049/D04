@@ -10,22 +10,26 @@
 - they accept any liabilities with respect to them.
 --%>
 
-<%@page%>
-
-<%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="acme" uri="http://acme-framework.org/"%>
-
-<acme:list>
-	<acme:list-column code="manager.flight.list.label.tag" path="tag" width="20%"/>
-	<acme:list-column code="manager.flight.list.label.indication" path="indication" width="10%"/>
-	<acme:list-column code="manager.flight.list.label.cost" path="cost" width="10%"/>
-	<acme:list-column code="manager.flight.list.label.description" path="description" width="10%"/>
-	<acme:list-column code="manager.flight.list.label.departure" path="departure" width="10%"/>
-	<acme:list-column code="manager.flight.list.label.arrival" path="arrival" width="10%"/>
-	<acme:list-column code="manager.flight.list.label.originCity" path="originCity" width="10%"/>
-	<acme:list-column code="manager.flight.list.label.destinationCity" path="destinationCity" width="10%"/>
-	<acme:list-column code="manager.flight.list.label.numberOfLayovers" path="numberOfLayovers" width="10%"/>	
-	<acme:list-payload path="payload"/>
-</acme:list>
-
-<acme:button code="manager.flight.list.button.create" action="/manager/flight/create"/>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="acme" uri="http://acme-framework.org/" %>
+<%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core" %>
+<html>
+<head>
+    <title>Flight List</title>
+</head>
+<body>
+    <h1>Flight List</h1>
+    <acme:list navigable="true" show="show">
+        <acme:list-column path="tag" code="manager.flight.list.label.tag" />
+        <acme:list-column path="originCity" code="manager.flight.list.label.originCity" />
+        <acme:list-column path="destinationCity" code="manager.flight.list.label.destinationCity" />
+        <acme:list-column path="indication" code="manager.flight.list.label.indication" />
+        <acme:list-column path="cost" code="manager.flight.list.label.cost" />
+        <acme:list-column path="description" code="manager.flight.list.label.description" />
+        <acme:list-column path="departure" code="manager.flight.list.label.departure" />
+        <acme:list-column path="arrival" code="manager.flight.list.label.arrival" />
+        <acme:list-column path="numberOfLayovers" code="manager.flight.list.label.numberOfLayovers" />
+    </acme:list>
+    <acme:button code="manager.flight.list.button.create" action="/manager/flight/create" />
+</body>
+</html>
