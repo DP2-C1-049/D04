@@ -2,27 +2,42 @@ key,tag,indication,cost,description,key:manager,draftMode
 flight-00,Standard Flight,True,USD 500.00,Standard commercial flight,manager-01,true
 #tag
 flight-01,The Fastest Route,True,USD 500.00,Standard commercial flight,manager-01,false
-flight-02,The Cheapest Option,True,USD 500.00,Standard commercial flight,manager-01,false
-flight-03,Non-Stop Flight,True,USD 500.00,Standard commercial flight,manager-01,true
-flight-04,Luxury Experience,True,USD 500.00,Standard commercial flight,manager-01,true
-flight-05,Business Class Deal,True,USD 500.00,Standard commercial flight,manager-01,false
-flight-06,Scenic Mountain View,True,USD 500.00,Standard commercial flight,manager-01,true
-flight-07,Economy with Free Meal,True,USD 500.00,Standard commercial flight,manager-01,true
-flight-08,Shortest Duration,True,USD 500.00,Standard commercial flight,manager-01,true
-flight-09,Best Price Guaranteed,True,USD 500.00,Standard commercial flight,manager-01,true
-flight-10,Extra Baggage Included,True,USD 500.00,Standard commercial flight,manager-01,false
+flight-02,L,True,USD 500.00,Standard commercial flight,manager-01,false
+flight-03,Lo,True,USD 500.00,Standard commercial flight,manager-01,true
+flight-04,Lorem ipsum dolor sit amet consectetur adipiscin,True,USD 500.00,Standard commercial flight,manager-01,true
+flight-05,Lorem ipsum dolor sit amets consectetur adipiscing,True,USD 500.00,Standard commercial flight,manager-01,false
+flight-06,โลเร็ม อิปซัม,True,USD 500.00,Standard commercial flight,manager-01,true
+flight-07,لوريم إيبسوم,True,USD 500.00,Standard commercial flight,manager-01,true
+flight-08,洛伦·伊普森,True,USD 500.00,Standard commercial flight,manager-01,true
+flight-09,<marquee>Hacked</marquee>,True,USD 500.00,Standard commercial flight,manager-01,true
+flight-10,<script>alert(‘Hacked!’);</script>,True,USD 500.00,Standard commercial flight,manager-01,false
+flight-22,' or 'A' = 'A ,True,USD 500.00,Standard commercial flight,manager-01,true
 #indication
 flight-11,Standard Flight,False,USD 500.00,Standard commercial flight,manager-01,true
+flight-23,Standard Flight,True,USD 500.00,Standard commercial flight,manager-01,true
 #cost
-flight-12,Standard Flight,True,USD 0.00,Standard commercial flight,manager-01,true
-flight-13,Standard Flight,True,USD 1000000.00,Standard commercial flight,manager-01,true
-flight-14,Standard Flight,True,EUR 999999.99,Standard commercial flight,manager-01,true
+flight-12,Standard Flight,True,EUR 500000.00,Standard commercial flight,manager-01,true
+flight-13,Standard Flight,True,EUR 0.00,Standard commercial flight,manager-01,true
+flight-14,Standard Flight,True,EUR 0.01,Standard commercial flight,manager-01,true
+flight-24,Standard Flight,True,EUR 999999.99,Standard commercial flight,manager-01,true
+flight-25,Standard Flight,True,EUR 1000000.00,Standard commercial flight,manager-01,true
 #description
 flight-15,Standard Flight,True,USD 500.00,"",manager-01,true
-flight-16,Standard Flight,True,USD 500.00,A,manager-01,true
-flight-17,Standard Flight,True,USD 500.00,"Comfortable flight with extra legroom",manager-01,true
-flight-18,Standard Flight,True,USD 500.00,"Includes access to VIP lounge",manager-02,true
-flight-19,Standard Flight,True,USD 500.00,"Direct flight with no layovers",manager-02,true
+flight-26,Standard Flight,True,USD 500.00,null,manager-01,true
+flight-16,Standard Flight,True,USD 500.00,Lorem ipsum dolor sit amets consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Uts,manager-01,true
+flight-17,Standard Flight,True,USD 500.00,L,manager-01,true
+flight-18,Standard Flight,True,USD 500.00,Lo,manager-02,true
+flight-19,Standard Flight,True,USD 500.00,Lorem ipsum dolor sit amets consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,manager-02,true
+flight-27,Standard Flight,True,USD 500.00,Lorem ipsum dolor sit amets consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolors,manager-01,true
+flight-28,Standard Flight,True,USD 500.00,โลเร็ม อิปซัม,manager-01,true
+flight-29,Standard Flight,True,USD 500.00,لوريم إيبسوم,manager-01,true
+flight-30,Standard Flight,True,USD 500.00,洛伦·伊普森,manager-01,true
+flight-31,Standard Flight,True,USD 500.00,<marquee>Hacked</marquee>,manager-01,true
+flight-32,Standard Flight,True,USD 500.00,<script>alert(‘Hacked!’);</script>,manager-01,true
+flight-33,Standard Flight,True,USD 500.00,' or 'A' = 'A ,manager-01,true
 #key:manager
 flight-20,Standard Flight,True,USD 500.00,Standard commercial flight,manager-02,false
 flight-21,Standard Flight,True,USD 500.00,Standard commercial flight,manager-02,false
+#draftMode
+flight-34,Standard Flight,True,USD 500.00,Standard commercial flight,manager-01,true
+flight-35,Standard Flight,True,USD 500.00,Standard commercial flight,manager-01,false
