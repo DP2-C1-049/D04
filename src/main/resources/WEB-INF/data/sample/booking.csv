@@ -20,7 +20,7 @@ booking-13,ABC132,2012/02/07 00:00,ECONOMY,9999,customer-01,flight-01,true
 #key:customers
 booking-14,ABC133,2012/02/07 00:00,ECONOMY,4999,customer-02,flight-01,false
 booking-15,ABC134,2012/02/07 00:00,ECONOMY,4999,customer-02,flight-02,true
-booking-16,ABC135,2012/02/07 00:00,ECONOMY,4999,customer-02,flight-03,false
+booking-16,ABC135,2012/02/07 00:00,ECONOMY,4999,customer-02,flight-21,false
 #key:flight
 booking-17,ABC136,2012/02/07 00:00,ECONOMY,4999,customer-02,flight-02,true
 booking-18,ABC137,2012/02/07 00:00,ECONOMY,4999,customer-01,flight-20,false

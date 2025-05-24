@@ -1,9 +1,10 @@
 key,key:booking,key:passenger
-bookingRecord-00,booking-00,passenger-00
-bookingRecord-01,booking-00,passenger-01
-bookingRecord-02,booking-02,passenger-02
-bookingRecord-03,booking-04,passenger-03
-bookingRecord-04,booking-04,passenger-04
-bookingRecord-05,booking-05,passenger-05
+bookingRecord-00,booking-01,passenger-00
+bookingRecord-01,booking-03,passenger-01
+bookingRecord-02,booking-06,passenger-02
+bookingRecord-03,booking-09,passenger-03
+bookingRecord-04,booking-14,passenger-04
+bookingRecord-05,booking-18,passenger-05
 bookingRecord-06,booking-14,passenger-26
 bookingRecord-07,booking-16,passenger-31
+bookingRecord-08,booking-02,passenger-31
