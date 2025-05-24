@@ -24,11 +24,12 @@ public class FlightCrewMemberActivityLogCreateService extends AbstractGuiService
 		int masterId;
 		FlightAssignment assignment;
 		if (super.getRequest().hasData("masterId", int.class)) {
+
 			masterId = super.getRequest().getData("masterId", int.class);
 			int flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
 			boolean authorised = this.repository.existsFlightCrewMember(flightCrewMemberId);
 
-			assignment = this.repository.findFlightAssignmentByActivityLogId(masterId);
+			assignment = this.repository.findFlightAssignmentById(masterId);
 			boolean authorised2 = false;
 			if (assignment != null) {
 				authorised2 = this.repository.existsFlightAssignment(masterId);
@@ -38,8 +39,8 @@ public class FlightCrewMemberActivityLogCreateService extends AbstractGuiService
 				status = status && ownsIt && this.repository.isFlightAssignmentCompleted(MomentHelper.getCurrentMoment(), masterId);
 			}
 		}
-
 		super.getResponse().setAuthorised(status);
+
 	}
 
 	@Override
@@ -88,7 +89,6 @@ public class FlightCrewMemberActivityLogCreateService extends AbstractGuiService
 
 		dataset = super.unbindObject(activityLog, "registrationMoment", "typeOfIncident", "description", "severityLevel", "draftMode");
 		dataset.put("masterId", masterId);
-
 		dataset.put("draftMode", activityLog.isDraftMode());
 		dataset.put("readonly", false);
 		dataset.put("masterDraftMode", !this.repository.isFlightAssignmentAlreadyPublishedById(masterId));
