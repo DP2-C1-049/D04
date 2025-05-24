@@ -1,5 +1,5 @@
 
-package acme.features.flightcrewmember.activitylogrecords;
+package acme.features.flightcrewmember.activitylog;
 
 import javax.annotation.PostConstruct;
 
