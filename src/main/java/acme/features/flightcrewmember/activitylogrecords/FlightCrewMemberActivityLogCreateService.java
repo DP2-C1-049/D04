@@ -20,32 +20,39 @@ public class FlightCrewMemberActivityLogCreateService extends AbstractGuiService
 
 	@Override
 	public void authorise() {
-		boolean status;
+		boolean status = false;
 		int masterId;
-		FlightAssignment Assignment;
+		FlightAssignment assignment;
+		if (super.getRequest().hasData("masterId", int.class)) {
+			masterId = super.getRequest().getData("masterId", int.class);
+			int flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+			boolean authorised = this.repository.existsFlightCrewMember(flightCrewMemberId);
 
-		masterId = super.getRequest().getData("masterId", int.class);
-		int flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		boolean authorised = this.repository.existsFlightCrewMember(flightCrewMemberId);
+			assignment = this.repository.findFlightAssignmentByActivityLogId(masterId);
+			boolean authorised2 = false;
+			if (assignment != null) {
+				authorised2 = this.repository.existsFlightAssignment(masterId);
+				status = authorised && authorised2;
+				boolean ownsIt = assignment.getFlightCrewMember().getId() == flightCrewMemberId;
 
-		Assignment = this.repository.findFlightAssignmentById(masterId);
-		status = authorised && Assignment != null;
+				status = status && ownsIt && this.repository.isFlightAssignmentCompleted(MomentHelper.getCurrentMoment(), masterId);
+			}
+		}
 
 		super.getResponse().setAuthorised(status);
-
 	}
 
 	@Override
 	public void load() {
 		ActivityLog activityLog;
 		int masterId;
-		FlightAssignment Assignment;
+		FlightAssignment assignment;
 
 		masterId = super.getRequest().getData("masterId", int.class);
-		Assignment = this.repository.findFlightAssignmentById(masterId);
+		assignment = this.repository.findFlightAssignmentById(masterId);
 
 		activityLog = new ActivityLog();
-		activityLog.setFlightAssignment(Assignment);
+		activityLog.setFlightAssignment(assignment);
 		activityLog.setDraftMode(true);
 		activityLog.setDescription("");
 		activityLog.setRegistrationMoment(MomentHelper.getCurrentMoment());
@@ -58,7 +65,7 @@ public class FlightCrewMemberActivityLogCreateService extends AbstractGuiService
 
 	@Override
 	public void bind(final ActivityLog activityLog) {
-		super.bindObject(activityLog, "registrationMoment", "typeOfIncident", "description", "severityLevel");
+		super.bindObject(activityLog, "typeOfIncident", "description", "severityLevel");
 
 	}
 

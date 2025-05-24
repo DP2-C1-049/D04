@@ -24,9 +24,12 @@ customer.booking.list.label.purchaseMoment=Momento de la compra
 customer.booking.list.label.price=Precio
 customer.booking.list.label.draftmode=Modo borrador
 
+customer.booking.list.label.fullName=Nombre completo
 customer.booking.list.label.locatorCode= Localizador de vuelo
 customer.booking.list.label.lastNibble= Últimos 4 dígitos de la tarjeta
 customer.booking.list.label.travelClass= Clase de viaje
+customer.booking.list.label.purchaseMoment=Momento de compra
 
 acme.validation.lastNibble.message = Debe completar los dígitos de su tarjeta para confirmar
 customer.booking.form.error.duplicateLocatorCode = El localizador de vuelo ya está en uso
+customer.booking.form.show.recommendations = Mostrar las recomendaciones en el destino

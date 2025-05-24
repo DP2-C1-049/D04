@@ -43,7 +43,7 @@ public class FlightCrewMemberFlightAssignmentPlannedListService extends Abstract
 
 	@Override
 	public void unbind(final FlightAssignment assignment) {
-		Dataset dataset = super.unbindObject(assignment, "duty", "moment", "currentStatus", "remarks");
+		Dataset dataset = super.unbindObject(assignment, "duty", "moment", "currentStatus", "remarks", "draftMode");
 
 		super.getResponse().addData(dataset);
 	}

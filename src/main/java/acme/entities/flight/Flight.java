@@ -81,7 +81,7 @@ public class Flight extends AbstractEntity {
 	@Transient
 	public String getDestinationCity() {
 		LegRepository repository = SpringHelper.getBean(LegRepository.class);
-		return repository.findDestinationCity(this.getId()).orElse("");
+		return repository.findDestinationCity(this.getId()).stream().findFirst().orElse("");
 	}
 
 	@Transient
@@ -101,4 +101,5 @@ public class Flight extends AbstractEntity {
 		List<Airport> list = repository.findOrderedDestinationAirport(this.getId());
 		return list.isEmpty() ? null : list.get(0);
 	}
+
 }

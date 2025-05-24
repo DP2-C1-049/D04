@@ -8,12 +8,10 @@ Airline-05,"Lorem ipsum dolor sit amet, consectetur adipiscing",EEE,http://lorem
 Airline-06,洛伦·伊普森,FFF,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,123456,Airport-01
 #website
 Airline-07,Lorem ipsum dolor sit ame,GGG,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,123456,Airport-01
-Airline-08,Lorem ipsum dolor sit ame,HHH,ftp://a,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,123456,Airport-01
 Airline-09,Lorem ipsum dolor sit ame,III,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/",LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,123456,Airport-01
 Airline-10,Lorem ipsum dolor sit ame,JJJ,http://example.org?a&b,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,123456,Airport-01
 Airline-11,Lorem ipsum dolor sit ame,KKK,http://example.org/a/b?a&b,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,123456,Airport-01
 Airline-12,Lorem ipsum dolor sit ame,LLL,http://lorem.com/ipftp://a.bsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,123456,Airport-01
-Airline-13,Lorem ipsum dolor sit ame,MMM,ftp://a.b,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,123456,Airport-01
 #type
 Airline-14,Lorem ipsum dolor sit ame,NNN,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,123456,Airport-01
 Airline-15,Lorem ipsum dolor sit ame,OOO,http://lorem.com/ipsum,STANDARD,2012/07/02 0:00,acme@lorem-ipsum.org,123456,Airport-01

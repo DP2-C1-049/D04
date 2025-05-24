@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.activitylog.ActivityLog;
@@ -21,18 +22,23 @@ public class FlightCrewMemberActivityLogListService extends AbstractGuiService<F
 
 	@Override
 	public void authorise() {
-		boolean status;
+		boolean status = false;
 		int masterId;
-		FlightAssignment flightAssignment;
+		FlightAssignment assignment;
+		if (super.getRequest().hasData("masterId", int.class)) {
+			masterId = super.getRequest().getData("masterId", int.class);
+			assignment = this.repository.findFlightAssignmentById(masterId);
+			if (assignment != null) {
+				int flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+				boolean authorised = this.repository.existsFlightCrewMember(flightCrewMemberId);
 
-		masterId = super.getRequest().getData("masterId", int.class);
-		flightAssignment = this.repository.findFlightAssignmentById(masterId);
+				status = authorised && assignment != null;
+				boolean ownsIt = assignment.getFlightCrewMember().getId() == flightCrewMemberId;
+				status = status && ownsIt && this.repository.isFlightAssignmentCompleted(MomentHelper.getCurrentMoment(), masterId);
+			}
+			super.getResponse().setAuthorised(status);
+		}
 
-		int flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		boolean authorised = this.repository.existsFlightCrewMember(flightCrewMemberId);
-
-		status = authorised && flightAssignment != null;
-		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -52,27 +58,20 @@ public class FlightCrewMemberActivityLogListService extends AbstractGuiService<F
 	public void unbind(final ActivityLog activityLog) {
 		Dataset dataset;
 
-		dataset = super.unbindObject(activityLog, "registrationMoment", "typeOfIncident", "description", "severityLevel");
+		dataset = super.unbindObject(activityLog, "registrationMoment", "typeOfIncident", "description", "severityLevel", "draftMode");
 		super.addPayload(dataset, activityLog, "registrationMoment", "typeOfIncident");
 
-		super.getResponse().addData(dataset);
-
-	}
-
-	@Override
-	public void unbind(final Collection<ActivityLog> activityLog) {
 		int masterId;
 
-		final boolean showCreate;
+		boolean showCreate;
 
 		masterId = super.getRequest().getData("masterId", int.class);
 
-		System.out.println("El masterId es: " + masterId + " de la Assignment= " + this.repository.isFlightAssignmentAlreadyPublishedById(masterId));
-		System.out.flush();
-		showCreate = this.repository.isFlightAssignmentAlreadyPublishedById(masterId);
+		showCreate = this.repository.flightAssignmentAssociatedWithCompletedLeg(masterId, MomentHelper.getCurrentMoment());
 
 		super.getResponse().addGlobal("masterId", masterId);
 		super.getResponse().addGlobal("showCreate", showCreate);
+		super.getResponse().addData(dataset);
 
 	}
 
