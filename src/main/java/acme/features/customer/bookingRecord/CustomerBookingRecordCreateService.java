@@ -91,7 +91,7 @@ public class CustomerBookingRecordCreateService extends AbstractGuiService<Custo
 		Collection<Passenger> addedPassengers = this.repository.findAllPassengersByBookingId(bookingId);
 
 		Collection<Passenger> passengers = this.repository.findAllPublisedPassengersOf(customerId).stream().filter(p -> !addedPassengers.contains(p)).toList();
-		SelectChoices passengerChoices = SelectChoices.from(passengers, "fullName", bookingRecord.getPassenger());
+		SelectChoices passengerChoices = SelectChoices.from(passengers, "id", bookingRecord.getPassenger());
 		dataset.put("passengers", passengerChoices);
 		dataset.put("locatorCode", bookingRecord.getBooking().getLocatorCode());
 

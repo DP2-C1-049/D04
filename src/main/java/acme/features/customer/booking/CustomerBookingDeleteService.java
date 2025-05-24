@@ -82,7 +82,7 @@ public class CustomerBookingDeleteService extends AbstractGuiService<Customer, B
 		dataset.put("travelClasses", travelClasses);
 		SelectChoices flightChoices;
 		Flight selectedFlight = this.repository.findBookingById(booking.getId()).getFlight();
-		flightChoices = SelectChoices.from(flights, "flightSummary", selectedFlight);
+		flightChoices = SelectChoices.from(flights, "id", selectedFlight);
 
 		dataset.put("flights", flightChoices);
 
