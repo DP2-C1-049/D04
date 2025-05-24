@@ -11,6 +11,7 @@ flight-assignment-05,flight-crew-member-01,leg-05,PILOT,2023/01/01 10:00, CONFIR
 flight-assignment-06,flight-crew-member-01,leg-00,PILOT,2000/01/01 00:00, CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
 flight-assignment-07,flight-crew-member-01,leg-01,PILOT,2000/01/01 00:01, CONFIRMED,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",false
 flight-assignment-08,flight-crew-member-02,leg-02,PILOT,2024/12/31 23:59, CONFIRMED,"Past assignment",true
+flight-assignment-23,flight-crew-member-02,leg-02,PILOT,2025/01/01 00:00, CONFIRMED,"Past assignment",true
 
 # currentStatus - standard variations
 flight-assignment-09,flight-crew-member-01,leg-04,PILOT,2023/01/01 10:00, PENDING,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",true
