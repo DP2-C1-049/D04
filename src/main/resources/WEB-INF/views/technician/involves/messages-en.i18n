@@ -1,5 +1,5 @@
-technician.involved-in.form.title = Association Form
-technician.involved-in.list.title = Association list 
+technician.involves.form.title = Association Form
+technician.involves.list.title = Association list 
 
 technician.involved-in.form.label.task = Task
 technician.involved-in.form.label.tickerMaintenanceRecord = Maintenance Record Ticker
