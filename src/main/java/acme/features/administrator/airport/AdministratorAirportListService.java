@@ -23,8 +23,10 @@ public class AdministratorAirportListService extends AbstractGuiService<Administ
 
 	@Override
 	public void authorise() {
-		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Administrator.class);
-		super.getResponse().setAuthorised(status);
+		if (!super.getRequest().getMethod().equals("GET"))
+			super.getResponse().setAuthorised(false);
+		else
+			super.getResponse().setAuthorised(true);
 	}
 
 	@Override
@@ -36,11 +38,8 @@ public class AdministratorAirportListService extends AbstractGuiService<Administ
 
 	@Override
 	public void unbind(final Airport airport) {
-
 		Dataset dataset;
-
 		dataset = super.unbindObject(airport, "name", "iataCode", "city", "country");
-
 		super.getResponse().addData(dataset);
 	}
 }
