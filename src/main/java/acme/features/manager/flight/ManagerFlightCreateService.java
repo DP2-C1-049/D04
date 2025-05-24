@@ -23,7 +23,11 @@ public class ManagerFlightCreateService extends AbstractGuiService<Manager, Flig
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status = true;
+		String method = super.getRequest().getMethod();
+		if (method.equals("GET") && super.getRequest().hasData("id", int.class))
+			status = false;
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -36,8 +40,8 @@ public class ManagerFlightCreateService extends AbstractGuiService<Manager, Flig
 		flight.getCost().setAmount(0.0);
 		flight.getCost().setCurrency("USD");
 		flight.setDescription("");
-		flight.setManager(manager);
 		flight.setDraftMode(true);
+		flight.setManager(manager);
 		super.getBuffer().addData(flight);
 	}
 

@@ -23,15 +23,27 @@ public class CustomerBookingShowService extends AbstractGuiService<Customer, Boo
 
 	@Override
 	public void authorise() {
-		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
+		try {
+			if (!super.getRequest().getMethod().equals("GET"))
+				super.getResponse().setAuthorised(false);
+			else {
+				boolean status = super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
 
-		super.getResponse().setAuthorised(status);
+				super.getResponse().setAuthorised(status);
 
-		int customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		int bookingId = super.getRequest().getData("id", int.class);
-		Booking booking = this.repository.getBookingById(bookingId);
+				int customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
+				Integer bookingId = super.getRequest().getData("id", Integer.class);
+				if (bookingId == null)
+					super.getResponse().setAuthorised(false);
+				else {
+					Booking booking = this.repository.findBookingById(bookingId);
+					super.getResponse().setAuthorised(customerId == booking.getCustomer().getId());
+				}
+			}
+		} catch (Throwable t) {
+			super.getResponse().setAuthorised(false);
+		}
 
-		super.getResponse().setAuthorised(customerId == booking.getCustomer().getId());
 	}
 
 	@Override
@@ -39,22 +51,23 @@ public class CustomerBookingShowService extends AbstractGuiService<Customer, Boo
 		Booking booking;
 		int id = super.getRequest().getData("id", int.class);
 
-		booking = this.repository.getBookingById(id);
+		booking = this.repository.findBookingById(id);
+
 		super.getBuffer().addData(booking);
+
 	}
 
 	@Override
 	public void unbind(final Booking booking) {
-		assert booking != null;
 		Dataset dataset;
 		SelectChoices travelClasses = SelectChoices.from(TravelClass.class, booking.getTravelClass());
-
 		Collection<Flight> flights = this.repository.findAllPublishedFlights();
-
 		dataset = super.unbindObject(booking, "flight", "locatorCode", "travelClass", "price", "lastNibble", "draftMode", "id");
 		dataset.put("travelClasses", travelClasses);
 		SelectChoices flightChoices = SelectChoices.from(flights, "flightSummary", booking.getFlight());
 		dataset.put("flights", flightChoices);
+		dataset.put("city", booking.getFlight().getDestinationAirport().getCity());
+		dataset.put("country", booking.getFlight().getDestinationAirport().getCountry());
 		super.getResponse().addData(dataset);
 	}
 

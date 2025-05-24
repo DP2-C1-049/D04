@@ -1,14 +1,21 @@
-technician.involves.form.title = Involved In Form
-technician.involves.list.title = Listing of Involved In
+technician.involved-in.form.title = Association Form
+technician.involved-in.list.title = Association list 
 
-technician.involves.form.label.task = Task
-technician.involves.form.label.priority = Priority
-technician.involves.form.label.technician = License number of Technician
+technician.involved-in.form.label.task = Task
+technician.involved-in.form.label.tickerMaintenanceRecord = Maintenance Record Ticker
+technician.involved-in.form.label.ticker= Task Ticker
+technician.involved-in.form.label.type= Task Type
+technician.involved-in.form.label.priority = Task Priority
+technician.task.form.label.estimated-duration = Task Estimated Duration
+technician.involved-in.form.label.technician = License number of Technician
 
-technician.involves.form.button.create = Create
-technician.involves.form.button.delete = Delete
+technician.involved-in.form.button.create = Add Association
+technician.involved-in.form.button.delete = Delete Association
 
-technician.involves.list.label.task = Task
-technician.involves.list.label.priority = Priority
+technician.involved-in.list.label.task = Task
+technician.involved-in.list.label.priority = Priority
 
-technician.involves.list.button.create = Create
+technician.involved-in.list.button.create = Add Association
+
+technician.involves.list.label.ticker = Ticker
+technician.involved-in.form.label.description = Task Description

@@ -10,3 +10,56 @@
 
 acme.validation.airline.IATACODE.message = Must have three-uppercase-letter identifier, where the last letter is typically an "X"
 acme.validation.Airline.duplicated-IATACode.message = Must not be duplicated
+
+acme.validation.maintenanceRecord.NotNull = The maintenance record cannot be null
+acme.validation.maintenanceRecord.nextInspectionNotNull = Must have a next inspection date
+acme.validation.maintenanceRecord.DateCorrect = Next inspection date must be after moment date
+
+acme.validation.involved-in.task = To publish a maintenance record it must have at least one published task and all his tasks must be published
+
+acme.validation.airport.form.error.duplicateIata = This IATA code already exists
+acme.validation.error.phoneNumber= It is not a valid phone number. It must have between 6 and 15 characters
+
+acme.validation.longText= The length must be between 1 and 255 characters
+acme.validation.shortText= The length must be between 1 and 50 characters
+
+acme.validation.job.ticker.message = invalid Ticker. It must have between 5 and 15 characters
+acme.validation.form.error.duplicateTicker = Duplicated Ticker 
+
+
+acme.validation.claim.form.error.registrationMomentNotPast = Registration Moment must be in the past
+acme.validation.claim.form.error.type = You can only choose a type from the selection 
+acme.validation.claim.form.error.leg = You can only choose a leg from the selection 
+acme.validation.claim.form.error.leg2 = Leg can not be null, you must select one
+acme.validation.claim.form.error.draftMode = You can not update o delete a claim if it is not in draft mode
+
+assistance-agent.tracking-log.form.error.wrongStatus = Status must be PENDING
+assistanceAgent.trackingLog.form.error.wrongStatus2. = Status must be ACCEPTED or REJECTED
+assistanceAgent.trackingLog.form.error.resolutionNeeded = Resolution can not be null
+assistanceAgent.trackingLog.form.error.complatePercentage = You can only have two tracking Log in 100 percentage
+assistanceAgent.trackingLog.form.error.wrongNewPercentage = The new Percentage must be higher than the last one
+assistanceAgent.trackingLog.form.error.statusNewPercentageTotal = The status of the new tracking log with 100 of percentage must be the same than the other tracking log with 100 of percentage 
+assistanceAgent.trackingLog.form.error.draftModeClaim = The claim must be publish before publishing a tracking log
+assistanceAgent.trackingLog.form.error.wrongPercentage = You can not create two trackingLogs with the same resolution percentage
+
+acme.validation.leg.message = This aircraft has pending flight legs, it cannot be disabled
+
+customer.booking.form.error.duplicateLocatorCode = This locator code is already in use
+
+acme.validation.lastNibble.message  = This field is required to publish a booking
+acme.validation.passengersNumber.message = The booking must have at least one passenger in order to be published
+acme.validation.passengersNotPublished.message = All passengers must be published in order to publish the booking
+
+acme.validation.validCurrency = This currency is invalid
+acme.validation.form.error.NotNull= It must not be null
+acme.validation.form.error.invalidAircraft = The aircraft is not valid
+acme.validation.form.error.invalidTask = The task is not valid
+
+acme.validation.form.error.TaskInvolved = There are tasks involved in maintenance records
+acme.validation.form.error.TaskInvolvedMR = There are tasks involved in
+
+acme.validation.assignment.dutyIncorrect = The leg is already assigned to co-pilot or pilot duty
+acme.validation.assignment.statusIncorrect = Member not Available 
+acme.validation.FlightAssignment.memberHasIncompatibleLegs.message = They cannot be assigned to multiple legs simultaneously.
+acme.validation.FlightAssignment.memberHasIncompatibleDuty.message = Each leg can only have one pilot and one co-pilot. 
+acme.validation.FlightAssignment.HasIncompatibleLeg = The associated leg should be published.

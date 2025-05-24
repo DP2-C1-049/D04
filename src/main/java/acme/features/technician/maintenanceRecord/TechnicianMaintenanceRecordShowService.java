@@ -31,8 +31,10 @@ public class TechnicianMaintenanceRecordShowService extends AbstractGuiService<T
 		masterId = super.getRequest().getData("id", int.class);
 		maintenanceRecord = this.repository.findMaintenanceRecordById(masterId);
 		technician = maintenanceRecord == null ? null : maintenanceRecord.getTechnician();
-		status = super.getRequest().getPrincipal().hasRealm(technician) && maintenanceRecord != null;
-
+		if (maintenanceRecord != null)
+			status = super.getRequest().getPrincipal().getActiveRealm().getId() == maintenanceRecord.getTechnician().getId() && super.getRequest().getPrincipal().hasRealmOfType(Technician.class);
+		else
+			status = false;
 		super.getResponse().setAuthorised(status);
 	}
 
@@ -59,7 +61,7 @@ public class TechnicianMaintenanceRecordShowService extends AbstractGuiService<T
 
 		choices = SelectChoices.from(MaintenaceRecordStatus.class, maintenanceRecord.getStatus());
 
-		dataset = super.unbindObject(maintenanceRecord, "moment", "nextInspectionDueTime", "estimatedCost", "notes", "draftMode");
+		dataset = super.unbindObject(maintenanceRecord, "ticker", "moment", "nextInspectionDueTime", "estimatedCost", "notes", "draftMode");
 		dataset.put("status", choices.getSelected().getKey());
 		dataset.put("statuses", choices);
 		dataset.put("aircrafts", aircrafts);

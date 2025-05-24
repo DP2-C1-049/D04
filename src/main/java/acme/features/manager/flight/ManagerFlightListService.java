@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
+import acme.client.components.principals.Principal;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.flight.Flight;
@@ -24,7 +25,9 @@ public class ManagerFlightListService extends AbstractGuiService<Manager, Flight
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		Principal manager = super.getRequest().getPrincipal();
+		boolean isManager = manager.hasRealmOfType(Manager.class);
+		super.getResponse().setAuthorised(isManager);
 	}
 
 	@Override
@@ -37,10 +40,20 @@ public class ManagerFlightListService extends AbstractGuiService<Manager, Flight
 	@Override
 	public void unbind(final Flight flight) {
 		Dataset dataset = super.unbindObject(flight, "tag", "indication", "cost", "description");
-		dataset.put("departure", flight.getDeparture());
-		dataset.put("arrival", flight.getArrival());
-		dataset.put("originCity", flight.getOriginCity());
-		dataset.put("destinationCity", flight.getDestinationCity());
+
+		if (flight.getDeparture() != null)
+			dataset.put("departure", flight.getDeparture());
+		if (flight.getArrival() != null)
+			dataset.put("arrival", flight.getArrival());
+		if (flight.getOriginCity() != null)
+			dataset.put("originCity", flight.getOriginCity());
+		else
+			dataset.put("originCity", "");
+		if (flight.getDestinationCity() != null)
+			dataset.put("destinationCity", flight.getDestinationCity());
+		else
+			dataset.put("destinationCity", "");
+
 		dataset.put("numberOfLayovers", flight.getNumberOfLayovers());
 		super.getResponse().addData(dataset);
 	}

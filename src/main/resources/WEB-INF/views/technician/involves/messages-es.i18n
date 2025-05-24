@@ -1,17 +1,21 @@
+technician.involved-in.form.title = Formulario de asociación 
+technician.involved-in.list.title = Lista asociaciones
 
 
+technician.involved-in.form.label.task = Tarea
+technician.involved-in.form.label.tickerMaintenanceRecord = Ticker Registro de Mantenimiento
+technician.involved-in.form.label.ticker= Ticker Tarea
+technician.involved-in.form.label.type= Tipo de tarea
+technician.involved-in.form.label.priority = Prioridad de la tarea
+technician.task.form.label.estimated-duration = Duración estimada de la tarea
+technician.involved-in.form.label.technician = Número de licencia del técnico
+technician.involved-in.form.button.create = Añadir Asociación
+technician.involved-in.form.button.delete = Eliminar Asociación
 
-technician.involves.form.title = Formulario
-technician.involves.list.title = Lista
+technician.involved-in.list.label.task = Tarea
+technician.involved-in.list.label.priority = Prioridad
 
-technician.involves.form.label.task = Tarea
-technician.involves.form.label.priority = Prioridad
-technician.involves.form.label.technician = Número de licencia del técnico
+technician.involved-in.list.button.create = Añadir Asociación
 
-technician.involves.form.button.create = Crear
-technician.involves.form.button.delete = Eliminar
-
-technician.involves.list.label.task = Tarea
-technician.involves.list.label.priority = Prioridad
-
-technician.involves.list.button.create = Crear
+technician.involves.list.label.ticker = Ticker
+technician.involved-in.form.label.description = Descripcion

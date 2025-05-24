@@ -2,6 +2,7 @@
 package acme.entities.flight;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -16,6 +17,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
 import acme.client.helpers.SpringHelper;
+import acme.entities.airport.Airport;
 import acme.features.authenticated.leg.LegRepository;
 import acme.realms.Manager;
 import lombok.Getter;
@@ -92,4 +94,12 @@ public class Flight extends AbstractEntity {
 	public String getFlightSummary() {
 		return String.format("Flight: %s → %s", this.getOriginCity(), this.getDestinationCity());
 	}
+
+	@Transient
+	public Airport getDestinationAirport() {
+		LegRepository repository = SpringHelper.getBean(LegRepository.class);
+		List<Airport> list = repository.findOrderedDestinationAirport(this.getId());
+		return list.isEmpty() ? null : list.get(0);
+	}
+
 }
