@@ -29,17 +29,18 @@ public class ManagerFlightPublishService extends AbstractGuiService<Manager, Fli
 
 	@Override
 	public void authorise() {
-		boolean isManager;
-		int flightId;
-		Flight flight;
-		flightId = super.getRequest().getData("id", int.class);
-		flight = this.repository.findById(flightId);
-		if (flight != null) {
-			int managerId = super.getRequest().getPrincipal().getActiveRealm().getId();
-			isManager = flight.getManager().getId() == managerId;
-		} else
-			isManager = false;
-		super.getResponse().setAuthorised(isManager && flight.isDraftMode());
+		boolean status = true;
+		String method = super.getRequest().getMethod();
+		if (method.equals("GET"))
+			status = false;
+		else {
+			int flightId = super.getRequest().getData("id", int.class);
+			Flight flight = this.repository.findById(flightId);
+			Manager manager = (Manager) super.getRequest().getPrincipal().getActiveRealm();
+
+			status = flight != null && flight.isDraftMode() && flight.getManager().getId() == manager.getId();
+		}
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -51,6 +52,7 @@ public class ManagerFlightPublishService extends AbstractGuiService<Manager, Fli
 
 	@Override
 	public void bind(final Flight flight) {
+		super.bindObject(flight, "tag", "indication", "cost", "description", "departure", "arrival");
 	}
 
 	@Override
@@ -58,6 +60,10 @@ public class ManagerFlightPublishService extends AbstractGuiService<Manager, Fli
 		Collection<Leg> legs = this.legRepository.findLegsByflightId(flight.getId());
 		boolean hasLeg = !legs.isEmpty();
 		super.state(hasLeg, "*", "flight.publish.error.noLegs");
+		if (hasLeg) {
+			boolean allPublished = legs.stream().allMatch(leg -> !leg.isDraftMode());
+			super.state(allPublished, "*", "flight.publish.error.unpublishedLegs");
+		}
 	}
 
 	@Override
@@ -68,12 +74,24 @@ public class ManagerFlightPublishService extends AbstractGuiService<Manager, Fli
 
 	@Override
 	public void unbind(final Flight flight) {
-		Dataset dataset = super.unbindObject(flight, "tag", "indication", "cost", "description");
-		dataset.put("departure", flight.getDeparture());
-		dataset.put("arrival", flight.getArrival());
-		dataset.put("originCity", flight.getOriginCity());
-		dataset.put("destinationCity", flight.getDestinationCity());
-		dataset.put("numberOfLayovers", flight.getNumberOfLayovers());
+		Dataset dataset = super.unbindObject(flight, "tag", "indication", "cost", "description", "draftMode");
+		if (flight.getDeparture() != null)
+			dataset.put("departure", flight.getDeparture());
+		if (flight.getArrival() != null)
+			dataset.put("arrival", flight.getArrival());
+		if (flight.getOriginCity() != null)
+			dataset.put("originCity", flight.getOriginCity());
+		else
+			dataset.put("originCity", "");
+		if (flight.getDestinationCity() != null)
+			dataset.put("destinationCity", flight.getDestinationCity());
+		else
+			dataset.put("destinationCity", "");
+		Integer layovers = flight.getNumberOfLayovers();
+		if (layovers == -1)
+			dataset.put("numberOfLayovers", 0);
+		else
+			dataset.put("numberOfLayovers", layovers != null ? layovers : 0);
 		super.getResponse().addData(dataset);
 	}
 }
