@@ -90,7 +90,7 @@ public class CustomerBookingRecordDeleteService extends AbstractGuiService<Custo
 		int bookingId = super.getRequest().getData("bookingId", int.class);
 		Collection<Passenger> addedPassengers = this.repository.findAllPassengersByBookingId(bookingId);
 		SelectChoices passengerChoices;
-		passengerChoices = SelectChoices.from(addedPassengers, "fullName", bookingRecord.getPassenger());
+		passengerChoices = SelectChoices.from(addedPassengers, "id", bookingRecord.getPassenger());
 
 		dataset.put("passengers", passengerChoices);
 		dataset.put("locatorCode", bookingRecord.getBooking().getLocatorCode());
