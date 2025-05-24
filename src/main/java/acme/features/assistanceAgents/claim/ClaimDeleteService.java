@@ -29,17 +29,25 @@ public class ClaimDeleteService extends AbstractGuiService<AssistanceAgents, Cla
 	@Override
 	public void authorise() {
 		boolean status;
-		Claim claim;
-		int id;
-		AssistanceAgents assistanceAgent;
+		try {
+			if (!super.getRequest().getMethod().equals("POST"))
+				super.getResponse().setAuthorised(false);
+			else {
+				Claim claim;
+				Integer id;
+				AssistanceAgents assistanceAgent;
 
-		id = super.getRequest().getData("id", int.class);
-		claim = this.repository.findClaimById(id);
-		assistanceAgent = claim == null ? null : claim.getAssistanceAgent();
-		status = super.getRequest().getPrincipal().hasRealm(assistanceAgent) && (claim == null || claim.isDraftMode());
-		super.getResponse().setAuthorised(status);
+				id = super.getRequest().getData("id", Integer.class);
+				claim = this.repository.findClaimById(id);
+				assistanceAgent = claim == null ? null : claim.getAssistanceAgent();
+				status = super.getRequest().getPrincipal().hasRealm(assistanceAgent) && (claim == null || claim.isDraftMode());
+				super.getResponse().setAuthorised(status);
+			}
+		} catch (Exception e) {
+			super.getResponse().setAuthorised(false);
+		}
+
 	}
-
 	@Override
 	public void load() {
 		Claim claim;
@@ -58,7 +66,10 @@ public class ClaimDeleteService extends AbstractGuiService<AssistanceAgents, Cla
 
 	@Override
 	public void validate(final Claim claim) {
-		;
+
+		Collection<TrackingLog> trackingLogs = this.repository.findTrackingLogsByClaimId(claim.getId());
+		boolean valid = trackingLogs.isEmpty();
+		super.state(valid, "*", "assistanceAgent.claim.form.error.stillTrackingLogs");
 	}
 
 	@Override
