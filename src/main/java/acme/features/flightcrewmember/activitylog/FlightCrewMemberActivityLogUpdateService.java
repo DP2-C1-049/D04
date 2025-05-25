@@ -60,14 +60,10 @@ public class FlightCrewMemberActivityLogUpdateService extends AbstractGuiService
 	@Override
 	public void validate(final ActivityLog activityLog) {
 
-		if (activityLog == null)
-			return;
 		FlightAssignment flightAssignment = this.repository.findFlightAssignmentByActivityLogId(activityLog.getId());
-		if (activityLog.getRegistrationMoment() == null || flightAssignment == null)
-			return;
+
 		Leg leg = flightAssignment.getLeg();
-		if (leg == null || leg.getArrival() == null)
-			return;
+
 		boolean activityLogMomentIsAfterscheduledArrival = this.repository.associatedWithCompletedLeg(activityLog.getId(), MomentHelper.getCurrentMoment());
 		super.state(activityLogMomentIsAfterscheduledArrival, "WrongActivityLogDate", "acme.validation.activityLog.wrongMoment.message");
 
