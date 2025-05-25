@@ -110,7 +110,7 @@ public class ClaimPublishService extends AbstractGuiService<AssistanceAgents, Cl
 		Dataset dataset;
 
 		choices = SelectChoices.from(ClaimType.class, claim.getType());
-		for (Leg leg : this.repository.findAllLeg())
+		for (Leg leg : this.repository.findAllLegPublish())
 			if (leg.getArrival().before(claim.getRegistrationMoment()))
 				legs.add(leg);
 		choices2 = SelectChoices.from(legs, "flightNumber", claim.getLeg());

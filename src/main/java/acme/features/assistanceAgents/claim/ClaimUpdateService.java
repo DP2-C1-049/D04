@@ -28,33 +28,25 @@ public class ClaimUpdateService extends AbstractGuiService<AssistanceAgents, Cla
 
 	@Override
 	public void authorise() {
-		boolean status;
-		Integer claimId;
 		Claim claim;
-		AssistanceAgents assistanceAgent;
-		try {
-			if (!super.getRequest().getMethod().equals("POST"))
-				super.getResponse().setAuthorised(false);
-			else {
-				claimId = super.getRequest().getData("id", Integer.class);
-				claim = this.repository.findClaimById(claimId);
-				assistanceAgent = claim == null ? null : claim.getAssistanceAgent();
-				status = super.getRequest().getPrincipal().hasRealm(assistanceAgent);
+		int id;
 
-				if (super.getRequest().hasData("id")) {
-					Integer legId = super.getRequest().getData("leg", Integer.class);
-					if (legId == null || legId != 0) {
-						Leg leg = this.repository.findLegByLegId(legId);
-						status = status && leg != null && !leg.isDraftMode();
-					}
-				}
-				super.getResponse().setAuthorised(status);
-			}
-		} catch (Exception e) {
-			super.getResponse().setAuthorised(false);
+		id = super.getRequest().getData("id", int.class);
+		claim = this.repository.findClaimById(id);
+		boolean status = claim.isDraftMode();
+		AssistanceAgents agent;
+		agent = (AssistanceAgents) super.getRequest().getPrincipal().getActiveRealm();
+		status = status && claim.getAssistanceAgent().equals(agent);
+		String method = super.getRequest().getMethod();
+		if (method.equals("POST")) {
+
+			int legId = super.getRequest().getData("leg", int.class);
+			status = status && (this.repository.findLegByLegId(legId) != null || legId == 0 || this.repository.findLegByLegId(claim.getLeg().getId()) != null);
+
 		}
-
+		super.getResponse().setAuthorised(status);
 	}
+
 	@Override
 	public void load() {
 		Claim claim;
@@ -86,20 +78,20 @@ public class ClaimUpdateService extends AbstractGuiService<AssistanceAgents, Cla
 
 	@Override
 	public void unbind(final Claim claim) {
+
 		List<Leg> legs = new ArrayList<>();
 		SelectChoices choices;
 		SelectChoices choices2;
 		Dataset dataset;
 
 		choices = SelectChoices.from(ClaimType.class, claim.getType());
-		for (Leg leg : this.repository.findAllLeg())
-			if (leg.getArrival().before(claim.getRegistrationMoment()))
-				legs.add(leg);
+		legs = this.repository.findAllLegPublish().stream().filter(l -> l.getArrival().before(claim.getRegistrationMoment())).toList();
 		choices2 = SelectChoices.from(legs, "flightNumber", claim.getLeg());
 
 		dataset = super.unbindObject(claim, "registrationMoment", "email", "description", "type", "draftMode", "id");
+
 		dataset.put("types", choices);
-		dataset.put("leg", choices2.getSelected().getKey());
+		dataset.put("leg", choices2);
 		dataset.put("legs", choices2);
 
 		super.getResponse().addData(dataset);

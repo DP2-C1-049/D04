@@ -27,7 +27,7 @@ public class PendingClaimListService extends AbstractGuiService<AssistanceAgents
 			super.getResponse().setAuthorised(status);
 			if (!super.getRequest().getMethod().equals("GET"))
 				super.getResponse().setAuthorised(false);
-		} catch (Throwable t) {
+		} catch (Exception e) {
 			super.getResponse().setAuthorised(false);
 		}
 	}
