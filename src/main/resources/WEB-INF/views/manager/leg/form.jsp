@@ -22,7 +22,7 @@
         <acme:input-textbox code="manager.leg.form.label.flightNumber" path="flightNumber" />
         <acme:input-moment code="manager.leg.form.label.departure" path="departure" />
         <acme:input-moment code="manager.leg.form.label.arrival" path="arrival" />
-        <acme:input-textbox code="manager.leg.form.label.duration" path="duration" />
+        <acme:input-textbox code="manager.leg.form.label.duration" path="duration" readonly="true"/>
         <acme:input-select code="manager.leg.form.label.status" path="status"  choices="${legStatuses}" />
         <acme:input-select 
             code="manager.leg.form.label.departureAirport" 

@@ -28,7 +28,7 @@ public class Leg extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@Mandatory
-	@ValidString
+	@ValidString(pattern = "^[A-Z]{3}\\d{4}$")
 	@Automapped
 	@Column(unique = true)
 	private String				flightNumber;

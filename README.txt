@@ -30,10 +30,15 @@ GitHub dashboard SamuCoco04 D02:
 https://github.com/orgs/DP2-C1-049/projects/12/views/3
 GitHub dashboard SamuCoco04 D03:
 https://github.com/orgs/DP2-C1-049/projects/12/views/4
+
 GitHub dashboard STX3837 D01:
 https://github.com/orgs/DP2-C1-049/projects/8/views/2
 GitHub dashboard STX3837 D02:
 https://github.com/orgs/DP2-C1-049/projects/8/views/3
+GitHub dashboard STX3837 D03:
+https://github.com/orgs/DP2-C1-049/projects/8/views/4
+GitHub dashboard STX3837 D04:
+https://github.com/orgs/DP2-C1-049/projects/8/views/5
 
 GitHub dashboard serponlop D01 (Student 2): 
 https://github.com/orgs/DP2-C1-049/projects/9/views/2

@@ -52,10 +52,7 @@ public class ManagerFlightCreateService extends AbstractGuiService<Manager, Flig
 
 	@Override
 	public void validate(final Flight flight) {
-		Manager manager = flight.getManager();
-		super.state(manager != null, "manager", "acme.validation.Flight.ManagerIncompatibleDates.message");
-		boolean confirmation = super.getRequest().getData("confirmation", boolean.class);
-		super.state(confirmation, "confirmation", "manager.flight.form.label.confirmation");
+
 	}
 
 	@Override
