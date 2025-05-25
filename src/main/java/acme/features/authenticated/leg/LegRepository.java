@@ -24,11 +24,11 @@ public interface LegRepository extends AbstractRepository {
 	@Query("SELECT MAX(l.arrival) FROM Leg l WHERE l.flight.id = :flightId")
 	Optional<Date> findLastArrival(@Param("flightId") int flightId);
 
-	@Query("SELECT l.departureAirport.city FROM Leg l WHERE l.flight.id = :flightId AND l.departure = (SELECT MIN(l2.departure) FROM Leg l2 WHERE l2.flight.id = :flightId)")
-	Optional<String> findOriginCity(@Param("flightId") int flightId);
+	@Query("SELECT l.departureAirport.city FROM Leg l WHERE l.flight.id= :flightId ORDER BY l.departure ASC")
+	List<String> findOriginCity(@Param("flightId") int flightId);
 
-	@Query("SELECT l.arrivalAirport.city FROM Leg l WHERE l.flight.id = :flightId AND l.arrival = (SELECT MAX(l2.arrival) FROM Leg l2 WHERE l2.flight.id = :flightId)")
-	Optional<String> findDestinationCity(@Param("flightId") int flightId);
+	@Query("SELECT l.arrivalAirport.city FROM Leg l WHERE l.flight.id = :flightId ORDER BY l.arrival DESC")
+	List<String> findDestinationCity(@Param("flightId") int flightId);
 
 	@Query("SELECT l.departureAirport.iataCode FROM Leg l WHERE l.flight.id = :flightId AND l.departure = (SELECT MIN(l2.departure) FROM Leg l2 WHERE l2.flight.id = :flightId)")
 	Optional<String> findOriginIataCode(@Param("flightId") int flightId);

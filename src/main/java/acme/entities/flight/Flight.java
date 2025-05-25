@@ -75,13 +75,21 @@ public class Flight extends AbstractEntity {
 	@Transient
 	public String getOriginCity() {
 		LegRepository repository = SpringHelper.getBean(LegRepository.class);
-		return repository.findOriginCity(this.getId()).orElse("");
+		List<String> cities = repository.findOriginCity(this.getId());
+		if (cities.isEmpty())
+			return null;
+		else
+			return cities.get(0);
 	}
 
 	@Transient
 	public String getDestinationCity() {
 		LegRepository repository = SpringHelper.getBean(LegRepository.class);
-		return repository.findDestinationCity(this.getId()).stream().findFirst().orElse("");
+		List<String> cities = repository.findDestinationCity(this.getId());
+		if (cities.isEmpty())
+			return null;
+		else
+			return cities.get(0);
 	}
 
 	@Transient
