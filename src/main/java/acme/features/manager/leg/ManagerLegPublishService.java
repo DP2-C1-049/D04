@@ -139,7 +139,6 @@ public class ManagerLegPublishService extends AbstractGuiService<Manager, Leg> {
 	@Override
 	public void unbind(final Leg leg) {
 		Dataset ds = super.unbindObject(leg, "flightNumber", "departure", "arrival", "draftMode");
-		ds.put("duration", leg.getDuration());
 		if (leg.getDepartureAirport() != null) {
 			ds.put("departureAirport", leg.getDepartureAirport().getIataCode());
 			ds.put("originCity", leg.getDepartureAirport().getCity());

@@ -5,13 +5,9 @@ import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import acme.client.components.models.Dataset;
-import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.claim.Claim;
-import acme.entities.claim.ClaimType;
-import acme.entities.leg.Leg;
 import acme.entities.trackingLogs.TrackingLog;
 import acme.realms.AssistanceAgents;
 
@@ -29,17 +25,25 @@ public class ClaimDeleteService extends AbstractGuiService<AssistanceAgents, Cla
 	@Override
 	public void authorise() {
 		boolean status;
-		Claim claim;
-		int id;
-		AssistanceAgents assistanceAgent;
+		try {
+			if (!super.getRequest().getMethod().equals("POST"))
+				super.getResponse().setAuthorised(false);
+			else {
+				Claim claim;
+				Integer id;
+				AssistanceAgents assistanceAgent;
 
-		id = super.getRequest().getData("id", int.class);
-		claim = this.repository.findClaimById(id);
-		assistanceAgent = claim == null ? null : claim.getAssistanceAgent();
-		status = super.getRequest().getPrincipal().hasRealm(assistanceAgent) && (claim == null || claim.isDraftMode());
-		super.getResponse().setAuthorised(status);
+				id = super.getRequest().getData("id", Integer.class);
+				claim = this.repository.findClaimById(id);
+				assistanceAgent = claim == null ? null : claim.getAssistanceAgent();
+				status = super.getRequest().getPrincipal().hasRealm(assistanceAgent) && (claim == null || claim.isDraftMode());
+				super.getResponse().setAuthorised(status);
+			}
+		} catch (Exception e) {
+			super.getResponse().setAuthorised(false);
+		}
+
 	}
-
 	@Override
 	public void load() {
 		Claim claim;
@@ -58,7 +62,7 @@ public class ClaimDeleteService extends AbstractGuiService<AssistanceAgents, Cla
 
 	@Override
 	public void validate(final Claim claim) {
-		;
+
 	}
 
 	@Override
@@ -72,21 +76,7 @@ public class ClaimDeleteService extends AbstractGuiService<AssistanceAgents, Cla
 
 	@Override
 	public void unbind(final Claim claim) {
-		Collection<Leg> legs;
-		SelectChoices choices;
-		SelectChoices choices2;
-		Dataset dataset;
 
-		choices = SelectChoices.from(ClaimType.class, claim.getType());
-		legs = this.repository.findAllLeg();
-		choices2 = SelectChoices.from(legs, "flightNumber", claim.getLeg());
-
-		dataset = super.unbindObject(claim, "registrationMoment", "passengerEmail", "description", "type", "draftMode");
-		dataset.put("types", choices);
-		dataset.put("leg", choices2.getSelected().getKey());
-		dataset.put("legs", choices2);
-
-		super.getResponse().addData(dataset);
 	}
 
 }
