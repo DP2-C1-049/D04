@@ -33,13 +33,13 @@ public class TechnicianMaintenanceRecordPublishService extends AbstractGuiServic
 		else {
 			int masterId;
 			MaintenanceRecord maintenanceRecord;
-			Technician technician;
+			int technician;
 
 			masterId = super.getRequest().getData("id", int.class);
 			maintenanceRecord = this.repository.findMaintenanceRecordById(masterId);
-			technician = maintenanceRecord == null ? null : maintenanceRecord.getTechnician();
+			technician = maintenanceRecord.getTechnician().getId();
 
-			status = maintenanceRecord != null && maintenanceRecord.isDraftMode() && super.getRequest().getPrincipal().hasRealm(technician);
+			status = maintenanceRecord != null && maintenanceRecord.isDraftMode() && super.getRequest().getPrincipal().getActiveRealm().getId() == technician;
 			super.getResponse().setAuthorised(status);
 
 			Integer aircraftId = super.getRequest().getData("aircraft", Integer.class);

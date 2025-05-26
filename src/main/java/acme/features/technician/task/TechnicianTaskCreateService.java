@@ -23,6 +23,10 @@ public class TechnicianTaskCreateService extends AbstractGuiService<Technician, 
 		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Technician.class);
 		if (super.getRequest().getMethod().equals("GET") && super.getRequest().hasData("id", int.class))
 			status = false;
+		if (super.getRequest().getMethod().equals("POST")) {
+			int id = super.getRequest().getData("id", int.class);
+			status = id == 0;
+		}
 		super.getResponse().setAuthorised(status);
 	}
 

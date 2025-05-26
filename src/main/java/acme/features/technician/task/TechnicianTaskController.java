@@ -14,25 +14,22 @@ import acme.realms.Technician;
 public class TechnicianTaskController extends AbstractGuiController<Technician, Task> {
 
 	@Autowired
-	private TechnicianTaskListService			listService;
+	private TechnicianTaskListService		listService;
 
 	@Autowired
-	private TechnicianTaskShowService			showService;
+	private TechnicianTaskShowService		showService;
 
 	@Autowired
-	private TechnicianTaskCreateService			createService;
+	private TechnicianTaskCreateService		createService;
 
 	@Autowired
-	private TechnicianTaskUpdateService			updateService;
+	private TechnicianTaskUpdateService		updateService;
 
 	@Autowired
-	private TechnicianTaskPublishService		publishService;
+	private TechnicianTaskPublishService	publishService;
 
 	@Autowired
-	private TechnicianTaskDeleteService			deleteService;
-
-	@Autowired
-	private TechnicianTaskListPublishService	listPublishService;
+	private TechnicianTaskDeleteService		deleteService;
 
 
 	@PostConstruct
@@ -42,7 +39,6 @@ public class TechnicianTaskController extends AbstractGuiController<Technician, 
 		super.addBasicCommand("create", this.createService);
 		super.addBasicCommand("update", this.updateService);
 		super.addBasicCommand("delete", this.deleteService);
-		super.addCustomCommand("published", "list", this.listPublishService);
 		super.addCustomCommand("publish", "update", this.publishService);
 	}
 
