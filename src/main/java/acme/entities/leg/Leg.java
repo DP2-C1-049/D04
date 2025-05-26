@@ -5,7 +5,9 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Index;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.Valid;
 
@@ -14,6 +16,7 @@ import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
+import acme.constraints.ValidLeg;
 import acme.entities.aircraft.Aircraft;
 import acme.entities.airport.Airport;
 import acme.entities.flight.Flight;
@@ -23,12 +26,16 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@ValidLeg
+@Table(name = "leg", indexes = {
+	@Index(columnList = "departure")
+})
 public class Leg extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
 	@Mandatory
-	@ValidString
+	@ValidString(pattern = "^[A-Z]{3}\\d{4}$")
 	@Automapped
 	@Column(unique = true)
 	private String				flightNumber;

@@ -5,7 +5,9 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.Index;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.Valid;
 
@@ -26,6 +28,9 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@Table(name = "flight", indexes = {
+	@Index(columnList = "manager_id")
+})
 public class Flight extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
@@ -75,13 +80,21 @@ public class Flight extends AbstractEntity {
 	@Transient
 	public String getOriginCity() {
 		LegRepository repository = SpringHelper.getBean(LegRepository.class);
-		return repository.findOriginCity(this.getId()).orElse("");
+		List<String> cities = repository.findOriginCity(this.getId());
+		if (cities.isEmpty())
+			return null;
+		else
+			return cities.get(0);
 	}
 
 	@Transient
 	public String getDestinationCity() {
 		LegRepository repository = SpringHelper.getBean(LegRepository.class);
-		return repository.findDestinationCity(this.getId()).stream().findFirst().orElse("");
+		List<String> cities = repository.findDestinationCity(this.getId());
+		if (cities.isEmpty())
+			return null;
+		else
+			return cities.get(0);
 	}
 
 	@Transient
