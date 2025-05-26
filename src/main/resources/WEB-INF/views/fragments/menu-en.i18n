@@ -56,6 +56,7 @@ master.menu.manager.list-flights = Listing of flights
 master.menu.technician = Technician
 master.menu.maintenanceRecord.list = Maintenance Record List
 master.menu.task.list = Task list
+master.menu.show-dashboard = Technician Dashboard
 
 # master.menu.user-account ####################################################
 
