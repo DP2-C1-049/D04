@@ -1,0 +1,29 @@
+
+
+technician.technician-dashboard.form.title = Panel de indicadores de técnicos
+
+technician.dashboard.form.title.general-indicators = Indicadores generales
+technician.dashboard.form.title.maintenanceRecord-statuses = Estados de registros  
+
+
+technician.dashboard.form.label.recordWithNearestInspection = Registro con fecha de inspección más cercana.
+technician.dashboard.form.label.top5AircraftsWithMostTasks = Top cinco aviones con mayor número de tareas en sus registros.
+
+technician.dashboard.form.label.averageEstimatedCostLastYear = Media del coste estimado en los registros en el último año.
+technician.dashboard.form.label.minimumEstimatedCostLastYear= Mínimo coste estimado en los registros en el último año.
+technician.dashboard.form.label.maximumEstimatedCostLastYear= Máximo coste estimado en los registros en el último año.
+technician.dashboard.form.label.sTDDEVEstimatedCostLastYear=Desviación estándar del coste estimado en los registros en el último año.
+
+
+technician.dashboard.form.label.averageEstimatedDurationTask=Media de la duración estimada de las tareas.
+technician.dashboard.form.label.minimumEstimatedDurationTask= Mínima duración estimada de las tareas.
+technician.dashboard.form.label.maximumEstimatedDurationTask=Máxima duración estimada de las tareas.
+technician.dashboard.form.label.sTDDEVEstimatedDurationTask=Desviación estándar de la duración estimada de las tareas.
+
+
+technician.dashboard.form.label.maintenanceRecord-statuses = Número de registros de mantenimiento
+technician.dashboard.form.label.general= Indicadores generales
+technician.dashboard.form.label.eur=EUR
+technician.dashboard.form.label.usd=USD
+technician.dashboard.form.label.gbp=GBP
+technician.dashboard.form.label.duration = Duración Tareas
