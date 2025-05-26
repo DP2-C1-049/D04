@@ -3,12 +3,8 @@ package acme.features.assistanceAgents.trackingLog;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import acme.client.components.models.Dataset;
-import acme.client.components.views.SelectChoices;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
-import acme.entities.claim.Claim;
-import acme.entities.trackingLogs.ClaimStatus;
 import acme.entities.trackingLogs.TrackingLog;
 import acme.realms.AssistanceAgents;
 
@@ -69,15 +65,6 @@ public class AssistanceAgentTrackingLogDeleteService extends AbstractGuiService<
 	}
 	@Override
 	public void unbind(final TrackingLog trackingLog) {
-		SelectChoices choices;
 
-		Dataset dataset;
-
-		choices = SelectChoices.from(ClaimStatus.class, trackingLog.getStatus());
-
-		dataset = super.unbindObject(trackingLog, "lastUpdateMoment", "step", "resolutionPercentage", "status", "resolution");
-		dataset.put("status", choices);
-		Claim claim = this.repository.findClaimByTrackingLogId(trackingLog.getId());
-		dataset.put("claimId", claim.getId());
 	}
 }
