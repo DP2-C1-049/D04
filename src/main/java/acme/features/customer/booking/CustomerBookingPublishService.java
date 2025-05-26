@@ -26,32 +26,27 @@ public class CustomerBookingPublishService extends AbstractGuiService<Customer, 
 	@Override
 	public void authorise() {
 		boolean status;
+		status = super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
 
-		try {
-			status = super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
-
-			super.getResponse().setAuthorised(status);
-			if (!super.getRequest().getMethod().equals("POST"))
-				super.getResponse().setAuthorised(false);
-			else {
-				int customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
-				int bookingId = super.getRequest().getData("id", int.class);
-				Booking booking = this.repository.findBookingById(bookingId);
-				Integer flightId = super.getRequest().getData("flight", Integer.class);
-				if (flightId == null)
-					status = false;
-				else if (flightId != 0) {
-					Flight flight = this.repository.getFlightById(flightId);
-					status = status && flight != null && !flight.isDraftMode();
-				}
-
-				status = status && customerId == booking.getCustomer().getId();
-				super.getResponse().setAuthorised(status);
-			}
-		} catch (Throwable t) {
+		super.getResponse().setAuthorised(status);
+		if (!super.getRequest().getMethod().equals("POST"))
 			super.getResponse().setAuthorised(false);
-		}
+		else {
+			int customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
+			int bookingId = super.getRequest().getData("id", int.class);
+			Booking booking = this.repository.findBookingById(bookingId);
+			Integer flightId = super.getRequest().getData("flight", Integer.class);
+			if (flightId == null)
+				status = false;
+			else if (flightId != 0) {
+				Flight flight = this.repository.getFlightById(flightId);
+				status = status && flight != null && !flight.isDraftMode();
 
+			}
+
+			status = status && customerId == booking.getCustomer().getId();
+			super.getResponse().setAuthorised(status);
+		}
 	}
 
 	@Override
