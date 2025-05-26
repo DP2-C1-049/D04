@@ -53,8 +53,10 @@ public class ManagerFlightListService extends AbstractGuiService<Manager, Flight
 			dataset.put("destinationCity", flight.getDestinationCity());
 		else
 			dataset.put("destinationCity", "");
-
-		dataset.put("numberOfLayovers", flight.getNumberOfLayovers());
+		if (flight.getNumberOfLayovers() == -1)
+			dataset.put("numberOfLayovers", 0);
+		else
+			dataset.put("numberOfLayovers", flight.getNumberOfLayovers());
 		super.getResponse().addData(dataset);
 	}
 }
