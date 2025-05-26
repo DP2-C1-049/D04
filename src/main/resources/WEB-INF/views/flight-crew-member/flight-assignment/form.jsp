@@ -10,10 +10,6 @@
 	<acme:input-select code="flight-crew-member.flight-assignment.form.label.current-status" path="currentStatus" choices="${currentStatus}"/>
 	<acme:input-textbox code="flight-crew-member.flight-assignment.form.label.remarks" path="remarks"/>
 	<acme:input-moment code="flight-crew-member.flight-assignment.form.label.moment" path="moment" readonly="true"/>
-	<p>_command = ${_command}</p>
-	<p>draftMode = ${draftMode}</p>
-	<p>isCompleted = ${isCompleted}</p>
-	
 
 	<jstl:choose>	 
 		
