@@ -1,0 +1,15 @@
+
+administrator.involved-in.list.title = Association list 
+administrator.involved-in.form.title = Association Form
+
+administrator.involved-in.form.label.ticker = Ticker
+administrator.involved-in.form.label.type = Task Type
+administrator.involved-in.form.label.priority = Priority
+administrator.involved-in.form.label.description = Description
+administrator.involved-in.form.label.technician = Technician
+administrator.involved-in.form.label.estimatedDuration= Estimated Duration
+
+
+administrator.involved-in.list.label.task = Task
+administrator.involved-in.list.label.priority = Priority
+administrator.involves.list.label.ticker = Ticker

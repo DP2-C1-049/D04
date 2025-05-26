@@ -30,7 +30,7 @@ master.menu.administrator.populate-db-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-system-down = Parar el sistema
 master.menu.administrator.list-bookings = Lista de reservas
 master.menu.administrator.list-airlines = Ver Lista de lineas aereas
-
+master.menu.administrator.maintenanceRecord.list = Lista de registros de mantenimiento
 
 # master.menu.provider ########################################################
 
