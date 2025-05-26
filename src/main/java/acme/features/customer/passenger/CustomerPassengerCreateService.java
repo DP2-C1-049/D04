@@ -18,13 +18,10 @@ public class CustomerPassengerCreateService extends AbstractGuiService<Customer,
 
 	@Override
 	public void authorise() {
-		try {
-			boolean status = super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
+		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
 
-			super.getResponse().setAuthorised(status);
-		} catch (Throwable t) {
-			super.getResponse().setAuthorised(false);
-		}
+		super.getResponse().setAuthorised(status);
+
 	}
 
 	@Override
