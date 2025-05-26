@@ -21,11 +21,16 @@ public class PendingClaimListService extends AbstractGuiService<AssistanceAgents
 
 	@Override
 	public void authorise() {
-		boolean status = super.getRequest().getPrincipal().hasRealmOfType(AssistanceAgents.class);
+		try {
+			boolean status = super.getRequest().getPrincipal().hasRealmOfType(AssistanceAgents.class);
 
-		super.getResponse().setAuthorised(status);
+			super.getResponse().setAuthorised(status);
+			if (!super.getRequest().getMethod().equals("GET"))
+				super.getResponse().setAuthorised(false);
+		} catch (Exception e) {
+			super.getResponse().setAuthorised(false);
+		}
 	}
-
 	@Override
 	public void load() {
 		Collection<Claim> claims;
@@ -33,7 +38,6 @@ public class PendingClaimListService extends AbstractGuiService<AssistanceAgents
 
 		assistanceAgentId = super.getRequest().getPrincipal().getActiveRealm().getId();
 		claims = this.repository.findClaimsByAssistanceAgent(assistanceAgentId).stream().filter(x -> x.getStatus() == ClaimStatus.PENDING).toList();
-		//claims = this.repository.findClaimsByAssistanceAgent(assistanceAgentId).stream().toList();
 		super.getBuffer().addData(claims);
 	}
 
@@ -42,7 +46,6 @@ public class PendingClaimListService extends AbstractGuiService<AssistanceAgents
 		Dataset dataset;
 		ClaimStatus indicator;
 		indicator = claim.getStatus();
-		//indicator = ClaimStatus.PENDING;
 		dataset = super.unbindObject(claim, "email", "type");
 		dataset.put("indicator", indicator);
 		super.addPayload(dataset, claim, "registrationMoment", "description", "leg.flightNumber");
