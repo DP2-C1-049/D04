@@ -29,13 +29,10 @@ public class CustomerPassengerListService extends AbstractGuiService<Customer, P
 		if (!super.getRequest().getData().isEmpty()) {
 			int customerId = super.getRequest().getPrincipal().getActiveRealm().getId();
 			Integer bookingId = super.getRequest().getData("bookingId", Integer.class);
-			if (bookingId == null)
-				super.getResponse().setAuthorised(false);
-			else {
-				Booking booking = this.repository.findBookingById(bookingId);
 
-				super.getResponse().setAuthorised(customerId == booking.getCustomer().getId());
-			}
+			Booking booking = this.repository.findBookingById(bookingId);
+
+			super.getResponse().setAuthorised(customerId == booking.getCustomer().getId());
 
 		}
 
