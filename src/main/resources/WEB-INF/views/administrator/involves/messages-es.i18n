@@ -6,10 +6,10 @@ administrator.involved-in.form.title = Detalles de asociación
 administrator.involved-in.form.label.ticker = Ticker
 administrator.involved-in.form.label.type = Tipo de tarea
 administrator.involved-in.form.label.priority = Prioridad
-administrator.involved-in.form.label.description = Descipción
+administrator.involved-in.form.label.description = Descripción
 administrator.involved-in.form.label.technician = Técnico
 administrator.involved-in.form.label.estimatedDuration= Duración estimada
 
 administrator.involved-in.list.label.task = Tarea
 administrator.involved-in.list.label.priority = Prioridad
-administrator.involves.list.label.ticker = Ticker
+administrator.involved-in.list.label.ticker = Ticker

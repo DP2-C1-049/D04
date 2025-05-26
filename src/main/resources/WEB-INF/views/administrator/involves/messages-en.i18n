@@ -12,4 +12,4 @@ administrator.involved-in.form.label.estimatedDuration= Estimated Duration
 
 administrator.involved-in.list.label.task = Task
 administrator.involved-in.list.label.priority = Priority
-administrator.involves.list.label.ticker = Ticker
+administrator.involved-in.list.label.ticker = Ticker
