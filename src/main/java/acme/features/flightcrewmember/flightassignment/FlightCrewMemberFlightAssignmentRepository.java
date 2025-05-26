@@ -65,4 +65,7 @@ public interface FlightCrewMemberFlightAssignmentRepository extends AbstractRepo
 	@Query("select case when count (l) > 0 then true else false end from Leg l where l.id = :id")
 	boolean existsLeg(int id);
 
+	@Query("SELECT fa FROM FlightAssignment fa WHERE fa.leg.id = :legId")
+	Collection<FlightAssignment> findFlightAssignmentByLegId(int legId);
+
 }

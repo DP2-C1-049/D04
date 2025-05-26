@@ -80,13 +80,13 @@ public class ManagerLegUpdateService extends AbstractGuiService<Manager, Leg> {
 	@Override
 	public void bind(final Leg leg) {
 		super.bindObject(leg, "flightNumber", "departure", "arrival", "status");
-
-		String dep = super.getRequest().getData("departureAirport", String.class);
-		leg.setDepartureAirport("0".equals(dep) ? null : this.airportRepository.findAirportByIataCode(dep));
-
-		String arr = super.getRequest().getData("arrivalAirport", String.class);
-		leg.setArrivalAirport("0".equals(arr) ? null : this.airportRepository.findAirportByIataCode(arr));
-
+		String statusStr = super.getRequest().getData("status", String.class);
+		if (statusStr != null && !statusStr.isEmpty())
+			try {
+				Status newStatus = Status.valueOf(statusStr);
+				leg.setStatus(newStatus);
+			} catch (IllegalArgumentException ex) {
+			}
 		String departureIata = super.getRequest().getData("departureAirport", String.class);
 		if ("0".equals(departureIata))
 			leg.setDepartureAirport(null);
@@ -105,22 +105,16 @@ public class ManagerLegUpdateService extends AbstractGuiService<Manager, Leg> {
 				throw new IllegalStateException("Access not authorised");
 			leg.setArrivalAirport(arrivalAirport);
 		}
-		Integer acId = super.getRequest().getData("aircraft", Integer.class);
-		if (acId == null || acId == 0)
+		Integer aircraftId = super.getRequest().getData("aircraft", Integer.class);
+		if (aircraftId == null || aircraftId == 0)
 			leg.setAircraft(null);
 		else {
-			Aircraft aircraft = this.aircraftRepository.findAircraftById(acId);
+			Aircraft aircraft = this.aircraftRepository.findAircraftById(aircraftId);
 			if (aircraft == null)
 				throw new IllegalStateException("Access not authorised");
 			leg.setAircraft(aircraft);
 		}
 
-		String statusStr = super.getRequest().getData("status", String.class);
-		if (statusStr != null && !statusStr.isBlank())
-			try {
-				leg.setStatus(Status.valueOf(statusStr));
-			} catch (Exception e) {
-			}
 	}
 
 	@Override
@@ -129,17 +123,14 @@ public class ManagerLegUpdateService extends AbstractGuiService<Manager, Leg> {
 		if (leg.getDepartureAirport() != null && leg.getArrivalAirport() != null) {
 			boolean valid = !(leg.getDepartureAirport().getId() == leg.getArrivalAirport().getId());
 			super.state(valid, "arrivalAirport", "manager.leg.error.sameAirport");
+			Leg existing = this.repository.findLegByFlightNumber(leg.getFlightNumber());
+			boolean validFlightNumber = existing == null || existing.getId() == leg.getId();
+			super.state(validFlightNumber, "flightNumber", "manager.leg.error.duplicateFlightNumber");
+			super.state(leg.getDeparture() != null, "departure", "manager.leg.error.required.date");
+			super.state(leg.getArrival() != null, "arrival", "manager.leg.error.required.date");
+			if (leg.getDeparture() != null && leg.getArrival() != null)
+				super.state(leg.getDeparture().before(leg.getArrival()), "departure", "manager.leg.error.departureBeforeArrival");
 		}
-
-		super.state(leg.getDeparture() != null, "departure", "manager.leg.error.required.date");
-		super.state(leg.getArrival() != null, "arrival", "manager.leg.error.required.date");
-
-		if (leg.getDeparture() != null && leg.getArrival() != null)
-			super.state(leg.getDeparture().before(leg.getArrival()), "departure", "manager.leg.error.departureBeforeArrival");
-
-		Leg existing = this.repository.findLegByFlightNumber(leg.getFlightNumber());
-		boolean ok = existing == null || existing.getId() == leg.getId();
-		super.state(ok, "flightNumber", "manager.leg.error.duplicateFlightNumber");
 	}
 
 	@Override
@@ -150,7 +141,6 @@ public class ManagerLegUpdateService extends AbstractGuiService<Manager, Leg> {
 	@Override
 	public void unbind(final Leg leg) {
 		Dataset ds = super.unbindObject(leg, "flightNumber", "departure", "arrival", "draftMode");
-		ds.put("duration", leg.getDuration());
 		if (leg.getDepartureAirport() != null) {
 			ds.put("departureAirport", leg.getDepartureAirport().getIataCode());
 			ds.put("originCity", leg.getDepartureAirport().getCity());
