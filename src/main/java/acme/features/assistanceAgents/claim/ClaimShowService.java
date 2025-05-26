@@ -1,7 +1,8 @@
 
 package acme.features.assistanceAgents.claim;
 
-import java.util.Collection;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -24,17 +25,28 @@ public class ClaimShowService extends AbstractGuiService<AssistanceAgents, Claim
 
 	@Override
 	public void authorise() {
-		boolean status;
-		int masterId;
-		Claim claim;
-		AssistanceAgents assistanceAgent;
+		try {
+			if (!super.getRequest().getMethod().equals("GET"))
+				super.getResponse().setAuthorised(false);
+			else {
+				boolean status = super.getRequest().getPrincipal().hasRealmOfType(AssistanceAgents.class);
 
-		masterId = super.getRequest().getData("id", int.class);
-		claim = this.repository.findClaimById(masterId);
-		assistanceAgent = claim == null ? null : claim.getAssistanceAgent();
-		status = super.getRequest().getPrincipal().hasRealm(assistanceAgent) || claim != null;
+				super.getResponse().setAuthorised(status);
 
-		super.getResponse().setAuthorised(status);
+				int agentId = super.getRequest().getPrincipal().getActiveRealm().getId();
+				Integer claimId = super.getRequest().getData("id", Integer.class);
+				if (claimId == null)
+					super.getResponse().setAuthorised(false);
+				else {
+					Claim claim = this.repository.findClaimById(claimId);
+
+					super.getResponse().setAuthorised(agentId == claim.getAssistanceAgent().getId());
+				}
+			}
+
+		} catch (Throwable t) {
+			super.getResponse().setAuthorised(false);
+		}
 	}
 
 	@Override
@@ -50,7 +62,9 @@ public class ClaimShowService extends AbstractGuiService<AssistanceAgents, Claim
 
 	@Override
 	public void unbind(final Claim claim) {
-		Collection<Leg> legs;
+		List<Leg> legs = new ArrayList<>();
+
+		//		Collection<Leg> legs;
 		SelectChoices choices;
 		SelectChoices choices2;
 		Dataset dataset;
@@ -58,7 +72,9 @@ public class ClaimShowService extends AbstractGuiService<AssistanceAgents, Claim
 
 		indicator = claim.getStatus();
 		choices = SelectChoices.from(ClaimType.class, claim.getType());
-		legs = this.repository.findAllLeg();
+
+		legs = this.repository.findAllLegPublish().stream().filter(l -> l.getArrival().before(claim.getRegistrationMoment())).toList();
+		//legs = this.repository.findAllLegPublish();
 		choices2 = SelectChoices.from(legs, "flightNumber", claim.getLeg());
 
 		dataset = super.unbindObject(claim, "registrationMoment", "email", "description", "type", "draftMode", "id");

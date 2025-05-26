@@ -34,4 +34,12 @@ public interface TrackingLogRepository extends AbstractRepository {
 	@Query("select t from TrackingLog t where t.claim.id = :claimId and t.draftMode = false order by t.resolutionPercentage desc")
 	Optional<List<TrackingLog>> findOrderTrackingLogPublished(Integer claimId);
 
+	@Query("select c from Claim c where c.id=:claimId")
+	Claim getClaimById(int claimId);
+
+	@Query("select t.claim from TrackingLog t where t.id = :id")
+	Claim findClaimByTrackingLogId(int id);
+
+	@Query("select t from TrackingLog t where t.claim.id = :masterId")
+	Collection<TrackingLog> findTrackingLogsByMasterId(int masterId);
 }
