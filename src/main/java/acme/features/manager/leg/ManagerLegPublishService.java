@@ -1,7 +1,9 @@
 
 package acme.features.manager.leg;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -67,7 +69,7 @@ public class ManagerLegPublishService extends AbstractGuiService<Manager, Leg> {
 		super.getResponse().addGlobal("departureAirports", departureChoices);
 		super.getResponse().addGlobal("arrivalAirports", arrivalChoices);
 
-		Collection<Aircraft> aircrafts = this.aircraftRepository.findAllAircrafts();
+		Collection<Aircraft> aircrafts = this.aircraftRepository.findAllAircrafts().stream().filter(a -> !a.isDisabled()).collect(Collectors.toCollection(ArrayList::new));
 		SelectChoices aircraftChoices = new SelectChoices();
 		aircraftChoices.add("0", "----", leg.getAircraft() == null);
 		for (Aircraft ac : aircrafts) {
@@ -128,6 +130,8 @@ public class ManagerLegPublishService extends AbstractGuiService<Manager, Leg> {
 		Leg existing = this.repository.findLegByFlightNumber(leg.getFlightNumber());
 		boolean ok = existing == null || existing.getId() == leg.getId();
 		super.state(ok, "flightNumber", "manager.leg.error.duplicateFlightNumber");
+		super.state(leg.getFlightNumber().contains(leg.getAircraft().getAirline().getIATACode()), "flightNumber", "manager.leg.error.wrongFlightNumber");
+		super.state(!leg.getAircraft().isDisabled(), "aircraft", "manager.leg.error.aircraftDisabled");
 	}
 
 	@Override
