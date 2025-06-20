@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.aircraft.Aircraft;
@@ -125,8 +126,15 @@ public class ManagerLegPublishService extends AbstractGuiService<Manager, Leg> {
 		}
 		super.state(leg.getDeparture() != null, "departure", "manager.leg.error.required.date");
 		super.state(leg.getArrival() != null, "arrival", "manager.leg.error.required.date");
-		if (leg.getDeparture() != null && leg.getArrival() != null)
+		if (leg.getDeparture() != null && leg.getArrival() != null) {
 			super.state(leg.getDeparture().before(leg.getArrival()), "departure", "manager.leg.error.departureBeforeArrival");
+			if (!leg.getDeparture().before(MomentHelper.getCurrentMoment()) && !leg.getArrival().before(MomentHelper.getCurrentMoment()))
+				super.state(leg.getStatus().equals(Status.ON_TIME) || leg.getStatus().equals(Status.CANCELLED) || leg.getStatus().equals(Status.DELAYED), "status", "manager.leg.error.wrongFutureStatus");
+			if (leg.getDeparture().before(MomentHelper.getCurrentMoment()) && !leg.getArrival().before(MomentHelper.getCurrentMoment()))
+				super.state(leg.getStatus().equals(Status.CANCELLED) || leg.getStatus().equals(Status.DELAYED), "status", "manager.leg.error.wrongPresentStatus");
+			if (leg.getDeparture().before(MomentHelper.getCurrentMoment()) && leg.getArrival().before(MomentHelper.getCurrentMoment()))
+				super.state(leg.getStatus().equals(Status.LANDED), "status", "manager.leg.error.wrongPastStatus");
+		}
 		Leg existing = this.repository.findLegByFlightNumber(leg.getFlightNumber());
 		boolean ok = existing == null || existing.getId() == leg.getId();
 		super.state(ok, "flightNumber", "manager.leg.error.duplicateFlightNumber");
