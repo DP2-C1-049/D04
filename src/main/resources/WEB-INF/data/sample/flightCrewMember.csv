@@ -3,6 +3,6 @@ key,key:userAccount,employeeCode,phoneNumber,languageSkills,salary,yearsOfExperi
 flight-crew-member-01,user-account-flighCrewMember-01,AG111111,123456,Lorem ipsum dolor sit ame,EUR 10000,2,AVAILABLE,Airline-01
 flight-crew-member-02,user-account-flighCrewMember-02,DM222222,123456,Lorem ipsum dolor sit ame,EUR 10000,2,AVAILABLE,Airline-01
 flight-crew-member-03,user-account-flighCrewMember-03,WE333333,123456,Lorem ipsum dolor sit ame,EUR 10000,2,AVAILABLE,Airline-01
-flight-crew-member-04,user-account-flighCrewMember-04,WA242424,123456,Lorem ipsum dolor sit ame,EUR 10000,2,AVAILABLE,Airline-01
+flight-crew-member-04,user-account-flighCrewMember-04,WA242424,123456,Lorem ipsum dolor sit ame,EUR 10000,2,ON_VACATION,Airline-01
 flight-crew-member-05,user-account-flighCrewMember-05,SA353535,123456,Lorem ipsum dolor sit ame,EUR 10000,2,AVAILABLE,Airline-01
 
