@@ -27,8 +27,8 @@ public class FlightCrewMemberFlightAssignmentCreateService extends AbstractGuiSe
 
 	@Override
 	public void authorise() {
-		int crewId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		boolean existsCrew = this.repository.existsFlightCrewMember(crewId);
+		int flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		boolean existsCrew = this.repository.existsFlightCrewMember(flightCrewMemberId);
 		boolean existsLeg = true;
 		if (super.getRequest().hasData("leg", int.class)) {
 			int legId = super.getRequest().getData("leg", int.class);
@@ -67,26 +67,21 @@ public class FlightCrewMemberFlightAssignmentCreateService extends AbstractGuiSe
 		Leg leg = assignment.getLeg();
 		Date now = MomentHelper.getCurrentMoment();
 
-		// Only AVAILABLE crew members can be assigned
 		if (crew != null) {
 			boolean available = crew.getAvailabilityStatus() == AvailabilityStatus.AVAILABLE;
 			super.state(available, "flightCrewMember", "acme.validation.FlightAssignment.flightCrewMemberNotAvailable.message");
 		}
 
 		if (leg != null) {
-			// Cannot assign to draft legs
 			super.state(!leg.isDraftMode(), "leg", "acme.validation.FlightAssignment.legDraftModeNotAllowed.message");
-			// Cannot assign to legs that have already occurred
 			boolean past = leg.getDeparture().before(now) || leg.getArrival().before(now);
 			super.state(!past, "leg", "acme.validation.FlightAssignment.legAlreadyOccurred.message");
 		}
 
-		// Prevent overlapping assignments
 		if (crew != null && leg != null && this.isLegCompatible(assignment)) {
 			super.state(false, "flightCrewMember", "acme.validation.FlightAssignment.FlightCrewMemberIncompatibleLegs.message");
 			return;
 		}
-		// Enforce one pilot and one co-pilot per leg
 		if (leg != null)
 			this.checkPilotAndCopilotAssignment(assignment);
 	}
