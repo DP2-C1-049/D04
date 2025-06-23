@@ -47,5 +47,5 @@ manager.leg.error.required.date = La fecha no puede ser nula
 manager.leg.error.wrongFlightNumber = El numero de vuelo debe contener el codigo IATA de la aerolinea
 manager.leg.error.aircraftDisabled = La aeronave esta deshabilitada
 manager.leg.error.wrongFutureStatus = El Estado de un futuro tramo debe ser ON_TIME, DELAYED o CANCELLED
-manager.leg.error.wrongPresentStatus = El Estado de un tramo que se encuentra en vuelo debe ser DELAYED o CANCELLED
-manager.leg.error.wrongPastStatus = El Estado de un tramo del pasado debe ser LANDED
+manager.leg.error.wrongPresentStatus = El Estado de un tramo que se encuentra en vuelo debe ser ON_TIME, DELAYED o CANCELLED
+manager.leg.error.wrongPastStatus = El Estado de un tramo del pasado debe ser LANDED o CANCELLED

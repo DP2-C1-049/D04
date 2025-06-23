@@ -136,9 +136,9 @@ public class ManagerLegUpdateService extends AbstractGuiService<Manager, Leg> {
 				if (!leg.getDeparture().before(MomentHelper.getCurrentMoment()) && !leg.getArrival().before(MomentHelper.getCurrentMoment()))
 					super.state(leg.getStatus().equals(Status.ON_TIME) || leg.getStatus().equals(Status.CANCELLED) || leg.getStatus().equals(Status.DELAYED), "status", "manager.leg.error.wrongFutureStatus");
 				if (leg.getDeparture().before(MomentHelper.getCurrentMoment()) && !leg.getArrival().before(MomentHelper.getCurrentMoment()))
-					super.state(leg.getStatus().equals(Status.CANCELLED) || leg.getStatus().equals(Status.DELAYED), "status", "manager.leg.error.wrongPresentStatus");
+					super.state(leg.getStatus().equals(Status.ON_TIME) || leg.getStatus().equals(Status.CANCELLED) || leg.getStatus().equals(Status.DELAYED), "status", "manager.leg.error.wrongPresentStatus");
 				if (leg.getDeparture().before(MomentHelper.getCurrentMoment()) && leg.getArrival().before(MomentHelper.getCurrentMoment()))
-					super.state(leg.getStatus().equals(Status.LANDED), "status", "manager.leg.error.wrongPastStatus");
+					super.state(leg.getStatus().equals(Status.LANDED) || leg.getStatus().equals(Status.CANCELLED), "status", "manager.leg.error.wrongPastStatus");
 			}
 			super.state(leg.getFlightNumber().contains(leg.getAircraft().getAirline().getIATACode()), "flightNumber", "manager.leg.error.wrongFlightNumber");
 			super.state(!leg.getAircraft().isDisabled(), "aircraft", "manager.leg.error.aircraftDisabled");

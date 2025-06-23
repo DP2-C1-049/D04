@@ -1,41 +1,52 @@
 key,flightNumber,departure,arrival,status,key:flight,key:departureAirport,key:arrivalAirport,key:aircraft,draftMode
-leg-00,AAA1001,2024/06/10 08:00,2024/06/10 10:00,ON_TIME,flight-00,Airport-01,Airport-02,Aircraft-01,true
+leg-00,AAA1001,2024/06/10 08:00,2024/06/10 10:00,LANDED,flight-00,Airport-01,Airport-02,Aircraft-01,true
 leg-23,AAA1234,2025/01/01 09:00,2025/01/01 11:00,ON_TIME,flight-29,Airport-01,Airport-01,Aircraft-01,false
 leg-24,AAA1235,2025/01/01 09:01,2025/01/01 10:59,ON_TIME,flight-30,Airport-01,Airport-01,Aircraft-02,false
 leg-25,AAA1236,2025/01/01 09:00,2025/01/01 11:00,ON_TIME,flight-02,Airport-01,Airport-01,Aircraft-01,false
 #flightNumber
-leg-01,AAA1002,2024/06/11 07:30,2024/06/11 09:45,ON_TIME,flight-00,Airport-01,Airport-02,Aircraft-01,true
-leg-02,AAA2003,2024/06/12 10:00,2024/06/12 12:15,DELAYED,flight-01,Airport-02,Airport-03,Aircraft-02,true
+leg-01,AAA1002,2024/06/11 07:30,2024/06/11 09:45,LANDED,flight-00,Airport-01,Airport-02,Aircraft-01,true
+leg-02,AAA2003,2024/06/12 10:00,2024/06/12 12:15,CANCELLED,flight-01,Airport-02,Airport-03,Aircraft-02,false
 leg-03,AAA3004,2024/06/13 15:45,2024/06/13 18:30,LANDED,flight-02,Airport-03,Airport-04,Aircraft-03,true
 leg-04,AAA4005,2024/06/14 05:20,2024/06/14 07:35,CANCELLED,flight-03,Airport-04,Airport-05,Aircraft-04,true
 #scheduledDeparture y scheduledArrival
-leg-05,AAA1010,2012/07/02 0:00,2024/06/15 08:30,ON_TIME,flight-04,Airport-05,Airport-06,Aircraft-01,true
-leg-06,AAA2011,2000/01/01 0:00,2024/06/16 15:10,DELAYED,flight-05,Airport-06,Airport-07,Aircraft-01,true
-leg-07,AAA3012,2000/01/01 0:01,2024/06/17 09:01,ON_TIME,flight-06,Airport-07,Airport-08,Aircraft-01,true
+leg-05,AAA1010,2012/07/02 0:00,2024/06/15 08:30,LANDED,flight-04,Airport-05,Airport-06,Aircraft-01,true
+leg-06,AAA2011,2000/01/01 0:00,2024/06/16 15:10,CANCELLED,flight-05,Airport-06,Airport-07,Aircraft-01,false
+leg-07,AAA3012,2000/01/01 0:01,2024/06/17 09:01,LANDED,flight-06,Airport-07,Airport-08,Aircraft-01,true
 leg-08,AAA4013,2200/12/31 23:58,2200/12/31 23:59,CANCELLED,flight-07,Airport-08,Airport-09,Aircraft-01,true
 leg-26,AAA5701,2200/12/31 23:59,2200/12/31 23:59,ON_TIME,flight-22,Airport-01,Airport-02,Aircraft-01,true
-leg-27,AAA5801,2000/01/01 0:00,2000/01/01 0:00,ON_TIME,flight-23,Airport-01,Airport-02,Aircraft-01,true
-leg-28,AAA5901,2000/01/01 0:00,2000/01/01 0:01,ON_TIME,flight-24,Airport-01,Airport-02,Aircraft-01,true
-leg-29,AAA6101,2024/06/10 08:00,2200/12/31 23:58,ON_TIME,flight-25,Airport-01,Airport-02,Aircraft-01,true
-leg-30,AAA6201,2024/06/10 08:00,2200/12/31 23:59,ON_TIME,flight-26,Airport-01,Airport-02,Aircraft-01,true
+leg-27,AAA5801,2000/01/01 0:00,2000/01/01 0:00,LANDED,flight-23,Airport-01,Airport-02,Aircraft-01,true
+leg-28,AAA5901,2000/01/01 0:00,2000/01/01 0:01,LANDED,flight-24,Airport-01,Airport-02,Aircraft-01,true
+leg-29,AAA6101,2024/06/10 08:00,2200/12/31 23:58,DELAYED,flight-25,Airport-01,Airport-02,Aircraft-01,true
+leg-30,AAA6201,2024/06/10 08:00,2200/12/31 23:59,DELAYED,flight-26,Airport-01,Airport-02,Aircraft-01,true
 #status
-leg-09,AAA1020,2024/06/19 13:30,2024/06/19 16:00,ON_TIME,flight-08,Airport-09,Airport-10,Aircraft-01,true
-leg-10,AAA2021,2024/06/20 05:15,2024/06/20 07:50,DELAYED,flight-09,Airport-10,Airport-01,Aircraft-01,true
-leg-11,AAA3022,2024/06/21 16:10,2024/06/21 18:40,CANCELLED,flight-10,Airport-01,Airport-02,Aircraft-01,true
+leg-09,AAA1020,2025/06/19 13:30,2025/06/19 16:00,ON_TIME,flight-08,Airport-09,Airport-10,Aircraft-01,true
+leg-10,AAA2021,2025/06/20 05:15,2025/06/20 07:50,DELAYED,flight-09,Airport-10,Airport-01,Aircraft-01,true
+leg-11,AAA3022,2024/06/21 16:10,2024/06/21 18:40,CANCELLED,flight-10,Airport-01,Airport-02,Aircraft-01,false
 leg-12,AAA4023,2024/06/22 22:00,2024/06/23 01:30,LANDED,flight-11,Airport-02,Airport-03,Aircraft-01,true
 #key:flight
-leg-13,AAA1030,2024/06/23 08:25,2024/06/23 11:05,ON_TIME,flight-12,Airport-03,Airport-04,Aircraft-01,true
-leg-14,AAA2031,2024/06/24 14:30,2024/06/24 17:20,DELAYED,flight-13,Airport-04,Airport-05,Aircraft-01,true
+leg-13,AAA1030,2024/06/23 08:25,2024/06/23 11:05,LANDED,flight-12,Airport-03,Airport-04,Aircraft-01,true
+leg-14,AAA2031,2024/06/24 14:30,2024/06/24 17:20,CANCELLED,flight-13,Airport-04,Airport-05,Aircraft-01,true
 leg-15,AAA3032,2024/06/25 19:10,2024/06/25 21:45,CANCELLED,flight-14,Airport-05,Airport-06,Aircraft-01,true
 leg-16,AAA4033,2024/06/26 12:40,2024/06/26 15:00,LANDED,flight-15,Airport-06,Airport-07,Aircraft-01,true
 #key:departureAirport y key:arrivalAirport
-leg-17,AAA1040,2024/06/27 09:20,2024/06/27 11:55,DELAYED,flight-16,Airport-07,Airport-08,Aircraft-01,true
+leg-17,AAA1040,2025/06/27 09:20,2025/06/27 11:55,DELAYED,flight-16,Airport-07,Airport-08,Aircraft-01,true
 leg-18,AAA2041,2024/06/28 07:10,2024/06/28 09:30,CANCELLED,flight-17,Airport-08,Airport-09,Aircraft-01,true
 #key:aircraft
-leg-19,AAA3042,2024/06/29 16:45,2024/06/29 19:20,ON_TIME,flight-18,Airport-09,Airport-10,Aircraft-02,true
-leg-20,AAA4043,2024/06/30 05:30,2024/06/30 07:40,DELAYED,flight-19,Airport-10,Airport-01,Aircraft-03,true
-leg-21,AAA3044,2024/07/01 12:32,2024/07/01 19:20,ON_TIME,flight-20,Airport-01,Airport-04,Aircraft-02,true
-leg-22,AAA4045,2024/07/02 06:35,2024/07/02 09:40,DELAYED,flight-21,Airport-07,Airport-08,Aircraft-03,true
+leg-19,AAA3042,2024/06/29 16:45,2024/06/29 19:20,LANDED,flight-18,Airport-09,Airport-10,Aircraft-02,true
+leg-20,AAA4043,2024/06/30 05:30,2024/06/30 07:40,CANCELLED,flight-19,Airport-10,Airport-01,Aircraft-03,true
+leg-21,AAA3044,2024/07/01 12:32,2024/07/01 19:20,LANDED,flight-20,Airport-01,Airport-04,Aircraft-02,false
+leg-22,AAA4045,2024/07/02 06:35,2024/07/02 09:40,CANCELLED,flight-21,Airport-07,Airport-08,Aircraft-03,false
 #draftMode
-leg-31,AAA6301,2024/06/10 08:00,2024/06/10 10:00,ON_TIME,flight-27,Airport-01,Airport-02,Aircraft-01,false
-leg-32,AAA6401,2024/06/10 08:00,2024/06/10 10:00,ON_TIME,flight-28,Airport-01,Airport-02,Aircraft-01,true
+leg-31,AAA6301,2025/06/10 08:00,2025/06/10 10:00,ON_TIME,flight-27,Airport-01,Airport-02,Aircraft-01,false
+leg-32,AAA6401,2025/06/10 08:00,2025/06/10 10:00,ON_TIME,flight-28,Airport-01,Airport-02,Aircraft-01,true
+#extraCases
+leg-33,AAA6302,2022/06/10 08:00,2022/06/10 10:00,LANDED,flight-29,Airport-01,Airport-02,Aircraft-01,false
+leg-34,AAA6303,2022/06/10 08:00,2022/06/10 10:00,LANDED,flight-30,Airport-01,Airport-02,Aircraft-01,false
+leg-35,AAA6304,2022/06/10 08:00,2022/06/10 10:00,LANDED,flight-31,Airport-01,Airport-02,Aircraft-01,false
+leg-36,AAA6305,2022/06/10 10:00,2022/06/10 12:00,CANCELLED,flight-31,Airport-01,Airport-02,Aircraft-01,false
+leg-37,AAA6306,2022/06/10 08:00,2022/06/10 10:00,CANCELLED,flight-33,Airport-01,Airport-02,Aircraft-01,false
+leg-38,AAA6307,2022/06/10 10:00,2022/06/10 12:00,CANCELLED,flight-35,Airport-01,Airport-02,Aircraft-01,false
+leg-39,AAA6308,2000/01/01 0:00,2000/01/01 0:00,LANDED,flight-20,Airport-01,Airport-02,Aircraft-01,false
+leg-40,AAA6309,2000/01/01 0:00,2000/01/01 0:00,LANDED,flight-21,Airport-01,Airport-02,Aircraft-01,false
+leg-41,AAA6310,2000/01/01 0:00,2000/01/01 0:00,CANCELLED,flight-22,Airport-01,Airport-02,Aircraft-01,false
+leg-42,AAA6311,2000/01/01 0:00,2000/01/01 0:00,CANCELLED,flight-20,Airport-01,Airport-02,Aircraft-01,false
