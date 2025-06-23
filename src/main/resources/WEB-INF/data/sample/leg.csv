@@ -50,3 +50,9 @@ leg-39,AAA6308,2000/01/01 0:00,2000/01/01 0:00,LANDED,flight-20,Airport-01,Airpo
 leg-40,AAA6309,2000/01/01 0:00,2000/01/01 0:00,LANDED,flight-21,Airport-01,Airport-02,Aircraft-01,false
 leg-41,AAA6310,2000/01/01 0:00,2000/01/01 0:00,CANCELLED,flight-22,Airport-01,Airport-02,Aircraft-01,false
 leg-42,AAA6311,2000/01/01 0:00,2000/01/01 0:00,CANCELLED,flight-20,Airport-01,Airport-02,Aircraft-01,false
+leg-43,AAA6312,2026/01/01 9:00,2026/01/01 10:00,ON_TIME,flight-28,Airport-01,Airport-02,Aircraft-01,false
+leg-44,AAA6313,2026/01/01 19:00,2026/01/01 20:00,ON_TIME,flight-19,Airport-01,Airport-02,Aircraft-01,false
+leg-45,AAA6314,2026/01/01 18:00,2026/01/01 21:00,ON_TIME,flight-16,Airport-01,Airport-02,Aircraft-01,false
+leg-46,AAA6315,2026/01/01 14:00,2026/01/01 15:00,DELAYED,flight-17,Airport-01,Airport-02,Aircraft-01,false
+leg-47,AAA6316,2026/01/01 9:00,2026/01/01 10:00,DELAYED,flight-13,Airport-01,Airport-02,Aircraft-01,false
+leg-48,AAA6317,2026/01/01 20:00,2026/01/01 22:00,DELAYED,flight-09,Airport-01,Airport-02,Aircraft-01,false
