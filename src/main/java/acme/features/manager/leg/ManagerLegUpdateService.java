@@ -1,12 +1,15 @@
 
 package acme.features.manager.leg;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.models.Dataset;
 import acme.client.components.views.SelectChoices;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.aircraft.Aircraft;
@@ -67,7 +70,7 @@ public class ManagerLegUpdateService extends AbstractGuiService<Manager, Leg> {
 		super.getResponse().addGlobal("departureAirports", departureChoices);
 		super.getResponse().addGlobal("arrivalAirports", arrivalChoices);
 
-		Collection<Aircraft> aircrafts = this.aircraftRepository.findAllAircrafts();
+		Collection<Aircraft> aircrafts = this.aircraftRepository.findAllAircrafts().stream().filter(a -> !a.isDisabled()).collect(Collectors.toCollection(ArrayList::new));
 		SelectChoices aircraftChoices = new SelectChoices();
 		aircraftChoices.add("0", "----", leg.getAircraft() == null);
 		for (Aircraft ac : aircrafts) {
@@ -128,8 +131,17 @@ public class ManagerLegUpdateService extends AbstractGuiService<Manager, Leg> {
 			super.state(validFlightNumber, "flightNumber", "manager.leg.error.duplicateFlightNumber");
 			super.state(leg.getDeparture() != null, "departure", "manager.leg.error.required.date");
 			super.state(leg.getArrival() != null, "arrival", "manager.leg.error.required.date");
-			if (leg.getDeparture() != null && leg.getArrival() != null)
+			if (leg.getDeparture() != null && leg.getArrival() != null) {
 				super.state(leg.getDeparture().before(leg.getArrival()), "departure", "manager.leg.error.departureBeforeArrival");
+				if (!leg.getDeparture().before(MomentHelper.getCurrentMoment()) && !leg.getArrival().before(MomentHelper.getCurrentMoment()))
+					super.state(leg.getStatus().equals(Status.ON_TIME) || leg.getStatus().equals(Status.CANCELLED) || leg.getStatus().equals(Status.DELAYED), "status", "manager.leg.error.wrongFutureStatus");
+				if (leg.getDeparture().before(MomentHelper.getCurrentMoment()) && !leg.getArrival().before(MomentHelper.getCurrentMoment()))
+					super.state(leg.getStatus().equals(Status.ON_TIME) || leg.getStatus().equals(Status.CANCELLED) || leg.getStatus().equals(Status.DELAYED), "status", "manager.leg.error.wrongPresentStatus");
+				if (leg.getDeparture().before(MomentHelper.getCurrentMoment()) && leg.getArrival().before(MomentHelper.getCurrentMoment()))
+					super.state(leg.getStatus().equals(Status.LANDED) || leg.getStatus().equals(Status.CANCELLED), "status", "manager.leg.error.wrongPastStatus");
+			}
+			super.state(leg.getFlightNumber().contains(leg.getAircraft().getAirline().getIATACode()), "flightNumber", "manager.leg.error.wrongFlightNumber");
+			super.state(!leg.getAircraft().isDisabled(), "aircraft", "manager.leg.error.aircraftDisabled");
 		}
 	}
 
