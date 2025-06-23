@@ -14,6 +14,7 @@ import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.aircraft.Aircraft;
+import acme.entities.aircraft.AircraftStatus;
 import acme.entities.airport.Airport;
 import acme.entities.flight.Flight;
 import acme.entities.leg.Leg;
@@ -167,7 +168,7 @@ public class ManagerLegCreateService extends AbstractGuiService<Manager, Leg> {
 					super.state(leg.getStatus().equals(Status.LANDED) || leg.getStatus().equals(Status.CANCELLED), "status", "manager.leg.error.wrongPastStatus");
 			}
 			super.state(leg.getFlightNumber().contains(leg.getAircraft().getAirline().getIATACode()), "flightNumber", "manager.leg.error.wrongFlightNumber");
-			super.state(!leg.getAircraft().isDisabled(), "aircraft", "manager.leg.error.aircraftDisabled");
+			super.state(!leg.getAircraft().isDisabled() && leg.getAircraft().getStatus().equals(AircraftStatus.ACTIVE), "aircraft", "manager.leg.error.aircraftDisabled");
 		}
 	}
 
