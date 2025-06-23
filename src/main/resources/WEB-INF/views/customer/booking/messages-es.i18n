@@ -35,3 +35,7 @@ customer.booking.list.label.purchaseMoment=Momento de compra
 acme.validation.lastNibble.message = Debe completar los dígitos de su tarjeta para confirmar
 customer.booking.form.error.duplicateLocatorCode = El localizador de vuelo ya está en uso
 customer.booking.form.show.recommendations = Mostrar las recomendaciones en el destino
+customer.booking.form.error.noPassengers = Debes añadir algún pasajero antes de publicar la reserva
+customer.booking.form.error.invalidFlight = El vuelo seleccionado no está disponible
+customer.booking.form.error.publishPassengers = Todos los pasajeros asociados deben estar publicados para publicar la reserva
+customer.booking.form.error.stillPassengers = Todavía hay pasajeros asociados a esta reserva
