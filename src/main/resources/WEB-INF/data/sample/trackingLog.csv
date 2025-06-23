@@ -1,50 +1,53 @@
 key,lastUpdateMoment,step,resolutionPercentage,status,draftMode,resolution,key:claim
 #lastUpdateMoment
-trackingLog-01,2012/07/02 0:00,Lorem ipsum dolor sit ame,100.00,PENDING,true,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-01
-trackingLog-02,2000/01/01 0:00,Lorem ipsum dolor sit ame,100.00,ACCEPTED,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-02
-trackingLog-03,2000/01/01 0:01,Lorem ipsum dolor sit ame,100.00,PENDING,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-01
-trackingLog-04,2024/12/31 23:59,Lorem ipsum dolor sit ame,100.00,PENDING,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-01
-trackingLog-05,2025/01/01 0:00,Lorem ipsum dolor sit ame,100.00,PENDING,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-01
+trackingLog-01,2012/07/02 0:00,Lorem ipsum dolor sit ame,100.00,ACCEPTED,true,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-36
+trackingLog-02,2000/01/01 0:03,Lorem ipsum dolor sit ame,100.00,ACCEPTED,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-37
+trackingLog-03,2000/01/01 0:04,Lorem ipsum dolor sit ame,100.00,ACCEPTED,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-38
+trackingLog-04,2024/12/31 23:59,Lorem ipsum dolor sit ame,100.00,ACCEPTED,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-39
+trackingLog-05,2025/01/01 0:00,Lorem ipsum dolor sit ame,100.00,ACCEPTED,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-40
 #step
-trackingLog-06,2024/10/01 0:00,Lorem ipsum dolor sit ame,100.00,PENDING,true,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-08
-trackingLog-07,2024/10/01 0:00,L,100.00,PENDING,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-08
-trackingLog-08,2024/10/01 0:00,Lo,100.00,PENDING,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-08
-trackingLog-09,2024/10/01 0:00,Lorem ipsum dolor sit amet. consectetur adipiscin,100.00,PENDING,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-08
-trackingLog-10,2024/10/01 0:00,Lorem ipsum dolor sit amet. consectetur adipiscing,100.00,PENDING,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-08
-trackingLog-31,2024/10/01 0:00,โลเร็ม อิปซัม,100.00,PENDING,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-08
-trackingLog-32,2024/10/01 0:00,لوريم إيبسوم,100.00,PENDING,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-08
-trackingLog-33,2024/10/01 0:00,洛伦·伊普森,100.00,PENDING,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-08
-trackingLog-34,2024/10/01 0:00,<marquee>Hacked</marquee>,100.00,PENDING,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-08
-trackingLog-35,2024/10/01 0:00,<script>alert(‘Hacked!’);</script>,100.00,PENDING,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-08
-trackingLog-36,2024/10/01 0:00,' or 'A' = 'A,100.00,PENDING,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-08
+trackingLog-06,2024/10/01 0:00,Lorem ipsum dolor sit ame,100.00,ACCEPTED,true,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-41
+trackingLog-07,2024/10/01 0:00,L,100.00,ACCEPTED,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-42
+trackingLog-08,2024/10/01 0:00,Lo,100.00,ACCEPTED,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-43
+trackingLog-09,2024/10/01 0:00,Lorem ipsum dolor sit amet. consectetur adipiscin,100.00,ACCEPTED,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-44
+trackingLog-10,2024/10/01 0:00,Lorem ipsum dolor sit amet. consectetur adipiscing,100.00,ACCEPTED,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-45
+trackingLog-31,2024/10/01 0:00,โลเร็ม อิปซัม,100.00,ACCEPTED,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-46
+trackingLog-32,2024/10/01 0:00,لوريم إيبسوم,100.00,ACCEPTED,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-47
+trackingLog-33,2024/10/01 0:00,洛伦·伊普森,100.00,ACCEPTED,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-48
+trackingLog-34,2024/10/01 0:00,<marquee>Hacked</marquee>,100.00,ACCEPTED,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-49
+trackingLog-35,2024/10/01 0:00,<script>alert(‘Hacked!’);</script>,100.00,ACCEPTED,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-50
+trackingLog-36,2024/10/01 0:00,' or 'A' = 'A,100.00,ACCEPTED,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-51
 #resolutionPercentage
-trackingLog-11,2024/10/01 0:00,Lorem ipsum dolor sit ame,0.00,PENDING,false,null,Claim-08
-trackingLog-12,2024/10/01 0:00,Lorem ipsum dolor sit ame,0.01,PENDING,false,null,Claim-08
-trackingLog-13,2024/10/01 0:00,Lorem ipsum dolor sit ame,50.00,PENDING,false,null,Claim-08
-trackingLog-16,2024/10/01 0:00,Lorem ipsum dolor sit amet,50.00,PENDING,false,null,Claim-08
-trackingLog-14,2024/10/01 0:00,Lorem ipsum dolor sit ame,99.99,PENDING,false,null,Claim-08
-trackingLog-24,2024/10/01 0:00,Lorem ipsum dolor sit amet,99.99,PENDING,false,null,Claim-08
-trackingLog-15,2024/10/01 0:00,Lorem ipsum dolor sit ame,100.00,PENDING,false,null,Claim-08
+trackingLog-11,2024/10/01 0:00,Lorem ipsum dolor sit ame,0.00,PENDING,true,null,Claim-52
+trackingLog-12,2024/10/01 0:00,Lorem ipsum dolor sit ame,0.01,PENDING,true,null,Claim-52
+trackingLog-13,2024/10/01 0:00,Lorem ipsum dolor sit ame,50.00,PENDING,true,null,Claim-52
+trackingLog-16,2024/10/01 0:00,Lorem ipsum dolor sit amet,50.00,PENDING,true,null,Claim-52
+trackingLog-14,2024/10/01 0:00,Lorem ipsum dolor sit ame,99.99,PENDING,true,null,Claim-52
+trackingLog-15,2024/10/01 0:00,Lorem ipsum dolor sit ame,100.00,ACCEPTED,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-52
 #status
-trackingLog-17,2024/10/01 0:00,Lorem ipsum dolor sit amet,100.00,PENDING,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-03
-trackingLog-18,2024/10/01 0:00,Lorem ipsum dolor sit amet,100.00,ACCEPTED,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-04
-trackingLog-28,2024/10/01 0:00,Lorem ipsum dolor sit ame,100.00,REJECTED,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-05
+trackingLog-17,2024/10/01 0:00,Lorem ipsum dolor sit amet,0.00,PENDING,true,null,Claim-53
+trackingLog-18,2024/10/01 0:00,Lorem ipsum dolor sit amet,100.00,ACCEPTED,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-53
+trackingLog-28,2024/10/01 0:00,Lorem ipsum dolor sit ame,100.00,REJECTED,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-54
 #resolution
-trackingLog-19,2024/10/01 0:00,Lorem ipsum dolor sit amet,100.00,PENDING,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-08
-trackingLog-20,2024/10/01 0:00,Lorem ipsum dolor sit amet,100.00,PENDING,false,L,Claim-08
-trackingLog-21,2024/10/01 0:00,Lorem ipsum dolor sit amet,100.00,PENDING,false,Lo,Claim-08
-trackingLog-22,2024/10/01 0:00,Lorem ipsum dolor sit amet,100.00,PENDING,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,Claim-08
-trackingLog-23,2024/10/01 0:00,Lorem ipsum dolor sit amet,100.00,PENDING,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,Claim-08
-trackingLog-37,2024/10/01 0:00,Lorem ipsum dolor sit amet,100.00,PENDING,false,โลเร็ม อิปซัม,Claim-08
-trackingLog-38,2024/10/01 0:00,Lorem ipsum dolor sit amet,100.00,PENDING,false,لوريم إيبسوم,Claim-08
-trackingLog-39,2024/10/01 0:00,Lorem ipsum dolor sit amet,100.00,PENDING,false,洛伦·伊普森,Claim-08
-trackingLog-40,2024/10/01 0:00,Lorem ipsum dolor sit amet,100.00,PENDING,false,<marquee>Hacked</marquee>,Claim-08
-trackingLog-41,2024/10/01 0:00,Lorem ipsum dolor sit amet,100.00,PENDING,false,<script>alert(‘Hacked!’);</script>,Claim-08
-trackingLog-42,2024/10/01 0:00,Lorem ipsum dolor sit amet,100.00,PENDING,false,' or 'A' = 'A,Claim-08
+trackingLog-19,2024/10/01 0:00,Lorem ipsum dolor sit amet,100.00,REJECTED,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-55
+trackingLog-20,2024/10/01 0:00,Lorem ipsum dolor sit amet,100.00,REJECTED,false,L,Claim-56
+trackingLog-21,2024/10/01 0:00,Lorem ipsum dolor sit amet,100.00,REJECTED,false,Lo,Claim-57
+trackingLog-22,2024/10/01 0:00,Lorem ipsum dolor sit amet,100.00,REJECTED,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor,Claim-58
+trackingLog-23,2024/10/01 0:00,Lorem ipsum dolor sit amet,100.00,REJECTED,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut enim ad minim veniam? Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor*,Claim-59
+trackingLog-37,2024/10/01 0:00,Lorem ipsum dolor sit amet,100.00,ACCEPTED,false,โลเร็ม อิปซัม,Claim-60
+trackingLog-38,2024/10/01 0:00,Lorem ipsum dolor sit amet,100.00,ACCEPTED,false,لوريم إيبسوم,Claim-61
+trackingLog-39,2024/10/01 0:00,Lorem ipsum dolor sit amet,100.00,ACCEPTED,false,洛伦·伊普森,Claim-62
+trackingLog-40,2024/10/01 0:00,Lorem ipsum dolor sit amet,100.00,ACCEPTED,false,<marquee>Hacked</marquee>,Claim-63
+trackingLog-41,2024/10/01 0:00,Lorem ipsum dolor sit amet,100.00,ACCEPTED,false,<script>alert(‘Hacked!’);</script>,Claim-64
+trackingLog-42,2024/10/01 0:00,Lorem ipsum dolor sit amet,100.00,ACCEPTED,false,' or 'A' = 'A,Claim-65
 #key:claim,"","","","","",""
-trackingLog-25,2024/10/01 0:00,Lorem ipsum dolor sit ame,100.00,PENDING,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-02
-trackingLog-26,2024/10/01 0:00,Lorem ipsum dolor sit ame,100.00,PENDING,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-22
-trackingLog-27,2024/10/01 0:00,Lorem ipsum dolor sit ame,100.00,PENDING,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-11
-#drafMode
-trackingLog-29,2024/10/01 0:00,Lorem ipsum dolor sit ame,100.00,PENDING,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-06
-trackingLog-30,2024/10/01 0:00,Lorem ipsum dolor sit ame,100.00,PENDING,true,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-09
+trackingLog-25,2024/10/01 0:00,Lorem ipsum dolor sit ame,100.00,ACCEPTED,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-66
+trackingLog-26,2024/10/01 0:00,Lorem ipsum dolor sit ame,100.00,ACCEPTED,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-67
+trackingLog-27,2024/10/01 0:00,Lorem ipsum dolor sit ame,100.00,ACCEPTED,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-68
+#draftMode
+trackingLog-29,2024/10/01 0:00,Lorem ipsum dolor sit ame,100.00,ACCEPTED,false,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-69
+trackingLog-30,2024/10/01 0:00,Lorem ipsum dolor sit ame,100.00,ACCEPTED,true,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-70
+#extraCases
+trackingLog-43,2024/10/01 0:00,Lorem ipsum dolor sit ame,100.00,ACCEPTED,true,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-71
+trackingLog-44,2024/10/01 0:00,Lorem ipsum dolor sit ame,100.00,REJECTED,true,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-72
+trackingLog-45,2024/10/01 0:00,Lorem ipsum dolor sit ame,100.00,ACCEPTED,true,Lorem ipsum dolor sit amet. consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,Claim-73
