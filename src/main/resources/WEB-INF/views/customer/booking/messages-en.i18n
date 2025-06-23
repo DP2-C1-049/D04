@@ -8,7 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-customer.booking.form.title = Create or update booking
+customer.booking.form.title = Details of booking
 customer.booking.list.title = List of bookings
 
 customer.booking.form.button.create = Create 
@@ -34,3 +34,7 @@ customer.booking.list.label.travelClass= Travel Class
 acme.validation.lastNibble.message = You must complete the last digits of your card to publish
 customer.booking.form.error.duplicateLocatorCode = That locator Code is already in use
 customer.booking.form.show.recommendations = Show recommendations in destination
+customer.booking.form.error.noPassengers = You should add any passengers before publishing
+customer.booking.form.error.invalidFlight = The flight selected is not available
+customer.booking.form.error.publishPassengers = All included passengers must be published before publishing the booking
+customer.booking.form.error.stillPassengers = There are still passengers linked to this booking

@@ -24,9 +24,26 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 
 	@Override
 	public void authorise() {
-		boolean status = super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
+		boolean status;
+		try {
+			status = super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
+			super.getResponse().setAuthorised(status);
 
-		super.getResponse().setAuthorised(status);
+			if (super.getRequest().hasData("id")) {
+				Integer flightId = super.getRequest().getData("flight", Integer.class);
+				if (flightId == null)
+					status = false;
+				else if (flightId != 0) {
+					Flight flight = this.repository.getFlightById(flightId);
+					status = status && flight != null && !flight.isDraftMode();
+				}
+			}
+			super.getResponse().setAuthorised(status);
+
+		} catch (Throwable t) {
+			super.getResponse().setAuthorised(false);
+		}
+
 	}
 
 	@Override
@@ -52,6 +69,9 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 		Booking existing = this.repository.findBookingByLocator(booking.getLocatorCode());
 		boolean valid = existing == null || existing.getId() == booking.getId();
 		super.state(valid, "locatorCode", "customer.booking.form.error.duplicateLocatorCode");
+		valid = booking.getFlight() != null;
+		super.state(valid, "flight", "customer.booking.form.error.invalidFlight");
+
 	}
 
 	@Override
@@ -62,7 +82,6 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 
 	@Override
 	public void unbind(final Booking booking) {
-		assert booking != null;
 		Dataset dataset;
 		SelectChoices travelClasses = SelectChoices.from(TravelClass.class, booking.getTravelClass());
 
@@ -70,7 +89,10 @@ public class CustomerBookingCreateService extends AbstractGuiService<Customer, B
 
 		dataset = super.unbindObject(booking, "flight", "locatorCode", "travelClass", "lastNibble", "draftMode", "id");
 		dataset.put("travelClasses", travelClasses);
-		SelectChoices flightChoices = SelectChoices.from(flights, "id", booking.getFlight());
+		SelectChoices flightChoices;
+
+		flightChoices = SelectChoices.from(flights, "id", booking.getFlight());
+
 		dataset.put("flights", flightChoices);
 
 		super.getResponse().addData(dataset);

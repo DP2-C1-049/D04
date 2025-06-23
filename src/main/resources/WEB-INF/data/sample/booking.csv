@@ -6,8 +6,8 @@ booking-02,QWERTY12,2012/02/07 00:00,ECONOMY,4999,customer-01,flight-01,true
 #purchaseMoment
 booking-03,ABC121,2000/01/01 00:00,ECONOMY,4999,customer-01,flight-01,false
 booking-04,ABC122,2000/01/01 00:01,ECONOMY,4999,customer-01,flight-01,true
-booking-05,ABC124,2024/12/31 23:59,ECONOMY,4999,customer-01,flight-01,true
-booking-06,ABC125,2025/01/01 00:00,ECONOMY,4999,customer-01,flight-01,false
+booking-05,ABC124,2024/12/31 23:59,ECONOMY,4999,customer-03,flight-01,true
+booking-06,ABC125,2025/01/01 00:00,ECONOMY,4999,customer-03,flight-01,false
 #travelClass
 booking-07,ABC126,2012/02/07 00:00,BUSINESS,4999,customer-01,flight-01,true
 #lastNibble
