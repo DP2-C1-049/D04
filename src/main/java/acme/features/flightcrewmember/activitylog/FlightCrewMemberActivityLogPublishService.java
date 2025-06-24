@@ -63,9 +63,11 @@ public class FlightCrewMemberActivityLogPublishService extends AbstractGuiServic
 		int activityLogId = activityLog.getId();
 
 		FlightAssignment assignment = this.repository.findFlightAssignmentByActivityLogId(activityLog.getId());
-
+		if (activityLog.getRegistrationMoment() == null || assignment == null)
+			return;
 		Leg leg = assignment.getLeg();
-
+		if (leg == null || leg.getArrival() == null)
+			return;
 		Date activityLogMoment = activityLog.getRegistrationMoment();
 		boolean activityLogMomentIsAfterscheduledArrival = this.repository.associatedWithCompletedLeg(activityLogId, activityLogMoment);
 		super.state(activityLogMomentIsAfterscheduledArrival, "WrongActivityLogDate", "acme.validation.activityLog.wrongMoment.message");
