@@ -125,6 +125,7 @@ public class ManagerLegUpdateService extends AbstractGuiService<Manager, Leg> {
 
 		if (leg.getDepartureAirport() != null && leg.getArrivalAirport() != null) {
 			boolean validAircraft;
+			boolean validLegFlight;
 			boolean valid = !(leg.getDepartureAirport().getId() == leg.getArrivalAirport().getId());
 			super.state(valid, "arrivalAirport", "manager.leg.error.sameAirport");
 			Leg existing = this.repository.findLegByFlightNumber(leg.getFlightNumber());
@@ -141,9 +142,11 @@ public class ManagerLegUpdateService extends AbstractGuiService<Manager, Leg> {
 				if (leg.getDeparture().before(MomentHelper.getCurrentMoment()) && leg.getArrival().before(MomentHelper.getCurrentMoment()))
 					super.state(leg.getStatus().equals(Status.LANDED) || leg.getStatus().equals(Status.CANCELLED), "status", "manager.leg.error.wrongPastStatus");
 				if (leg.getAircraft() != null) {
-					validAircraft = this.repository.findLegsWithAircraftInUse(leg.getAircraft().getId(), leg.getDeparture(), leg.getArrival()).isEmpty();
+					validAircraft = this.repository.findLegsAircraftUsed(leg.getAircraft().getId(), leg.getDeparture(), leg.getArrival()).isEmpty();
 					super.state(validAircraft, "aircraft", "manager.leg.error.aircraftInUse");
 				}
+				validLegFlight = this.repository.findLegsInconsistent(leg.getFlight().getId(), leg.getDeparture(), leg.getArrival()).isEmpty();
+				super.state(validLegFlight, "departure", "manager.leg.error.inconsistentLeg");
 			}
 			super.state(leg.getFlightNumber().contains(leg.getAircraft().getAirline().getIATACode()), "flightNumber", "manager.leg.error.wrongFlightNumber");
 		}

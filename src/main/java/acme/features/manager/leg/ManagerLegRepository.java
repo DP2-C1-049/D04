@@ -29,5 +29,8 @@ public interface ManagerLegRepository extends AbstractRepository {
 	Leg findOneLegByIdAndManager(int legId, int managerId);
 
 	@Query("SELECT l FROM Leg l WHERE l.aircraft.id = :aircraftId AND l.draftMode = false AND ((:departure < l.arrival AND :arrival > l.departure))")
-	Collection<Leg> findLegsWithAircraftInUse(int aircraftId, Date departure, Date arrival);
+	Collection<Leg> findLegsAircraftUsed(int aircraftId, Date departure, Date arrival);
+
+	@Query("SELECT l FROM Leg l WHERE l.flight.id = :flightId AND l.draftMode = false AND ((:departure < l.arrival AND :arrival > l.departure))")
+	Collection<Leg> findLegsInconsistent(int flightId, Date departure, Date arrival);
 }

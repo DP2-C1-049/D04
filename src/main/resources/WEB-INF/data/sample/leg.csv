@@ -49,7 +49,7 @@ leg-38,AAA6307,2022/06/10 10:00,2022/06/10 12:00,CANCELLED,flight-35,Airport-01,
 leg-39,AAA6308,2000/01/01 0:00,2000/01/01 0:00,LANDED,flight-20,Airport-01,Airport-02,Aircraft-10,false
 leg-40,AAA6309,2000/01/01 0:00,2000/01/01 0:00,LANDED,flight-21,Airport-01,Airport-02,Aircraft-11,false
 leg-41,AAA6310,2000/01/01 0:00,2000/01/01 0:00,CANCELLED,flight-22,Airport-01,Airport-02,Aircraft-12,false
-leg-42,AAA6311,2000/01/01 0:00,2000/01/01 0:00,CANCELLED,flight-20,Airport-01,Airport-02,Aircraft-13,false
+leg-42,AAA6311,2000/01/01 0:00,2000/01/01 0:00,CANCELLED,flight-35,Airport-01,Airport-02,Aircraft-13,false
 leg-43,AAA6312,2026/01/01 9:00,2026/01/01 10:00,ON_TIME,flight-28,Airport-01,Airport-02,Aircraft-14,false
 leg-44,AAA6313,2026/01/01 19:00,2026/01/01 20:00,ON_TIME,flight-19,Airport-01,Airport-02,Aircraft-15,false
 leg-45,AAA6314,2026/01/01 18:00,2026/01/01 21:00,ON_TIME,flight-16,Airport-01,Airport-02,Aircraft-16,false

@@ -51,6 +51,9 @@ acme.validation.lastNibble.message  = Este campo es necesario para poder publica
 acme.validation.passengersNumber.message = La reserva debe tener al menos un pasajero para poder ser publicada
 acme.validation.passengersNotPublished.message = Todos los pasajeros deben estar publicados para poder publicar la reserva
 
+acme.validation.leg.aircraft-not-active.message = El avion no esta en activo
+acme.validation.leg.wrong-scheduled-arrival.message = La llegada debe ser posterior a la salida
+
 acme.validation.form.error.NotNull = No puede ser nulo
 acme.validation.form.error.invalidAircraft = El avión no es válido
 acme.validation.form.error.invalidTask = La tarea no es válida
