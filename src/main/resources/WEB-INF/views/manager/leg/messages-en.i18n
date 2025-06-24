@@ -49,3 +49,4 @@ manager.leg.error.aircraftDisabled = Aircraft is disabled or in maintenance
 manager.leg.error.wrongFutureStatus = The Status of a future leg must be ON_TIME, DELAYED or CANCELLED
 manager.leg.error.wrongPresentStatus = The Status of a current leg must be ON_TIME, DELAYED or CANCELLED
 manager.leg.error.wrongPastStatus = The Status of a past leg must be LANDED or CANCELLED
+manager.leg.error.aircraftInUse = The selected Aircraft is in use for those dates

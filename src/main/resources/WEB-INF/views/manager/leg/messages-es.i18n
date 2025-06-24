@@ -49,3 +49,4 @@ manager.leg.error.aircraftDisabled = La aeronave esta deshabilitada o en manteni
 manager.leg.error.wrongFutureStatus = El Estado de un futuro tramo debe ser ON_TIME, DELAYED o CANCELLED
 manager.leg.error.wrongPresentStatus = El Estado de un tramo que se encuentra en vuelo debe ser ON_TIME, DELAYED o CANCELLED
 manager.leg.error.wrongPastStatus = El Estado de un tramo del pasado debe ser LANDED o CANCELLED
+manager.leg.error.aircraftInUse = El Avion seleccionado esta en uso para esas fechas
