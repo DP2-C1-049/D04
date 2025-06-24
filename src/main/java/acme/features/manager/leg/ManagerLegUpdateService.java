@@ -13,7 +13,6 @@ import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.aircraft.Aircraft;
-import acme.entities.aircraft.AircraftStatus;
 import acme.entities.airport.Airport;
 import acme.entities.leg.Leg;
 import acme.entities.leg.Status;
@@ -147,7 +146,6 @@ public class ManagerLegUpdateService extends AbstractGuiService<Manager, Leg> {
 				}
 			}
 			super.state(leg.getFlightNumber().contains(leg.getAircraft().getAirline().getIATACode()), "flightNumber", "manager.leg.error.wrongFlightNumber");
-			super.state(!leg.getAircraft().isDisabled() && leg.getAircraft().getStatus().equals(AircraftStatus.ACTIVE), "aircraft", "manager.leg.error.aircraftDisabled");
 		}
 	}
 
