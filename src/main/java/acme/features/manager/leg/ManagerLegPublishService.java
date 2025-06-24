@@ -127,6 +127,8 @@ public class ManagerLegPublishService extends AbstractGuiService<Manager, Leg> {
 		super.state(leg.getDeparture() != null, "departure", "manager.leg.error.required.date");
 		super.state(leg.getArrival() != null, "arrival", "manager.leg.error.required.date");
 		if (leg.getDeparture() != null && leg.getArrival() != null) {
+			boolean validAircraft;
+			boolean validLegFlight;
 			super.state(leg.getDeparture().before(leg.getArrival()), "departure", "manager.leg.error.departureBeforeArrival");
 			if (!leg.getDeparture().before(MomentHelper.getCurrentMoment()) && !leg.getArrival().before(MomentHelper.getCurrentMoment()))
 				super.state(leg.getStatus().equals(Status.ON_TIME) || leg.getStatus().equals(Status.CANCELLED) || leg.getStatus().equals(Status.DELAYED), "status", "manager.leg.error.wrongFutureStatus");
@@ -134,12 +136,17 @@ public class ManagerLegPublishService extends AbstractGuiService<Manager, Leg> {
 				super.state(leg.getStatus().equals(Status.ON_TIME) || leg.getStatus().equals(Status.CANCELLED) || leg.getStatus().equals(Status.DELAYED), "status", "manager.leg.error.wrongPresentStatus");
 			if (leg.getDeparture().before(MomentHelper.getCurrentMoment()) && leg.getArrival().before(MomentHelper.getCurrentMoment()))
 				super.state(leg.getStatus().equals(Status.LANDED) || leg.getStatus().equals(Status.CANCELLED), "status", "manager.leg.error.wrongPastStatus");
+			if (leg.getAircraft() != null) {
+				validAircraft = this.repository.findLegsAircraftUsed(leg.getAircraft().getId(), leg.getDeparture(), leg.getArrival()).isEmpty();
+				super.state(validAircraft, "aircraft", "manager.leg.error.aircraftInUse");
+			}
+			validLegFlight = this.repository.findLegsInconsistent(leg.getFlight().getId(), leg.getDeparture(), leg.getArrival()).isEmpty();
+			super.state(validLegFlight, "departure", "manager.leg.error.inconsistentLeg");
 		}
 		Leg existing = this.repository.findLegByFlightNumber(leg.getFlightNumber());
 		boolean ok = existing == null || existing.getId() == leg.getId();
 		super.state(ok, "flightNumber", "manager.leg.error.duplicateFlightNumber");
 		super.state(leg.getFlightNumber().contains(leg.getAircraft().getAirline().getIATACode()), "flightNumber", "manager.leg.error.wrongFlightNumber");
-		super.state(!leg.getAircraft().isDisabled(), "aircraft", "manager.leg.error.aircraftDisabled");
 	}
 
 	@Override

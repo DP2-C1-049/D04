@@ -2,6 +2,7 @@
 package acme.features.manager.leg;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -26,4 +27,10 @@ public interface ManagerLegRepository extends AbstractRepository {
 
 	@Query("SELECT l FROM Leg l WHERE l.id = :legId AND l.flight.manager.id = :managerId")
 	Leg findOneLegByIdAndManager(int legId, int managerId);
+
+	@Query("SELECT l FROM Leg l WHERE l.aircraft.id = :aircraftId AND l.draftMode = false AND ((:departure < l.arrival AND :arrival > l.departure))")
+	Collection<Leg> findLegsAircraftUsed(int aircraftId, Date departure, Date arrival);
+
+	@Query("SELECT l FROM Leg l WHERE l.flight.id = :flightId AND l.draftMode = false AND ((:departure < l.arrival AND :arrival > l.departure))")
+	Collection<Leg> findLegsInconsistent(int flightId, Date departure, Date arrival);
 }

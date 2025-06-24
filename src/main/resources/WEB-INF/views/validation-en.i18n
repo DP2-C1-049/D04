@@ -55,6 +55,9 @@ acme.validation.form.error.NotNull= It must not be null
 acme.validation.form.error.invalidAircraft = The aircraft is not valid
 acme.validation.form.error.invalidTask = The task is not valid
 
+acme.validation.leg.aircraft-not-active.message = Aircraft is not active
+acme.validation.leg.wrong-scheduled-arrival.message = Arrival must be after departure
+
 acme.validation.form.error.TaskInvolved = There are tasks involved in maintenance records
 acme.validation.form.error.TaskInvolvedMR = There are tasks involved in
 
