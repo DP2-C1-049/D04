@@ -76,6 +76,10 @@ public class TechnicianMaintenanceRecordCreateService extends AbstractGuiService
 		boolean valid = maintenanceRecord.getAircraft() != null;
 		super.state(valid, "aircraft", "acme.validation.form.error.invalidAircraft");
 
+		MaintenanceRecord existMR = this.repository.findMaintenanceRecordByTicker(maintenanceRecord.getTicker());
+		boolean valid2 = existMR == null || existMR.getId() == maintenanceRecord.getId();
+		super.state(valid2, "ticker", "acme.validation.form.error.duplicateTicker");
+
 	}
 	@Override
 	public void perform(final MaintenanceRecord maintenanceRecord) {
