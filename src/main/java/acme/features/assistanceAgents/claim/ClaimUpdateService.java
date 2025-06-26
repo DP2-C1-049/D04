@@ -60,7 +60,7 @@ public class ClaimUpdateService extends AbstractGuiService<AssistanceAgents, Cla
 
 	@Override
 	public void bind(final Claim claim) {
-		super.bindObject(claim, "registrationMoment", "email", "description", "type", "leg", "id");
+		super.bindObject(claim, "email", "description", "type", "leg", "id");
 	}
 
 	@Override
