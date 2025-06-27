@@ -6,10 +6,13 @@ import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import acme.client.components.models.Dataset;
+import acme.client.components.views.SelectChoices;
 import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.aircraft.Aircraft;
+import acme.entities.maintenanceRecord.MaintenaceRecordStatus;
 import acme.entities.maintenanceRecord.MaintenanceRecord;
 import acme.entities.task.Involves;
 import acme.realms.Technician;
@@ -76,6 +79,21 @@ public class TechnicianMaintenanceRecordDeleteService extends AbstractGuiService
 	}
 	@Override
 	public void unbind(final MaintenanceRecord maintenanceRecord) {
+		Dataset dataset;
+		SelectChoices choices;
 
+		SelectChoices aircrafts;
+		Collection<Aircraft> aircraftsCollection;
+		aircraftsCollection = this.repository.findAircrafts();
+		aircrafts = SelectChoices.from(aircraftsCollection, "registrationNumber", maintenanceRecord.getAircraft());
+
+		choices = SelectChoices.from(MaintenaceRecordStatus.class, maintenanceRecord.getStatus());
+		dataset = super.unbindObject(maintenanceRecord, "ticker", "moment", "nextInspectionDueTime", "estimatedCost", "notes", "draftMode");
+		dataset.put("status", choices.getSelected().getKey());
+		dataset.put("statuses", choices);
+
+		dataset.put("aircrafts", aircrafts);
+		dataset.put("aircraft", aircrafts.getSelected().getKey());
+		super.getResponse().addData(dataset);
 	}
 }

@@ -31,6 +31,11 @@ public class TechnicianMaintenanceRecordCreateService extends AbstractGuiService
 		if (super.getRequest().getMethod().equals("GET") && super.getRequest().hasData("id", int.class))
 			status = false;
 
+		if (super.getRequest().getMethod().equals("POST")) {
+			int id = super.getRequest().getData("id", int.class);
+			status = id == 0;
+		}
+
 		boolean status2 = true;
 		if (super.getRequest().hasData("aircraft", Integer.class)) {
 			Integer aircraftId = super.getRequest().getData("aircraft", Integer.class);
