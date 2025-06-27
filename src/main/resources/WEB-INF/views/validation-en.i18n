@@ -33,7 +33,8 @@ acme.validation.claim.form.error.leg = You can only choose a leg from the select
 acme.validation.claim.form.error.leg2 = Leg can not be null, you must select one
 acme.validation.claim.form.error.draftMode = You can not update o delete a claim if it is not in draft mode
 
-assistance-agent.tracking-log.form.error.wrongStatus = Status must be PENDING
+assistanceAgent.trackingLog.form.error.wrongStatus = Status must be PENDING
+assistanceAgent.trackingLog.form.error.claimNotPublished= Claim is not published
 assistanceAgent.trackingLog.form.error.wrongStatus2. = Status must be ACCEPTED or REJECTED
 assistanceAgent.trackingLog.form.error.resolutionNeeded = Resolution can not be null
 assistanceAgent.trackingLog.form.error.complatePercentage = You can only have two tracking Log in 100 percentage

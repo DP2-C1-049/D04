@@ -21,15 +21,12 @@ public class PendingClaimListService extends AbstractGuiService<AssistanceAgents
 
 	@Override
 	public void authorise() {
-		try {
-			boolean status = super.getRequest().getPrincipal().hasRealmOfType(AssistanceAgents.class);
+		boolean status = super.getRequest().getPrincipal().hasRealmOfType(AssistanceAgents.class);
 
-			super.getResponse().setAuthorised(status);
-			if (!super.getRequest().getMethod().equals("GET"))
-				super.getResponse().setAuthorised(false);
-		} catch (Exception e) {
+		super.getResponse().setAuthorised(status);
+		if (!super.getRequest().getMethod().equals("GET"))
 			super.getResponse().setAuthorised(false);
-		}
+
 	}
 	@Override
 	public void load() {
