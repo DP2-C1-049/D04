@@ -131,11 +131,11 @@ public class ManagerLegPublishService extends AbstractGuiService<Manager, Leg> {
 			boolean validLegFlight;
 			super.state(leg.getDeparture().before(leg.getArrival()), "departure", "manager.leg.error.departureBeforeArrival");
 			if (!leg.getDeparture().before(MomentHelper.getCurrentMoment()) && !leg.getArrival().before(MomentHelper.getCurrentMoment()))
-				super.state(leg.getStatus().equals(Status.ON_TIME) || leg.getStatus().equals(Status.CANCELLED) || leg.getStatus().equals(Status.DELAYED), "status", "manager.leg.error.wrongFutureStatus");
+				super.state(leg.getStatus() != null && (leg.getStatus().equals(Status.ON_TIME) || leg.getStatus().equals(Status.CANCELLED) || leg.getStatus().equals(Status.DELAYED)), "status", "manager.leg.error.wrongFutureStatus");
 			if (leg.getDeparture().before(MomentHelper.getCurrentMoment()) && !leg.getArrival().before(MomentHelper.getCurrentMoment()))
-				super.state(leg.getStatus().equals(Status.ON_TIME) || leg.getStatus().equals(Status.CANCELLED) || leg.getStatus().equals(Status.DELAYED), "status", "manager.leg.error.wrongPresentStatus");
+				super.state(leg.getStatus() != null && (leg.getStatus().equals(Status.ON_TIME) || leg.getStatus().equals(Status.CANCELLED) || leg.getStatus().equals(Status.DELAYED)), "status", "manager.leg.error.wrongPresentStatus");
 			if (leg.getDeparture().before(MomentHelper.getCurrentMoment()) && leg.getArrival().before(MomentHelper.getCurrentMoment()))
-				super.state(leg.getStatus().equals(Status.LANDED) || leg.getStatus().equals(Status.CANCELLED), "status", "manager.leg.error.wrongPastStatus");
+				super.state(leg.getStatus() != null && (leg.getStatus().equals(Status.LANDED) || leg.getStatus().equals(Status.CANCELLED)), "status", "manager.leg.error.wrongPastStatus");
 			if (leg.getAircraft() != null) {
 				validAircraft = this.repository.findLegsAircraftUsed(leg.getAircraft().getId(), leg.getDeparture(), leg.getArrival()).isEmpty();
 				super.state(validAircraft, "aircraft", "manager.leg.error.aircraftInUse");
@@ -146,7 +146,8 @@ public class ManagerLegPublishService extends AbstractGuiService<Manager, Leg> {
 		Leg existing = this.repository.findLegByFlightNumber(leg.getFlightNumber());
 		boolean ok = existing == null || existing.getId() == leg.getId();
 		super.state(ok, "flightNumber", "manager.leg.error.duplicateFlightNumber");
-		super.state(leg.getFlightNumber().contains(leg.getAircraft().getAirline().getIATACode()), "flightNumber", "manager.leg.error.wrongFlightNumber");
+		if (leg.getAircraft() != null)
+			super.state(leg.getFlightNumber().contains(leg.getAircraft().getAirline().getIATACode()), "flightNumber", "manager.leg.error.wrongFlightNumber");
 	}
 
 	@Override
