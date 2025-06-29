@@ -61,8 +61,9 @@ acme.validation.leg.wrong-scheduled-arrival.message = Arrival must be after depa
 acme.validation.form.error.TaskInvolved = There are tasks involved in maintenance records
 acme.validation.form.error.TaskInvolvedMR = There are tasks involved in
 
-acme.validation.assignment.dutyIncorrect = The leg is already assigned to co-pilot or pilot duty
-acme.validation.assignment.statusIncorrect = Member not Available 
-acme.validation.FlightAssignment.memberHasIncompatibleLegs.message = They cannot be assigned to multiple legs simultaneously.
-acme.validation.FlightAssignment.memberHasIncompatibleDuty.message = Each leg can only have one pilot and one co-pilot. 
-acme.validation.FlightAssignment.HasIncompatibleLeg = The associated leg should be published.
+acme.validation.FlightAssignment.flightCrewMemberNotAvailable.message = FlightCrewMember must be AVAILABLE
+acme.validation.FlightAssignment.legAlreadyOccurred.message = The selected leg has already occured
+acme.validation.FlightAssignment.FlightCrewMemberIncompatibleLegs.message = This flight leg conflicts with an existing assignment
+acme.validation.FlightAssignment.havePilot.message = This assignment already has a PILOT
+acme.validation.FlightAssignment.haveCopilot.message = This assignment already has a COPILOT
+acme.validation.FlightAssignment.legDraftModeNotAllowed.message = This leg has been already published

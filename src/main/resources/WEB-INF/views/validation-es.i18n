@@ -68,6 +68,9 @@ acme.validation.assignment.legIncorrect = No se pueden asignar a varios tramos s
 acme.validation.assignment.legDraft = El tramo seleccionado no está publicado
 acme.validation.assignment.delete = No se puede borrar la asignación, todavía tiene registros de actividades asociados.
 
-acme.validation.FlightAssignment.memberHasIncompatibleLegs.message = No se pueden asignar a varios tramos simultáneamente.
-acme.validation.FlightAssignment.memberHasIncompatibleDuty.message = Cada etapa solo puede tener un piloto y un copiloto.
-acme.validation.FlightAssignment.HasIncompatibleLeg = El leg asociado debe estar publicado
+acme.validation.FlightAssignment.flightCrewMemberNotAvailable.message = El miembro de tripulación debe estar DISPONIBLE
+acme.validation.FlightAssignment.legAlreadyOccurred.message = El tramo seleccionado ya ha ocurrido
+acme.validation.FlightAssignment.FlightCrewMemberIncompatibleLegs.message = Este tramo de vuelo entra en conflicto con una asignación existente
+acme.validation.FlightAssignment.havePilot.message = Esta asignación ya tiene un PILOTO
+acme.validation.FlightAssignment.haveCopilot.message = Esta asignación ya tiene un COPILOTO
+acme.validation.FlightAssignment.legDraftModeNotAllowed.message = Este tramo ya ha sido publicado
