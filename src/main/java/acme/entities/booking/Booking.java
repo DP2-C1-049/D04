@@ -67,7 +67,7 @@ public class Booking extends AbstractEntity {
 	private TravelClass			travelClass;
 
 	@Optional
-	@ValidString(min = 4, max = 4, pattern = "[0-9]{4}", message = "{acme.validation.lastNibble.notPattern.message}")
+	@ValidString(min = 4, max = 4, pattern = "[0-9]{4}")
 	@Automapped
 	private String				lastNibble;
 

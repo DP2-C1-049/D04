@@ -19,9 +19,6 @@ public class CustomerPassengerShowService extends AbstractGuiService<Customer, P
 	@Override
 	public void authorise() {
 		try {
-			//			if (!super.getRequest().getMethod().equals("GET"))
-			//				super.getResponse().setAuthorised(false);
-			//			else {
 			boolean status = super.getRequest().getPrincipal().hasRealmOfType(Customer.class);
 
 			super.getResponse().setAuthorised(status);
@@ -35,7 +32,6 @@ public class CustomerPassengerShowService extends AbstractGuiService<Customer, P
 
 				super.getResponse().setAuthorised(passengerId != null && customerId == passenger.getCustomer().getId());
 			}
-			//			}
 
 		} catch (Throwable t) {
 			super.getResponse().setAuthorised(false);

@@ -81,7 +81,6 @@ public class CustomerBookingRecordCreateService extends AbstractGuiService<Custo
 
 	@Override
 	public void unbind(final BookingRecord bookingRecord) {
-		assert bookingRecord != null;
 		Dataset dataset;
 
 		dataset = super.unbindObject(bookingRecord, "passenger", "booking", "id");
