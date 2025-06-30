@@ -24,28 +24,35 @@ public class TaskInvolvedInMaintenanceRecordDeleteService extends AbstractGuiSer
 	@Override
 	public void authorise() {
 		boolean status = true;
-		String method = super.getRequest().getMethod();
-
 		int masterId;
 		MaintenanceRecord maintenanceRecord;
 		boolean status1 = true;
-		if (super.getRequest().getMethod().equals("GET") && super.getRequest().hasData("id", int.class))
-			status1 = false;
-		if (super.getRequest().hasData("masterId", int.class)) {
-			masterId = super.getRequest().getData("masterId", int.class);
-			maintenanceRecord = this.repository.findMaintenanceRecordById(masterId);
-			status = maintenanceRecord != null && super.getRequest().getPrincipal().hasRealm(maintenanceRecord.getTechnician()) && maintenanceRecord.isDraftMode();
+		try {
+			String method = super.getRequest().getMethod();
+			if (super.getRequest().getMethod().equals("GET") && super.getRequest().hasData("id", int.class))
+				status1 = false;
+			if (super.getRequest().getMethod().equals("POST")) {
+				int id = super.getRequest().getData("id", int.class);
+				status1 = id == 0;
+			}
+			if (super.getRequest().hasData("masterId", int.class)) {
+				masterId = super.getRequest().getData("masterId", int.class);
+				maintenanceRecord = this.repository.findMaintenanceRecordById(masterId);
+				status = maintenanceRecord != null && super.getRequest().getPrincipal().hasRealm(maintenanceRecord.getTechnician()) && maintenanceRecord.isDraftMode();
 
-			if (super.getRequest().hasData("task", Integer.class)) {
-				Integer taskId = super.getRequest().getData("task", Integer.class);
-				if (taskId == null)
-					status = false;
-				if (taskId != 0) {
-					Task checkedTask = this.repository.findTaskById(taskId);
-					Involves i = this.repository.findInvolvedInTMR(masterId, taskId);
-					status = status && checkedTask != null && i != null;
+				if (super.getRequest().hasData("task", Integer.class)) {
+					Integer taskId = super.getRequest().getData("task", Integer.class);
+					if (taskId == null)
+						status = false;
+					if (taskId != 0) {
+						Task checkedTask = this.repository.findTaskById(taskId);
+						Involves i = this.repository.findInvolvedInTMR(masterId, taskId);
+						status = status && checkedTask != null && i != null;
+					}
 				}
 			}
+		} catch (Throwable t) {
+			status = false;
 		}
 		super.getResponse().setAuthorised(status && status1);
 	}

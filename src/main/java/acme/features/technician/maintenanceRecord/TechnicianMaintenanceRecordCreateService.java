@@ -26,20 +26,28 @@ public class TechnicianMaintenanceRecordCreateService extends AbstractGuiService
 	@Override
 	public void authorise() {
 		boolean status = true;
-
-		status = super.getRequest().getPrincipal().hasRealmOfType(Technician.class);
-		if (super.getRequest().getMethod().equals("GET") && super.getRequest().hasData("id", int.class))
-			status = false;
-
 		boolean status2 = true;
-		if (super.getRequest().hasData("aircraft", Integer.class)) {
-			Integer aircraftId = super.getRequest().getData("aircraft", Integer.class);
-			if (aircraftId == null)
-				status2 = false;
-			else if (aircraftId != 0) {
-				Aircraft existingAircraft = this.repository.findAircraftById(aircraftId);
-				status2 = existingAircraft != null;
+		try {
+			status = super.getRequest().getPrincipal().hasRealmOfType(Technician.class);
+			if (super.getRequest().getMethod().equals("GET") && super.getRequest().hasData("id", int.class))
+				status = false;
+
+			if (super.getRequest().getMethod().equals("POST")) {
+				int id = super.getRequest().getData("id", int.class);
+				status = id == 0;
 			}
+
+			if (super.getRequest().hasData("aircraft", Integer.class)) {
+				Integer aircraftId = super.getRequest().getData("aircraft", Integer.class);
+				if (aircraftId == null)
+					status2 = false;
+				else if (aircraftId != 0) {
+					Aircraft existingAircraft = this.repository.findAircraftById(aircraftId);
+					status2 = existingAircraft != null;
+				}
+			}
+		} catch (Throwable t) {
+			status = false;
 		}
 
 		super.getResponse().setAuthorised(status && status2);
