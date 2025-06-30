@@ -149,7 +149,7 @@ public class ManagerLegUpdateService extends AbstractGuiService<Manager, Leg> {
 				super.state(validLegFlight, "departure", "manager.leg.error.inconsistentLeg");
 			}
 			if (leg.getAircraft() != null)
-				super.state(leg.getFlightNumber().contains(leg.getAircraft().getAirline().getIATACode()), "flightNumber", "manager.leg.error.wrongFlightNumber");
+				super.state(leg.getFlightNumber().contains(leg.getFlight().getManager().getAirline().getIATACode()), "flightNumber", "manager.leg.error.wrongFlightNumber");
 		}
 	}
 
