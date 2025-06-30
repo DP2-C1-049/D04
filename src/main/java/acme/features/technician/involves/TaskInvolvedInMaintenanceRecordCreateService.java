@@ -28,26 +28,30 @@ public class TaskInvolvedInMaintenanceRecordCreateService extends AbstractGuiSer
 		int masterId;
 		MaintenanceRecord maintenanceRecord;
 		boolean status1 = true;
-		if (super.getRequest().getMethod().equals("GET") && super.getRequest().hasData("id", int.class))
-			status1 = false;
-		if (super.getRequest().getMethod().equals("POST")) {
-			int id = super.getRequest().getData("id", int.class);
-			status1 = id == 0;
-		}
-		if (super.getRequest().hasData("masterId", int.class)) {
-			masterId = super.getRequest().getData("masterId", int.class);
-			maintenanceRecord = this.repository.findMaintenanceRecordById(masterId);
-			status = maintenanceRecord != null && super.getRequest().getPrincipal().hasRealm(maintenanceRecord.getTechnician()) && maintenanceRecord.isDraftMode();
-			if (super.getRequest().hasData("task", Integer.class)) {
-				Integer taskId = super.getRequest().getData("task", Integer.class);
-				if (taskId == null)
-					status = false;
-				else if (taskId != 0) {
-					Task checkedTask = this.repository.findTaskById(taskId);
-					Involves i = this.repository.findInvolvedInTMR(masterId, taskId);
-					status = status && checkedTask != null && i == null && !checkedTask.isDraftMode() && checkedTask.getTechnician().getId() == super.getRequest().getPrincipal().getActiveRealm().getId();
+		try {
+			if (super.getRequest().getMethod().equals("GET") && super.getRequest().hasData("id", int.class))
+				status1 = false;
+			if (super.getRequest().getMethod().equals("POST")) {
+				int id = super.getRequest().getData("id", int.class);
+				status1 = id == 0;
+			}
+			if (super.getRequest().hasData("masterId", int.class)) {
+				masterId = super.getRequest().getData("masterId", int.class);
+				maintenanceRecord = this.repository.findMaintenanceRecordById(masterId);
+				status = maintenanceRecord != null && super.getRequest().getPrincipal().hasRealm(maintenanceRecord.getTechnician()) && maintenanceRecord.isDraftMode();
+				if (super.getRequest().hasData("task", Integer.class)) {
+					Integer taskId = super.getRequest().getData("task", Integer.class);
+					if (taskId == null)
+						status = false;
+					else if (taskId != 0) {
+						Task checkedTask = this.repository.findTaskById(taskId);
+						Involves i = this.repository.findInvolvedInTMR(masterId, taskId);
+						status = status && checkedTask != null && i == null && !checkedTask.isDraftMode() && checkedTask.getTechnician().getId() == super.getRequest().getPrincipal().getActiveRealm().getId();
+					}
 				}
 			}
+		} catch (Throwable t) {
+			status = false;
 		}
 
 		super.getResponse().setAuthorised(status && status1);
