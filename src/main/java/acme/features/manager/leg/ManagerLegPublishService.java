@@ -147,7 +147,7 @@ public class ManagerLegPublishService extends AbstractGuiService<Manager, Leg> {
 		boolean ok = existing == null || existing.getId() == leg.getId();
 		super.state(ok, "flightNumber", "manager.leg.error.duplicateFlightNumber");
 		if (leg.getAircraft() != null)
-			super.state(leg.getFlightNumber().contains(leg.getAircraft().getAirline().getIATACode()), "flightNumber", "manager.leg.error.wrongFlightNumber");
+			super.state(leg.getFlightNumber().contains(leg.getFlight().getManager().getAirline().getIATACode()), "flightNumber", "manager.leg.error.wrongFlightNumber");
 	}
 
 	@Override
