@@ -5,6 +5,9 @@ authenticated.technician.form.title = Technician form
  authenticated.technician.form.label.healthTestPassed = Health Test Passed
  authenticated.technician.form.label.yearsOfExperience= Years of experience
  authenticated.technician.form.label.certifications = Certifications
+ 
+ authenticated.technician.form.placeholder.licenseNumber = ABC123456
+ authenticated.technician.form.placeholder.phoneNumber = 600123456
   
  authenticated.technician.form.button.create = Register
  authenticated.technician.form.button.update = Update
