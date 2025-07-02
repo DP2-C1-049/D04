@@ -4,8 +4,8 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form>
- 	<acme:input-textbox code="authenticated.technician.form.label.licenseNumber" path="licenseNumber"/>
- 	<acme:input-textbox code="authenticated.technician.form.label.phoneNumber" path="phoneNumber"/>
+ 	<acme:input-textbox code="authenticated.technician.form.label.licenseNumber" path="licenseNumber" placeholder="authenticated.technician.form.placeholder.licenseNumber"/>
+ 	<acme:input-textbox code="authenticated.technician.form.label.phoneNumber" path="phoneNumber" placeholder="authenticated.technician.form.placeholder.phoneNumber"/>
  	<acme:input-textbox code="authenticated.technician.form.label.specialization" path="specialisation"/>
  	<acme:input-checkbox code="authenticated.technician.form.label.healthTestPassed" path="passedAnnualHealthTest"/>
  	<acme:input-integer code="authenticated.technician.form.label.yearsOfExperience" path="experienceYears"/>
