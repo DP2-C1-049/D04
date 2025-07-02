@@ -33,6 +33,7 @@ acme.validation.claim.form.error.leg = Solo puedes elegir la traza que aparecen 
 acme.validation.claim.form.error.leg2 = La traza no puede ser nulo, 
 acme.validation.claim.form.error.draftMode = No puedes eliminar ni modificar un registro si no está en modo borrado
 
+assistanceAgent.trackingLog.form.error.claimNotPublished= Claim no publicada
 assistanceAgent.trackingLog.form.error.wrongStatus = El estado debe de estar PENDING
 assistanceAgent.trackingLog.form.error.wrongStatus2 = El estado debe de estar ACCEPTED o REJECTED
 assistanceAgent.trackingLog.form.error.resolutionNeeded = El campo resolución no puede ser nulo
