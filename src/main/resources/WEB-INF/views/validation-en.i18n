@@ -62,6 +62,9 @@ acme.validation.leg.wrong-scheduled-arrival.message = Arrival must be after depa
 acme.validation.form.error.TaskInvolved = There are tasks involved in maintenance records
 acme.validation.form.error.TaskInvolvedMR = There are tasks involved in
 
+acme.validation.manager.duplicated-identifier.message = This identifier already exists.
+acme.validation.manager.invalid-identifier.message = The identifier must start with the initial of the first name and the initial of the surname.
+
 acme.validation.FlightAssignment.flightCrewMemberNotAvailable.message = FlightCrewMember must be AVAILABLE
 acme.validation.FlightAssignment.legAlreadyOccurred.message = The selected leg has already occured
 acme.validation.FlightAssignment.FlightCrewMemberIncompatibleLegs.message = This flight leg conflicts with an existing assignment
