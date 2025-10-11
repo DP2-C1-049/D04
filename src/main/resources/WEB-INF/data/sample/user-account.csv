@@ -19,6 +19,8 @@ user-account-flighCrewMember-01,true,"UserIdentity{name: 'Chuty', surname: 'Vk',
 user-account-assistanceAgent-01,true,"UserIdentity{name: 'Gazir', surname: 'García', email: 'gazirgarcía@acme.com'}",agent1,agent1
 user-account-assistanceAgent-02,true,"UserIdentity{name: 'Aczino', surname: 'Hernández', email: 'aczinohernández@acme.com'}",agent2,agent2
 user-account-assistanceAgent-03,true,"UserIdentity{name: 'Josep', surname: 'Pedrerol', email: 'joseppedrerol@acme.com'}",agent3,agent3
+user-account-assistanceAgent-04,true,"UserIdentity{name: 'Marki', surname: 'Locura', email: 'markito@acme.com'}",agent4,agent4
+user-account-assistanceAgent-05,true,"UserIdentity{name: 'Miguel', surname: 'Hernandez', email: 'miguelillo@acme.com'}",agent5,agent5
 user-account-manager-01,true,"UserIdentity{name: 'Fernando', surname: 'Alonso', email: 'fernandoalonso@acme.com'}",manager1,manager1
 user-account-manager-02,true,"UserIdentity{name: 'Antonio', surname: 'Lobato', email: 'antoniolobato@acme.com'}",manager2,manager2
 user-account-manager-03,true,"UserIdentity{name: 'Rafael', surname: 'Nadal', email: 'rafaelnadal@acme.com'}",manager3,manager3

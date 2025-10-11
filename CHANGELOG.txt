@@ -13,3 +13,7 @@
 25.1.0	This is the first version of Acme-ANS
 25.2.0	This is the second version of Acme-ANS
 25.3.0	This is the third versión of Acme-ANS
+25.4.0	This is the fourth version of Acme-ANS
+25.5.0	This is the fifth version of Acme-ANS
+25.6.0	This is the sixth versión of Acme-ANS
+25.7.0	This is the seventh versión of Acme-ANS
