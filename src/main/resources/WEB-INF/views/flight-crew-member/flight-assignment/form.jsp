@@ -6,7 +6,37 @@
 <acme:form> 
 	<acme:input-textbox code="flight-crew-member.flight-assignment.form.label.flight-crew-member" path="flightCrewMember" readonly="true"/>
 	<acme:input-select code="flight-crew-member.flight-assignment.form.label.leg" path="leg" choices="${legs}"/>		
-	<acme:input-select code="flight-crew-member.flight-assignment.form.label.duty" path="duty" choices="${duty}"/>
+	<div class="form-group">
+        <label for="dutySelect">
+            <acme:print code="flight-crew-member.flight-assignment.form.label.duty"/>
+        </label>
+		<jstl:if test="${acme:anyOf(_command, 'show|update|publish')}">
+        <select id="dutySelect" name="duty" class="form-control" 
+                onchange="if(this.value) window.location.href='/Acme-ANS-C3/flight-crew-member/flight-assignment/${_command }?duty=' + this.value + '&id=${id}'">
+            
+            <jstl:forEach var="choice" items="${duty.iterator()}">		
+			<acme:input-option 
+				value="${choice.getKey()}" 
+				code="${choice.getLabel()}" 
+				selected="${choice.isSelected()}"/>
+		</jstl:forEach>
+           
+        </select>
+        </jstl:if>
+        <jstl:if test="${_command == 'create'}">
+        <select id="dutySelect" name="duty" class="form-control" 
+                onchange="if(this.value) window.location.href='/Acme-ANS-C3/flight-crew-member/flight-assignment/${_command }?duty=' + this.value">
+            
+            <jstl:forEach var="choice" items="${duty.iterator()}">		
+			<acme:input-option 
+				value="${choice.getKey()}" 
+				code="${choice.getLabel()}" 
+				selected="${choice.isSelected()}"/>
+		</jstl:forEach>
+           
+        </select>
+        </jstl:if>
+    </div>
 	<acme:input-select code="flight-crew-member.flight-assignment.form.label.current-status" path="currentStatus" choices="${currentStatus}"/>
 	<acme:input-textbox code="flight-crew-member.flight-assignment.form.label.remarks" path="remarks"/>
 	<acme:input-moment code="flight-crew-member.flight-assignment.form.label.moment" path="moment" readonly="true"/>
