@@ -5,7 +5,6 @@
 
 <acme:form> 
     <jstl:choose>
-        <%-- MODO SHOW (SOLO LECTURA) --%>
         <jstl:when test="${_command == 'show'}">
             <acme:input-textbox code="flight-crew-member.flight-assignment.form.label.flight-crew-member" path="flightCrewMember" readonly="true"/>
             <acme:input-textbox code="flight-crew-member.flight-assignment.form.label.leg" path="legLabel" readonly="true"/>		
@@ -35,7 +34,6 @@
             </jstl:choose>
         </jstl:when>
 
-        <%-- MODO CREATE (CAMPOS EDITABLES) --%>
         <jstl:when test="${_command == 'create'}">
             <acme:input-textbox code="flight-crew-member.flight-assignment.form.label.flight-crew-member" path="flightCrewMember" readonly="true"/>
             <acme:input-select code="flight-crew-member.flight-assignment.form.label.leg" path="leg" choices="${legs}"/>		
@@ -63,7 +61,6 @@
             <acme:submit code="flight-crew-member.flight-assignment.form.button.create" action="/flight-crew-member/flight-assignment/create"/>
         </jstl:when>
 
-        <%-- MODO UPDATE (CAMPOS EDITABLES) --%>
         <jstl:when test="${_command == 'update'}">
             <acme:input-textbox code="flight-crew-member.flight-assignment.form.label.flight-crew-member" path="flightCrewMember" readonly="true"/>
             <acme:input-select code="flight-crew-member.flight-assignment.form.label.leg" path="leg" choices="${legs}"/>		
@@ -91,7 +88,6 @@
             <acme:submit code="flight-crew-member.flight-assignment.form.button.update" action="/flight-crew-member/flight-assignment/update"/>
         </jstl:when>
 
-        <%-- MODO PUBLISH (CAMPOS EDITABLES) --%>
         <jstl:when test="${_command == 'publish'}">
             <acme:input-textbox code="flight-crew-member.flight-assignment.form.label.flight-crew-member" path="flightCrewMember" readonly="true"/>
             <acme:input-select code="flight-crew-member.flight-assignment.form.label.leg" path="leg" choices="${legs}"/>		

@@ -44,13 +44,11 @@ public class FlightCrewMemberFlightAssignmentDeleteService extends AbstractGuiSe
 
 	@Override
 	public void bind(final FlightAssignment assignment) {
-		// No necesitamos bind para delete, ya que no estamos modificando datos
-		// Solo necesitamos la entidad cargada para eliminarla
+
 	}
 
 	@Override
 	public void validate(final FlightAssignment assignment) {
-		// Validación simple: asegurarnos de que la asignación existe y está en draft mode
 		if (assignment == null)
 			super.state(false, "*", "acme.validation.flightassignment.notfound.message");
 		else if (!assignment.isDraftMode())
@@ -60,17 +58,14 @@ public class FlightCrewMemberFlightAssignmentDeleteService extends AbstractGuiSe
 	@Override
 	public void perform(final FlightAssignment assignment) {
 		if (assignment != null) {
-			// Eliminar los activity logs asociados primero
 			Collection<ActivityLog> activityLogs = this.repository.findActivityLogsByFlightAssignmentId(assignment.getId());
 			if (activityLogs != null && !activityLogs.isEmpty())
 				this.repository.deleteAll(activityLogs);
-			// Eliminar la flight assignment
 			this.repository.delete(assignment);
 		}
 	}
 
 	@Override
 	public void unbind(final FlightAssignment assignment) {
-		// No necesitamos unbind para delete
 	}
 }

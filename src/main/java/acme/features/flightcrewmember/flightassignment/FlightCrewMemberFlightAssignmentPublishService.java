@@ -41,14 +41,10 @@ public class FlightCrewMemberFlightAssignmentPublishService extends AbstractGuiS
 
 	@Override
 	public void bind(final FlightAssignment assignment) {
-		// No necesitamos bind porque no estamos modificando los datos
-		// Solo vamos a cambiar el draftMode
 	}
 
 	@Override
 	public void validate(final FlightAssignment assignment) {
-		// Validación mínima: solo verificar que existe y está en draft mode
-		// Las demás validaciones ya se hicieron en create/update
 		if (assignment == null)
 			super.state(false, "*", "acme.validation.flightassignment.notfound.message");
 	}
@@ -62,7 +58,7 @@ public class FlightCrewMemberFlightAssignmentPublishService extends AbstractGuiS
 
 	@Override
 	public void unbind(final FlightAssignment assignment) {
-		// Solo necesitamos unbind básico
+
 		Dataset dataset = super.unbindObject(assignment, "draftMode");
 		dataset.put("draftMode", assignment.isDraftMode());
 		super.getResponse().addData(dataset);

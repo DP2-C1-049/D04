@@ -129,15 +129,13 @@ public class FlightCrewMemberFlightAssignmentCreateService extends AbstractGuiSe
 		SelectChoices statusChoices = SelectChoices.from(CurrentStatus.class, assignment.getCurrentStatus());
 		SelectChoices dutyChoices = SelectChoices.from(Duty.class, assignment.getDuty());
 
-		// Obtener legs según el duty seleccionado
 		Collection<Leg> availableLegs;
 		Date now = MomentHelper.getCurrentMoment();
 
 		Duty selectedDuty = assignment.getDuty();
 
-		// Si el duty es null o 0 (valor nulo), no mostrar ninguna leg
 		if (selectedDuty == null)
-			availableLegs = new ArrayList<>(); // Lista vacía
+			availableLegs = new ArrayList<>();
 		else if (selectedDuty == Duty.PILOT)
 			availableLegs = this.repository.findAvailableLegsWithoutPilot(now);
 		else if (selectedDuty == Duty.COPILOT)
@@ -145,11 +143,9 @@ public class FlightCrewMemberFlightAssignmentCreateService extends AbstractGuiSe
 		else
 			availableLegs = this.repository.findAvailableLegs(now);
 
-		// Obtener las legs existentes del tripulante para filtrar por compatibilidad
 		FlightCrewMember crew = this.repository.findFlightCrewMemberById(super.getRequest().getPrincipal().getActiveRealm().getId());
 		Collection<Leg> existingLegs = this.repository.findLegsByFlightCrewMember(crew.getId());
 
-		// Filtrar las legs disponibles para quedarnos solo con las compatibles
 		Collection<Leg> compatibleLegs = availableLegs.stream().filter(leg -> this.isLegCompatibleWithExisting(leg, existingLegs)).collect(Collectors.toList());
 
 		SelectChoices legChoices = SelectChoices.from(compatibleLegs, "flightNumber", assignment.getLeg());

@@ -52,28 +52,23 @@ public class FlightCrewMemberFlightAssignmentUpdateService extends AbstractGuiSe
 
 	@Override
 	public void bind(final FlightAssignment assignment) {
-		// Obtener y validar el duty
 		Duty duty = null;
 		if (super.getRequest().hasData("duty", Duty.class))
 			duty = super.getRequest().getData("duty", Duty.class);
 
-		// Obtener y validar la leg
 		int legId = super.getRequest().getData("leg", int.class);
 		Leg leg = null;
 		if (legId != 0)
 			leg = this.repository.findLegById(legId);
 
-		// Hacer el bind de los campos
 		super.bindObject(assignment, "currentStatus", "remarks");
 
-		// Asignar los valores después del bind
 		assignment.setDuty(duty);
 		assignment.setLeg(leg);
 	}
 
 	@Override
 	public void validate(final FlightAssignment assignment) {
-		// Si hay errores críticos (duty o leg nulos), no continuar con otras validaciones
 		if (assignment.getDuty() == null || assignment.getLeg() == null)
 			return;
 
@@ -82,7 +77,6 @@ public class FlightCrewMemberFlightAssignmentUpdateService extends AbstractGuiSe
 		Leg leg = assignment.getLeg();
 		Date now = MomentHelper.getCurrentMoment();
 
-		// Verificar si hubo cambios
 		boolean cambioDuty = !original.getDuty().equals(assignment.getDuty());
 		boolean cambioLeg = !original.getLeg().equals(assignment.getLeg());
 		boolean cambioStatus = !original.getCurrentStatus().equals(assignment.getCurrentStatus());
@@ -90,13 +84,11 @@ public class FlightCrewMemberFlightAssignmentUpdateService extends AbstractGuiSe
 		if (!(cambioDuty || cambioLeg || cambioStatus))
 			return;
 
-		// Validar disponibilidad del tripulante
 		if (crew != null && (cambioDuty || cambioLeg)) {
 			boolean available = crew.getAvailabilityStatus() == AvailabilityStatus.AVAILABLE;
 			super.state(available, "flightCrewMember", "acme.validation.FlightAssignment.flightCrewMemberNotAvailable.message");
 		}
 
-		// Validaciones específicas para cambio de leg
 		if (cambioLeg) {
 			super.state(!leg.isDraftMode(), "leg", "acme.validation.FlightAssignment.legDraftModeNotAllowed.message");
 
@@ -107,7 +99,6 @@ public class FlightCrewMemberFlightAssignmentUpdateService extends AbstractGuiSe
 				super.state(false, "flightCrewMember", "acme.validation.FlightAssignment.FlightCrewMemberIncompatibleLegs.message");
 		}
 
-		// Validaciones para pilotos y copilotos
 		if (cambioDuty || cambioLeg)
 			this.checkPilotAndCopilotAssignment(assignment);
 	}
@@ -134,9 +125,7 @@ public class FlightCrewMemberFlightAssignmentUpdateService extends AbstractGuiSe
 
 	@Override
 	public void perform(final FlightAssignment assignment) {
-		// VERIFICACIÓN CRÍTICA: No guardar si hay datos inválidos
 		if (assignment.getDuty() == null || assignment.getLeg() == null)
-			// Lanzar una excepción o simplemente no guardar
 			return;
 
 		assignment.setMoment(MomentHelper.getCurrentMoment());
@@ -145,7 +134,6 @@ public class FlightCrewMemberFlightAssignmentUpdateService extends AbstractGuiSe
 
 	@Override
 	public void unbind(final FlightAssignment assignment) {
-		// Capturar el duty actual, considerando posibles cambios en la request
 		Duty currentDuty = assignment.getDuty();
 		if (super.getRequest().hasData("duty", Duty.class)) {
 			Duty newDuty = super.getRequest().getData("duty", Duty.class);
@@ -155,7 +143,6 @@ public class FlightCrewMemberFlightAssignmentUpdateService extends AbstractGuiSe
 		SelectChoices statusChoices = SelectChoices.from(CurrentStatus.class, assignment.getCurrentStatus());
 		SelectChoices dutyChoices = SelectChoices.from(Duty.class, currentDuty);
 
-		// Obtener legs según el duty seleccionado
 		Collection<Leg> availableLegs;
 		Date now = MomentHelper.getCurrentMoment();
 
@@ -170,13 +157,11 @@ public class FlightCrewMemberFlightAssignmentUpdateService extends AbstractGuiSe
 		else
 			availableLegs = this.repository.findAvailableLegs(now);
 
-		// Filtrar legs por compatibilidad
 		FlightCrewMember crew = assignment.getFlightCrewMember();
 		Collection<Leg> existingLegs = this.repository.findLegsByFlightCrewMember(crew.getId());
 
 		Collection<Leg> compatibleLegs = availableLegs.stream().filter(leg -> this.isLegCompatibleWithExisting(leg, existingLegs)).collect(Collectors.toList());
 
-		// Incluir la leg actual
 		Leg currentLeg = assignment.getLeg();
 		if (currentLeg != null && !compatibleLegs.contains(currentLeg))
 			compatibleLegs.add(currentLeg);

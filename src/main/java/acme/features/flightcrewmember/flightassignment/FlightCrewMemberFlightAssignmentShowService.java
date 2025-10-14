@@ -80,7 +80,6 @@ public class FlightCrewMemberFlightAssignmentShowService extends AbstractGuiServ
 		currentMoment = MomentHelper.getCurrentMoment();
 		isCompleted = this.repository.areLegsCompletedByFlightAssignment(assignmentId, currentMoment);
 
-		// Obtener los labels de las opciones seleccionadas para mostrar en modo lectura
 		String dutyLabel = duty.getSelected().getLabel();
 		String currentStatusLabel = currentStatus.getSelected().getLabel();
 		String legLabel = legChoices.getSelected().getLabel();
@@ -93,7 +92,6 @@ public class FlightCrewMemberFlightAssignmentShowService extends AbstractGuiServ
 		dataset.put("flightCrewMember", flightCrewMember.getEmployeeCode());
 		dataset.put("isCompleted", isCompleted);
 
-		// Añadir los labels para mostrar en modo lectura
 		dataset.put("dutyLabel", dutyLabel);
 		dataset.put("currentStatusLabel", currentStatusLabel);
 		dataset.put("legLabel", legLabel);
