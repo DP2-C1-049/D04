@@ -21,46 +21,50 @@ public class FlightCrewMemberFlightAssignmentDeleteService extends AbstractGuiSe
 	@Override
 	public void authorise() {
 		boolean status = false;
-		int flightAssignmentId = super.getRequest().getData("id", int.class);
-		FlightAssignment assignment = this.repository.findFlightAssignmentById(flightAssignmentId);
-		int flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
+		try {
+			Integer flightAssignmentId = super.getRequest().getData("id", Integer.class);
+			FlightAssignment assignment = this.repository.findFlightAssignmentById(flightAssignmentId);
+			int flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
 
-		if (assignment != null) {
-			boolean authorised1 = this.repository.existsFlightCrewMember(flightCrewMemberId);
-			boolean authorised = authorised1 && this.repository.thatFlightAssignmentIsOf(flightAssignmentId, flightCrewMemberId);
-			boolean ownsIt = assignment.getFlightCrewMember().getId() == flightCrewMemberId;
-			status = assignment.isDraftMode() && authorised && ownsIt;
+			if (assignment != null) {
+				boolean authorised1 = this.repository.existsFlightCrewMember(flightCrewMemberId);
+				boolean authorised = authorised1 && this.repository.thatFlightAssignmentIsOf(flightAssignmentId, flightCrewMemberId);
+				boolean ownsIt = assignment.getFlightCrewMember().getId() == flightCrewMemberId;
+				status = assignment.isDraftMode() && authorised && ownsIt;
+			}
+		} catch (Exception e) {
+			status = false;
 		}
-
 		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		int flightAssignmentId = super.getRequest().getData("id", int.class);
-		FlightAssignment assignment = this.repository.findFlightAssignmentById(flightAssignmentId);
-		super.getBuffer().addData(assignment);
+		try {
+			Integer flightAssignmentId = super.getRequest().getData("id", Integer.class);
+			FlightAssignment assignment = null;
+
+			if (flightAssignmentId != null)
+				assignment = this.repository.findFlightAssignmentById(flightAssignmentId);
+
+			super.getBuffer().addData(assignment);
+		} catch (Exception e) {
+			super.getBuffer().addData(null);
+		}
 	}
 
 	@Override
 	public void bind(final FlightAssignment assignment) {
-
 	}
 
 	@Override
 	public void validate(final FlightAssignment assignment) {
-		if (assignment == null)
-			super.state(false, "*", "acme.validation.flightassignment.notfound.message");
-		else if (!assignment.isDraftMode())
-			super.state(false, "*", "acme.validation.flightassignment.notDraft.message");
 	}
 
 	@Override
 	public void perform(final FlightAssignment assignment) {
 		if (assignment != null) {
 			Collection<ActivityLog> activityLogs = this.repository.findActivityLogsByFlightAssignmentId(assignment.getId());
-			if (activityLogs != null && !activityLogs.isEmpty())
-				this.repository.deleteAll(activityLogs);
 			this.repository.delete(assignment);
 		}
 	}

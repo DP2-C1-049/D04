@@ -3,7 +3,6 @@ package acme.features.flightcrewmember.flightassignment;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import acme.client.components.models.Dataset;
 import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.flightassignment.FlightAssignment;
@@ -18,25 +17,40 @@ public class FlightCrewMemberFlightAssignmentPublishService extends AbstractGuiS
 
 	@Override
 	public void authorise() {
-		int assignmentId = super.getRequest().getData("id", int.class);
-		FlightAssignment assignment = this.repository.findFlightAssignmentById(assignmentId);
+		boolean status = false;
 
-		if (assignment == null) {
-			super.getResponse().setAuthorised(false);
-			return;
+		try {
+			Integer assignmentId = super.getRequest().getData("id", Integer.class);
+
+			if (assignmentId != null) {
+				FlightAssignment assignment = this.repository.findFlightAssignmentById(assignmentId);
+
+				if (assignment != null) {
+					boolean principalIsOwner = assignment.getFlightCrewMember().getId() == super.getRequest().getPrincipal().getActiveRealm().getId();
+					boolean isDraft = assignment.isDraftMode();
+					status = principalIsOwner && isDraft;
+				}
+			}
+		} catch (Exception e) {
+			status = false;
 		}
 
-		boolean principalIsOwner = assignment.getFlightCrewMember().getId() == super.getRequest().getPrincipal().getActiveRealm().getId();
-		boolean isDraft = assignment.isDraftMode();
-
-		super.getResponse().setAuthorised(principalIsOwner && isDraft);
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		int assignmentId = super.getRequest().getData("id", int.class);
-		FlightAssignment assignment = this.repository.findFlightAssignmentById(assignmentId);
-		super.getBuffer().addData(assignment);
+		try {
+			Integer assignmentId = super.getRequest().getData("id", Integer.class);
+			FlightAssignment assignment = null;
+
+			if (assignmentId != null)
+				assignment = this.repository.findFlightAssignmentById(assignmentId);
+
+			super.getBuffer().addData(assignment);
+		} catch (Exception e) {
+			super.getBuffer().addData(null);
+		}
 	}
 
 	@Override
@@ -45,22 +59,20 @@ public class FlightCrewMemberFlightAssignmentPublishService extends AbstractGuiS
 
 	@Override
 	public void validate(final FlightAssignment assignment) {
-		if (assignment == null)
-			super.state(false, "*", "acme.validation.flightassignment.notfound.message");
+
 	}
 
 	@Override
 	public void perform(final FlightAssignment assignment) {
-		// Solo cambiar el draftMode a false
-		assignment.setDraftMode(false);
-		this.repository.save(assignment);
+		if (assignment != null) {
+			assignment.setDraftMode(false);
+			this.repository.save(assignment);
+		}
 	}
 
 	@Override
 	public void unbind(final FlightAssignment assignment) {
 
-		Dataset dataset = super.unbindObject(assignment, "draftMode");
-		dataset.put("draftMode", assignment.isDraftMode());
-		super.getResponse().addData(dataset);
 	}
+
 }

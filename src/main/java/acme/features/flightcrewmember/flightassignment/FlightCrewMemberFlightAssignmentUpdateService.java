@@ -29,27 +29,64 @@ public class FlightCrewMemberFlightAssignmentUpdateService extends AbstractGuiSe
 
 	@Override
 	public void authorise() {
-		int assignmentId = super.getRequest().getData("id", int.class);
+		boolean status = false;
+
+		Integer assignmentId = null;
+		try {
+			assignmentId = super.getRequest().getData("id", Integer.class);
+		} catch (Exception e) {
+			super.getResponse().setAuthorised(false);
+			return;
+		}
+
+		if (assignmentId == null) {
+			super.getResponse().setAuthorised(false);
+			return;
+		}
+
 		FlightAssignment assignment = this.repository.findFlightAssignmentById(assignmentId);
+		if (assignment == null) {
+			super.getResponse().setAuthorised(false);
+			return;
+		}
+
 		boolean principalIsOwner = assignment.getFlightCrewMember().getId() == super.getRequest().getPrincipal().getActiveRealm().getId();
+		boolean isDraft = assignment.isDraftMode();
+
+		if (!principalIsOwner || !isDraft) {
+			super.getResponse().setAuthorised(false);
+			return;
+		}
+
 		boolean correctDuty = true;
-		if (super.getRequest().hasData("duty", Duty.class))
+		if (super.getRequest().hasData("duty"))
 			try {
 				super.getRequest().getData("duty", Duty.class);
 			} catch (Exception ex) {
 				correctDuty = false;
 			}
 
-		super.getResponse().setAuthorised(principalIsOwner && assignment.isDraftMode() && correctDuty);
+		status = correctDuty;
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		int assignmentId = super.getRequest().getData("id", int.class);
-		FlightAssignment assignment = this.repository.findFlightAssignmentById(assignmentId);
+		FlightAssignment assignment = null;
+
+		Integer assignmentId = null;
+		try {
+			assignmentId = super.getRequest().getData("id", Integer.class);
+		} catch (Exception e) {
+			super.getBuffer().addData(null);
+			return;
+		}
+
+		if (assignmentId != null)
+			assignment = this.repository.findFlightAssignmentById(assignmentId);
+
 		super.getBuffer().addData(assignment);
 	}
-
 	@Override
 	public void bind(final FlightAssignment assignment) {
 		Duty duty = null;
@@ -74,8 +111,6 @@ public class FlightCrewMemberFlightAssignmentUpdateService extends AbstractGuiSe
 
 		FlightAssignment original = this.repository.findFlightAssignmentById(assignment.getId());
 		FlightCrewMember crew = assignment.getFlightCrewMember();
-		Leg leg = assignment.getLeg();
-		Date now = MomentHelper.getCurrentMoment();
 
 		boolean cambioDuty = !original.getDuty().equals(assignment.getDuty());
 		boolean cambioLeg = !original.getLeg().equals(assignment.getLeg());
@@ -89,28 +124,8 @@ public class FlightCrewMemberFlightAssignmentUpdateService extends AbstractGuiSe
 			super.state(available, "flightCrewMember", "acme.validation.FlightAssignment.flightCrewMemberNotAvailable.message");
 		}
 
-		if (cambioLeg) {
-			super.state(!leg.isDraftMode(), "leg", "acme.validation.FlightAssignment.legDraftModeNotAllowed.message");
-
-			boolean past = leg.getDeparture().before(now) || leg.getArrival().before(now);
-			super.state(!past, "leg", "acme.validation.FlightAssignment.legAlreadyOccurred.message");
-
-			if (crew != null && this.isLegIncompatible(assignment))
-				super.state(false, "flightCrewMember", "acme.validation.FlightAssignment.FlightCrewMemberIncompatibleLegs.message");
-		}
-
 		if (cambioDuty || cambioLeg)
 			this.checkPilotAndCopilotAssignment(assignment);
-	}
-
-	private boolean isLegIncompatible(final FlightAssignment assignment) {
-		Collection<Leg> existing = this.repository.findLegsByFlightCrewMember(assignment.getFlightCrewMember().getId()).stream().filter(existingLeg -> existingLeg.getId() != assignment.getLeg().getId()).collect(Collectors.toList());
-		Leg candidate = assignment.getLeg();
-		return existing.stream().anyMatch(oldLeg -> !this.areLegsCompatible(candidate, oldLeg));
-	}
-
-	private boolean areLegsCompatible(final Leg newLeg, final Leg oldLeg) {
-		return !(MomentHelper.isInRange(newLeg.getDeparture(), oldLeg.getDeparture(), oldLeg.getArrival()) || MomentHelper.isInRange(newLeg.getArrival(), oldLeg.getDeparture(), oldLeg.getArrival()));
 	}
 
 	private void checkPilotAndCopilotAssignment(final FlightAssignment assignment) {

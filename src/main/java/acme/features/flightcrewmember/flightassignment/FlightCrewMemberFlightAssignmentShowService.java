@@ -29,13 +29,22 @@ public class FlightCrewMemberFlightAssignmentShowService extends AbstractGuiServ
 		boolean authorised = false;
 		boolean ownsIt = false;
 		int flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		int assignmentId = super.getRequest().getData("id", int.class);
-		FlightAssignment assignment = this.repository.findFlightAssignmentById(assignmentId);
-		if (assignment != null) {
-			boolean authorised2 = this.repository.existsFlightAssignment(assignmentId);
-			boolean authorised1 = this.repository.existsFlightCrewMember(flightCrewMemberId);
-			authorised = authorised2 && authorised1 && this.repository.thatFlightAssignmentIsOf(assignmentId, flightCrewMemberId);
-			ownsIt = assignment.getFlightCrewMember().getId() == flightCrewMemberId;
+
+		try {
+			Integer assignmentId = super.getRequest().getData("id", Integer.class);
+
+			if (assignmentId != null) {
+				FlightAssignment assignment = this.repository.findFlightAssignmentById(assignmentId);
+				if (assignment != null) {
+					boolean authorised2 = this.repository.existsFlightAssignment(assignmentId);
+					boolean authorised1 = this.repository.existsFlightCrewMember(flightCrewMemberId);
+					authorised = authorised2 && authorised1 && this.repository.thatFlightAssignmentIsOf(assignmentId, flightCrewMemberId);
+					ownsIt = assignment.getFlightCrewMember().getId() == flightCrewMemberId;
+				}
+			}
+		} catch (Exception e) {
+			authorised = false;
+			ownsIt = false;
 		}
 
 		super.getResponse().setAuthorised(authorised && ownsIt);
@@ -43,26 +52,26 @@ public class FlightCrewMemberFlightAssignmentShowService extends AbstractGuiServ
 
 	@Override
 	public void load() {
-		FlightAssignment assignment;
-		int id;
+		FlightAssignment assignment = null;
 
-		id = super.getRequest().getData("id", int.class);
-		assignment = this.repository.findFlightAssignmentById(id);
+		try {
+			Integer id = super.getRequest().getData("id", Integer.class);
+
+			if (id != null)
+				assignment = this.repository.findFlightAssignmentById(id);
+		} catch (Exception e) {
+		}
 
 		super.getBuffer().addData(assignment);
 	}
 
 	@Override
 	public void unbind(final FlightAssignment assignment) {
-		Collection<Leg> legs;
-		SelectChoices legChoices;
-
 		Dataset dataset;
 
+		Collection<Leg> legs;
+		SelectChoices legChoices;
 		SelectChoices currentStatus;
-		int assignmentId;
-
-		assignmentId = super.getRequest().getData("id", int.class);
 		SelectChoices duty;
 
 		boolean isCompleted;
@@ -78,6 +87,8 @@ public class FlightCrewMemberFlightAssignmentShowService extends AbstractGuiServ
 
 		Date currentMoment;
 		currentMoment = MomentHelper.getCurrentMoment();
+
+		int assignmentId = assignment.getId();
 		isCompleted = this.repository.areLegsCompletedByFlightAssignment(assignmentId, currentMoment);
 
 		String dutyLabel = duty.getSelected().getLabel();
@@ -98,5 +109,4 @@ public class FlightCrewMemberFlightAssignmentShowService extends AbstractGuiServ
 
 		super.getResponse().addData(dataset);
 	}
-
 }

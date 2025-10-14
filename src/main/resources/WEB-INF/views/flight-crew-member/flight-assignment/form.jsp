@@ -88,30 +88,5 @@
             <acme:submit code="flight-crew-member.flight-assignment.form.button.update" action="/flight-crew-member/flight-assignment/update"/>
         </jstl:when>
 
-        <jstl:when test="${_command == 'publish'}">
-            <acme:input-textbox code="flight-crew-member.flight-assignment.form.label.flight-crew-member" path="flightCrewMember" readonly="true"/>
-            <acme:input-select code="flight-crew-member.flight-assignment.form.label.leg" path="leg" choices="${legs}"/>		
-            <div class="form-group">
-                <label for="dutySelect">
-                    <acme:print code="flight-crew-member.flight-assignment.form.label.duty"/>
-                </label>
-                <select id="dutySelect" name="duty" class="form-control" 
-                        onchange="if(this.value) window.location.href='/Acme-ANS-C3/flight-crew-member/flight-assignment/${_command }?duty=' + this.value + '&id=${id}'">
-                    
-                    <jstl:forEach var="choice" items="${duty.iterator()}">		
-                    <acme:input-option 
-                        value="${choice.getKey()}" 
-                        code="${choice.getLabel()}" 
-                        selected="${choice.isSelected()}"/>
-                </jstl:forEach>
-                   
-                </select>
-            </div>
-            <acme:input-select code="flight-crew-member.flight-assignment.form.label.current-status" path="currentStatus" choices="${currentStatus}"/>
-            <acme:input-textbox code="flight-crew-member.flight-assignment.form.label.remarks" path="remarks"/>
-            <acme:input-moment code="flight-crew-member.flight-assignment.form.label.moment" path="moment"/>
-            
-            <acme:submit code="flight-crew-member.flight-assignment.form.button.publish" action="/flight-crew-member/flight-assignment/publish"/>
-        </jstl:when>
     </jstl:choose>
 </acme:form>
