@@ -73,11 +73,6 @@ public class FlightCrewMemberFlightAssignmentUpdateService extends AbstractGuiSe
 
 	@Override
 	public void validate(final FlightAssignment assignment) {
-
-		// Validación: Leg no puede ser nula
-		if (assignment.getLeg() == null)
-			super.state(false, "leg", "acme.validation.FlightAssignment.legNotNull.message");
-
 		// Si hay errores críticos (duty o leg nulos), no continuar con otras validaciones
 		if (assignment.getDuty() == null || assignment.getLeg() == null)
 			return;

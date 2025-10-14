@@ -9,7 +9,6 @@ import acme.client.services.AbstractGuiService;
 import acme.client.services.GuiService;
 import acme.entities.activitylog.ActivityLog;
 import acme.entities.flightassignment.FlightAssignment;
-import acme.entities.leg.Leg;
 import acme.realms.flightcrewmembers.FlightCrewMember;
 
 @GuiService
@@ -22,57 +21,56 @@ public class FlightCrewMemberFlightAssignmentDeleteService extends AbstractGuiSe
 	@Override
 	public void authorise() {
 		boolean status = false;
-		String method = super.getRequest().getMethod();
-		if (method.equals("GET"))
-			status = false;
-		else {
-			int flightAssignmentId = super.getRequest().getData("id", int.class);
-			FlightAssignment assignment = this.repository.findFlightAssignmentById(flightAssignmentId);
-			int flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
-			if (assignment != null) {
+		int flightAssignmentId = super.getRequest().getData("id", int.class);
+		FlightAssignment assignment = this.repository.findFlightAssignmentById(flightAssignmentId);
+		int flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
 
-				boolean authorised1 = this.repository.existsFlightCrewMember(flightCrewMemberId);
-				boolean authorised = authorised1 && this.repository.thatFlightAssignmentIsOf(flightAssignmentId, flightCrewMemberId);
-				boolean ownsIt = assignment.getFlightCrewMember().getId() == flightCrewMemberId;
-				status = assignment.isDraftMode() && authorised && ownsIt;
-			}
+		if (assignment != null) {
+			boolean authorised1 = this.repository.existsFlightCrewMember(flightCrewMemberId);
+			boolean authorised = authorised1 && this.repository.thatFlightAssignmentIsOf(flightAssignmentId, flightCrewMemberId);
+			boolean ownsIt = assignment.getFlightCrewMember().getId() == flightCrewMemberId;
+			status = assignment.isDraftMode() && authorised && ownsIt;
 		}
+
 		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		FlightAssignment assignment = new FlightAssignment();
-		assignment.setDraftMode(true);
+		int flightAssignmentId = super.getRequest().getData("id", int.class);
+		FlightAssignment assignment = this.repository.findFlightAssignmentById(flightAssignmentId);
 		super.getBuffer().addData(assignment);
 	}
 
 	@Override
 	public void bind(final FlightAssignment assignment) {
-		int legId = super.getRequest().getData("leg", int.class);
-		Leg leg = this.repository.findLegById(legId);
-
-		int flightCrewMemberId = super.getRequest().getPrincipal().getActiveRealm().getId();
-		FlightCrewMember flightCrewMember = this.repository.findFlightCrewMemberById(flightCrewMemberId);
-
-		super.bindObject(assignment, "duty", "currentStatus", "remarks");
-		assignment.setLeg(leg);
-		assignment.setFlightCrewMember(flightCrewMember);
+		// No necesitamos bind para delete, ya que no estamos modificando datos
+		// Solo necesitamos la entidad cargada para eliminarla
 	}
 
 	@Override
 	public void validate(final FlightAssignment assignment) {
+		// Validación simple: asegurarnos de que la asignación existe y está en draft mode
+		if (assignment == null)
+			super.state(false, "*", "acme.validation.flightassignment.notfound.message");
+		else if (!assignment.isDraftMode())
+			super.state(false, "*", "acme.validation.flightassignment.notDraft.message");
 	}
 
 	@Override
 	public void perform(final FlightAssignment assignment) {
-		Collection<ActivityLog> activityLogs = this.repository.findActivityLogsByFlightAssignmentId(assignment.getId());
-		this.repository.deleteAll(activityLogs);
-		this.repository.delete(assignment);
+		if (assignment != null) {
+			// Eliminar los activity logs asociados primero
+			Collection<ActivityLog> activityLogs = this.repository.findActivityLogsByFlightAssignmentId(assignment.getId());
+			if (activityLogs != null && !activityLogs.isEmpty())
+				this.repository.deleteAll(activityLogs);
+			// Eliminar la flight assignment
+			this.repository.delete(assignment);
+		}
 	}
 
 	@Override
 	public void unbind(final FlightAssignment assignment) {
-
+		// No necesitamos unbind para delete
 	}
 }
