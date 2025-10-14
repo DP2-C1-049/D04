@@ -78,3 +78,4 @@ acme.validation.FlightAssignment.FlightCrewMemberIncompatibleLegs.message = Este
 acme.validation.FlightAssignment.havePilot.message = Esta asignación ya tiene un PILOTO
 acme.validation.FlightAssignment.haveCopilot.message = Esta asignación ya tiene un COPILOTO
 acme.validation.FlightAssignment.legDraftModeNotAllowed.message = Este tramo ya ha sido publicado
+acme.validation.FlightAssignment.dutyNotNull.message = No se puede asignar un tramo a un rol nulo

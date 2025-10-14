@@ -68,4 +68,15 @@ public interface FlightCrewMemberFlightAssignmentRepository extends AbstractRepo
 	@Query("SELECT fa FROM FlightAssignment fa WHERE fa.leg.id = :legId")
 	Collection<FlightAssignment> findFlightAssignmentByLegId(int legId);
 
+	@Query("select l from Leg l where l.draftMode = false and l.arrival > :now")
+	Collection<Leg> findAvailableLegs(Date now);
+
+	@Query("select l from Leg l where l.draftMode = false and l.arrival > :now " + "and l.id not in (select fa.leg.id from FlightAssignment fa where fa.leg = l and fa.duty = acme.entities.flightassignment.Duty.PILOT)")
+	Collection<Leg> findAvailableLegsWithoutPilot(Date now);
+
+	@Query("select l from Leg l where l.draftMode = false and l.arrival > :now " + "and l.id not in (select fa.leg.id from FlightAssignment fa where fa.leg = l and fa.duty = acme.entities.flightassignment.Duty.COPILOT)")
+	Collection<Leg> findAvailableLegsWithoutCopilot(Date now);
+
+	@Query("select count(fa) > 0 from FlightAssignment fa where fa.leg.id = :legId and fa.duty = :duty and fa.id != :assignmentId")
+	boolean existsFlightCrewMemberWithDutyInLegExcludingAssignment(int legId, Duty duty, int assignmentId);
 }

@@ -71,3 +71,4 @@ acme.validation.FlightAssignment.FlightCrewMemberIncompatibleLegs.message = This
 acme.validation.FlightAssignment.havePilot.message = This assignment already has a PILOT
 acme.validation.FlightAssignment.haveCopilot.message = This assignment already has a COPILOT
 acme.validation.FlightAssignment.legDraftModeNotAllowed.message = This leg has been already published
+acme.validation.FlightAssignment.dutyNotNull.message = Can't assign a leg to an empty duty
