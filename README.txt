@@ -72,7 +72,9 @@ GitHub dashboard javmanriq D03 (Student 3):
 https://github.com/orgs/DP2-C1-049/projects/10/views/4
 GitHub dashboard javmanriq D04 (Student 3):
 https://github.com/orgs/DP2-C1-049/projects/10/views/5
-GithHub dashboard javmanriq C3 (Student 3):
+GithHub dashboard javmanriq C2 (Student 3):
 https://github.com/orgs/DP2-C1-049/projects/10/views/6
+GithHub dashboard javmanriq C2 (Student 3):
+https://github.com/orgs/DP2-C1-049/projects/10/views/8
 
 
